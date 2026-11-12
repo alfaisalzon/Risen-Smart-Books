@@ -1,416 +1,536 @@
+
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#1457d9">
-<title>Risen Smart Books | The Risen High School</title>
-<style>
-@font-face{font-family:Jameel;src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff') format('woff');font-display:swap}
-:root{--blue:#1457d9;--navy:#123b82;--bg:#f3f6fc;--line:#dbe3ef;--text:#172033;--muted:#64748b}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Jameel,"Noto Nastaliq Urdu",Arial,sans-serif;font-size:17px}
-header{background:linear-gradient(120deg,#103d9d,#2878ed);color:white;padding:16px;position:sticky;top:0;z-index:10;box-shadow:0 3px 12px #102b5b33}
-header h1{margin:0;font-size:27px}header p{margin:0;font-size:14px}
-nav{display:flex;gap:7px;overflow:auto;padding:9px;background:white;position:sticky;top:76px;z-index:9;border-bottom:1px solid var(--line)}
-nav button{white-space:nowrap;border:0;border-radius:20px;background:#edf2fc;color:#21416f;padding:8px 13px;font:inherit}
-nav button.active{background:var(--blue);color:white}
-main{max-width:1000px;margin:auto;padding:14px}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:15px;margin-bottom:13px;box-shadow:0 3px 12px #1c37600a}
-h2{font-size:23px;color:var(--navy);margin:0 0 10px}h3{font-size:19px;color:var(--navy);margin:8px 0}
-label{display:block;margin:7px 0 3px}input,select,textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;background:#fff;color:var(--text)}
-textarea{min-height:85px;resize:vertical}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-button.primary,.primary{background:var(--blue);color:white;border:0;border-radius:9px;padding:9px 15px;font:inherit;cursor:pointer}
-button.secondary{background:#eaf0fc;color:#17449b;border:0;border-radius:9px;padding:8px 13px;font:inherit;cursor:pointer}
-button.danger{background:#fee2e2;color:#991b1b;border:0;border-radius:9px;padding:7px 11px;font:inherit}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.muted{color:var(--muted);font-size:14px}.hidden{display:none!important}
-.item{border:1px solid var(--line);border-radius:10px;padding:11px;margin:8px 0;background:white}.tag{display:inline-block;background:#eaf0fc;color:#17449b;border-radius:20px;padding:1px 9px;font-size:13px}
-.bookgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
-.bookcard{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
-.author-credit{margin:14px auto 4px;padding:9px 12px;border-top:1px solid #9bb7d8;border-bottom:1px solid #9bb7d8;text-align:center;line-height:1.9;color:#173b67;font-weight:700}.author-credit .en{direction:ltr;font-family:Arial,sans-serif}
-#qr{display:flex;justify-content:center;padding:12px}#qr canvas,#qr img{max-width:100%}
-.question{border:1px solid var(--line);padding:10px;border-radius:9px;margin:9px 0}
-.opt{display:block;border:1px solid var(--line);border-radius:8px;padding:7px;margin:6px 0}
-.cover{padding:22px;text-align:center;background:linear-gradient(135deg,#eaf2ff,#fff,#eafaf3);border:2px solid var(--blue);border-radius:12px;margin-bottom:12px}
-.cover h1{font-size:34px;color:var(--navy);margin:6px}
-.drawing svg{width:min(100%,400px);height:auto;display:block;margin:auto}
-.pageprint{padding:16px;border:1px dashed #b9c7d8;border-radius:12px;margin:10px 0;text-align:center}
-footer{text-align:center;color:var(--muted);padding:20px;font-size:13px}
-@media(max-width:560px){.grid{grid-template-columns:1fr}header{position:static}nav{top:0}}
-@media print{header,nav,.noprint,footer{display:none!important}body{background:#fff}.panel{box-shadow:none;border:0}.pageprint{break-after:page;border:0;min-height:250mm}main{max-width:none;padding:0}}
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-</head>
-<body>
-<header><h1>Risen Smart Books</h1><p>The Risen High School · Playgroup to Class 4</p></header>
-<nav class="noprint" id="nav">
-<button class="active" data-tab="home">کتابیں</button><button data-tab="lesson">سبق / مواد</button><button data-tab="library">محفوظ اسباق</button><button data-tab="scan">QR اسکین</button><button data-tab="test">ٹیسٹ</button><button data-tab="manage">انتظام</button>
-</nav>
-<main>
-<section id="home" class="tab">
-<div class="panel"><h2>اپنی جماعت اور مضمون منتخب کریں</h2>
-<div class="grid"><div><label>جماعت</label><select id="grade"></select></div><div><label>مضمون</label><select id="subject"></select></div></div>
-<div class="actions"><button class="primary" id="showBooks">کتاب کھولیں</button><button class="secondary" onclick="window.print()">کتاب پرنٹ / PDF</button></div>
-</div><div class="panel"><h2 id="bookHeading">کتابیں</h2><div id="bookLessons"></div></div>
-</section>
-<section id="lesson" class="tab hidden"><div class="panel"><h2>نیا سبق / سوالات شامل کریں</h2>
-<div class="grid"><div><label>جماعت</label><select id="newGrade"></select></div><div><label>مضمون</label><select id="newSubject"></select></div></div>
-<label>سبق کا عنوان</label><input id="newTitle" placeholder="سبق کا نام">
-<label>سبق کی وضاحت / متن</label><textarea id="newText" placeholder="آسان الفاظ میں سبق لکھیں..."></textarea>
-<div class="actions"><button class="secondary" id="addQ">+ سوال شامل کریں</button><button class="primary" id="saveLesson">سبق محفوظ کریں</button></div>
-<div id="qEditor"></div></div></section>
-<section id="library" class="tab hidden"><div class="panel"><h2>تمام محفوظ اسباق</h2><div id="allLessons"></div></div></section>
-<section id="scan" class="tab hidden"><div class="panel"><h2>QR Code اسکین کریں</h2><video id="video" playsinline style="width:100%;max-height:300px;background:#111;border-radius:10px"></video><div class="actions"><button class="primary" id="scanStart">کیمرہ شروع کریں</button><button class="secondary" id="scanStop">بند کریں</button></div><p id="scanMsg" class="muted">اگر کیمرہ اسکین دستیاب نہ ہو تو QR لنک نیچے پیسٹ کریں۔</p><input id="manualQR" placeholder="QR لنک یا سبق ID"><button class="secondary" id="manualOpen">سبق کھولیں</button></div></section>
-<section id="test" class="tab hidden"><div class="panel"><h2>سبق کا ٹیسٹ</h2><label>سبق منتخب کریں</label><select id="testSelect"></select><button class="primary" id="testStart">ٹیسٹ شروع کریں</button><div id="testArea"></div></div></section>
-<section id="manage" class="tab hidden"><div class="panel"><h2>ڈیٹا بیک اپ</h2><p class="muted">اپنی کتابوں اور اسباق کی JSON فائل محفوظ رکھیں۔ دوسرے فون پر Restore کرنے سے وہاں کا موجودہ ڈیٹا بدل جائے گا۔</p><div class="actions"><button class="primary" id="export">Backup ڈاؤن لوڈ</button><label class="secondary" style="cursor:pointer">Backup Restore <input type="file" id="restore" accept=".json,application/json" hidden></label></div></div>
-<div class="panel"><h2>نئی کتاب شامل کریں</h2><div class="grid"><div><label>جماعت</label><select id="customGrade"></select></div><div><label>مضمون</label><input id="customSubject" placeholder="مضمون"></div></div><label>کتاب کا نام</label><input id="customBook" placeholder="کتاب کا نام"><button class="primary" id="addBook">کتاب محفوظ کریں</button><div id="customBooks"></div></div></section>
-<section id="view" class="tab hidden"><div class="panel"><div class="actions noprint"><button class="secondary" id="back">واپس</button><button class="secondary" onclick="window.print()">پرنٹ / PDF</button></div><div id="viewContent"></div><h3>اس سبق کا QR Code</h3><div id="qr"></div><div class="actions noprint"><button class="secondary" id="saveQR">QR تصویر ڈاؤن لوڈ</button><button class="primary" id="viewTest">ٹیسٹ دیں</button></div></div></section>
-</main><footer>Risen Smart Books · مصنف: رانا محمد فیصل · Author: Rana Muhammad Faisal · Jameel Noori Nastaleeq</footer>
-<script>
-const GRADES=["Playgroup","Nursery","Prep","Class 1","Class 2","Class 3","Class 4"];
-const SUBJECTS=["اردو","English","Mathematics","اسلامیات","General Knowledge","General Science","Drawing & Colouring"];
-const $=id=>document.getElementById(id);
-const key='risen_smart_books_v2';
-let data=JSON.parse(localStorage.getItem(key)||'null')||{lessons:[],books:[]}, current=null,stream=null,scanLoop=null;
-function save(){localStorage.setItem(key,JSON.stringify(data));}
-function id(){return 'RSB-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,6)}
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function fillSelect(el,arr){$(el).innerHTML=arr.map(x=>`<option>${esc(x)}</option>`).join('')}
-['grade','newGrade','customGrade'].forEach(x=>fillSelect(x,GRADES));['subject','newSubject'].forEach(x=>fillSelect(x,SUBJECTS));
-function tab(n){document.querySelectorAll('.tab').forEach(x=>x.classList.add('hidden'));$(n).classList.remove('hidden');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===n));}
-document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
-  function seed(){
- if(data.seeded)return;
- const seedRows=[
- ["Playgroup","اردو","حروفِ تہجی: ا، ب، پ","ا سے انار، ب سے بکری، پ سے پتنگ۔ حروف کو دیکھیں، بولیں اور پہچانیں۔",[{q:"ا سے کیا ہے؟",type:"mcq",options:["انار","بلی","گھر"],answer:"انار"}]],
- ["Playgroup","English","Letters A, B, C","A for Apple, B for Ball, C for Cat. Look, say and trace the letters.",[{q:"A is for ____.",type:"mcq",options:["Apple","Ball","Cat"],answer:"Apple"}]],
- ["Playgroup","Mathematics","Numbers 1–5","اعداد 1 سے 5 تک گنیں۔ ہر عدد کے ساتھ اتنی ہی چیزیں گنیں۔",[{q:"What comes after 2?",type:"mcq",options:["1","3","5"],answer:"3"}]],
- ["Playgroup","اسلامیات","سلام کرنا","ہم ملتے وقت السلام علیکم کہتے ہیں۔ جواب میں وعلیکم السلام کہا جاتا ہے۔",[{q:"سلام کے جواب میں کیا کہتے ہیں؟",type:"mcq",options:["وعلیکم السلام","خدا حافظ","شکریہ"],answer:"وعلیکم السلام"}]],
- ["Playgroup","General Knowledge","میرا جسم","ہماری دو آنکھیں، دو کان، ایک ناک اور ایک منہ ہوتا ہے۔",[{q:"ہم کس سے دیکھتے ہیں؟",type:"mcq",options:["آنکھوں سے","کانوں سے","ہاتھوں سے"],answer:"آنکھوں سے"}]],
- ["Playgroup","General Science","رنگ","دنیا میں کئی رنگ ہیں۔ سیب سرخ، پتے سبز اور آسمان نیلا دکھائی دے سکتا ہے۔",[{q:"پتے عام طور پر کس رنگ کے ہوتے ہیں؟",type:"mcq",options:["سبز","نیلے","سیاہ"],answer:"سبز"}]],
- ["Nursery","اردو","آسان الفاظ","آم، انار، بکری، تتلی اور کتاب آسان الفاظ ہیں۔ انہیں پڑھیں اور لکھنے کی مشق کریں۔",[{q:"کتاب کس کام آتی ہے؟",type:"mcq",options:["پڑھنے","کھانے","دوڑنے"],answer:"پڑھنے"}]],
- ["Nursery","English","Small Words","Learn: cat, bat, mat, sun, pen. Read each word aloud.",[{q:"Which word names an animal?",type:"mcq",options:["cat","pen","sun"],answer:"cat"}]],
- ["Nursery","Mathematics","Numbers 1–10","Count forward from 1 to 10. Write each number neatly.",[{q:"What comes before 5?",type:"mcq",options:["4","6","7"],answer:"4"}]],
- ["Nursery","اسلامیات","بسم اللہ","ہم اچھے کام شروع کرنے سے پہلے بسم اللہ الرحمن الرحیم پڑھتے ہیں۔",[{q:"کام شروع کرتے وقت کیا پڑھتے ہیں؟",type:"mcq",options:["بسم اللہ","الوداع","صبح بخیر"],answer:"بسم اللہ"}]],
- ["Nursery","General Knowledge","رنگ اور شکلیں","دائرہ، مربع اور مثلث بنیادی شکلیں ہیں۔ اپنے اردگرد ان شکلوں کو تلاش کریں۔",[{q:"گیند عموماً کس شکل کی ہوتی ہے؟",type:"mcq",options:["گول","چوکور","تکونی"],answer:"گول"}]],
- ["Nursery","General Science","پودے","پودوں کو پانی، ہوا اور روشنی کی ضرورت ہوتی ہے۔ پودے ہماری دنیا کو خوب صورت بناتے ہیں۔",[{q:"پودے کو بڑھنے کے لیے کیا چاہیے؟",type:"mcq",options:["پانی","پلاسٹک","پتھر"],answer:"پانی"}]],
- ["Prep","اردو","میرا گھر","میرا گھر صاف ستھرا ہے۔ میں اپنے گھر کو صاف رکھنے میں مدد کرتا ہوں۔",[{q:"ہمیں گھر کیسا رکھنا چاہیے؟",type:"mcq",options:["صاف","گندا","بے ترتیب"],answer:"صاف"}]],
- ["Prep","English","My School","My school is a place to learn. I respect my teachers and love my school.",[{q:"Where do we learn?",type:"mcq",options:["School","Market","Park"],answer:"School"}]],
- ["Prep","Mathematics","Addition","Add: 2 + 3 = 5. جمع کرنے سے چیزوں کی تعداد بڑھتی ہے۔",[{q:"What is 4 + 1?",type:"mcq",options:["5","3","6"],answer:"5"}]],
- ["Prep","اسلامیات","صفائی","صفائی اچھی عادت ہے۔ ہمیں اپنے جسم، کپڑوں اور اردگرد کی جگہ کو صاف رکھنا چاہیے۔",[{q:"صفائی کیسی عادت ہے؟",type:"mcq",options:["اچھی","بری","غیر ضروری"],answer:"اچھی"}]],
- ["Prep","General Knowledge","ہمارا پاکستان","پاکستان ہمارا پیارا وطن ہے۔ اس کا دارالحکومت اسلام آباد ہے۔",[{q:"پاکستان کا دارالحکومت کون سا ہے؟",type:"mcq",options:["اسلام آباد","لاہور","کراچی"],answer:"اسلام آباد"}]],
- ["Prep","General Science","پانی","پانی زندگی کے لیے ضروری ہے۔ ہمیں صاف پانی پینا چاہیے اور اسے ضائع نہیں کرنا چاہیے۔",[{q:"ہمیں کون سا پانی پینا چاہیے؟",type:"mcq",options:["صاف پانی","گندا پانی","رنگین پانی"],answer:"صاف پانی"}]],
- ["Class 1","اردو","اچھے اخلاق","ہمیں بڑوں کا ادب اور چھوٹوں سے پیار کرنا چاہیے۔ سچ بولنا اور دوسروں کی مدد کرنا اچھی عادتیں ہیں۔",[{q:"ہمیں ہمیشہ کیا بولنا چاہیے؟",type:"mcq",options:["سچ","جھوٹ","بدتمیزی"],answer:"سچ"}]],
- ["Class 1","English","The Helpful Child","A good child helps others, speaks politely and keeps things tidy.",[{q:"A good child speaks ____.",type:"mcq",options:["politely","rudely","angrily"],answer:"politely"}]],
- ["Class 1","Mathematics","Addition and Subtraction","Add: 12 + 5 = 17. Subtract: 17 − 5 = 12. جمع میں اضافہ اور تفریق میں کمی ہوتی ہے۔",[{q:"What is 10 + 7?",type:"mcq",options:["17","15","12"],answer:"17"}]],
- ["Class 1","اسلامیات","اللہ تعالیٰ کی نعمتیں","اللہ تعالیٰ نے ہمیں ہوا، پانی، روشنی، خوراک اور بہت سی نعمتیں عطا کی ہیں۔ ہمیں شکر ادا کرنا چاہیے۔",[{q:"ہمیں نعمتوں پر کس کا شکر ادا کرنا چاہیے؟",type:"mcq",options:["اللہ تعالیٰ کا","کسی چیز کا نہیں","صرف دوستوں کا"],answer:"اللہ تعالیٰ کا"}]],
- ["Class 1","General Knowledge","ہفتے کے دن","ایک ہفتے میں سات دن ہوتے ہیں: پیر، منگل، بدھ، جمعرات، جمعہ، ہفتہ اور اتوار۔",[{q:"ایک ہفتے میں کتنے دن ہوتے ہیں؟",type:"mcq",options:["سات","پانچ","دس"],answer:"سات"}]],
- ["Class 1","General Science","ہوا اور پانی","ہوا اور پانی جانداروں کے لیے ضروری ہیں۔ ہمیں پانی اور ہوا کو آلودہ نہیں کرنا چاہیے۔",[{q:"زندگی کے لیے کون سی چیز ضروری ہے؟",type:"mcq",options:["ہوا اور پانی","دھواں","کچرا"],answer:"ہوا اور پانی"}]],
- ["Class 2","اردو","وقت کی پابندی","وقت بہت قیمتی ہے۔ ہمیں اپنا کام وقت پر کرنا چاہیے اور پڑھائی، کھیل اور آرام کے لیے وقت مقرر کرنا چاہیے۔",[{q:"وقت کیسا ہے؟",type:"mcq",options:["قیمتی","بے کار","لامحدود"],answer:"قیمتی"}]],
- ["Class 2","English","A Visit to the Park","We visited a park. We saw green trees, colourful flowers and children playing.",[{q:"What did we see in the park?",type:"mcq",options:["Trees and flowers","Factories","Trains"],answer:"Trees and flowers"}]],
- ["Class 2","Mathematics","Multiplication","Multiplication is repeated addition. 3 × 2 means 3 groups of 2, so the answer is 6. ضرب بار بار جمع کرنے کا آسان طریقہ ہے۔",[{q:"What is 4 × 2?",type:"mcq",options:["8","6","10"],answer:"8"}]],
- ["Class 2","اسلامیات","والدین کا احترام","والدین ہمارے لیے بہت محنت کرتے ہیں۔ ہمیں ان سے ادب سے بات کرنی اور ان کی جائز بات ماننی چاہیے۔",[{q:"ہمیں والدین سے کیسے بات کرنی چاہیے؟",type:"mcq",options:["ادب سے","غصے سے","بدتمیزی سے"],answer:"ادب سے"}]],
- ["Class 2","General Knowledge","پاکستان کے صوبے","پاکستان کے چار صوبے پنجاب، سندھ، خیبر پختونخوا اور بلوچستان ہیں۔",[{q:"پاکستان کا سب سے بڑا صوبہ رقبے کے لحاظ سے کون سا ہے؟",type:"mcq",options:["بلوچستان","پنجاب","سندھ"],answer:"بلوچستان"}]],
- ["Class 2","General Science","جانوروں کی اقسام","کچھ جانور خشکی پر، کچھ پانی میں اور کچھ خشکی و پانی دونوں جگہ رہتے ہیں۔",[{q:"مچھلی کہاں رہتی ہے؟",type:"mcq",options:["پانی میں","درخت پر","صحرا میں"],answer:"پانی میں"}]],
- ["Class 3","اردو","محنت کی عظمت","محنت کامیابی کی کنجی ہے۔ جو طالب علم باقاعدگی سے پڑھتا اور کوشش کرتا ہے وہ علم میں ترقی کرتا ہے۔",[{q:"کامیابی کی کنجی کیا ہے؟",type:"mcq",options:["محنت","سستی","غفلت"],answer:"محنت"}]],
- ["Class 3","English","Clean Environment","A clean environment keeps us healthy. We should use dustbins and plant trees.",[{q:"Where should we put rubbish?",type:"mcq",options:["In dustbins","On roads","In rivers"],answer:"In dustbins"}]],
- ["Class 3","Mathematics","Fractions","A fraction shows a part of a whole. If a pizza is divided into 2 equal parts, one part is one-half (1/2). کسر کسی پوری چیز کے حصے کو ظاہر کرتی ہے۔",[{q:"Which fraction means one out of two equal parts?",type:"mcq",options:["1/2","1/3","2/2"],answer:"1/2"}]],
- ["Class 3","اسلامیات","سچائی اور امانت","سچ بولنا اور امانت کی حفاظت کرنا اچھی صفات ہیں۔ ہمیں ہر معاملے میں دیانت داری اختیار کرنی چاہیے۔",[{q:"امانت کے ساتھ کیا کرنا چاہیے؟",type:"mcq",options:["حفاظت","ضائع","انکار"],answer:"حفاظت"}]],
- ["Class 3","General Knowledge","دنیا اور براعظم","دنیا میں سات براعظم ہیں۔ ایشیا ان میں سب سے بڑا براعظم ہے۔",[{q:"سب سے بڑا براعظم کون سا ہے؟",type:"mcq",options:["ایشیا","یورپ","آسٹریلیا"],answer:"ایشیا"}]],
- ["Class 3","General Science","مادہ کی حالتیں","مادہ عام طور پر ٹھوس، مائع اور گیس کی حالت میں پایا جاتا ہے۔ برف ٹھوس اور پانی مائع ہے۔",[{q:"برف کس حالت میں ہوتی ہے؟",type:"mcq",options:["ٹھوس","مائع","گیس"],answer:"ٹھوس"}]],
- ["Class 4","اردو","علم کی اہمیت","علم انسان کو اچھے اور برے میں فرق کرنا سکھاتا ہے۔ علم سے انسان اپنی زندگی اور معاشرے کو بہتر بنا سکتا ہے۔",[{q:"علم ہمیں کیا سکھاتا ہے؟",type:"mcq",options:["اچھے اور برے میں فرق","سستی","بدتمیزی"],answer:"اچھے اور برے میں فرق"}]],
- ["Class 4","English","The Importance of Trees","Trees provide shade, fruits and oxygen. They protect soil and make our environment beautiful.",[{q:"What do trees provide?",type:"mcq",options:["Shade and oxygen","Plastic","Smoke"],answer:"Shade and oxygen"}]],
- ["Class 4","Mathematics","Perimeter and Area","Perimeter is the total length around a shape. Area is the surface inside it. مستطیل کا رقبہ = لمبائی × چوڑائی۔",[{q:"What is the perimeter of a square with side 4 cm?",type:"mcq",options:["16 cm","8 cm","12 cm"],answer:"16 cm"}]],
- ["Class 4","اسلامیات","حقوق العباد","لوگوں کے حقوق کا خیال رکھنا ضروری ہے۔ ہمیں پڑوسیوں، رشتہ داروں اور ضرورت مندوں کے ساتھ اچھا سلوک کرنا چاہیے۔",[{q:"ہمیں پڑوسیوں کے ساتھ کیسا سلوک کرنا چاہیے؟",type:"mcq",options:["اچھا","برا","سخت"],answer:"اچھا"}]],
- ["Class 4","General Knowledge","پاکستان کی قومی علامتیں","پاکستان کا قومی پھول چنبیلی، قومی جانور مارخور اور قومی پرندہ چکور ہے۔",[{q:"پاکستان کا قومی جانور کون سا ہے؟",type:"mcq",options:["مارخور","شیر","ہاتھی"],answer:"مارخور"}]],
- ["Class 4","General Science","انسانی جسم اور صحت","دل خون کو جسم میں گردش دینے میں مدد کرتا ہے۔ متوازن غذا، صاف پانی اور صفائی صحت کے لیے اہم ہیں۔",[{q:"خون کو جسم میں گردش دینے میں کون مدد کرتا ہے؟",type:"mcq",options:["دل","معدہ","کان"],answer:"دل"}]]
- ];
- seedRows.forEach(r=>data.lessons.push({id:id(),grade:r[0],subject:r[1],title:r[2],text:r[3],questions:r[4],seed:true}));
- const drawTopics=[["Playgroup","بلی","بلی کے بڑے خاکے میں رنگ بھریں۔","cat"],["Nursery","پھل","پھل کے خاکے میں رنگ بھریں۔","apple"],["Prep","سورج اور بادل","سورج اور بادل میں مناسب رنگ بھریں۔","sun"],["Class 1","گھر","گھر کی چھت، دروازہ اور کھڑکیاں مکمل کریں۔","house"],["Class 2","پھول","پھول کی پنکھڑیوں اور پتوں میں رنگ بھریں۔","flower"],["Class 3","درخت اور گھر","اپنی مرضی سے درخت اور گھر کا منظر بنائیں۔","house"],["Class 4","قدرتی منظر","اپنا قدرتی منظر بنائیں اور رنگ بھریں۔","blank"]];
- drawTopics.forEach(x=>data.lessons.push({id:id(),grade:x[0],subject:"Drawing & Colouring",title:x[1],text:x[2],drawing:x[3],questions:[],seed:true}));
- data.seeded=true;save();
-}
-  function renderBooks(){
- const grade=$('grade').value,subject=$('subject').value;
- const lessons=data.lessons.filter(x=>x.grade===grade&&x.subject===subject);
- $('bookHeading').textContent=grade+' — '+subject;
- $('bookLessons').innerHTML=`
- <div class="cover">
- <h1>The Risen High School</h1>
- <h2>${esc(subject)}</h2>
- <h3>${esc(grade)}</h3>
- <div class="author-credit">
- مصنف: رانا محمد فیصل
- <div class="en">Author: Rana Muhammad Faisal</div>
- </div>
- </div>
- <div class="bookgrid">
- ${lessons.map((l,i)=>`
- <div class="bookcard">
- <span class="tag">سبق ${i+1}</span>
- <h3>${esc(l.title)}</h3>
- <p>${esc(l.text)}</p>
- <div class="author-credit">
- مصنف: رانا محمد فیصل
- <div class="en">Author: Rana Muhammad Faisal</div>
- </div>
- <button class="primary" onclick="openLesson('${l.id}')">سبق کھولیں</button>
- </div>`).join('')}
- </div>`;
-}
-$('showBooks').onclick=renderBooks;
-$('grade').onchange=renderBooks;
-$('subject').onchange=renderBooks;
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123f78">
+<title>Risen Smart Books</title>
 
-function renderAll(){
- $('allLessons').innerHTML=data.lessons.map(l=>`
- <div class="item">
- <span class="tag">${esc(l.grade)} — ${esc(l.subject)}</span>
- <h3>${esc(l.title)}</h3>
- <p>${esc(l.text)}</p>
- <div class="actions">
- <button class="primary" onclick="openLesson('${l.id}')">کھولیں</button>
- ${!l.seed?`<button class="danger" onclick="deleteLesson('${l.id}')">حذف</button>`:''}
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
+}
+*{box-sizing:border-box}
+body{
+ margin:0;background:#f2f6fc;color:#23344d;
+ font-family:Jameel,Arial,sans-serif;
+}
+header{
+ background:linear-gradient(130deg,#10366b,#287ed0);
+ color:white;text-align:center;padding:22px 12px;
+ border-radius:0 0 25px 25px;
+}
+header h1{font-size:30px;margin:0}
+header p{margin:4px}
+header .author{font-size:14px;color:#dcecff}
+nav{
+ display:flex;gap:7px;overflow-x:auto;
+ padding:10px;background:white;position:sticky;
+ top:0;z-index:5;box-shadow:0 3px 10px #0001;
+}
+nav button{
+ border:0;border-radius:12px;padding:10px 15px;
+ background:#eaf2ff;color:#174d8c;
+ white-space:nowrap;font:16px Jameel;
+}
+nav button.active{background:#1558a6;color:white}
+main{max-width:950px;margin:auto;padding:14px}
+.page{display:none}
+.page.active{display:block}
+.hero{
+ padding:22px;border-radius:20px;
+ background:linear-gradient(120deg,#d9ecff,#fff);
+ margin-bottom:18px;
+}
+h2{color:#174d83}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));
+ gap:12px;
+}
+.tile,.card{
+ background:white;border-radius:16px;padding:15px;
+ box-shadow:0 3px 12px #102c5010;
+ border:1px solid #e6edf6;
+}
+.tile{text-align:center;cursor:pointer}
+.tile .emoji{font-size:35px}
+.tile h3{font-size:18px;margin:6px 0;color:#1558a6}
+.tile p{margin:0;color:#78889b;font-size:13px}
+button{cursor:pointer;font-family:inherit}
+.primary{
+ border:0;background:#1558a6;color:white;
+ padding:10px 18px;border-radius:11px;font-size:16px;
+}
+.secondary{
+ border:0;background:#eaf2ff;color:#1558a6;
+ padding:9px 14px;border-radius:10px;font-size:15px;
+}
+input,select{
+ width:100%;padding:12px;border:1px solid #d5dfec;
+ border-radius:10px;font:16px Jameel;margin:7px 0;
+}
+.lessonImage{
+ width:100%;max-height:270px;object-fit:cover;
+ border-radius:14px;margin:10px 0;
+}
+.lessonText{font-size:20px;line-height:2.1}
+.english{font-family:Arial,sans-serif;direction:ltr;text-align:left}
+.unit{
+ background:white;border:1px solid #e4ebf4;
+ padding:13px;border-radius:13px;margin:9px 0;
+ display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+.unit strong{color:#174d83}
+.badge{
+ background:#e7f6ee;color:#15835c;
+ border-radius:20px;padding:4px 10px;font-size:13px;
+}
+.option{
+ display:block;padding:11px;margin:8px 0;
+ background:#f0f5fc;border-radius:10px;cursor:pointer;
+}
+.option input{width:auto}
+#qr img{width:170px;height:170px;max-width:100%}
+footer{text-align:center;padding:25px;color:#718096}
+.small{font-size:13px;color:#718096}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row button{flex:1}
+hr{border:0;border-top:1px solid #e6edf4;margin:16px 0}
+@media print{
+ nav,header,.noPrint,footer{display:none!important}
+ body{background:white}
+ .page{display:none!important}
+ #reader{display:block!important}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h1>Risen Smart Books</h1>
+ <p>The Risen High School</p>
+ <div class="author">مصنف: رانا محمد فیصل</div>
+ <div class="author">Author: Rana Muhammad Faisal</div>
+</header>
+
+<nav>
+ <button class="active" onclick="page('home',this)">ہوم</button>
+ <button onclick="page('classes',this)">جماعتیں</button>
+ <button onclick="page('library',this)">کتب خانہ</button>
+ <button onclick="page('tests',this)">ٹیسٹ</button>
+ <button onclick="page('saved',this)">محفوظ اسباق</button>
+ <button onclick="page('search',this)">تلاش</button>
+ <button onclick="page('about',this)">تعارف</button>
+</nav>
+
+<main>
+
+<section id="home" class="page active">
+ <div class="hero">
+  <h2>خوش آمدید!</h2>
+  <p>آسان تعلیم، دلچسپ اسباق اور روشن مستقبل۔</p>
+  <button class="primary" onclick="page('classes')">کتابیں کھولیں</button>
  </div>
- </div>`).join('')||'<p>ابھی کوئی سبق محفوظ نہیں۔</p>';
- $('testSelect').innerHTML=data.lessons.map(l=>
- `<option value="${l.id}">${esc(l.grade)} — ${esc(l.subject)} — ${esc(l.title)}</option>`
- ).join('');
-}
-function deleteLesson(x){
- if(!confirm('کیا آپ یہ سبق حذف کرنا چاہتے ہیں؟'))return;
- data.lessons=data.lessons.filter(l=>l.id!==x);
- save();renderAll();renderBooks();
-}
-let questions=[];
-$('addQ').onclick=()=>{
- questions.push({q:'',type:'mcq',options:['','',''],answer:''});
- renderQEditor();
+ <h2>ہماری جماعتیں</h2>
+ <div class="grid" id="homeClasses"></div>
+ <div class="card">
+  <h3>ہماری اپنی تعلیمی کتابیں</h3>
+  <p>یہ The Risen High School کا اپنا تعلیمی منصوبہ ہے۔</p>
+  <span class="badge">Risen Learning Series</span>
+ </div>
+</section>
+
+<section id="classes" class="page">
+ <h2>جماعت منتخب کریں</h2>
+ <div class="grid" id="classGrid"></div>
+</section>
+
+<section id="library" class="page">
+ <h2 id="libraryHeading">کتب خانہ</h2>
+ <div id="subjectGrid" class="grid"></div>
+ <div id="unitList"></div>
+</section>
+
+<section id="reader" class="page">
+ <div class="card">
+  <div class="row noPrint">
+   <button class="secondary" onclick="page('library')">واپس</button>
+   <button class="secondary" onclick="saveLesson()">سبق محفوظ کریں</button>
+   <button class="secondary" onclick="window.print()">پرنٹ / PDF</button>
+  </div>
+  <div id="lessonContent"></div>
+  <hr>
+  <div class="noPrint">
+   <h3>اس سبق کا QR کوڈ</h3>
+   <p class="small">اس QR کوڈ کو اسکین کرنے سے اسی سبق کا ٹیسٹ کھلے گا۔</p>
+   <div id="qr"></div>
+  </div>
+ </div>
+</section>
+
+<section id="tests" class="page">
+ <h2>سبق وار ٹیسٹ</h2>
+ <p>جماعت اور مضمون منتخب کرکے سبق کا ٹیسٹ دیں۔</p>
+ <div class="card">
+  <select id="testClass" onchange="fillTestSubjects()"></select>
+  <select id="testSubject" onchange="fillTestUnits()"></select>
+  <select id="testUnit"></select>
+  <button class="primary" onclick="openSelectedTest()">ٹیسٹ شروع کریں</button>
+ </div>
+</section>
+
+<section id="quiz" class="page">
+ <div class="card">
+  <h2 id="quizTitle">سبق کا ٹیسٹ</h2>
+  <div id="quizQuestions"></div>
+  <button class="primary" onclick="checkQuiz()">جوابات چیک کریں</button>
+  <h3 id="quizResult"></h3>
+ </div>
+</section>
+
+<section id="saved" class="page">
+ <h2>محفوظ اسباق</h2>
+ <div id="savedList"></div>
+</section>
+
+<section id="search" class="page">
+ <h2>کتابوں میں تلاش کریں</h2>
+ <input id="searchBox" placeholder="سبق کا نام لکھیں" oninput="searchLessons()">
+ <div id="searchResults"></div>
+</section>
+
+<section id="about" class="page">
+ <div class="card">
+  <h2>Risen Smart Books</h2>
+  <p>یہ کتابیں The Risen High School کے اپنے تعلیمی منصوبے کے طور پر تیار کی جا رہی ہیں۔</p>
+  <h3>مصنف</h3>
+  <p>رانا محمد فیصل</p>
+  <p class="english">Rana Muhammad Faisal</p>
+  <p>اردو فونٹ: جمیل نوری نستعلیق</p>
+  <p>جماعتیں: Playgroup، Nursery، Class 1، Class 2، Class 3، Class 4</p>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ The Risen High School<br>
+ Rana Muhammad Faisal
+</footer>
+
+<script>
+const grades=[
+ 'Playgroup','Nursery','Class 1','Class 2','Class 3','Class 4'
+];
+
+const subjects=[
+ {id:'urdu',name:'اردو',icon:'📖'},
+ {id:'english',name:'English',icon:'🔤'},
+ {id:'math',name:'Mathematics',icon:'➕'},
+ {id:'islamic',name:'اسلامیات',icon:'🕌'},
+ {id:'gk',name:'جنرل نالج',icon:'🌍'},
+ {id:'science',name:'جنرل سائنس',icon:'🔬'},
+ {id:'drawing',name:'Drawing & Colouring',icon:'🎨'}
+];
+
+const topics={
+ urdu:[
+ 'میرا تعارف','میرا گھر','میرا اسکول','میری کتاب',
+ 'پھلوں کے نام','سبزیوں کے نام','جانوروں کے نام','پرندوں کے نام',
+ 'رنگوں کے نام','اچھے اخلاق','چھوٹی کہانی','نظم اور دہرائی'
+ ],
+ english:[
+ 'Alphabet','Capital and Small Letters','Vowels',
+ 'Myself','My Family','My School','Fruits Names',
+ 'Vegetables Names','Animals Names','Colours Names',
+ 'Simple Words','Revision'
+ ],
+ math:[
+ 'Counting 1 to 10','Counting 11 to 20','Number Names',
+ 'Before and After','Greater and Smaller','Addition',
+ 'Subtraction','Shapes','Patterns','Time',
+ 'Money','Revision'
+ ],
+ islamic:[
+ 'اللہ تعالیٰ کی پہچان','ہمارے پیارے نبی ﷺ','کلمہ طیبہ',
+ 'بسم اللہ','سلام کرنا','صفائی کی اہمیت','والدین کا احترام',
+ 'سچ بولنا','نماز کا تعارف','اچھی عادتیں','دعائیں','دہرائی'
+ ],
+ gk:[
+ 'میرا وطن پاکستان','پاکستان کا پرچم','میرا شہر',
+ 'ہمارے قومی جانور','ہمارے قومی پرندے','دن اور رات',
+ 'ہفتے کے دن','سال کے مہینے','پھل اور سبزیاں',
+ 'ٹرانسپورٹ','پیشہ ور افراد','دہرائی'
+ ],
+ science:[
+ 'ہمارا جسم','پانچ حواس','صاف پانی','ہوا',
+ 'پودے','جانور','خوراک','صفائی',
+ 'روشنی','سورج اور چاند','موسم','دہرائی'
+ ],
+ drawing:[
+ 'رنگوں کی پہچان','سیب کی تصویر','آم کی تصویر',
+ 'گیند کی تصویر','گھر کی تصویر','سورج کی تصویر',
+ 'پھول کی تصویر','درخت کی تصویر','مچھلی کی تصویر',
+ 'تتلی کی تصویر','پرندے کی تصویر','آزاد ڈرائنگ'
+ ]
 };
-function renderQEditor(){
- $('qEditor').innerHTML=questions.map((q,i)=>`
- <div class="question">
- <h3>سوال ${i+1}</h3>
- <input placeholder="سوال لکھیں" value="${esc(q.q)}" onchange="questions[${i}].q=this.value">
- ${q.options.map((o,j)=>`
- <input placeholder="آپشن ${j+1}" value="${esc(o)}"
- onchange="questions[${i}].options[${j}]=this.value">`).join('')}
- <input placeholder="درست جواب" value="${esc(q.answer)}"
- onchange="questions[${i}].answer=this.value">
- <button class="danger" onclick="questions.splice(${i},1);renderQEditor()">سوال حذف کریں</button>
- </div>`).join('');
+
+const englishWords={
+ 'Alphabet':['A','B','C','D','E'],
+ 'Capital and Small Letters':['A a','B b','C c','D d'],
+ 'Vowels':['A','E','I','O','U'],
+ 'Myself':['My name is ____','I am a student.'],
+ 'My Family':['Father','Mother','Brother','Sister'],
+ 'My School':['Teacher','Book','Class','School'],
+ 'Fruits Names':['Apple','Mango','Banana','Orange'],
+ 'Vegetables Names':['Potato','Tomato','Carrot','Onion'],
+ 'Animals Names':['Cat','Dog','Cow','Goat'],
+ 'Colours Names':['Red','Blue','Green','Yellow'],
+ 'Simple Words':['Cat','Bat','Sun','Pen'],
+ 'Revision':['Read and revise all words']
+};
+
+const images={
+ urdu:'fruit apple mango',
+ english:'alphabet colorful letters',
+ math:'colorful number blocks mathematics',
+ islamic:'mosque architecture',
+ gk:'Pakistan flag landscape',
+ science:'green plant nature science',
+ drawing:'colorful drawing for children'
+};
+
+let currentGrade=0;
+let currentSubject='urdu';
+let currentLesson=null;
+let currentQuiz=null;
+
+function page(id,btn){
+ document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+ if(btn)btn.classList.add('active');
+ if(id==='saved')renderSaved();
+ if(id==='tests')fillTestSubjects();
 }
-$('saveLesson').onclick=()=>{
- const title=$('newTitle').value.trim();
- const txt=$('newText').value.trim();
- if(!title||!txt)return alert('سبق کا عنوان اور متن لکھیں۔');
- data.lessons.push({
- id:id(),grade:$('newGrade').value,
- subject:$('newSubject').value,
- title,text:txt,questions:questions.filter(q=>q.q.trim())
+
+function makeTile(title,icon,sub,fn){
+ let d=document.createElement('div');
+ d.className='tile';
+ d.innerHTML=`<div class="emoji">${icon}</div><h3>${title}</h3><p>${sub||''}</p>`;
+ d.onclick=fn;
+ return d;
+}
+
+function renderClasses(){
+ ['homeClasses','classGrid'].forEach(id=>{
+  let el=document.getElementById(id);el.innerHTML='';
+  grades.forEach((g,i)=>{
+   el.appendChild(makeTile(g,'🎓','سالانہ کتابیں',()=>selectGrade(i)));
+  });
  });
- save();questions=[];renderQEditor();renderAll();
- $('newTitle').value='';$('newText').value='';
- alert('سبق محفوظ ہوگیا۔');
-};
-function openLesson(x){
- const l=data.lessons.find(a=>a.id===x);
- if(!l)return alert('سبق نہیں ملا۔');
- current=l;tab('view');
- $('viewContent').innerHTML=`
- <div class="cover">
- <h1>The Risen High School</h1>
- <h2>${esc(l.subject)}</h2>
- <h3>${esc(l.grade)}</h3>
- <h2>${esc(l.title)}</h2>
- <div class="author-credit">
- مصنف: رانا محمد فیصل
- <div class="en">Author: Rana Muhammad Faisal</div>
- </div>
- </div>
- <div class="pageprint">
- <h2>${esc(l.title)}</h2>
- <p style="white-space:pre-wrap;text-align:right;line-height:2">${esc(l.text)}</p>
- <div class="author-credit">
- مصنف: رانا محمد فیصل
- <div class="en">Author: Rana Muhammad Faisal</div>
- </div>
- </div>
- ${l.drawing?`<div class="drawing">${drawingSVG(l.drawing)}</div>`:''}
- ${l.questions?.length?'<h3>سوالات</h3>'+l.questions.map((q,i)=>`
- <div class="question">${i+1}. ${esc(q.q)}</div>`).join(''):''}
+}
+
+function selectGrade(i){
+ currentGrade=i;
+ document.getElementById('libraryHeading').textContent=grades[i]+' — کتب خانہ';
+ renderSubjects();
+ page('library');
+}
+
+function renderSubjects(){
+ let el=document.getElementById('subjectGrid');el.innerHTML='';
+ subjects.forEach(s=>{
+  el.appendChild(makeTile(s.name,s.icon,'12 یونٹس',()=>{
+   currentSubject=s.id;renderUnits();
+  }));
+ });
+ document.getElementById('unitList').innerHTML='';
+}
+
+function renderUnits(){
+ let el=document.getElementById('unitList');
+ el.innerHTML=`<h2>${grades[currentGrade]} — ${subjects.find(s=>s.id===currentSubject).name}</h2>`;
+ topics[currentSubject].forEach((t,i)=>{
+  let d=document.createElement('div');d.className='unit';
+  d.innerHTML=`<div><strong>یونٹ ${i+1}: ${t}</strong><br><span class="small">سبق، سرگرمی، سوالات اور ٹیسٹ</span></div>
+  <button class="primary">کھولیں</button>`;
+  d.querySelector('button').onclick=()=>openLesson(currentGrade,currentSubject,i);
+  el.appendChild(d);
+ });
+}
+
+function lessonId(g,s,i){return 'risen-'+g+'-'+s+'-'+i}
+
+function openLesson(g,s,i){
+ currentGrade=g;currentSubject=s;
+ let topic=topics[s][i];
+ currentLesson={g,s,i,id:lessonId(g,s,i),topic};
+ let grade=grades[g];
+ let content='';
+
+ if(s==='english'){
+  let words=englishWords[topic]||['Learn the words','Read and repeat'];
+  content=`<p class="english">${words.join(' &nbsp; | &nbsp; ')}</p>
+  <p class="english">Read the words aloud and write them in your notebook.</p>`;
+ }else if(s==='math'){
+  content=`<p>اس سبق میں اعداد اور ریاضی کی بنیادی مشقیں سیکھیں۔</p>
+  <p class="english">Practice: 2 + 1 = ____</p>
+  <p class="english">Practice: 5 - 2 = ____</p>
+  <p class="english">Count objects and write the correct number.</p>`;
+ }else if(s==='drawing'){
+  content=`<p>تصویر کو غور سے دیکھیں اور اپنی کاپی میں بنائیں۔</p>
+  <p>رنگ بھریں اور تصویر کو خوبصورت بنائیں۔</p>`;
+ }else{
+  content=`<p>اس سبق میں ہم <b>${topic}</b> کے بارے میں آسان الفاظ میں سیکھیں گے۔</p>
+  <p>اپنے استاد کی مدد سے موضوع کو پڑھیں، سمجھیں اور مثالیں اپنی روزمرہ زندگی سے تلاش کریں۔</p>
+  <p>سبق کو اچھی طرح یاد کریں اور نیچے دی گئی مشق مکمل کریں۔</p>`;
+ }
+
+ let questions=makeQuestions(s,topic);
+ document.getElementById('lessonContent').innerHTML=`
+ <span class="badge">${grade}</span>
+ <h2>${subjects.find(x=>x.id===s).name}</h2>
+ <h1 class="lessonTitle">${topic}</h1>
+ <p class="small">مصنف: رانا محمد فیصل | Rana Muhammad Faisal</p>
+ <img class="lessonImage" src="https://loremflickr.com/800/450/${encodeURIComponent(images[s])}" alt="${topic}" onerror="this.style.display='none'">
+ <div class="lessonText">${content}</div>
+ <hr><h3>سبق کی مشق</h3>
+ <p>1۔ سبق کا نام لکھیں۔</p>
+ <p>2۔ اس سبق سے سیکھی گئی تین باتیں بتائیں۔</p>
+ <p>3۔ استاد کی مدد سے سبق کی زبانی مشق کریں۔</p>
+ <hr><h3>سوالات</h3>
+ ${questions.map((q,n)=>`<p>${n+1}۔ ${q.q}</p>`).join('')}
+ <p class="small">یہ ابتدائی تدریسی خاکہ ہے۔ ہر سبق کے مکمل، مخصوص سوالات اور جوابات کو مزید تصنیف اور جانچ کے بعد شامل کرنا ہوگا۔</p>
  `;
- $('qr').innerHTML='';
- if(window.QRCode){
-  const link=location.href.split('#')[0]+'#lesson='+encodeURIComponent(l.id);
-  new QRCode($('qr'),{text:link,width:180,height:180});
- }else $('qr').textContent='QR بنانے کے لیے انٹرنیٹ درکار ہے۔';
+ let url=location.origin+location.pathname+'#quiz='+currentLesson.id;
+ document.getElementById('qr').innerHTML=
+ `<img alt="QR Code" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(url)}">`;
+ page('reader');
 }
-function drawingSVG(type){
- const shapes={
- cat:`<svg viewBox="0 0 300 240"><path d="M75 95 L75 25 L125 65 Q150 55 175 65 L225 25 L225 95 Q250 155 190 190 Q150 215 110 190 Q50 155 75 95Z" fill="white" stroke="#222" stroke-width="5"/><circle cx="120" cy="115" r="7"/><circle cx="180" cy="115" r="7"/><path d="M140 145 L160 145 L150 158Z M150 158 Q135 175 125 162 M150 158 Q165 175 175 162" fill="none" stroke="#222" stroke-width="4"/></svg>`,
- apple:`<svg viewBox="0 0 300 240"><path d="M150 75 Q90 25 50 100 Q20 180 105 215 Q140 230 150 210 Q170 230 205 215 Q280 180 250 100 Q210 25 150 75Z" fill="white" stroke="#222" stroke-width="5"/><path d="M150 75 Q145 35 165 15 Q200 10 210 25 Q185 55 150 75" fill="white" stroke="#222" stroke-width="5"/></svg>`,
- sun:`<svg viewBox="0 0 300 240"><circle cx="150" cy="115" r="55" fill="white" stroke="#222" stroke-width="5"/>${Array.from({length:8},(_,i)=>{let a=i*Math.PI/4,x1=150+70*Math.cos(a),y1=115+70*Math.sin(a),x2=150+95*Math.cos(a),y2=115+95*Math.sin(a);return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#222" stroke-width="5"/>`}).join('')}</svg>`,
- house:`<svg viewBox="0 0 300 240"><path d="M35 110 L150 20 L265 110 M65 100 V220 H235 V100" fill="white" stroke="#222" stroke-width="6"/><rect x="125" y="145" width="50" height="75" fill="white" stroke="#222" stroke-width="5"/><rect x="80" y="120" width="35" height="35" fill="white" stroke="#222" stroke-width="5"/><rect x="185" y="120" width="35" height="35" fill="white" stroke="#222" stroke-width="5"/></svg>`,
- flower:`<svg viewBox="0 0 300 240"><path d="M150 115 V225 M150 180 Q90 130 85 190 Q120 210 150 180 M150 190 Q210 135 220 190 Q185 215 150 190" fill="white" stroke="#222" stroke-width="5"/><circle cx="150" cy="95" r="22" fill="white" stroke="#222" stroke-width="5"/><g fill="white" stroke="#222" stroke-width="5"><circle cx="150" cy="55" r="25"/><circle cx="190" cy="95" r="25"/><circle cx="150" cy="135" r="25"/><circle cx="110" cy="95" r="25"/></g></svg>`,
- blank:`<svg viewBox="0 0 300 240"><rect x="15" y="15" width="270" height="210" rx="12" fill="white" stroke="#222" stroke-width="3" stroke-dasharray="8 6"/><text x="150" y="125" font-size="18" text-anchor="middle" fill="#888">Draw here</text></svg>`
- };
- return shapes[type]||shapes.blank;
+
+function makeQuestions(s,topic){
+ if(s==='math')return [
+  {q:'What is 2 + 2?',a:['3','4','5'],correct:1},
+  {q:'What is 5 - 1?',a:['3','4','6'],correct:1},
+  {q:'Which is the bigger number?',a:['2','8','1'],correct:1}
+ ];
+ if(s==='english')return [
+  {q:'Which language is this subject?',a:['English','Urdu','Arabic'],correct:0},
+  {q:'Which is a letter?',a:['Apple','A','Ball'],correct:1},
+  {q:'Choose a simple word.',a:['Cat','Running fast','Beautifully'],correct:0}
+ ];
+ return [
+  {q:`اس سبق کا موضوع کیا ہے؟`,a:[topic,'گاڑی','پہاڑ'],correct:0},
+  {q:'سبق پڑھنے کے بعد کیا کرنا چاہیے؟',a:['مشق کرنا','کتاب بند کرکے بھول جانا','شور کرنا'],correct:0},
+  {q:'سیکھنے کا اچھا طریقہ کیا ہے؟',a:['غور سے پڑھنا','بغیر پڑھے جواب دینا','سبق چھوڑ دینا'],correct:0}
+ ];
 }
-$('back').onclick=()=>tab('home');
-$('saveQR').onclick=()=>{
- const el=$('qr').querySelector('canvas')||$('qr').querySelector('img');
- if(!el)return alert('QR Code موجود نہیں۔');
- const a=document.createElement('a');
- a.href=el.tagName==='CANVAS'?el.toDataURL('image/png'):el.src;
- a.download='Risen-Lesson-QR.png';a.click();
-};
-  
-function startTest(){
- const l=data.lessons.find(x=>x.id===$('testSelect').value);
- if(!l)return alert('پہلے سبق منتخب کریں۔');
- if(!l.questions?.length){
-  $('testArea').innerHTML='<p>اس سبق کے لیے MCQs موجود نہیں۔</p>';
-  return;
+
+function openQuiz(g,s,i){
+ currentQuiz={g,s,i,questions:makeQuestions(s,topics[s][i])};
+ document.getElementById('quizTitle').textContent=topics[s][i]+' — ٹیسٹ';
+ document.getElementById('quizResult').textContent='';
+ let el=document.getElementById('quizQuestions');el.innerHTML='';
+ currentQuiz.questions.forEach((q,n)=>{
+  let d=document.createElement('div');d.className='card';
+  d.innerHTML=`<b>${n+1}. ${q.q}</b>`+
+  q.a.map((a,j)=>`<label class="option"><input type="radio" name="q${n}" value="${j}"> ${a}</label>`).join('');
+  el.appendChild(d);
+ });
+ page('quiz');
+}
+
+function checkQuiz(){
+ if(!currentQuiz)return;
+ let score=0;
+ currentQuiz.questions.forEach((q,n)=>{
+  let a=document.querySelector(`input[name="q${n}"]:checked`);
+  if(a&&Number(a.value)===q.correct)score++;
+ });
+ document.getElementById('quizResult').textContent=
+ `آپ کے نمبر: ${score} / ${currentQuiz.questions.length}`;
+}
+
+function saveLesson(){
+ if(!currentLesson)return;
+ let saved=JSON.parse(localStorage.getItem('risenSaved')||'[]');
+ if(!saved.some(x=>x.id===currentLesson.id)){
+  saved.push(currentLesson);
+  localStorage.setItem('risenSaved',JSON.stringify(saved));
  }
- $('testArea').innerHTML=`
- <h3>${esc(l.title)} — ٹیسٹ</h3>
- <form id="quiz">
- ${l.questions.map((q,i)=>`
- <div class="question">
- <b>${i+1}. ${esc(q.q)}</b>
- ${q.options?.length?q.options.map(o=>`
- <label class="opt">
- <input type="radio" name="q${i}" value="${esc(o)}" style="width:auto">
- ${esc(o)}
- </label>`).join(''):`<input name="q${i}" placeholder="اپنا جواب لکھیں">`}
- </div>`).join('')}
- <button class="primary" type="submit">جواب چیک کریں</button>
- </form>
- <div id="result"></div>`;
- $('quiz').onsubmit=e=>{
-  e.preventDefault();
-  let score=0,total=l.questions.length;
-  l.questions.forEach((q,i)=>{
-   let v=$('quiz').querySelector(`[name="q${i}"]:checked`)?.value||
-   $('quiz').querySelector(`[name="q${i}"]`)?.value||'';
-   if(v.trim().toLowerCase()===String(q.answer||'').trim().toLowerCase())score++;
-  });
-  $('result').innerHTML=`
-  <div class="item">
-  <h3>آپ کے نمبر: ${score} / ${total}</h3>
-  <p>${Math.round(score/total*100)} فیصد</p>
-  </div>`;
- };
-};
-$('testStart').onclick=startTest;
-$('viewTest').onclick=()=>{
- tab('test');
- $('testSelect').value=current?.id||'';
- startTest();
-};
-$('manualOpen').onclick=()=>{
- let v=$('manualQR').value.trim();
- let m=v.match(/lesson=([^&]+)/);
- let x=m?decodeURIComponent(m[1]):v;
- openLesson(x);
-};
-$('scanStart').onclick=async()=>{
- try{
-  if(!('BarcodeDetector'in window))
-   throw Error('اس براؤزر میں QR کیمرہ اسکین دستیاب نہیں۔ لنک دستی طور پر درج کریں۔');
-  stream=await navigator.mediaDevices.getUserMedia({
-   video:{facingMode:'environment'}
-  });
-  $('video').srcObject=stream;
-  await $('video').play();
-  let detector=new BarcodeDetector({formats:['qr_code']});
-  $('scanMsg').textContent='QR Code کیمرے کے سامنے رکھیں۔';
-  scanLoop=setInterval(async()=>{
-   try{
-    let codes=await detector.detect($('video'));
-    if(codes.length){
-     $('manualQR').value=codes[0].rawValue;
-     $('scanStop').click();
-     $('manualOpen').click();
+ alert('سبق محفوظ ہوگیا۔');
+}
+
+function renderSaved(){
+ let el=document.getElementById('savedList');el.innerHTML='';
+ let saved=JSON.parse(localStorage.getItem('risenSaved')||'[]');
+ if(!saved.length){el.innerHTML='<p>ابھی کوئی سبق محفوظ نہیں۔</p>';return}
+ saved.forEach(x=>{
+  let b=document.createElement('div');b.className='unit';
+  b.innerHTML=`<strong>${grades[x.g]} — ${x.topic}</strong><button class="secondary">کھولیں</button>`;
+  b.querySelector('button').onclick=()=>openLesson(x.g,x.s,x.i);
+  el.appendChild(b);
+ });
+}
+
+function searchLessons(){
+ let q=document.getElementById('searchBox').value.trim().toLowerCase();
+ let el=document.getElementById('searchResults');el.innerHTML='';
+ if(!q)return;
+ grades.forEach((g,gi)=>{
+  subjects.forEach(s=>{
+   topics[s.id].forEach((t,i)=>{
+    if(t.toLowerCase().includes(q)){
+     let b=document.createElement('div');b.className='unit';
+     b.innerHTML=`<strong>${g} — ${t}</strong><button class="secondary">کھولیں</button>`;
+     b.querySelector('button').onclick=()=>openLesson(gi,s.id,i);
+     el.appendChild(b);
     }
-   }catch(e){}
-  },500);
- }catch(e){
-  $('scanMsg').textContent=e.message;
- }
-};
-$('scanStop').onclick=()=>{
- if(scanLoop)clearInterval(scanLoop);
- if(stream)stream.getTracks().forEach(t=>t.stop());
- stream=null;
- $('video').srcObject=null;
-};
-$('export').onclick=()=>{
- let blob=new Blob([JSON.stringify(data,null,2)],{
-  type:'application/json'
+   });
+  });
  });
- let a=document.createElement('a');
- a.href=URL.createObjectURL(blob);
- a.download='Risen-Smart-Books-Backup.json';
- a.click();
- URL.revokeObjectURL(a.href);
-};
-$('restore').onchange=async e=>{
- let f=e.target.files[0];
- if(!f)return;
- try{
-  let d=JSON.parse(await f.text());
-  if(!Array.isArray(d.lessons))
-   throw Error('غلط بیک اپ فائل');
-  if(confirm('موجودہ ڈیٹا کی جگہ بیک اپ ڈیٹا بحال کیا جائے؟')){
-   data=d;
-   save();
-   renderAll();
-   renderBooks();
-   alert('بیک اپ بحال ہوگیا۔');
+}
+
+function fillTestSubjects(){
+ let c=document.getElementById('testClass');
+ if(!c.options.length)grades.forEach((g,i)=>c.add(new Option(g,i)));
+ let s=document.getElementById('testSubject');s.innerHTML='';
+ subjects.forEach(x=>s.add(new Option(x.name,x.id)));
+ fillTestUnits();
+}
+
+function fillTestUnits(){
+ let s=document.getElementById('testSubject').value;
+ let u=document.getElementById('testUnit');u.innerHTML='';
+ (topics[s]||[]).forEach((t,i)=>u.add(new Option(t,i)));
+}
+
+function openSelectedTest(){
+ let g=Number(document.getElementById('testClass').value);
+ let s=document.getElementById('testSubject').value;
+ let i=Number(document.getElementById('testUnit').value);
+ openQuiz(g,s,i);
+}
+
+function checkQR(){
+ let hash=location.hash;
+ if(hash.startsWith('#quiz=risen-')){
+  let parts=hash.replace('#quiz=risen-','').split('-');
+  let g=Number(parts[0]),s=parts[1],i=Number(parts[2]);
+  if(grades[g]&&topics[s]&&topics[s][i]){
+   openQuiz(g,s,i);
   }
- }catch(err){
-  alert('فائل درست نہیں: '+err.message);
  }
- e.target.value='';
-};
-$('addBook').onclick=()=>{
- let name=$('customBook').value.trim();
- let subject=$('customSubject').value.trim();
- if(!name||!subject)
-  return alert('کتاب اور مضمون کا نام لکھیں۔');
- data.books.push({
-  grade:$('customGrade').value,
-  subject,
-  name
- });
- save();
- renderCustomBooks();
- $('customBook').value='';
- $('customSubject').value='';
- alert('کتاب محفوظ ہوگئی۔');
-};
-function renderCustomBooks(){
- $('customBooks').innerHTML=data.books.map((b,i)=>`
- <div class="item">
- ${esc(b.grade)} — ${esc(b.subject)} — ${esc(b.name)}
- <button class="danger" onclick="removeBook(${i})">حذف</button>
- </div>`).join('');
 }
-window.removeBook=i=>{
- data.books.splice(i,1);
- save();
- renderCustomBooks();
-};
-function openHash(){
- let m=location.hash.match(/lesson=([^&]+)/);
- if(m)openLesson(decodeURIComponent(m[1]));
-}
-seed();
-renderBooks();
-renderAll();
-renderCustomBooks();
-openHash();
-window.addEventListener('hashchange',openHash);
+
+renderClasses();
+fillTestSubjects();
+checkQR();
+window.addEventListener('hashchange',checkQR);
 </script>
 </body>
 </html>
