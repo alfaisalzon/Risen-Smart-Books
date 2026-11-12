@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nursery General Science | The Risen High School</title>
+
+<style>
+@font-face{
+font-family:Jameel;
+src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+background:#edf2f7;
+color:#263449;
+font-family:Arial,sans-serif;
+font-size:16px;
+line-height:1.7;
+}
+header{
+background:linear-gradient(120deg,#075985,#2563eb);
+color:white;
+text-align:center;
+padding:22px 10px;
+}
+header h1{font-size:30px;margin:0}
+header p{margin:2px}
+nav{
+background:white;
+position:sticky;
+top:0;
+z-index:5;
+padding:8px;
+text-align:center;
+box-shadow:0 2px 8px #0002;
+}
+button{
+border:0;
+border-radius:8px;
+padding:9px 16px;
+margin:3px;
+background:#075985;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+.book{max-width:1000px;margin:auto;padding:12px}
+.page{
+background:white;
+margin:15px 0;
+padding:22px;
+border-radius:12px;
+box-shadow:0 2px 9px #0001;
+page-break-after:always;
+}
+.cover{
+text-align:center;
+background:linear-gradient(140deg,#dbeafe,#dcfce7);
+}
+.cover h2{font-size:38px;color:#075985}
+.cover img{
+width:100%;
+max-width:650px;
+height:260px;
+object-fit:cover;
+border-radius:14px;
+}
+h2{color:#075985;margin-top:0}
+h3{color:#0e7490}
+.lesson{border-top:5px solid #0e7490}
+.lesson-title{text-align:center;font-size:25px;color:#075985}
+.photo{
+width:100%;
+height:210px;
+object-fit:cover;
+border-radius:12px;
+margin:10px 0;
+}
+.bilingual{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+direction:ltr;
+}
+.lang{
+border:1px solid #cbd5e1;
+border-radius:10px;
+padding:14px;
+min-width:0;
+}
+.english{
+background:#eff6ff;
+text-align:left;
+direction:ltr;
+}
+.urdu{
+background:#f0fdf4;
+font-family:Jameel,serif;
+font-size:19px;
+text-align:right;
+direction:rtl;
+}
+.lang h3{
+margin-top:0;
+border-bottom:2px solid #bfdbfe;
+padding-bottom:5px;
+}
+.urdu h3{font-family:Jameel,serif}
+.exercise{
+margin-top:12px;
+padding:10px;
+border-radius:8px;
+background:#fff7ed;
+border-right:4px solid #f59e0b;
+}
+.urdu .exercise{font-family:Jameel,serif}
+.vocab{
+background:#f8fafc;
+padding:10px;
+border-radius:8px;
+}
+.qr{
+display:flex;
+gap:12px;
+align-items:center;
+background:#f1f5f9;
+padding:10px;
+border-radius:9px;
+margin-top:14px;
+}
+.qr img{width:90px;height:90px}
+.small{font-size:13px;color:#64748b}
+.contents li{padding:3px}
+.footer{text-align:center;color:#64748b}
+@media(max-width:650px){
+.bilingual{grid-template-columns:1fr}
+.photo{height:190px}
+.page{padding:14px}
+}
+@media print{
+body{background:white}
+nav,.no-print{display:none!important}
+.book{max-width:100%;padding:0}
+.page{
+margin:0;
+padding:10mm;
+border-radius:0;
+box-shadow:none;
+break-after:page;
+}
+.bilingual{grid-template-columns:1fr 1fr}
+.lang{padding:8px;font-size:13px}
+.urdu{font-size:16px}
+.photo{height:150px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>The Risen High School</h1>
+<p>Nursery Class — General Science</p>
+<p>نرسری جماعت — جنرل سائنس</p>
+<p>Author: Rana Muhammad Faisal</p>
+<p>مصنف: رانا محمد فیصل</p>
+</header>
+
+<nav class="no-print">
+<button onclick="window.print()">Print / Save PDF</button>
+<button onclick="location.href='../../index.html'">Home</button>
+</nav>
+
+<main class="book">
+
+<!-- COVER -->
+<section class="page cover">
+<h2>My First Science Book</h2>
+<h2>میری پہلی سائنس کی کتاب</h2>
+<h3>Nursery Class | نرسری جماعت</h3>
+<img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200" alt="Science learning">
+<h3>Learn About the World Around Us</h3>
+<h3>اپنے اردگرد کی دنیا کو پہچانیے</h3>
+<p>Author: Rana Muhammad Faisal</p>
+<p>مصنف: رانا محمد فیصل</p>
+<p><b>The Risen High School</b></p>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="page">
+<h2>About This Book | کتاب کا تعارف</h2>
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Welcome, little scientists! This book helps you learn about yourself, animals, plants, food, water, weather and the world around you.</p>
+<p>Look at the pictures, read the words and enjoy learning science.</p>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>پیارے بچو! اس کتاب میں آپ اپنے جسم، جانوروں، پودوں، خوراک، پانی، موسم اور اپنے اردگرد کی دنیا کے بارے میں سیکھیں گے۔</p>
+<p>تصاویر دیکھیں، الفاظ پڑھیں اور سائنس سیکھنے سے لطف اٹھائیں۔</p>
+</div>
+</div>
+<h3>Contents | فہرست</h3>
+<ol class="contents">
+<li>My Body — میرا جسم</li>
+<li>Five Senses — پانچ حواس</li>
+<li>My Family — میرا خاندان</li>
+<li>Healthy Food — صحت مند غذا</li>
+<li>Animals — جانور</li>
+<li>Birds — پرندے</li>
+<li>Plants — پودے</li>
+<li>Parts of a Plant — پودے کے حصے</li>
+<li>Water — پانی</li>
+<li>Air — ہوا</li>
+<li>Weather — موسم</li>
+<li>Day and Night — دن اور رات</li>
+<li>Our Earth — ہماری زمین</li>
+<li>Cleanliness — صفائی</li>
+<li>Safety Rules — حفاظت کے اصول</li>
+</ol>
+</section>
+
+<!-- LESSON 1 -->
+<section class="page lesson" id="lesson1">
+<h2 class="lesson-title">Lesson 1: My Body | سبق 1: میرا جسم</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1000" alt="Child learning about body">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>This is my body.</p>
+<p>I have a head, two eyes, two ears, one nose and one mouth.</p>
+<p>I have two hands and two feet.</p>
+<p>My body helps me walk, play and learn.</p>
+<div class="exercise">
+<b>Practice</b>
+<ol><li>How many eyes do you have?</li><li>Name two body parts.</li><li>What helps you walk?</li></ol>
+</div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>یہ میرا جسم ہے۔</p>
+<p>میرے سر، دو آنکھیں، دو کان، ایک ناک اور ایک منہ ہے۔</p>
+<p>میرے دو ہاتھ اور دو پاؤں ہیں۔</p>
+<p>میرا جسم مجھے چلنے، کھیلنے اور سیکھنے میں مدد دیتا ہے۔</p>
+<div class="exercise">
+<b>مشق</b>
+<ol><li>آپ کی کتنی آنکھیں ہیں؟</li><li>جسم کے دو حصوں کے نام بتائیں۔</li><li>چلنے میں جسم کا کون سا حصہ مدد دیتا ہے؟</li></ol>
+</div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="page lesson" id="lesson2">
+<h2 class="lesson-title">Lesson 2: Five Senses | سبق 2: پانچ حواس</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=1000" alt="Child exploring">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>We have five sense organs.</p>
+<ol>
+<li>Eyes help us see.</li>
+<li>Ears help us hear.</li>
+<li>Nose helps us smell.</li>
+<li>Tongue helps us taste.</li>
+<li>Skin helps us feel.</li>
+</ol>
+<div class="exercise"><b>Practice</b><p>Which organ helps you see? Which organ helps you hear?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>ہمارے پانچ حواس ہیں۔</p>
+<ol>
+<li>آنکھیں دیکھنے میں مدد دیتی ہیں۔</li>
+<li>کان سننے میں مدد دیتے ہیں۔</li>
+<li>ناک سونگھنے میں مدد دیتی ہے۔</li>
+<li>زبان ذائقہ محسوس کرتی ہے۔</li>
+<li>جلد چھونے کا احساس دلاتی ہے۔</li>
+</ol>
+<div class="exercise"><b>مشق</b><p>ہم کس عضو سے دیکھتے ہیں؟ ہم کس عضو سے سنتے ہیں؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="page lesson" id="lesson3">
+<h2 class="lesson-title">Lesson 3: My Family | سبق 3: میرا خاندان</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1000" alt="Family">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>I have a loving family.</p>
+<p>My family may include my father, mother, brothers and sisters.</p>
+<p>We care for one another.</p>
+<p>We should respect our elders.</p>
+<div class="exercise"><b>Practice</b><p>Name two members of your family.</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>میرا ایک پیارا خاندان ہے۔</p>
+<p>میرے خاندان میں والد، والدہ، بھائی اور بہنیں شامل ہو سکتے ہیں۔</p>
+<p>ہم ایک دوسرے کا خیال رکھتے ہیں۔</p>
+<p>ہمیں بڑوں کا احترام کرنا چاہیے۔</p>
+<div class="exercise"><b>مشق</b><p>اپنے خاندان کے دو افراد کے نام بتائیں۔</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="page lesson" id="lesson4">
+<h2 class="lesson-title">Lesson 4: Healthy Food | سبق 4: صحت مند غذا</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000" alt="Healthy food">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Food gives us energy.</p>
+<p>We should eat fruits, vegetables, milk and other healthy foods.</p>
+<p>We should wash fruits before eating them.</p>
+<p>We should drink clean water.</p>
+<div class="exercise"><b>Practice</b><p>Name two healthy foods.</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>خوراک ہمیں توانائی دیتی ہے۔</p>
+<p>ہمیں پھل، سبزیاں، دودھ اور دوسری صحت مند غذائیں کھانی چاہئیں۔</p>
+<p>پھل کھانے سے پہلے دھونے چاہئیں۔</p>
+<p>ہمیں صاف پانی پینا چاہیے۔</p>
+<div class="exercise"><b>مشق</b><p>دو صحت مند غذاؤں کے نام بتائیں۔</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="page lesson" id="lesson5">
+<h2 class="lesson-title">Lesson 5: Animals | سبق 5: جانور</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=1000" alt="Wild animals">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Animals are living things.</p>
+<p>A cow gives us milk.</p>
+<p>A horse can run fast.</p>
+<p>A lion is a wild animal.</p>
+<p>We should treat animals kindly.</p>
+<div class="exercise"><b>Practice</b><p>Which animal gives us milk? Name a wild animal.</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>جانور جاندار ہوتے ہیں۔</p>
+<p>گائے ہمیں دودھ دیتی ہے۔</p>
+<p>گھوڑا تیز دوڑ سکتا ہے۔</p>
+<p>شیر ایک جنگلی جانور ہے۔</p>
+<p>ہمیں جانوروں کے ساتھ نرمی کرنی چاہیے۔</p>
+<div class="exercise"><b>مشق</b><p>کون سا جانور دودھ دیتا ہے؟ کسی جنگلی جانور کا نام بتائیں۔</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="page lesson" id="lesson6">
+<h2 class="lesson-title">Lesson 6: Birds | سبق 6: پرندے</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=1000" alt="Birds">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Birds are living things.</p>
+<p>Most birds have wings, feathers and a beak.</p>
+<p>Many birds can fly.</p>
+<p>A parrot is a colourful bird.</p>
+<div class="exercise"><b>Practice</b><p>Name two birds. What do birds use to fly?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>پرندے جاندار ہوتے ہیں۔</p>
+<p>زیادہ تر پرندوں کے پر، پَر اور چونچ ہوتی ہے۔</p>
+<p>بہت سے پرندے اڑ سکتے ہیں۔</p>
+<p>طوطا ایک رنگین پرندہ ہے۔</p>
+<div class="exercise"><b>مشق</b><p>دو پرندوں کے نام بتائیں۔ پرندے کس چیز سے اڑتے ہیں؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="page lesson" id="lesson7">
+<h2 class="lesson-title">Lesson 7: Plants | سبق 7: پودے</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1000" alt="Green plants">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Plants are living things.</p>
+<p>Plants need water, air and sunlight to grow.</p>
+<p>Some plants give us fruits and flowers.</p>
+<p>We should care for plants.</p>
+<div class="exercise"><b>Practice</b><p>What do plants need to grow?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>پودے جاندار ہوتے ہیں۔</p>
+<p>پودوں کو بڑھنے کے لیے پانی، ہوا اور دھوپ کی ضرورت ہوتی ہے۔</p>
+<p>کچھ پودے ہمیں پھل اور پھول دیتے ہیں۔</p>
+<p>ہمیں پودوں کی دیکھ بھال کرنی چاہیے۔</p>
+<div class="exercise"><b>مشق</b><p>پودوں کو بڑھنے کے لیے کن چیزوں کی ضرورت ہوتی ہے؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="page lesson" id="lesson8">
+<h2 class="lesson-title">Lesson 8: Parts of a Plant | سبق 8: پودے کے حصے</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1000" alt="Plant">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>A plant has different parts.</p>
+<ul>
+<li>Roots grow under the soil.</li>
+<li>The stem supports the plant.</li>
+<li>Leaves are usually green.</li>
+<li>Flowers can be colourful.</li>
+<li>Some plants grow fruits.</li>
+</ul>
+<div class="exercise"><b>Practice</b><p>Which part grows under the soil?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>پودے کے مختلف حصے ہوتے ہیں۔</p>
+<ul>
+<li>جڑیں مٹی کے اندر ہوتی ہیں۔</li>
+<li>تنا پودے کو سہارا دیتا ہے۔</li>
+<li>پتے عموماً سبز ہوتے ہیں۔</li>
+<li>پھول کئی رنگوں کے ہوتے ہیں۔</li>
+<li>کچھ پودوں پر پھل لگتے ہیں۔</li>
+</ul>
+<div class="exercise"><b>مشق</b><p>پودے کا کون سا حصہ مٹی کے اندر ہوتا ہے؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="page lesson" id="lesson9">
+<h2 class="lesson-title">Lesson 9: Water | سبق 9: پانی</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?w=1000" alt="Water">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Water is very important for life.</p>
+<p>We drink water.</p>
+<p>Plants and animals also need water.</p>
+<p>We should not waste water.</p>
+<p>Always drink clean water.</p>
+<div class="exercise"><b>Practice</b><p>Why do we need water?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>پانی زندگی کے لیے بہت ضروری ہے۔</p>
+<p>ہم پانی پیتے ہیں۔</p>
+<p>پودوں اور جانوروں کو بھی پانی کی ضرورت ہوتی ہے۔</p>
+<p>ہمیں پانی ضائع نہیں کرنا چاہیے۔</p>
+<p>ہمیشہ صاف پانی پئیں۔</p>
+<div class="exercise"><b>مشق</b><p>ہمیں پانی کی ضرورت کیوں ہوتی ہے؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="page lesson" id="lesson10">
+<h2 class="lesson-title">Lesson 10: Air | سبق 10: ہوا</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000" alt="Nature and sky">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Air is all around us.</p>
+<p>We cannot see air, but we can feel it.</p>
+<p>People, animals and plants need air.</p>
+<p>Fresh air is good for us.</p>
+<div class="exercise"><b>Practice</b><p>Can we see air? What do we need to breathe?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>ہوا ہمارے چاروں طرف موجود ہے۔</p>
+<p>ہم ہوا کو دیکھ نہیں سکتے لیکن محسوس کر سکتے ہیں۔</p>
+<p>انسانوں، جانوروں اور پودوں کو ہوا کی ضرورت ہوتی ہے۔</p>
+<p>تازہ ہوا ہمارے لیے اچھی ہے۔</p>
+<div class="exercise"><b>مشق</b><p>کیا ہم ہوا کو دیکھ سکتے ہیں؟ سانس لینے کے لیے ہمیں کیا چاہیے؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 11 -->
+<section class="page lesson" id="lesson11">
+<h2 class="lesson-title">Lesson 11: Weather | سبق 11: موسم</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1000" alt="Weather and landscape">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Weather can change.</p>
+<p>A sunny day is bright.</p>
+<p>A rainy day has rain.</p>
+<p>Clouds cover the sky.</p>
+<p>Some days are cold and some are hot.</p>
+<div class="exercise"><b>Practice</b><p>Name two kinds of weather.</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>موسم بدلتا رہتا ہے۔</p>
+<p>دھوپ والا دن روشن ہوتا ہے۔</p>
+<p>بارش والے دن پانی برستا ہے۔</p>
+<p>بادل آسمان پر چھا جاتے ہیں۔</p>
+<p>کچھ دن سرد اور کچھ گرم ہوتے ہیں۔</p>
+<div class="exercise"><b>مشق</b><p>موسم کی دو اقسام کے نام بتائیں۔</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 12 -->
+<section class="page lesson" id="lesson12">
+<h2 class="lesson-title">Lesson 12: Day and Night | سبق 12: دن اور رات</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1472120435266-53107fd0c44a?w=1000" alt="Sunset">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>The Sun gives us light during the day.</p>
+<p>The Moon can be seen at night.</p>
+<p>We work and play during the day.</p>
+<p>We usually sleep at night.</p>
+<div class="exercise"><b>Practice</b><p>What gives us light during the day? When do we usually sleep?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>سورج ہمیں دن کے وقت روشنی دیتا ہے۔</p>
+<p>چاند رات کو دکھائی دے سکتا ہے۔</p>
+<p>ہم دن میں کام کرتے اور کھیلتے ہیں۔</p>
+<p>ہم عموماً رات کو سوتے ہیں۔</p>
+<div class="exercise"><b>مشق</b><p>دن میں ہمیں روشنی کون دیتا ہے؟ ہم عموماً کب سوتے ہیں؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 13 -->
+<section class="page lesson" id="lesson13">
+<h2 class="lesson-title">Lesson 13: Our Earth | سبق 13: ہماری زمین</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1000" alt="Planet Earth">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>We live on planet Earth.</p>
+<p>Earth has land and water.</p>
+<p>People, animals and plants live on Earth.</p>
+<p>We should keep our surroundings clean.</p>
+<div class="exercise"><b>Practice</b><p>What is the name of our planet?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>ہم زمین نامی سیارے پر رہتے ہیں۔</p>
+<p>زمین پر خشکی اور پانی موجود ہیں۔</p>
+<p>انسان، جانور اور پودے زمین پر رہتے ہیں۔</p>
+<p>ہمیں اپنے اردگرد کا ماحول صاف رکھنا چاہیے۔</p>
+<div class="exercise"><b>مشق</b><p>ہمارے سیارے کا نام کیا ہے؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 14 -->
+<section class="page lesson" id="lesson14">
+<h2 class="lesson-title">Lesson 14: Cleanliness | سبق 14: صفائی</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1000" alt="Cleaning">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Cleanliness keeps us healthy.</p>
+<p>We should wash our hands with soap.</p>
+<p>We should brush our teeth every day.</p>
+<p>We should wear clean clothes.</p>
+<p>We should put rubbish in a dustbin.</p>
+<div class="exercise"><b>Practice</b><p>When should we wash our hands?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>صفائی ہمیں صحت مند رکھتی ہے۔</p>
+<p>ہمیں صابن سے ہاتھ دھونے چاہئیں۔</p>
+<p>ہمیں روزانہ دانت صاف کرنے چاہئیں۔</p>
+<p>ہمیں صاف کپڑے پہننے چاہئیں۔</p>
+<p>ہمیں کوڑا دان میں پھینکنا چاہیے۔</p>
+<div class="exercise"><b>مشق</b><p>ہمیں ہاتھ کب دھونے چاہئیں؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- LESSON 15 -->
+<section class="page lesson" id="lesson15">
+<h2 class="lesson-title">Lesson 15: Safety Rules | سبق 15: حفاظت کے اصول</h2>
+<img class="photo" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000" alt="Children learning">
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<p>Safety rules help protect us.</p>
+<ul>
+<li>Look both ways before crossing a road.</li>
+<li>Walk with a trusted adult near traffic.</li>
+<li>Do not touch hot objects.</li>
+<li>Do not play with electrical switches.</li>
+<li>Tell an adult if something is unsafe.</li>
+</ul>
+<div class="exercise"><b>Practice</b><p>Who should help you cross a busy road?</p></div>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<p>حفاظت کے اصول ہمیں محفوظ رکھتے ہیں۔</p>
+<ul>
+<li>سڑک پار کرنے سے پہلے دونوں طرف دیکھیں۔</li>
+<li>ٹریفک کے قریب کسی بڑے کے ساتھ چلیں۔</li>
+<li>گرم چیزوں کو ہاتھ نہ لگائیں۔</li>
+<li>بجلی کے سوئچ سے نہ کھیلیں۔</li>
+<li>کسی خطرناک چیز کے بارے میں بڑے کو بتائیں۔</li>
+</ul>
+<div class="exercise"><b>مشق</b><p>مصروف سڑک پار کرنے میں آپ کی مدد کون کرے؟</p></div>
+</div>
+</div>
+</section>
+
+<!-- REVISION -->
+<section class="page">
+<h2>Revision | دہرائی</h2>
+<div class="bilingual">
+<div class="lang english">
+<h3>English</h3>
+<ol>
+<li>Name two body parts.</li>
+<li>How many senses do we have?</li>
+<li>Name two animals.</li>
+<li>What do plants need to grow?</li>
+<li>Why do we need water?</li>
+<li>What is our planet called?</li>
+<li>How can we keep clean?</li>
+<li>Name two kinds of weather.</li>
+</ol>
+</div>
+<div class="lang urdu">
+<h3>اردو</h3>
+<ol>
+<li>جسم کے دو حصوں کے نام بتائیں۔</li>
+<li>ہمارے کتنے حواس ہیں؟</li>
+<li>دو جانوروں کے نام بتائیں۔</li>
+<li>پودوں کو بڑھنے کے لیے کیا چاہیے؟</li>
+<li>ہمیں پانی کی ضرورت کیوں ہے؟</li>
+<li>ہمارے سیارے کا نام کیا ہے؟</li>
+<li>ہم صفائی کیسے رکھ سکتے ہیں؟</li>
+<li>دو موسموں کے نام بتائیں۔</li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- ANNUAL TEST -->
+<section class="page">
+<h2>Annual Examination | سالانہ امتحان</h2>
+<p>Class: Nursery | جماعت: نرسری</p>
+<p>Subject: General Science | مضمون: جنرل سائنس</p>
+<p>Marks: 50 | کل نمبر: 50</p>
+<p>Name: __________________________</p>
+
+<h3>Q1. Choose the correct answer. (10 Marks)</h3>
+<p>1. We see with our: (Eyes / Ears)</p>
+<p>2. A cow gives us: (Milk / Juice)</p>
+<p>3. Plants need: (Water / Plastic)</p>
+<p>4. We live on: (Earth / Moon)</p>
+<p>5. We smell with our: (Nose / Feet)</p>
+
+<h3>Q2. Fill in the blanks. (10 Marks)</h3>
+<p>1. We have ______ eyes.</p>
+<p>2. Plants need water and ______.</p>
+<p>3. The Sun gives us ______.</p>
+<p>4. We drink ______.</p>
+<p>5. A parrot is a ______.</p>
+
+<h3>Q3. Match the words. (10 Marks)</h3>
+<table>
+<tr><th>Word</th><th>Match</th></tr>
+<tr><td>Eyes</td><td>See</td></tr>
+<tr><td>Ears</td><td>Hear</td></tr>
+<tr><td>Nose</td><td>Smell</td></tr>
+<tr><td>Tongue</td><td>Taste</td></tr>
+<tr><td>Skin</td><td>Feel</td></tr>
+</table>
+
+<h3>Q4. Answer these questions. (10 Marks)</h3>
+<p>1. Name two animals.</p>
+<p>2. Why do we need water?</p>
+<p>3. Name two parts of a plant.</p>
+<p>4. What gives us light during the day?</p>
+
+<h3>Q5. Oral Test. (10 Marks)</h3>
+<p>Identify pictures of animals, plants, fruits and body parts.</p>
+<p>Read five English science words and explain their meanings in Urdu.</p>
+</section>
+
+<!-- ANSWER KEY -->
+<section class="page">
+<h2>Answer Key | جوابی کلید</h2>
+<h3>Q1</h3>
+<ol>
+<li>Eyes</li>
+<li>Milk</li>
+<li>Water</li>
+<li>Earth</li>
+<li>Nose</li>
+</ol>
+<h3>Q2</h3>
+<ol>
+<li>Two</li>
+<li>Air</li>
+<li>Light</li>
+<li>Water</li>
+<li>Bird</li>
+</ol>
+<h3>Q3</h3>
+<p>Eyes — See</p>
+<p>Ears — Hear</p>
+<p>Nose — Smell</p>
+<p>Tongue — Taste</p>
+<p>Skin — Feel</p>
+<h3>Q4</h3>
+<p>1. Any two animals, for example cow and cat.</p>
+<p>2. We need water to live.</p>
+<p>3. Roots and leaves.</p>
+<p>4. The Sun.</p>
+<p>Q5: بچے کی زبانی کارکردگی کے مطابق نمبر دیں۔</p>
+</section>
+
+<section class="page cover">
+<h2>Well Done!</h2>
+<h2>شاباش پیارے بچو!</h2>
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000" alt="Children at school">
+<h3>You have completed your Science Book.</h3>
+<h3>آپ نے سائنس کی کتاب مکمل کر لی۔</h3>
+<p>Keep Learning and Keep Exploring!</p>
+<p>مصنف: رانا محمد فیصل</p>
+<p>Author: Rana Muhammad Faisal</p>
+<p><b>The Risen High School</b></p>
+</section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+document.querySelectorAll('.lesson').forEach(function(lesson){
+ const box=document.createElement('div');
+ box.className='qr no-print';
+
+ const qr=document.createElement('div');
+ const info=document.createElement('div');
+
+ info.innerHTML=
+ '<b>Lesson QR Code | سبق کا QR کوڈ</b>'+
+ '<br><span class="small">Scan to open this lesson | سبق کھولنے کے لیے اسکین کریں</span>';
+
+ box.appendChild(qr);
+ box.appendChild(info);
+ lesson.appendChild(box);
+
+ if(window.QRCode){
+  new QRCode(qr,{
+   text:location.href.split('#')[0]+'#'+lesson.id,
+   width:90,
+   height:90
+  });
+ }else{
+  info.innerHTML+=' <br>Internet connection required.';
+ }
+});
+
+function openLesson(){
+ if(location.hash){
+  const target=document.getElementById(location.hash.substring(1));
+  if(target){
+   setTimeout(function(){
+    target.scrollIntoView({behavior:'smooth'});
+   },300);
+  }
+ }
+}
+window.addEventListener('load',openLesson);
+window.addEventListener('hashchange',openLesson);
+</script>
+
+</body>
+</html>
