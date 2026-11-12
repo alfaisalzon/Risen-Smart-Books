@@ -1,536 +1,322 @@
 
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#123f78">
-<title>Risen Smart Books</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Risen Smart Books - Playgroup</title>
 <style>
 @font-face{
  font-family:Jameel;
- src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
+ src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff') format('woff');
 }
 *{box-sizing:border-box}
-body{
- margin:0;background:#f2f6fc;color:#23344d;
- font-family:Jameel,Arial,sans-serif;
-}
-header{
- background:linear-gradient(130deg,#10366b,#287ed0);
- color:white;text-align:center;padding:22px 12px;
- border-radius:0 0 25px 25px;
-}
+body{margin:0;background:#edf4fb;color:#24334a;font-family:Arial,sans-serif}
+header{background:linear-gradient(120deg,#063b75,#0796a8);color:white;text-align:center;padding:24px 10px}
 header h1{font-size:30px;margin:0}
-header p{margin:4px}
-header .author{font-size:14px;color:#dcecff}
-nav{
- display:flex;gap:7px;overflow-x:auto;
- padding:10px;background:white;position:sticky;
- top:0;z-index:5;box-shadow:0 3px 10px #0001;
-}
-nav button{
- border:0;border-radius:12px;padding:10px 15px;
- background:#eaf2ff;color:#174d8c;
- white-space:nowrap;font:16px Jameel;
-}
-nav button.active{background:#1558a6;color:white}
-main{max-width:950px;margin:auto;padding:14px}
-.page{display:none}
-.page.active{display:block}
-.hero{
- padding:22px;border-radius:20px;
- background:linear-gradient(120deg,#d9ecff,#fff);
- margin-bottom:18px;
-}
-h2{color:#174d83}
-.grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));
- gap:12px;
-}
-.tile,.card{
- background:white;border-radius:16px;padding:15px;
- box-shadow:0 3px 12px #102c5010;
- border:1px solid #e6edf6;
-}
-.tile{text-align:center;cursor:pointer}
-.tile .emoji{font-size:35px}
-.tile h3{font-size:18px;margin:6px 0;color:#1558a6}
-.tile p{margin:0;color:#78889b;font-size:13px}
-button{cursor:pointer;font-family:inherit}
-.primary{
- border:0;background:#1558a6;color:white;
- padding:10px 18px;border-radius:11px;font-size:16px;
-}
-.secondary{
- border:0;background:#eaf2ff;color:#1558a6;
- padding:9px 14px;border-radius:10px;font-size:15px;
-}
-input,select{
- width:100%;padding:12px;border:1px solid #d5dfec;
- border-radius:10px;font:16px Jameel;margin:7px 0;
-}
-.lessonImage{
- width:100%;max-height:270px;object-fit:cover;
- border-radius:14px;margin:10px 0;
-}
-.lessonText{font-size:20px;line-height:2.1}
-.english{font-family:Arial,sans-serif;direction:ltr;text-align:left}
-.unit{
- background:white;border:1px solid #e4ebf4;
- padding:13px;border-radius:13px;margin:9px 0;
- display:flex;align-items:center;justify-content:space-between;gap:8px;
-}
-.unit strong{color:#174d83}
-.badge{
- background:#e7f6ee;color:#15835c;
- border-radius:20px;padding:4px 10px;font-size:13px;
-}
-.option{
- display:block;padding:11px;margin:8px 0;
- background:#f0f5fc;border-radius:10px;cursor:pointer;
-}
-.option input{width:auto}
-#qr img{width:170px;height:170px;max-width:100%}
-footer{text-align:center;padding:25px;color:#718096}
-.small{font-size:13px;color:#718096}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.row button{flex:1}
-hr{border:0;border-top:1px solid #e6edf4;margin:16px 0}
+header p{margin:5px}
+nav{background:white;padding:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;position:sticky;top:0;z-index:10;box-shadow:0 2px 6px #0001}
+button{border:0;border-radius:8px;background:#087eaa;color:white;padding:10px 14px;font-size:15px;cursor:pointer}
+button:hover{background:#075985}
+main{max-width:950px;margin:auto;padding:12px}
+.card{background:white;border-radius:14px;padding:17px;margin:13px 0;box-shadow:0 2px 10px #0001}
+.cover{background:linear-gradient(135deg,#075985,#13a6a5);color:white;text-align:center;border-radius:12px;padding:30px 12px}
+.cover h2{color:white;font-size:30px}
+.ur{font-family:Jameel,serif;direction:rtl;text-align:right;line-height:2.15;font-size:20px}
+h2,h3{color:#075985}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.subject{background:#e5f4ff;border:1px solid #c5e2f7;padding:18px 8px;text-align:center;border-radius:12px;cursor:pointer}
+.subject b{display:block;color:#075985;margin-bottom:8px}
+.subject span{font-family:Jameel;font-size:20px}
+.lesson{border-bottom:1px solid #ddd;padding:13px 0}
+.lesson button{margin-top:8px}
+.picture{width:100%;max-height:300px;object-fit:cover;border-radius:12px;background:#e7f2fa}
+.words{display:flex;flex-wrap:wrap;gap:8px}
+.word{background:#e8f5ff;border-radius:20px;padding:7px 12px}
+.activity{background:#fff7dd;border-left:5px solid #edb93e;padding:12px;border-radius:8px}
+.exercise{background:#f1f8ff;padding:12px;border-radius:8px;margin:10px 0}
+.quizq{padding:12px;background:#f3f7fb;border-radius:9px;margin:10px 0}
+.quizq label{display:block;padding:5px}
+#qr{display:flex;justify-content:center;margin:15px}
+.small{color:#64748b;font-size:13px}
+footer{text-align:center;padding:22px;color:#64748b}
 @media print{
- nav,header,.noPrint,footer{display:none!important}
+ nav,.noprint,button{display:none!important}
  body{background:white}
- .page{display:none!important}
- #reader{display:block!important}
+ main{max-width:none;padding:0}
+ .card{box-shadow:none;border:0}
+ .newpage{break-before:page}
+ img{max-height:220px}
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
-
 <body>
-
 <header>
- <h1>Risen Smart Books</h1>
- <p>The Risen High School</p>
- <div class="author">مصنف: رانا محمد فیصل</div>
- <div class="author">Author: Rana Muhammad Faisal</div>
+<h1>Risen Smart Books</h1>
+<p>The Risen High School</p>
+<p>Playgroup Complete Book Library</p>
+<p>مصنف: رانا محمد فیصل</p>
+<p>Author: Rana Muhammad Faisal</p>
 </header>
-
-<nav>
- <button class="active" onclick="page('home',this)">ہوم</button>
- <button onclick="page('classes',this)">جماعتیں</button>
- <button onclick="page('library',this)">کتب خانہ</button>
- <button onclick="page('tests',this)">ٹیسٹ</button>
- <button onclick="page('saved',this)">محفوظ اسباق</button>
- <button onclick="page('search',this)">تلاش</button>
- <button onclick="page('about',this)">تعارف</button>
+<nav class="noprint">
+<button onclick="home()">Home</button>
+<button onclick="library()">All Books</button>
+<button onclick="window.print()">Print / Save PDF</button>
 </nav>
-
-<main>
-
-<section id="home" class="page active">
- <div class="hero">
-  <h2>خوش آمدید!</h2>
-  <p>آسان تعلیم، دلچسپ اسباق اور روشن مستقبل۔</p>
-  <button class="primary" onclick="page('classes')">کتابیں کھولیں</button>
- </div>
- <h2>ہماری جماعتیں</h2>
- <div class="grid" id="homeClasses"></div>
- <div class="card">
-  <h3>ہماری اپنی تعلیمی کتابیں</h3>
-  <p>یہ The Risen High School کا اپنا تعلیمی منصوبہ ہے۔</p>
-  <span class="badge">Risen Learning Series</span>
- </div>
-</section>
-
-<section id="classes" class="page">
- <h2>جماعت منتخب کریں</h2>
- <div class="grid" id="classGrid"></div>
-</section>
-
-<section id="library" class="page">
- <h2 id="libraryHeading">کتب خانہ</h2>
- <div id="subjectGrid" class="grid"></div>
- <div id="unitList"></div>
-</section>
-
-<section id="reader" class="page">
- <div class="card">
-  <div class="row noPrint">
-   <button class="secondary" onclick="page('library')">واپس</button>
-   <button class="secondary" onclick="saveLesson()">سبق محفوظ کریں</button>
-   <button class="secondary" onclick="window.print()">پرنٹ / PDF</button>
-  </div>
-  <div id="lessonContent"></div>
-  <hr>
-  <div class="noPrint">
-   <h3>اس سبق کا QR کوڈ</h3>
-   <p class="small">اس QR کوڈ کو اسکین کرنے سے اسی سبق کا ٹیسٹ کھلے گا۔</p>
-   <div id="qr"></div>
-  </div>
- </div>
-</section>
-
-<section id="tests" class="page">
- <h2>سبق وار ٹیسٹ</h2>
- <p>جماعت اور مضمون منتخب کرکے سبق کا ٹیسٹ دیں۔</p>
- <div class="card">
-  <select id="testClass" onchange="fillTestSubjects()"></select>
-  <select id="testSubject" onchange="fillTestUnits()"></select>
-  <select id="testUnit"></select>
-  <button class="primary" onclick="openSelectedTest()">ٹیسٹ شروع کریں</button>
- </div>
-</section>
-
-<section id="quiz" class="page">
- <div class="card">
-  <h2 id="quizTitle">سبق کا ٹیسٹ</h2>
-  <div id="quizQuestions"></div>
-  <button class="primary" onclick="checkQuiz()">جوابات چیک کریں</button>
-  <h3 id="quizResult"></h3>
- </div>
-</section>
-
-<section id="saved" class="page">
- <h2>محفوظ اسباق</h2>
- <div id="savedList"></div>
-</section>
-
-<section id="search" class="page">
- <h2>کتابوں میں تلاش کریں</h2>
- <input id="searchBox" placeholder="سبق کا نام لکھیں" oninput="searchLessons()">
- <div id="searchResults"></div>
-</section>
-
-<section id="about" class="page">
- <div class="card">
-  <h2>Risen Smart Books</h2>
-  <p>یہ کتابیں The Risen High School کے اپنے تعلیمی منصوبے کے طور پر تیار کی جا رہی ہیں۔</p>
-  <h3>مصنف</h3>
-  <p>رانا محمد فیصل</p>
-  <p class="english">Rana Muhammad Faisal</p>
-  <p>اردو فونٹ: جمیل نوری نستعلیق</p>
-  <p>جماعتیں: Playgroup، Nursery، Class 1، Class 2، Class 3، Class 4</p>
- </div>
-</section>
-
-</main>
-
+<main id="app"></main>
 <footer>
- The Risen High School<br>
- Rana Muhammad Faisal
+The Risen High School<br>
+مصنف: رانا محمد فیصل | Rana Muhammad Faisal
 </footer>
 
 <script>
-const grades=[
- 'Playgroup','Nursery','Class 1','Class 2','Class 3','Class 4'
+const A="رانا محمد فیصل";
+const E="Rana Muhammad Faisal";
+
+/* ہر کتاب کے 12 اسباق */
+const books=[
+{
+id:"urdu",en:"Urdu",ur:"اردو",color:"#e0f2fe",
+lessons:[
+["میرا تعارف","میرا نام بتانا سیکھیں۔ ہر بچہ اپنی پہچان رکھتا ہے۔ اپنا نام صاف آواز میں بولیں۔","نام، بچہ، میں، میرا","اپنا نام بولیں اور استاد کے ساتھ دہرائیں۔","آپ کا نام کیا ہے؟","اپنا نام بتائیں۔"],
+["میرا گھر","گھر وہ جگہ ہے جہاں ہم اپنے خاندان کے ساتھ رہتے ہیں۔ گھر کو صاف رکھنا چاہیے۔","گھر، کمرہ، دروازہ، کھڑکی","اپنے گھر کی تصویر دیکھ کر اس کے حصے بتائیں۔","ہم کہاں رہتے ہیں؟","گھر کے دو حصوں کے نام بتائیں۔"],
+["میرا اسکول","اسکول میں ہم پڑھتے، لکھتے اور کھیلتے ہیں۔ استاد ہمیں اچھی باتیں سکھاتے ہیں۔","اسکول، استاد، کتاب، بستہ","اپنے اسکول کا نام بولیں۔","ہم اسکول کیوں آتے ہیں؟","اپنے استاد کا نام بتائیں۔"],
+["میرا خاندان","خاندان میں والدین، بہن بھائی اور دوسرے پیارے رشتے شامل ہوتے ہیں۔ ہمیں سب کا احترام کرنا چاہیے۔","امی، ابو، بہن، بھائی","اپنے خاندان کے افراد کے نام بتائیں۔","آپ کے خاندان میں کون کون ہے؟","والدین کا احترام کیسے کرتے ہیں؟"],
+["رنگوں کے نام","دنیا میں بہت سے خوبصورت رنگ ہیں۔ سرخ، نیلا، پیلا اور سبز عام رنگ ہیں۔","لال، نیلا، پیلا، سبز","کلاس میں مختلف رنگوں کی چیزیں تلاش کریں۔","آسمان کا رنگ عام طور پر کیا دکھائی دیتا ہے؟","دو رنگوں کے نام بتائیں۔"],
+["پھلوں کے نام","پھل ہمارے لیے مفید غذا ہیں۔ سیب، کیلا، آم اور مالٹا مختلف پھل ہیں۔","سیب، آم، کیلا، مالٹا","پھلوں کی تصویریں دیکھ کر نام بولیں۔","دو پھلوں کے نام بتائیں۔","پھل کھانے سے کیا فائدہ ہے؟"],
+["جانوروں کے نام","جانور ہمارے اردگرد پائے جاتے ہیں۔ بلی، کتا، گائے اور گھوڑا جانور ہیں۔","بلی، کتا، گائے، گھوڑا","جانوروں کی آوازیں پہچانیں۔","گائے ہمیں کیا دیتی ہے؟","دو جانوروں کے نام بتائیں۔"],
+["پرندوں کے نام","پرندوں کے پر ہوتے ہیں۔ بہت سے پرندے اڑتے اور گھونسلے بناتے ہیں۔","طوطا، کبوتر، کوّا، چڑیا","پرندوں کی تصاویر دیکھ کر نام بتائیں۔","کون سا پرندہ بولنا سیکھ سکتا ہے؟","دو پرندوں کے نام بتائیں۔"],
+["جسم کے اعضا","ہمارے جسم کے مختلف اعضا ہیں۔ ہم آنکھوں سے دیکھتے اور کانوں سے سنتے ہیں۔","آنکھ، کان، ناک، ہاتھ","اپنے جسم کے اعضا کی نشاندہی کریں۔","ہم کس عضو سے دیکھتے ہیں؟","دو اعضا کے نام بتائیں۔"],
+["اچھی عادتیں","ہمیں سلام کرنا، شکریہ کہنا، سچ بولنا اور دوسروں کی مدد کرنا سیکھنا چاہیے۔","سلام، شکریہ، سچ، مدد","اچھی عادت کا کردار ادا کریں۔","ملنے پر کیا کہنا چاہیے؟","ایک اچھی عادت بتائیں۔"],
+["صفائی","صفائی صحت کے لیے اچھی ہے۔ ہمیں ہاتھ دھونے، دانت صاف کرنے اور کوڑا ڈبے میں ڈالنے کی عادت اپنانی چاہیے۔","صابن، پانی، تولیہ، صفائی","ہاتھ دھونے کے مراحل استاد سے سیکھیں۔","ہاتھ کب دھونے چاہییں؟","کوڑا کہاں ڈالنا چاہیے؟"],
+["نظم و دہرائی","اس کتاب میں سیکھے گئے الفاظ اور موضوعات کو دوبارہ دہرائیں۔ استاد کے ساتھ پڑھیں اور تصویریں پہچانیں۔","گھر، اسکول، پھل، رنگ، جانور","تصویری کارڈز سے الفاظ پہچانیں۔","کسی بھی تین پھلوں کے نام بتائیں۔","اپنی پسند کا ایک سبق بتائیں۔"]
+]},
+{
+id:"english",en:"English",ur:"انگریزی",color:"#dcfce7",
+lessons:[
+["My Introduction","My name is ______. I am a student. I study in Playgroup. I love my school.","I, My, Name, Student","Say your name and repeat: My name is ____.","What is your name?","Complete: My name is ____."] ,
+["My Family","A family is a group of people who love and care for one another. My family is special.","Father, Mother, Sister, Brother","Name the members of your family.","Who takes care of you?","Name two family members."],
+["My Home","A home is a place where we live with our family. A home has rooms, doors and windows.","Home, Room, Door, Window","Point to a door and a window.","Where do you live?","Name two parts of a home."],
+["My School","I go to school to learn. I meet my teacher and friends at school. I keep my classroom clean.","School, Teacher, Book, Bag","Show your school bag and book.","Where do you study?","Name one thing in your classroom."],
+["Colours","Colours make our world beautiful. Red, blue, yellow and green are common colours.","Red, Blue, Yellow, Green","Find something red and something blue.","What colour is a leaf?","Name two colours."],
+["Fruits","Fruits are healthy foods. We eat apples, bananas, mangoes and oranges.","Apple, Banana, Mango, Orange","Name the fruit shown in a picture.","Name a yellow fruit.","Name two fruits."],
+["Animals","Animals are living things. A cow gives us milk. A cat says meow. A dog says woof.","Cat, Dog, Cow, Horse","Match animal pictures with their names.","Which animal gives us milk?","Name two animals."],
+["Birds","Birds have feathers, wings and beaks. Many birds can fly. A parrot is a colourful bird.","Parrot, Pigeon, Crow, Sparrow","Point to a bird in a picture.","What do birds use to fly?","Name two birds."],
+["Parts of the Body","We use our eyes to see, ears to hear, nose to smell and hands to hold things.","Eyes, Ears, Nose, Hands","Touch the body part named by the teacher.","Which body part helps us hear?","Name two body parts."],
+["Good Habits","Good habits help us stay healthy and kind. We should say please, thank you and sorry.","Please, Thank You, Sorry, Help","Practise saying thank you politely.","What do we say when someone helps us?","Tell one good habit."],
+["Cleanliness","Cleanliness keeps us healthy. Wash your hands with soap. Keep your surroundings clean.","Soap, Water, Clean, Towel","Practise washing hands with your teacher.","What do we use to wash hands?","Name one way to stay clean."],
+["Revision","Revise the words and sentences from all lessons. Read aloud with your teacher and identify the pictures.","Read, Speak, Listen, Learn","Match word cards to picture cards.","What is your favourite colour?","Name one fruit and one animal."]
+]},
+{
+id:"math",en:"Mathematics",ur:"ریاضی",color:"#fef3c7",
+lessons:[
+["Numbers 1 to 5","Learn to recognise numbers 1, 2, 3, 4 and 5. Count objects slowly with your teacher.","1, 2, 3, 4, 5","Count five pencils or blocks.","How many fingers are on one hand?","Count from 1 to 5."],
+["Numbers 6 to 10","Numbers continue after five. Learn to recognise 6, 7, 8, 9 and 10.","6, 7, 8, 9, 10","Count ten blocks with help.","Which number comes after 8?","Count from 6 to 10."],
+["Counting Objects","We can count real objects. Touch each object once while saying its number.","One, Two, Three, Four","Count three books and four pencils.","How many objects are in your group?","Count four stars."],
+["Basic Shapes","A circle is round. A square has four equal sides. A triangle has three sides.","Circle, Square, Triangle, Rectangle","Find shapes in the classroom.","Which shape is round?","Name a shape with three sides."],
+["Big and Small","Objects can be big or small. Compare two objects and tell which one is bigger.","Big, Small, Tall, Short","Compare two classroom objects.","Is an elephant big or small?","Point to a small object."],
+["More and Less","A group may have more objects or fewer objects. Compare two groups by counting.","More, Less, Equal","Compare two groups of blocks.","Which group has more?","Show a group with fewer objects."],
+["Matching","Matching means finding two things that are the same. Match shapes, colours and pictures.","Same, Match, Pair","Match two identical picture cards.","Find two matching shapes.","Match two same objects."],
+["Patterns","A pattern repeats in the same order. For example: red, blue, red, blue.","Repeat, Pattern, Red, Blue","Make a pattern with coloured blocks.","What comes after red in this pattern: red, blue, red, ___?","Make a two-colour pattern."],
+["Before and After","Numbers have an order. One number comes before another and one comes after it.","Before, After, Next, Number","Arrange number cards in order.","What comes after 3?","What comes before 5?"],
+["Inside and Outside","Objects can be inside or outside a box. These words tell us where something is.","Inside, Outside, In, Out","Put a toy inside and then outside a box.","Where is the toy now?","Show something outside a box."],
+["Near and Far","Some things are near us and some things are far away. We can describe their position.","Near, Far, Close, Away","Point to something near and something far.","Is your desk near you?","Show something far away."],
+["Revision","Revise counting, shapes, patterns, comparison and position words. Practise with objects and number cards.","Count, Shape, Pattern, Compare","Complete a number and shape activity.","Count five objects.","Name two shapes."]
+]},
+{
+id:"islamiat",en:"Islamiat",ur:"اسلامیات",color:"#ede9fe",
+lessons:[
+["اللہ تعالیٰ","اللہ تعالیٰ ہمارا خالق ہے۔ اللہ تعالیٰ نے ہمیں زندگی، خاندان اور بہت سی نعمتیں عطا فرمائی ہیں۔","اللہ، خالق، نعمت، شکر","اپنے اردگرد اللہ تعالیٰ کی نعمتوں کے نام بتائیں۔","ہمیں کس نے پیدا کیا؟","اللہ تعالیٰ کی دو نعمتیں بتائیں۔"],
+["ہمارے پیارے نبی ﷺ","حضرت محمد ﷺ اللہ تعالیٰ کے آخری نبی ہیں۔ آپ ﷺ نے ہمیں سچائی، رحم اور اچھے اخلاق کی تعلیم دی۔","نبی، محمد ﷺ، اخلاق، رحم","درود شریف سنیں اور استاد کے ساتھ ادب سے دہرائیں۔","ہمارے پیارے نبی کا نام کیا ہے؟","آپ ﷺ نے ہمیں کیا سکھایا؟"],
+["بسم اللہ","ہم اچھے کام شروع کرنے سے پہلے بسم اللہ پڑھتے ہیں۔ ہمیں کھانے اور پڑھنے سے پہلے بسم اللہ پڑھنی چاہیے۔","بسم اللہ، آغاز، کام","کتاب کھولنے سے پہلے بسم اللہ پڑھیں۔","کام شروع کرنے سے پہلے کیا پڑھتے ہیں؟","بسم اللہ کب پڑھتے ہیں؟"],
+["السلام علیکم","السلام علیکم ایک خوبصورت اسلامی سلام ہے۔ سلام کرنے سے محبت اور بھائی چارہ بڑھتا ہے۔","سلام، جواب، محبت، ادب","اپنے استاد کو سلام کریں۔","مسلمان آپس میں کیسے سلام کرتے ہیں؟","سلام کا جواب کیا ہے؟"],
+["صفائی","اسلام میں پاکیزگی اور صفائی کی اہمیت ہے۔ ہمیں جسم، کپڑے اور جگہ صاف رکھنی چاہیے۔","صفائی، پاکیزگی، پانی، صابن","اپنی چیزیں ترتیب سے رکھیں۔","صفائی کیوں ضروری ہے؟","صفائی کے دو طریقے بتائیں۔"],
+["والدین کا احترام","والدین ہم سے محبت کرتے اور ہماری دیکھ بھال کرتے ہیں۔ ہمیں ان کی بات ادب سے سننی چاہیے۔","والدین، احترام، خدمت، دعا","والدین کی کسی ایک کام میں مدد کریں۔","ہمیں والدین سے کیسے بات کرنی چاہیے؟","والدین کی مدد کیسے کر سکتے ہیں؟"],
+["سچ بولنا","سچ بولنا اچھی عادت ہے۔ ہمیں ہمیشہ سچ کہنا چاہیے اور غلطی ہو تو اسے تسلیم کرنا چاہیے۔","سچ، اچھائی، امانت، بات","ایک سچی بات کی مثال دیں۔","ہمیں سچ بولنا چاہیے یا جھوٹ؟","سچ بولنے کا ایک فائدہ بتائیں۔"],
+["کھانے کے آداب","کھانا شروع کرنے سے پہلے بسم اللہ پڑھیں۔ دائیں ہاتھ سے کھائیں اور کھانے کی قدر کریں۔","کھانا، بسم اللہ، دایاں ہاتھ، شکر","کھانے کے آداب کی مشق کریں۔","کھانا شروع کرنے سے پہلے کیا پڑھتے ہیں؟","کھانے کے بعد کس کا شکر ادا کرتے ہیں؟"],
+["پڑوسیوں سے اچھا سلوک","پڑوسی ہمارے آس پاس رہتے ہیں۔ ہمیں ان سے نرمی اور اچھے اخلاق سے پیش آنا چاہیے۔","پڑوسی، مدد، اخلاق، نرمی","پڑوسیوں کے ساتھ اچھے رویے کی مثال دیں۔","ہمیں پڑوسیوں سے کیسا سلوک کرنا چاہیے؟","اچھے سلوک کی ایک مثال دیں۔"],
+["مدد کرنا","ضرورت مند کی مدد کرنا اچھی بات ہے۔ ہمیں چھوٹوں سے پیار اور بڑوں کا احترام کرنا چاہیے۔","مدد، پیار، احترام، نیکی","کلاس میں کسی دوست کی مدد کریں۔","ہمیں کس کی مدد کرنی چاہیے؟","مدد کی ایک مثال دیں۔"],
+["دعا اور شکر","ہم اللہ تعالیٰ سے دعا کرتے ہیں اور اس کی نعمتوں پر شکر ادا کرتے ہیں۔","دعا، شکر، نعمت، اللہ","استاد کے ساتھ ایک مختصر دعا پڑھیں۔","ہم دعا کس سے مانگتے ہیں؟","دو نعمتوں کے نام بتائیں۔"],
+["دہرائی","تمام اسباق کو استاد کے ساتھ دہرائیں۔ سلام، بسم اللہ، صفائی، سچائی اور احترام کی مشق کریں۔","سلام، دعا، صفائی، سچائی","ہر سبق سے ایک اچھی بات بتائیں۔","سلام کے الفاظ بتائیں۔","ایک اچھی اسلامی عادت بتائیں۔"]
+]},
+{
+id:"gk",en:"General Knowledge",ur:"جنرل نالج",color:"#ffedd5",
+lessons:[
+["My Country Pakistan","Pakistan is our country. Its capital city is Islamabad. The national language is Urdu.","Pakistan, Islamabad, Urdu","Look at the map and flag of Pakistan.","What is the name of our country?","Name the capital of Pakistan."],
+["National Flag","The flag of Pakistan is green and white. It has a crescent and a star.","Flag, Green, White, Star","Colour a picture of the Pakistani flag.","Which colours are on our flag?","Name one symbol on the flag."],
+["My City and Village","People live in cities and villages. We see houses, schools, roads and shops around us.","City, Village, Road, School","Talk about places near your home.","Name one place near your home.","Where do children study?"],
+["Days of the Week","There are seven days in a week. Monday, Tuesday, Wednesday, Thursday, Friday, Saturday and Sunday.","Monday, Tuesday, Friday, Sunday","Repeat the days with your teacher.","How many days are in a week?","Which day comes after Monday?"],
+["Months of the Year","There are twelve months in a year. A year begins with January and ends with December.","January, March, June, December","Repeat the names of the months.","How many months are in a year?","Name the first month."],
+["Weather","Weather can be sunny, rainy, cloudy or windy. We wear clothes according to the weather.","Sunny, Rainy, Cloudy, Windy","Look outside and describe today's weather.","What do we use in rain?","Name two kinds of weather."],
+["Day and Night","The sun gives us daylight. Night is darker and we can see the moon and stars.","Day, Night, Sun, Moon","Sort pictures into day and night.","When do we usually see stars?","Name something seen in the daytime."],
+["Transport","Vehicles help people travel. Cars, buses, bicycles, trains and aeroplanes are means of transport.","Car, Bus, Train, Aeroplane","Match vehicles to road, rail or air.","Which vehicle travels in the air?","Name two vehicles."],
+["Community Helpers","Different people help our community. Teachers teach, doctors care for patients and farmers grow food.","Teacher, Doctor, Farmer, Driver","Match each helper to their work.","Who teaches children?","Who grows crops?"],
+["Seasons","We experience different seasons. Summer can be hot, winter can be cold and spring brings flowers.","Summer, Winter, Spring, Season","Talk about clothes for hot and cold days.","Which season is cold?","Name a season."],
+["Land and Water","Our Earth has land and water. Rivers, lakes and seas contain water. We live on land.","Earth, Land, River, Sea","Look at a picture of land and water.","Where do fish live?","Name one water body."],
+["Revision","Revise Pakistan, the flag, days, months, weather, transport and community helpers.","Pakistan, Flag, Weather, Transport","Use picture cards to revise the lessons.","What is our country's name?","Name one community helper."]
+]},
+{
+id:"science",en:"General Science",ur:"جنرل سائنس",color:"#d1fae5",
+lessons:[
+["Living Things","Living things need food, water and air. People, animals and plants are living things.","Living, People, Animals, Plants","Sort pictures into living and non-living things.","Name one living thing.","Do plants need water?"],
+["Plants","Plants are living things. They need water, air and sunlight to grow. Many plants have roots, stems and leaves.","Plant, Root, Stem, Leaf","Observe a small plant with your teacher.","What do plants need to grow?","Name one part of a plant."],
+["Animals","Animals are living things. Some animals live on farms, some in forests and some with people.","Animal, Farm, Forest, Pet","Match animal pictures to their homes.","Name one farm animal.","Where does a fish live?"],
+["Our Body","Our body has many parts. We use our hands, feet, eyes, ears and nose every day.","Body, Hand, Foot, Eye","Point to the body parts named by the teacher.","Which part helps us walk?","Name two body parts."],
+["Five Senses","We see with our eyes, hear with our ears, smell with our nose, taste with our tongue and feel with our skin.","See, Hear, Smell, Taste, Feel","Identify safe everyday sounds and smells with an adult.","Which sense uses our ears?","Which part helps us taste?"],
+["Healthy Food","Healthy food helps our bodies grow. Fruits, vegetables, milk and other foods give us energy.","Fruit, Vegetable, Milk, Food","Sort food pictures into fruits and vegetables.","Name one healthy food.","Why do we eat food?"],
+["Water","Water is important for people, animals and plants. We use water for drinking, washing and watering plants.","Water, Drink, Wash, Plant","Observe how water is used at home.","Why do we need water?","Name one use of water."],
+["Air","Air is around us. We need air to breathe. Moving air is called wind.","Air, Breathe, Wind, Fresh","Feel the gentle breeze with your teacher.","What do we breathe?","What is moving air called?"],
+["Sun","The sun gives us light and warmth. Plants need sunlight to grow.","Sun, Light, Warmth, Day","Observe sunlight from a safe shaded place.","What does the sun give us?","When do we see the sun?"],
+["Moon and Stars","The moon and stars can be seen in the night sky. The moon looks different on different nights.","Moon, Stars, Sky, Night","Look at a picture of the night sky.","When can we see stars?","Name one thing in the night sky."],
+["Clean Environment","A clean environment is good for living things. Put rubbish in a bin and keep your classroom tidy.","Clean, Rubbish, Bin, Environment","Put paper waste in the correct bin.","Where should rubbish go?","How can we keep our class clean?"],
+["Revision","Revise plants, animals, body parts, senses, food, water, air and the sun.","Plant, Animal, Water, Sun","Match science words with pictures.","Name one thing plants need.","Name one of the five senses."]
+]},
+{
+id:"drawing",en:"Drawing & Colouring",ur:"ڈرائنگ اینڈ کلرنگ",color:"#fce7f3",
+lessons:[
+["Lines","Lines can be straight, curved, horizontal or vertical. Practise drawing lines from one side of the page to the other.","Straight line, Curved line, Up, Down","Trace dotted lines with a pencil.","Draw one straight line.","Draw one curved line."],
+["Circle","A circle is a round shape. A ball, clock and many wheels look circular.","Circle, Round, Ball, Clock","Trace a large circle and colour it.","Which shape is round?","Draw a circle."],
+["Triangle","A triangle has three sides and three corners. Look for triangle shapes around you.","Triangle, Three, Side, Corner","Trace a triangle and colour it.","How many sides has a triangle?","Draw a triangle."],
+["Square","A square has four equal sides and four corners. A chessboard tile can look like a square.","Square, Four, Side, Corner","Trace a square and colour it.","How many sides has a square?","Draw a square."],
+["Sun","Draw a big circle for the sun and short lines around it for its rays. Use yellow and orange colours.","Sun, Yellow, Orange, Rays","Draw and colour the sun.","Which colour can we use for the sun?","Draw a sun."],
+["Flower","A flower has petals, a stem and leaves. Draw a simple flower and colour its petals.","Flower, Petal, Stem, Leaf","Draw a flower with five petals.","Name one part of a flower.","Colour your flower."],
+["Tree","A tree has a trunk, branches and leaves. Trees give shade and help living things.","Tree, Trunk, Branch, Leaves","Draw a tree with a trunk and leaves.","Name one part of a tree.","Draw a tree."],
+["Apple","An apple is a fruit. Draw its round shape and add a small stem. Colour it red or green.","Apple, Fruit, Red, Green","Draw and colour an apple.","Name the fruit.","What colour can an apple be?"],
+["House","A house protects people from weather. Draw a roof, walls, door and windows.","House, Roof, Door, Window","Draw a simple house.","Name one part of a house.","Draw a house with a door."],
+["Bird","A bird has a beak, wings and feathers. Draw a simple bird with a round body and wings.","Bird, Beak, Wing, Feather","Draw and colour a bird.","What does a bird use to fly?","Draw a bird."],
+["Pakistani Flag","The flag of Pakistan has green and white colours, with a crescent and a star. Draw and colour it carefully.","Green, White, Crescent, Star","Colour a flag outline with your teacher.","Name the two colours of the flag.","Draw a crescent and star."],
+["Creative Drawing","Use your imagination to draw your favourite thing. You may draw a flower, house, animal or tree.","Draw, Colour, Create, Picture","Make your own picture and tell the class about it.","What did you draw?","Name two colours you used."]
+]}
 ];
 
-const subjects=[
- {id:'urdu',name:'اردو',icon:'📖'},
- {id:'english',name:'English',icon:'🔤'},
- {id:'math',name:'Mathematics',icon:'➕'},
- {id:'islamic',name:'اسلامیات',icon:'🕌'},
- {id:'gk',name:'جنرل نالج',icon:'🌍'},
- {id:'science',name:'جنرل سائنس',icon:'🔬'},
- {id:'drawing',name:'Drawing & Colouring',icon:'🎨'}
-];
-
-const topics={
- urdu:[
- 'میرا تعارف','میرا گھر','میرا اسکول','میری کتاب',
- 'پھلوں کے نام','سبزیوں کے نام','جانوروں کے نام','پرندوں کے نام',
- 'رنگوں کے نام','اچھے اخلاق','چھوٹی کہانی','نظم اور دہرائی'
- ],
- english:[
- 'Alphabet','Capital and Small Letters','Vowels',
- 'Myself','My Family','My School','Fruits Names',
- 'Vegetables Names','Animals Names','Colours Names',
- 'Simple Words','Revision'
- ],
- math:[
- 'Counting 1 to 10','Counting 11 to 20','Number Names',
- 'Before and After','Greater and Smaller','Addition',
- 'Subtraction','Shapes','Patterns','Time',
- 'Money','Revision'
- ],
- islamic:[
- 'اللہ تعالیٰ کی پہچان','ہمارے پیارے نبی ﷺ','کلمہ طیبہ',
- 'بسم اللہ','سلام کرنا','صفائی کی اہمیت','والدین کا احترام',
- 'سچ بولنا','نماز کا تعارف','اچھی عادتیں','دعائیں','دہرائی'
- ],
- gk:[
- 'میرا وطن پاکستان','پاکستان کا پرچم','میرا شہر',
- 'ہمارے قومی جانور','ہمارے قومی پرندے','دن اور رات',
- 'ہفتے کے دن','سال کے مہینے','پھل اور سبزیاں',
- 'ٹرانسپورٹ','پیشہ ور افراد','دہرائی'
- ],
- science:[
- 'ہمارا جسم','پانچ حواس','صاف پانی','ہوا',
- 'پودے','جانور','خوراک','صفائی',
- 'روشنی','سورج اور چاند','موسم','دہرائی'
- ],
- drawing:[
- 'رنگوں کی پہچان','سیب کی تصویر','آم کی تصویر',
- 'گیند کی تصویر','گھر کی تصویر','سورج کی تصویر',
- 'پھول کی تصویر','درخت کی تصویر','مچھلی کی تصویر',
- 'تتلی کی تصویر','پرندے کی تصویر','آزاد ڈرائنگ'
- ]
-};
-
-const englishWords={
- 'Alphabet':['A','B','C','D','E'],
- 'Capital and Small Letters':['A a','B b','C c','D d'],
- 'Vowels':['A','E','I','O','U'],
- 'Myself':['My name is ____','I am a student.'],
- 'My Family':['Father','Mother','Brother','Sister'],
- 'My School':['Teacher','Book','Class','School'],
- 'Fruits Names':['Apple','Mango','Banana','Orange'],
- 'Vegetables Names':['Potato','Tomato','Carrot','Onion'],
- 'Animals Names':['Cat','Dog','Cow','Goat'],
- 'Colours Names':['Red','Blue','Green','Yellow'],
- 'Simple Words':['Cat','Bat','Sun','Pen'],
- 'Revision':['Read and revise all words']
-};
-
-const images={
- urdu:'fruit apple mango',
- english:'alphabet colorful letters',
- math:'colorful number blocks mathematics',
- islamic:'mosque architecture',
- gk:'Pakistan flag landscape',
- science:'green plant nature science',
- drawing:'colorful drawing for children'
-};
-
-let currentGrade=0;
-let currentSubject='urdu';
-let currentLesson=null;
-let currentQuiz=null;
-
-function page(id,btn){
- document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
- if(btn)btn.classList.add('active');
- if(id==='saved')renderSaved();
- if(id==='tests')fillTestSubjects();
+/* تصویر کے لیے موضوع سے متعلق سرچ تصویر */
+function pictureURL(title){
+ return "https://loremflickr.com/900/500/"+encodeURIComponent(title)+ "?lock="+encodeURIComponent(title);
 }
-
-function makeTile(title,icon,sub,fn){
- let d=document.createElement('div');
- d.className='tile';
- d.innerHTML=`<div class="emoji">${icon}</div><h3>${title}</h3><p>${sub||''}</p>`;
- d.onclick=fn;
- return d;
+function home(){
+ document.getElementById("app").innerHTML=`
+ <section class="card">
+ <div class="cover">
+ <h2>Playgroup Books</h2>
+ <h3 style="color:white">The Risen High School</h3>
+ <p>سات مضامین کی تعلیمی کتابیں</p>
+ <p>مصنف: ${A}</p><p>Author: ${E}</p>
+ </div>
+ <h2 class="ur">پلے گروپ کی کتابیں</h2>
+ <p class="ur">اپنی پسند کا مضمون منتخب کریں۔ ہر کتاب میں بارہ اسباق شامل ہیں۔</p>
+ <div class="grid">
+ ${books.map(b=>`<div class="subject" onclick="openBook('${b.id}')">
+ <b>${b.en}</b><span>${b.ur}</span><p>12 Lessons</p>
+ </div>`).join("")}
+ </div>
+ </section>
+ <section class="card">
+ <h2 class="ur">کتابوں کا طریقۂ استعمال</h2>
+ <p class="ur">ہر سبق کو ترتیب سے پڑھیں۔ تصویر دیکھیں، الفاظ دہرائیں، سرگرمی کریں اور آخر میں مشق اور سوالات حل کریں۔ استاد بچوں کی رہنمائی کریں۔</p>
+ </section>`;
 }
-
-function renderClasses(){
- ['homeClasses','classGrid'].forEach(id=>{
-  let el=document.getElementById(id);el.innerHTML='';
-  grades.forEach((g,i)=>{
-   el.appendChild(makeTile(g,'🎓','سالانہ کتابیں',()=>selectGrade(i)));
-  });
- });
+function openBook(id){
+ const b=books.find(x=>x.id===id);
+ document.getElementById("app").innerHTML=`
+ <section class="card">
+ <div class="cover">
+ <h2>${b.en}</h2><h2>${b.ur}</h2>
+ <p>PLAYGROUP</p><p>The Risen High School</p>
+ <p>مصنف: ${A}</p><p>Author: ${E}</p>
+ </div>
+ <h2 class="ur">فہرستِ اسباق</h2>
+ ${b.lessons.map((l,i)=>`<div class="lesson">
+ <b>${i+1}. ${l[0]}</b><br>
+ <button onclick="openLesson('${id}',${i})">سبق کھولیں / Open Lesson</button>
+ </div>`).join("")}
+ <button onclick="home()">واپس</button>
+ <button onclick="window.print()">Print Book</button>
+ </section>`;
 }
-
-function selectGrade(i){
- currentGrade=i;
- document.getElementById('libraryHeading').textContent=grades[i]+' — کتب خانہ';
- renderSubjects();
- page('library');
-}
-
-function renderSubjects(){
- let el=document.getElementById('subjectGrid');el.innerHTML='';
- subjects.forEach(s=>{
-  el.appendChild(makeTile(s.name,s.icon,'12 یونٹس',()=>{
-   currentSubject=s.id;renderUnits();
-  }));
- });
- document.getElementById('unitList').innerHTML='';
-}
-
-function renderUnits(){
- let el=document.getElementById('unitList');
- el.innerHTML=`<h2>${grades[currentGrade]} — ${subjects.find(s=>s.id===currentSubject).name}</h2>`;
- topics[currentSubject].forEach((t,i)=>{
-  let d=document.createElement('div');d.className='unit';
-  d.innerHTML=`<div><strong>یونٹ ${i+1}: ${t}</strong><br><span class="small">سبق، سرگرمی، سوالات اور ٹیسٹ</span></div>
-  <button class="primary">کھولیں</button>`;
-  d.querySelector('button').onclick=()=>openLesson(currentGrade,currentSubject,i);
-  el.appendChild(d);
- });
-}
-
-function lessonId(g,s,i){return 'risen-'+g+'-'+s+'-'+i}
-
-function openLesson(g,s,i){
- currentGrade=g;currentSubject=s;
- let topic=topics[s][i];
- currentLesson={g,s,i,id:lessonId(g,s,i),topic};
- let grade=grades[g];
- let content='';
-
- if(s==='english'){
-  let words=englishWords[topic]||['Learn the words','Read and repeat'];
-  content=`<p class="english">${words.join(' &nbsp; | &nbsp; ')}</p>
-  <p class="english">Read the words aloud and write them in your notebook.</p>`;
- }else if(s==='math'){
-  content=`<p>اس سبق میں اعداد اور ریاضی کی بنیادی مشقیں سیکھیں۔</p>
-  <p class="english">Practice: 2 + 1 = ____</p>
-  <p class="english">Practice: 5 - 2 = ____</p>
-  <p class="english">Count objects and write the correct number.</p>`;
- }else if(s==='drawing'){
-  content=`<p>تصویر کو غور سے دیکھیں اور اپنی کاپی میں بنائیں۔</p>
-  <p>رنگ بھریں اور تصویر کو خوبصورت بنائیں۔</p>`;
+function openLesson(id,n){
+ const b=books.find(x=>x.id===id),l=b.lessons[n];
+ const url=location.href.split("#")[0]+"#lesson="+id+"-"+n;
+ const isUr=["urdu","islamiat"].includes(id);
+ const explain=isUr?`<p class="ur">${l[1]}</p>`:`<p>${l[1]}</p>`;
+ const words=l[2].split(",").map(w=>`<span class="word">${w.trim()}</span>`).join("");
+ const activity=isUr?`<p class="ur">${l[3]}</p>`:`<p>${l[3]}</p>`;
+ const question1=isUr?`<p class="ur">${l[4]}</p>`:`<p>${l[4]}</p>`;
+ const question2=isUr?`<p class="ur">${l[5]}</p>`:`<p>${l[5]}</p>`;
+ const quiz=[
+ {q:l[4],a:[l[5],l[0],"مجھے معلوم نہیں"],correct:0},
+ {q:"اس سبق کا موضوع کیا ہے؟",a:[l[0],"کھیل کا وقت","چھٹی"],correct:0},
+ {q:"سبق میں کیا کرنا چاہیے؟",a:["توجہ سے سیکھنا","سبق نظر انداز کرنا","شور کرنا"],correct:0}
+ ];
+ window.activeQuiz=quiz;
+ document.getElementById("app").innerHTML=`
+ <article class="card">
+ <div class="cover">
+ <h2>${b.en}</h2><h2>${l[0]}</h2>
+ <p>Playgroup | Lesson ${n+1} of 12</p>
+ <p>مصنف: ${A}</p><p>Author: ${E}</p>
+ </div>
+ <h2 class="ur">سبق ${n+1}: ${l[0]}</h2>
+ <img class="picture" src="${pictureURL(l[0])}" alt="${l[0]}" loading="lazy"
+ onerror="this.style.display='none'">
+ <h3 class="ur">سبق کی وضاحت / Lesson Explanation</h3>
+ ${explain}
+ <h3 class="ur">نئے الفاظ / New Words</h3>
+ <div class="words">${words}</div>
+ <h3 class="ur">سرگرمی / Activity</h3>
+ <div class="activity">${activity}</div>
+ <h3 class="ur">مشق / Exercise</h3>
+ <div class="exercise">
+ <p>1. ${question1}</p>
+ <p>2. ${question2}</p>
+ <p>3. ${isUr?"سبق کے اہم الفاظ استاد کے ساتھ دہرائیں۔":"Repeat the important words with your teacher."}</p>
+ <p>4. ${isUr?"تصویر دیکھیں اور اس کے بارے میں بتائیں۔":"Look at the picture and talk about it."}</p>
+ </div>
+ <h3>Multiple Choice Questions (MCQs)</h3>
+ ${quiz.map((q,i)=>`<div class="quizq">
+ <b>${i+1}. ${q.q}</b>
+ ${q.a.map((a,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${a}</label>`).join("")}
+ </div>`).join("")}
+ <button onclick="checkQuiz()">Check Answers</button>
+ <p id="result"></p>
+ <h3 class="ur">سبق کا QR Code</h3>
+ <p class="ur">QR کوڈ اسکین کرنے سے یہی سبق دوبارہ کھلے گا۔</p>
+ <div id="qr"></div>
+ <p class="small">QR link: ${url}</p>
+ <div class="noprint">
+ <button onclick="openLesson('${id}',${Math.max(0,n-1)})">Previous</button>
+ <button onclick="openLesson('${id}',${Math.min(11,n+1)})">Next</button>
+ <button onclick="openBook('${id}')">Book Index</button>
+ <button onclick="window.print()">Print Lesson</button>
+ </div>
+ <p class="small">Page ${n+1} | The Risen High School | ${E}</p>
+ </article>`;
+ if(typeof QRCode!=="undefined"){
+ new QRCode(document.getElementById("qr"),{text:url,width:170,height:170});
  }else{
-  content=`<p>اس سبق میں ہم <b>${topic}</b> کے بارے میں آسان الفاظ میں سیکھیں گے۔</p>
-  <p>اپنے استاد کی مدد سے موضوع کو پڑھیں، سمجھیں اور مثالیں اپنی روزمرہ زندگی سے تلاش کریں۔</p>
-  <p>سبق کو اچھی طرح یاد کریں اور نیچے دی گئی مشق مکمل کریں۔</p>`;
+ document.getElementById("qr").innerText="QR code requires internet connection.";
  }
-
- let questions=makeQuestions(s,topic);
- document.getElementById('lessonContent').innerHTML=`
- <span class="badge">${grade}</span>
- <h2>${subjects.find(x=>x.id===s).name}</h2>
- <h1 class="lessonTitle">${topic}</h1>
- <p class="small">مصنف: رانا محمد فیصل | Rana Muhammad Faisal</p>
- <img class="lessonImage" src="https://loremflickr.com/800/450/${encodeURIComponent(images[s])}" alt="${topic}" onerror="this.style.display='none'">
- <div class="lessonText">${content}</div>
- <hr><h3>سبق کی مشق</h3>
- <p>1۔ سبق کا نام لکھیں۔</p>
- <p>2۔ اس سبق سے سیکھی گئی تین باتیں بتائیں۔</p>
- <p>3۔ استاد کی مدد سے سبق کی زبانی مشق کریں۔</p>
- <hr><h3>سوالات</h3>
- ${questions.map((q,n)=>`<p>${n+1}۔ ${q.q}</p>`).join('')}
- <p class="small">یہ ابتدائی تدریسی خاکہ ہے۔ ہر سبق کے مکمل، مخصوص سوالات اور جوابات کو مزید تصنیف اور جانچ کے بعد شامل کرنا ہوگا۔</p>
- `;
- let url=location.origin+location.pathname+'#quiz='+currentLesson.id;
- document.getElementById('qr').innerHTML=
- `<img alt="QR Code" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(url)}">`;
- page('reader');
 }
-
-function makeQuestions(s,topic){
- if(s==='math')return [
-  {q:'What is 2 + 2?',a:['3','4','5'],correct:1},
-  {q:'What is 5 - 1?',a:['3','4','6'],correct:1},
-  {q:'Which is the bigger number?',a:['2','8','1'],correct:1}
- ];
- if(s==='english')return [
-  {q:'Which language is this subject?',a:['English','Urdu','Arabic'],correct:0},
-  {q:'Which is a letter?',a:['Apple','A','Ball'],correct:1},
-  {q:'Choose a simple word.',a:['Cat','Running fast','Beautifully'],correct:0}
- ];
- return [
-  {q:`اس سبق کا موضوع کیا ہے؟`,a:[topic,'گاڑی','پہاڑ'],correct:0},
-  {q:'سبق پڑھنے کے بعد کیا کرنا چاہیے؟',a:['مشق کرنا','کتاب بند کرکے بھول جانا','شور کرنا'],correct:0},
-  {q:'سیکھنے کا اچھا طریقہ کیا ہے؟',a:['غور سے پڑھنا','بغیر پڑھے جواب دینا','سبق چھوڑ دینا'],correct:0}
- ];
-}
-
-function openQuiz(g,s,i){
- currentQuiz={g,s,i,questions:makeQuestions(s,topics[s][i])};
- document.getElementById('quizTitle').textContent=topics[s][i]+' — ٹیسٹ';
- document.getElementById('quizResult').textContent='';
- let el=document.getElementById('quizQuestions');el.innerHTML='';
- currentQuiz.questions.forEach((q,n)=>{
-  let d=document.createElement('div');d.className='card';
-  d.innerHTML=`<b>${n+1}. ${q.q}</b>`+
-  q.a.map((a,j)=>`<label class="option"><input type="radio" name="q${n}" value="${j}"> ${a}</label>`).join('');
-  el.appendChild(d);
- });
- page('quiz');
-}
-
 function checkQuiz(){
- if(!currentQuiz)return;
  let score=0;
- currentQuiz.questions.forEach((q,n)=>{
-  let a=document.querySelector(`input[name="q${n}"]:checked`);
-  if(a&&Number(a.value)===q.correct)score++;
+ window.activeQuiz.forEach((q,i)=>{
+ const v=document.querySelector('input[name="q'+i+'"]:checked');
+ if(v && Number(v.value)===q.correct)score++;
  });
- document.getElementById('quizResult').textContent=
- `آپ کے نمبر: ${score} / ${currentQuiz.questions.length}`;
+ document.getElementById("result").innerText=
+ "Correct answers: "+score+" / "+window.activeQuiz.length;
 }
-
-function saveLesson(){
- if(!currentLesson)return;
- let saved=JSON.parse(localStorage.getItem('risenSaved')||'[]');
- if(!saved.some(x=>x.id===currentLesson.id)){
-  saved.push(currentLesson);
-  localStorage.setItem('risenSaved',JSON.stringify(saved));
- }
- alert('سبق محفوظ ہوگیا۔');
-}
-
-function renderSaved(){
- let el=document.getElementById('savedList');el.innerHTML='';
- let saved=JSON.parse(localStorage.getItem('risenSaved')||'[]');
- if(!saved.length){el.innerHTML='<p>ابھی کوئی سبق محفوظ نہیں۔</p>';return}
- saved.forEach(x=>{
-  let b=document.createElement('div');b.className='unit';
-  b.innerHTML=`<strong>${grades[x.g]} — ${x.topic}</strong><button class="secondary">کھولیں</button>`;
-  b.querySelector('button').onclick=()=>openLesson(x.g,x.s,x.i);
-  el.appendChild(b);
- });
-}
-
-function searchLessons(){
- let q=document.getElementById('searchBox').value.trim().toLowerCase();
- let el=document.getElementById('searchResults');el.innerHTML='';
- if(!q)return;
- grades.forEach((g,gi)=>{
-  subjects.forEach(s=>{
-   topics[s.id].forEach((t,i)=>{
-    if(t.toLowerCase().includes(q)){
-     let b=document.createElement('div');b.className='unit';
-     b.innerHTML=`<strong>${g} — ${t}</strong><button class="secondary">کھولیں</button>`;
-     b.querySelector('button').onclick=()=>openLesson(gi,s.id,i);
-     el.appendChild(b);
-    }
-   });
-  });
- });
-}
-
-function fillTestSubjects(){
- let c=document.getElementById('testClass');
- if(!c.options.length)grades.forEach((g,i)=>c.add(new Option(g,i)));
- let s=document.getElementById('testSubject');s.innerHTML='';
- subjects.forEach(x=>s.add(new Option(x.name,x.id)));
- fillTestUnits();
-}
-
-function fillTestUnits(){
- let s=document.getElementById('testSubject').value;
- let u=document.getElementById('testUnit');u.innerHTML='';
- (topics[s]||[]).forEach((t,i)=>u.add(new Option(t,i)));
-}
-
-function openSelectedTest(){
- let g=Number(document.getElementById('testClass').value);
- let s=document.getElementById('testSubject').value;
- let i=Number(document.getElementById('testUnit').value);
- openQuiz(g,s,i);
-}
-
-function checkQR(){
- let hash=location.hash;
- if(hash.startsWith('#quiz=risen-')){
-  let parts=hash.replace('#quiz=risen-','').split('-');
-  let g=Number(parts[0]),s=parts[1],i=Number(parts[2]);
-  if(grades[g]&&topics[s]&&topics[s][i]){
-   openQuiz(g,s,i);
-  }
+function routeQR(){
+ if(!location.hash.startsWith("#lesson="))return;
+ const key=decodeURIComponent(location.hash.slice(8));
+ const [id,n]=key.split("-");
+ if(books.some(b=>b.id===id)&&Number(n)>=0&&Number(n)<12){
+ openLesson(id,Number(n));
  }
 }
-
-renderClasses();
-fillTestSubjects();
-checkQR();
-window.addEventListener('hashchange',checkQR);
+home();
+window.addEventListener("hashchange",routeQR);
+routeQR();
 </script>
 </body>
 </html>
