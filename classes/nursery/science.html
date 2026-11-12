@@ -1,159 +1,266 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#075985">
 <title>Nursery General Science | The Risen High School</title>
 
 <style>
 @font-face{
-font-family:Jameel;
-src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
+ font-family:'Jameel';
+ src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff') format('woff');
+ font-weight:normal;
+ font-style:normal;
+ font-display:swap;
 }
+
 *{box-sizing:border-box}
+
 body{
-margin:0;
-background:#edf2f7;
-color:#263449;
-font-family:Arial,sans-serif;
-font-size:16px;
-line-height:1.7;
+ margin:0;
+ background:#edf2f7;
+ color:#263449;
+ font-family:Arial,sans-serif;
+ font-size:16px;
+ line-height:1.7;
 }
+
 header{
-background:linear-gradient(120deg,#075985,#2563eb);
-color:white;
-text-align:center;
-padding:22px 10px;
+ background:linear-gradient(120deg,#075985,#2563eb);
+ color:white;
+ text-align:center;
+ padding:22px 10px;
 }
+
 header h1{font-size:30px;margin:0}
-header p{margin:2px}
+
+header p{margin:3px}
+
+.urdu-text,
+[lang="ur"],
+.urdu,
+.urdu p,
+.urdu li,
+.urdu h2,
+.urdu h3,
+.urdu b,
+.urdu strong,
+.urdu span{
+ font-family:'Jameel',serif!important;
+ direction:rtl;
+ text-align:right;
+ line-height:2.2;
+}
+
+header p[lang="ur"]{
+ text-align:center;
+ color:white;
+}
+
 nav{
-background:white;
-position:sticky;
-top:0;
-z-index:5;
-padding:8px;
-text-align:center;
-box-shadow:0 2px 8px #0002;
+ background:white;
+ position:sticky;
+ top:0;
+ z-index:5;
+ padding:8px;
+ text-align:center;
+ box-shadow:0 2px 8px #0002;
 }
+
 button{
-border:0;
-border-radius:8px;
-padding:9px 16px;
-margin:3px;
-background:#075985;
-color:white;
-font-size:16px;
-cursor:pointer;
+ border:0;
+ border-radius:8px;
+ padding:9px 16px;
+ margin:3px;
+ background:#075985;
+ color:white;
+ font-size:16px;
+ cursor:pointer;
 }
-.book{max-width:1000px;margin:auto;padding:12px}
+
+.book{
+ max-width:1000px;
+ margin:auto;
+ padding:12px;
+}
+
 .page{
-background:white;
-margin:15px 0;
-padding:22px;
-border-radius:12px;
-box-shadow:0 2px 9px #0001;
-page-break-after:always;
+ background:white;
+ margin:15px 0;
+ padding:22px;
+ border-radius:12px;
+ box-shadow:0 2px 9px #0001;
+ page-break-after:always;
+ break-after:page;
 }
+
 .cover{
-text-align:center;
-background:linear-gradient(140deg,#dbeafe,#dcfce7);
+ text-align:center;
+ background:linear-gradient(140deg,#dbeafe,#dcfce7);
 }
-.cover h2{font-size:38px;color:#075985}
+
+.cover h2{
+ font-size:34px;
+ color:#075985;
+}
+
+.cover h2[lang="ur"],
+.cover h3[lang="ur"]{
+ text-align:center;
+}
+
 .cover img{
-width:100%;
-max-width:650px;
-height:260px;
-object-fit:cover;
-border-radius:14px;
+ width:100%;
+ max-width:650px;
+ height:260px;
+ object-fit:cover;
+ border-radius:14px;
 }
+
 h2{color:#075985;margin-top:0}
 h3{color:#0e7490}
+
 .lesson{border-top:5px solid #0e7490}
-.lesson-title{text-align:center;font-size:25px;color:#075985}
+
+.lesson-title{
+ text-align:center;
+ font-size:25px;
+ color:#075985;
+}
+
+.lesson-title .urdu-title{
+ font-family:'Jameel',serif!important;
+}
+
 .photo{
-width:100%;
-height:210px;
-object-fit:cover;
-border-radius:12px;
-margin:10px 0;
+ width:100%;
+ height:210px;
+ object-fit:cover;
+ border-radius:12px;
+ margin:10px 0;
 }
+
 .bilingual{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-direction:ltr;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+ direction:ltr;
 }
+
 .lang{
-border:1px solid #cbd5e1;
-border-radius:10px;
-padding:14px;
-min-width:0;
+ border:1px solid #cbd5e1;
+ border-radius:10px;
+ padding:14px;
+ min-width:0;
 }
+
 .english{
-background:#eff6ff;
-text-align:left;
-direction:ltr;
+ background:#eff6ff;
+ text-align:left;
+ direction:ltr;
+ font-family:Arial,sans-serif;
 }
+
 .urdu{
-background:#f0fdf4;
-font-family:Jameel,serif;
-font-size:19px;
-text-align:right;
-direction:rtl;
+ background:#f0fdf4;
+ font-family:'Jameel',serif!important;
+ font-size:19px;
+ text-align:right;
+ direction:rtl;
+ line-height:2.2;
 }
+
 .lang h3{
-margin-top:0;
-border-bottom:2px solid #bfdbfe;
-padding-bottom:5px;
+ margin-top:0;
+ border-bottom:2px solid #bfdbfe;
+ padding-bottom:5px;
 }
-.urdu h3{font-family:Jameel,serif}
+
+.urdu h3{
+ font-family:'Jameel',serif!important;
+}
+
+.urdu p,
+.urdu li,
+.urdu .exercise,
+.urdu .exercise p{
+ font-family:'Jameel',serif!important;
+ line-height:2.2;
+}
+
 .exercise{
-margin-top:12px;
-padding:10px;
-border-radius:8px;
-background:#fff7ed;
-border-right:4px solid #f59e0b;
+ margin-top:12px;
+ padding:10px;
+ border-radius:8px;
+ background:#fff7ed;
+ border-right:4px solid #f59e0b;
 }
-.urdu .exercise{font-family:Jameel,serif}
+
 .vocab{
-background:#f8fafc;
-padding:10px;
-border-radius:8px;
+ background:#f8fafc;
+ padding:10px;
+ border-radius:8px;
 }
+
 .qr{
-display:flex;
-gap:12px;
-align-items:center;
-background:#f1f5f9;
-padding:10px;
-border-radius:9px;
-margin-top:14px;
+ display:flex;
+ gap:12px;
+ align-items:center;
+ background:#f1f5f9;
+ padding:10px;
+ border-radius:9px;
+ margin-top:14px;
 }
+
 .qr img{width:90px;height:90px}
+
 .small{font-size:13px;color:#64748b}
+
 .contents li{padding:3px}
-.footer{text-align:center;color:#64748b}
+
+.footer{
+ text-align:center;
+ color:#64748b;
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+}
+
+th,td{
+ border:1px solid #94a3b8;
+ padding:8px;
+ text-align:left;
+}
+
+th{background:#e0f2fe}
+
 @media(max-width:650px){
-.bilingual{grid-template-columns:1fr}
-.photo{height:190px}
-.page{padding:14px}
+ .bilingual{grid-template-columns:1fr}
+ .photo{height:190px}
+ .page{padding:14px}
+ .cover h2{font-size:27px}
 }
+
 @media print{
-body{background:white}
-nav,.no-print{display:none!important}
-.book{max-width:100%;padding:0}
-.page{
-margin:0;
-padding:10mm;
-border-radius:0;
-box-shadow:none;
-break-after:page;
-}
-.bilingual{grid-template-columns:1fr 1fr}
-.lang{padding:8px;font-size:13px}
-.urdu{font-size:16px}
-.photo{height:150px}
+ body{background:white}
+ nav,.no-print{display:none!important}
+ .book{max-width:100%;padding:0}
+ .page{
+  margin:0;
+  padding:10mm;
+  border-radius:0;
+  box-shadow:none;
+  break-after:page;
+  page-break-after:always;
+ }
+ .bilingual{grid-template-columns:1fr 1fr}
+ .lang{padding:8px;font-size:13px}
+ .urdu{font-size:16px}
+ .photo{height:150px}
 }
 </style>
 </head>
@@ -163,9 +270,9 @@ break-after:page;
 <header>
 <h1>The Risen High School</h1>
 <p>Nursery Class — General Science</p>
-<p>نرسری جماعت — جنرل سائنس</p>
+<p lang="ur">نرسری جماعت — جنرل سائنس</p>
 <p>Author: Rana Muhammad Faisal</p>
-<p>مصنف: رانا محمد فیصل</p>
+<p lang="ur">مصنف: رانا محمد فیصل</p>
 </header>
 
 <nav class="no-print">
@@ -178,13 +285,14 @@ break-after:page;
 <!-- COVER -->
 <section class="page cover">
 <h2>My First Science Book</h2>
-<h2>میری پہلی سائنس کی کتاب</h2>
-<h3>Nursery Class | نرسری جماعت</h3>
+<h2 lang="ur">میری پہلی سائنس کی کتاب</h2>
+<h3>Nursery Class</h3>
+<h3 lang="ur">نرسری جماعت</h3>
 <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200" alt="Science learning">
 <h3>Learn About the World Around Us</h3>
-<h3>اپنے اردگرد کی دنیا کو پہچانیے</h3>
+<h3 lang="ur">اپنے اردگرد کی دنیا کو پہچانیے</h3>
 <p>Author: Rana Muhammad Faisal</p>
-<p>مصنف: رانا محمد فیصل</p>
+<p lang="ur">مصنف: رانا محمد فیصل</p>
 <p><b>The Risen High School</b></p>
 </section>
 
@@ -197,12 +305,13 @@ break-after:page;
 <p>Welcome, little scientists! This book helps you learn about yourself, animals, plants, food, water, weather and the world around you.</p>
 <p>Look at the pictures, read the words and enjoy learning science.</p>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>پیارے بچو! اس کتاب میں آپ اپنے جسم، جانوروں، پودوں، خوراک، پانی، موسم اور اپنے اردگرد کی دنیا کے بارے میں سیکھیں گے۔</p>
 <p>تصاویر دیکھیں، الفاظ پڑھیں اور سائنس سیکھنے سے لطف اٹھائیں۔</p>
 </div>
 </div>
+
 <h3>Contents | فہرست</h3>
 <ol class="contents">
 <li>My Body — میرا جسم</li>
@@ -225,7 +334,7 @@ break-after:page;
 
 <!-- LESSON 1 -->
 <section class="page lesson" id="lesson1">
-<h2 class="lesson-title">Lesson 1: My Body | سبق 1: میرا جسم</h2>
+<h2 class="lesson-title">Lesson 1: My Body | <span class="urdu-title">سبق 1: میرا جسم</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1000" alt="Child learning about body">
 <div class="bilingual">
 <div class="lang english">
@@ -239,7 +348,7 @@ break-after:page;
 <ol><li>How many eyes do you have?</li><li>Name two body parts.</li><li>What helps you walk?</li></ol>
 </div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>یہ میرا جسم ہے۔</p>
 <p>میرے سر، دو آنکھیں، دو کان، ایک ناک اور ایک منہ ہے۔</p>
@@ -255,7 +364,7 @@ break-after:page;
 
 <!-- LESSON 2 -->
 <section class="page lesson" id="lesson2">
-<h2 class="lesson-title">Lesson 2: Five Senses | سبق 2: پانچ حواس</h2>
+<h2 class="lesson-title">Lesson 2: Five Senses | <span class="urdu-title">سبق 2: پانچ حواس</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=1000" alt="Child exploring">
 <div class="bilingual">
 <div class="lang english">
@@ -270,7 +379,7 @@ break-after:page;
 </ol>
 <div class="exercise"><b>Practice</b><p>Which organ helps you see? Which organ helps you hear?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>ہمارے پانچ حواس ہیں۔</p>
 <ol>
@@ -287,7 +396,7 @@ break-after:page;
 
 <!-- LESSON 3 -->
 <section class="page lesson" id="lesson3">
-<h2 class="lesson-title">Lesson 3: My Family | سبق 3: میرا خاندان</h2>
+<h2 class="lesson-title">Lesson 3: My Family | <span class="urdu-title">سبق 3: میرا خاندان</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1000" alt="Family">
 <div class="bilingual">
 <div class="lang english">
@@ -298,7 +407,7 @@ break-after:page;
 <p>We should respect our elders.</p>
 <div class="exercise"><b>Practice</b><p>Name two members of your family.</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>میرا ایک پیارا خاندان ہے۔</p>
 <p>میرے خاندان میں والد، والدہ، بھائی اور بہنیں شامل ہو سکتے ہیں۔</p>
@@ -311,7 +420,7 @@ break-after:page;
 
 <!-- LESSON 4 -->
 <section class="page lesson" id="lesson4">
-<h2 class="lesson-title">Lesson 4: Healthy Food | سبق 4: صحت مند غذا</h2>
+<h2 class="lesson-title">Lesson 4: Healthy Food | <span class="urdu-title">سبق 4: صحت مند غذا</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000" alt="Healthy food">
 <div class="bilingual">
 <div class="lang english">
@@ -322,7 +431,7 @@ break-after:page;
 <p>We should drink clean water.</p>
 <div class="exercise"><b>Practice</b><p>Name two healthy foods.</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>خوراک ہمیں توانائی دیتی ہے۔</p>
 <p>ہمیں پھل، سبزیاں، دودھ اور دوسری صحت مند غذائیں کھانی چاہئیں۔</p>
@@ -335,7 +444,7 @@ break-after:page;
 
 <!-- LESSON 5 -->
 <section class="page lesson" id="lesson5">
-<h2 class="lesson-title">Lesson 5: Animals | سبق 5: جانور</h2>
+<h2 class="lesson-title">Lesson 5: Animals | <span class="urdu-title">سبق 5: جانور</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=1000" alt="Wild animals">
 <div class="bilingual">
 <div class="lang english">
@@ -347,7 +456,7 @@ break-after:page;
 <p>We should treat animals kindly.</p>
 <div class="exercise"><b>Practice</b><p>Which animal gives us milk? Name a wild animal.</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>جانور جاندار ہوتے ہیں۔</p>
 <p>گائے ہمیں دودھ دیتی ہے۔</p>
@@ -361,7 +470,7 @@ break-after:page;
 
 <!-- LESSON 6 -->
 <section class="page lesson" id="lesson6">
-<h2 class="lesson-title">Lesson 6: Birds | سبق 6: پرندے</h2>
+<h2 class="lesson-title">Lesson 6: Birds | <span class="urdu-title">سبق 6: پرندے</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=1000" alt="Birds">
 <div class="bilingual">
 <div class="lang english">
@@ -372,7 +481,7 @@ break-after:page;
 <p>A parrot is a colourful bird.</p>
 <div class="exercise"><b>Practice</b><p>Name two birds. What do birds use to fly?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>پرندے جاندار ہوتے ہیں۔</p>
 <p>زیادہ تر پرندوں کے پر، پَر اور چونچ ہوتی ہے۔</p>
@@ -385,7 +494,7 @@ break-after:page;
 
 <!-- LESSON 7 -->
 <section class="page lesson" id="lesson7">
-<h2 class="lesson-title">Lesson 7: Plants | سبق 7: پودے</h2>
+<h2 class="lesson-title">Lesson 7: Plants | <span class="urdu-title">سبق 7: پودے</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1000" alt="Green plants">
 <div class="bilingual">
 <div class="lang english">
@@ -396,7 +505,7 @@ break-after:page;
 <p>We should care for plants.</p>
 <div class="exercise"><b>Practice</b><p>What do plants need to grow?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>پودے جاندار ہوتے ہیں۔</p>
 <p>پودوں کو بڑھنے کے لیے پانی، ہوا اور دھوپ کی ضرورت ہوتی ہے۔</p>
@@ -409,7 +518,7 @@ break-after:page;
 
 <!-- LESSON 8 -->
 <section class="page lesson" id="lesson8">
-<h2 class="lesson-title">Lesson 8: Parts of a Plant | سبق 8: پودے کے حصے</h2>
+<h2 class="lesson-title">Lesson 8: Parts of a Plant | <span class="urdu-title">سبق 8: پودے کے حصے</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1000" alt="Plant">
 <div class="bilingual">
 <div class="lang english">
@@ -424,7 +533,7 @@ break-after:page;
 </ul>
 <div class="exercise"><b>Practice</b><p>Which part grows under the soil?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>پودے کے مختلف حصے ہوتے ہیں۔</p>
 <ul>
@@ -441,7 +550,7 @@ break-after:page;
 
 <!-- LESSON 9 -->
 <section class="page lesson" id="lesson9">
-<h2 class="lesson-title">Lesson 9: Water | سبق 9: پانی</h2>
+<h2 class="lesson-title">Lesson 9: Water | <span class="urdu-title">سبق 9: پانی</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?w=1000" alt="Water">
 <div class="bilingual">
 <div class="lang english">
@@ -453,7 +562,7 @@ break-after:page;
 <p>Always drink clean water.</p>
 <div class="exercise"><b>Practice</b><p>Why do we need water?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>پانی زندگی کے لیے بہت ضروری ہے۔</p>
 <p>ہم پانی پیتے ہیں۔</p>
@@ -467,7 +576,7 @@ break-after:page;
 
 <!-- LESSON 10 -->
 <section class="page lesson" id="lesson10">
-<h2 class="lesson-title">Lesson 10: Air | سبق 10: ہوا</h2>
+<h2 class="lesson-title">Lesson 10: Air | <span class="urdu-title">سبق 10: ہوا</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000" alt="Nature and sky">
 <div class="bilingual">
 <div class="lang english">
@@ -478,7 +587,7 @@ break-after:page;
 <p>Fresh air is good for us.</p>
 <div class="exercise"><b>Practice</b><p>Can we see air? What do we need to breathe?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>ہوا ہمارے چاروں طرف موجود ہے۔</p>
 <p>ہم ہوا کو دیکھ نہیں سکتے لیکن محسوس کر سکتے ہیں۔</p>
@@ -491,7 +600,7 @@ break-after:page;
 
 <!-- LESSON 11 -->
 <section class="page lesson" id="lesson11">
-<h2 class="lesson-title">Lesson 11: Weather | سبق 11: موسم</h2>
+<h2 class="lesson-title">Lesson 11: Weather | <span class="urdu-title">سبق 11: موسم</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1000" alt="Weather and landscape">
 <div class="bilingual">
 <div class="lang english">
@@ -503,7 +612,7 @@ break-after:page;
 <p>Some days are cold and some are hot.</p>
 <div class="exercise"><b>Practice</b><p>Name two kinds of weather.</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>موسم بدلتا رہتا ہے۔</p>
 <p>دھوپ والا دن روشن ہوتا ہے۔</p>
@@ -517,7 +626,7 @@ break-after:page;
 
 <!-- LESSON 12 -->
 <section class="page lesson" id="lesson12">
-<h2 class="lesson-title">Lesson 12: Day and Night | سبق 12: دن اور رات</h2>
+<h2 class="lesson-title">Lesson 12: Day and Night | <span class="urdu-title">سبق 12: دن اور رات</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1472120435266-53107fd0c44a?w=1000" alt="Sunset">
 <div class="bilingual">
 <div class="lang english">
@@ -528,7 +637,7 @@ break-after:page;
 <p>We usually sleep at night.</p>
 <div class="exercise"><b>Practice</b><p>What gives us light during the day? When do we usually sleep?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>سورج ہمیں دن کے وقت روشنی دیتا ہے۔</p>
 <p>چاند رات کو دکھائی دے سکتا ہے۔</p>
@@ -541,7 +650,7 @@ break-after:page;
 
 <!-- LESSON 13 -->
 <section class="page lesson" id="lesson13">
-<h2 class="lesson-title">Lesson 13: Our Earth | سبق 13: ہماری زمین</h2>
+<h2 class="lesson-title">Lesson 13: Our Earth | <span class="urdu-title">سبق 13: ہماری زمین</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1000" alt="Planet Earth">
 <div class="bilingual">
 <div class="lang english">
@@ -552,7 +661,7 @@ break-after:page;
 <p>We should keep our surroundings clean.</p>
 <div class="exercise"><b>Practice</b><p>What is the name of our planet?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>ہم زمین نامی سیارے پر رہتے ہیں۔</p>
 <p>زمین پر خشکی اور پانی موجود ہیں۔</p>
@@ -565,7 +674,7 @@ break-after:page;
 
 <!-- LESSON 14 -->
 <section class="page lesson" id="lesson14">
-<h2 class="lesson-title">Lesson 14: Cleanliness | سبق 14: صفائی</h2>
+<h2 class="lesson-title">Lesson 14: Cleanliness | <span class="urdu-title">سبق 14: صفائی</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1000" alt="Cleaning">
 <div class="bilingual">
 <div class="lang english">
@@ -577,7 +686,7 @@ break-after:page;
 <p>We should put rubbish in a dustbin.</p>
 <div class="exercise"><b>Practice</b><p>When should we wash our hands?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>صفائی ہمیں صحت مند رکھتی ہے۔</p>
 <p>ہمیں صابن سے ہاتھ دھونے چاہئیں۔</p>
@@ -591,7 +700,7 @@ break-after:page;
 
 <!-- LESSON 15 -->
 <section class="page lesson" id="lesson15">
-<h2 class="lesson-title">Lesson 15: Safety Rules | سبق 15: حفاظت کے اصول</h2>
+<h2 class="lesson-title">Lesson 15: Safety Rules | <span class="urdu-title">سبق 15: حفاظت کے اصول</span></h2>
 <img class="photo" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000" alt="Children learning">
 <div class="bilingual">
 <div class="lang english">
@@ -606,7 +715,7 @@ break-after:page;
 </ul>
 <div class="exercise"><b>Practice</b><p>Who should help you cross a busy road?</p></div>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <p>حفاظت کے اصول ہمیں محفوظ رکھتے ہیں۔</p>
 <ul>
@@ -638,7 +747,7 @@ break-after:page;
 <li>Name two kinds of weather.</li>
 </ol>
 </div>
-<div class="lang urdu">
+<div class="lang urdu" lang="ur">
 <h3>اردو</h3>
 <ol>
 <li>جسم کے دو حصوں کے نام بتائیں۔</li>
@@ -727,17 +836,18 @@ break-after:page;
 <p>2. We need water to live.</p>
 <p>3. Roots and leaves.</p>
 <p>4. The Sun.</p>
-<p>Q5: بچے کی زبانی کارکردگی کے مطابق نمبر دیں۔</p>
+<p lang="ur">Q5: بچے کی زبانی کارکردگی کے مطابق نمبر دیں۔</p>
 </section>
 
+<!-- END PAGE -->
 <section class="page cover">
 <h2>Well Done!</h2>
-<h2>شاباش پیارے بچو!</h2>
+<h2 lang="ur">شاباش پیارے بچو!</h2>
 <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000" alt="Children at school">
 <h3>You have completed your Science Book.</h3>
-<h3>آپ نے سائنس کی کتاب مکمل کر لی۔</h3>
+<h3 lang="ur">آپ نے سائنس کی کتاب مکمل کر لی۔</h3>
 <p>Keep Learning and Keep Exploring!</p>
-<p>مصنف: رانا محمد فیصل</p>
+<p lang="ur">مصنف: رانا محمد فیصل</p>
 <p>Author: Rana Muhammad Faisal</p>
 <p><b>The Risen High School</b></p>
 </section>
@@ -745,8 +855,10 @@ break-after:page;
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script>
 document.querySelectorAll('.lesson').forEach(function(lesson){
+
  const box=document.createElement('div');
  box.className='qr no-print';
 
@@ -770,11 +882,13 @@ document.querySelectorAll('.lesson').forEach(function(lesson){
  }else{
   info.innerHTML+=' <br>Internet connection required.';
  }
+
 });
 
 function openLesson(){
  if(location.hash){
   const target=document.getElementById(location.hash.substring(1));
+
   if(target){
    setTimeout(function(){
     target.scrollIntoView({behavior:'smooth'});
@@ -782,6 +896,7 @@ function openLesson(){
   }
  }
 }
+
 window.addEventListener('load',openLesson);
 window.addEventListener('hashchange',openLesson);
 </script>
