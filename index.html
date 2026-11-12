@@ -128,3 +128,139 @@ document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>tab(b.dataset.
  drawTopics.forEach(x=>data.lessons.push({id:id(),grade:x[0],subject:"Drawing & Colouring",title:x[1],text:x[2],drawing:x[3],questions:[],seed:true}));
  data.seeded=true;save();
 }
+  function renderBooks(){
+ const grade=$('grade').value,subject=$('subject').value;
+ const lessons=data.lessons.filter(x=>x.grade===grade&&x.subject===subject);
+ $('bookHeading').textContent=grade+' — '+subject;
+ $('bookLessons').innerHTML=`
+ <div class="cover">
+ <h1>The Risen High School</h1>
+ <h2>${esc(subject)}</h2>
+ <h3>${esc(grade)}</h3>
+ <div class="author-credit">
+ مصنف: رانا محمد فیصل
+ <div class="en">Author: Rana Muhammad Faisal</div>
+ </div>
+ </div>
+ <div class="bookgrid">
+ ${lessons.map((l,i)=>`
+ <div class="bookcard">
+ <span class="tag">سبق ${i+1}</span>
+ <h3>${esc(l.title)}</h3>
+ <p>${esc(l.text)}</p>
+ <div class="author-credit">
+ مصنف: رانا محمد فیصل
+ <div class="en">Author: Rana Muhammad Faisal</div>
+ </div>
+ <button class="primary" onclick="openLesson('${l.id}')">سبق کھولیں</button>
+ </div>`).join('')}
+ </div>`;
+}
+$('showBooks').onclick=renderBooks;
+$('grade').onchange=renderBooks;
+$('subject').onchange=renderBooks;
+
+function renderAll(){
+ $('allLessons').innerHTML=data.lessons.map(l=>`
+ <div class="item">
+ <span class="tag">${esc(l.grade)} — ${esc(l.subject)}</span>
+ <h3>${esc(l.title)}</h3>
+ <p>${esc(l.text)}</p>
+ <div class="actions">
+ <button class="primary" onclick="openLesson('${l.id}')">کھولیں</button>
+ ${!l.seed?`<button class="danger" onclick="deleteLesson('${l.id}')">حذف</button>`:''}
+ </div>
+ </div>`).join('')||'<p>ابھی کوئی سبق محفوظ نہیں۔</p>';
+ $('testSelect').innerHTML=data.lessons.map(l=>
+ `<option value="${l.id}">${esc(l.grade)} — ${esc(l.subject)} — ${esc(l.title)}</option>`
+ ).join('');
+}
+function deleteLesson(x){
+ if(!confirm('کیا آپ یہ سبق حذف کرنا چاہتے ہیں؟'))return;
+ data.lessons=data.lessons.filter(l=>l.id!==x);
+ save();renderAll();renderBooks();
+}
+let questions=[];
+$('addQ').onclick=()=>{
+ questions.push({q:'',type:'mcq',options:['','',''],answer:''});
+ renderQEditor();
+};
+function renderQEditor(){
+ $('qEditor').innerHTML=questions.map((q,i)=>`
+ <div class="question">
+ <h3>سوال ${i+1}</h3>
+ <input placeholder="سوال لکھیں" value="${esc(q.q)}" onchange="questions[${i}].q=this.value">
+ ${q.options.map((o,j)=>`
+ <input placeholder="آپشن ${j+1}" value="${esc(o)}"
+ onchange="questions[${i}].options[${j}]=this.value">`).join('')}
+ <input placeholder="درست جواب" value="${esc(q.answer)}"
+ onchange="questions[${i}].answer=this.value">
+ <button class="danger" onclick="questions.splice(${i},1);renderQEditor()">سوال حذف کریں</button>
+ </div>`).join('');
+}
+$('saveLesson').onclick=()=>{
+ const title=$('newTitle').value.trim();
+ const txt=$('newText').value.trim();
+ if(!title||!txt)return alert('سبق کا عنوان اور متن لکھیں۔');
+ data.lessons.push({
+ id:id(),grade:$('newGrade').value,
+ subject:$('newSubject').value,
+ title,text:txt,questions:questions.filter(q=>q.q.trim())
+ });
+ save();questions=[];renderQEditor();renderAll();
+ $('newTitle').value='';$('newText').value='';
+ alert('سبق محفوظ ہوگیا۔');
+};
+function openLesson(x){
+ const l=data.lessons.find(a=>a.id===x);
+ if(!l)return alert('سبق نہیں ملا۔');
+ current=l;tab('view');
+ $('viewContent').innerHTML=`
+ <div class="cover">
+ <h1>The Risen High School</h1>
+ <h2>${esc(l.subject)}</h2>
+ <h3>${esc(l.grade)}</h3>
+ <h2>${esc(l.title)}</h2>
+ <div class="author-credit">
+ مصنف: رانا محمد فیصل
+ <div class="en">Author: Rana Muhammad Faisal</div>
+ </div>
+ </div>
+ <div class="pageprint">
+ <h2>${esc(l.title)}</h2>
+ <p style="white-space:pre-wrap;text-align:right;line-height:2">${esc(l.text)}</p>
+ <div class="author-credit">
+ مصنف: رانا محمد فیصل
+ <div class="en">Author: Rana Muhammad Faisal</div>
+ </div>
+ </div>
+ ${l.drawing?`<div class="drawing">${drawingSVG(l.drawing)}</div>`:''}
+ ${l.questions?.length?'<h3>سوالات</h3>'+l.questions.map((q,i)=>`
+ <div class="question">${i+1}. ${esc(q.q)}</div>`).join(''):''}
+ `;
+ $('qr').innerHTML='';
+ if(window.QRCode){
+  const link=location.href.split('#')[0]+'#lesson='+encodeURIComponent(l.id);
+  new QRCode($('qr'),{text:link,width:180,height:180});
+ }else $('qr').textContent='QR بنانے کے لیے انٹرنیٹ درکار ہے۔';
+}
+function drawingSVG(type){
+ const shapes={
+ cat:`<svg viewBox="0 0 300 240"><path d="M75 95 L75 25 L125 65 Q150 55 175 65 L225 25 L225 95 Q250 155 190 190 Q150 215 110 190 Q50 155 75 95Z" fill="white" stroke="#222" stroke-width="5"/><circle cx="120" cy="115" r="7"/><circle cx="180" cy="115" r="7"/><path d="M140 145 L160 145 L150 158Z M150 158 Q135 175 125 162 M150 158 Q165 175 175 162" fill="none" stroke="#222" stroke-width="4"/></svg>`,
+ apple:`<svg viewBox="0 0 300 240"><path d="M150 75 Q90 25 50 100 Q20 180 105 215 Q140 230 150 210 Q170 230 205 215 Q280 180 250 100 Q210 25 150 75Z" fill="white" stroke="#222" stroke-width="5"/><path d="M150 75 Q145 35 165 15 Q200 10 210 25 Q185 55 150 75" fill="white" stroke="#222" stroke-width="5"/></svg>`,
+ sun:`<svg viewBox="0 0 300 240"><circle cx="150" cy="115" r="55" fill="white" stroke="#222" stroke-width="5"/>${Array.from({length:8},(_,i)=>{let a=i*Math.PI/4,x1=150+70*Math.cos(a),y1=115+70*Math.sin(a),x2=150+95*Math.cos(a),y2=115+95*Math.sin(a);return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#222" stroke-width="5"/>`}).join('')}</svg>`,
+ house:`<svg viewBox="0 0 300 240"><path d="M35 110 L150 20 L265 110 M65 100 V220 H235 V100" fill="white" stroke="#222" stroke-width="6"/><rect x="125" y="145" width="50" height="75" fill="white" stroke="#222" stroke-width="5"/><rect x="80" y="120" width="35" height="35" fill="white" stroke="#222" stroke-width="5"/><rect x="185" y="120" width="35" height="35" fill="white" stroke="#222" stroke-width="5"/></svg>`,
+ flower:`<svg viewBox="0 0 300 240"><path d="M150 115 V225 M150 180 Q90 130 85 190 Q120 210 150 180 M150 190 Q210 135 220 190 Q185 215 150 190" fill="white" stroke="#222" stroke-width="5"/><circle cx="150" cy="95" r="22" fill="white" stroke="#222" stroke-width="5"/><g fill="white" stroke="#222" stroke-width="5"><circle cx="150" cy="55" r="25"/><circle cx="190" cy="95" r="25"/><circle cx="150" cy="135" r="25"/><circle cx="110" cy="95" r="25"/></g></svg>`,
+ blank:`<svg viewBox="0 0 300 240"><rect x="15" y="15" width="270" height="210" rx="12" fill="white" stroke="#222" stroke-width="3" stroke-dasharray="8 6"/><text x="150" y="125" font-size="18" text-anchor="middle" fill="#888">Draw here</text></svg>`
+ };
+ return shapes[type]||shapes.blank;
+}
+$('back').onclick=()=>tab('home');
+$('saveQR').onclick=()=>{
+ const el=$('qr').querySelector('canvas')||$('qr').querySelector('img');
+ if(!el)return alert('QR Code موجود نہیں۔');
+ const a=document.createElement('a');
+ a.href=el.tagName==='CANVAS'?el.toDataURL('image/png'):el.src;
+ a.download='Risen-Lesson-QR.png';a.click();
+};
+  
