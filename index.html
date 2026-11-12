@@ -77,3 +77,54 @@ function fillSelect(el,arr){$(el).innerHTML=arr.map(x=>`<option>${esc(x)}</optio
 ['grade','newGrade','customGrade'].forEach(x=>fillSelect(x,GRADES));['subject','newSubject'].forEach(x=>fillSelect(x,SUBJECTS));
 function tab(n){document.querySelectorAll('.tab').forEach(x=>x.classList.add('hidden'));$(n).classList.remove('hidden');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===n));}
 document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+  function seed(){
+ if(data.seeded)return;
+ const seedRows=[
+ ["Playgroup","اردو","حروفِ تہجی: ا، ب، پ","ا سے انار، ب سے بکری، پ سے پتنگ۔ حروف کو دیکھیں، بولیں اور پہچانیں۔",[{q:"ا سے کیا ہے؟",type:"mcq",options:["انار","بلی","گھر"],answer:"انار"}]],
+ ["Playgroup","English","Letters A, B, C","A for Apple, B for Ball, C for Cat. Look, say and trace the letters.",[{q:"A is for ____.",type:"mcq",options:["Apple","Ball","Cat"],answer:"Apple"}]],
+ ["Playgroup","Mathematics","Numbers 1–5","اعداد 1 سے 5 تک گنیں۔ ہر عدد کے ساتھ اتنی ہی چیزیں گنیں۔",[{q:"What comes after 2?",type:"mcq",options:["1","3","5"],answer:"3"}]],
+ ["Playgroup","اسلامیات","سلام کرنا","ہم ملتے وقت السلام علیکم کہتے ہیں۔ جواب میں وعلیکم السلام کہا جاتا ہے۔",[{q:"سلام کے جواب میں کیا کہتے ہیں؟",type:"mcq",options:["وعلیکم السلام","خدا حافظ","شکریہ"],answer:"وعلیکم السلام"}]],
+ ["Playgroup","General Knowledge","میرا جسم","ہماری دو آنکھیں، دو کان، ایک ناک اور ایک منہ ہوتا ہے۔",[{q:"ہم کس سے دیکھتے ہیں؟",type:"mcq",options:["آنکھوں سے","کانوں سے","ہاتھوں سے"],answer:"آنکھوں سے"}]],
+ ["Playgroup","General Science","رنگ","دنیا میں کئی رنگ ہیں۔ سیب سرخ، پتے سبز اور آسمان نیلا دکھائی دے سکتا ہے۔",[{q:"پتے عام طور پر کس رنگ کے ہوتے ہیں؟",type:"mcq",options:["سبز","نیلے","سیاہ"],answer:"سبز"}]],
+ ["Nursery","اردو","آسان الفاظ","آم، انار، بکری، تتلی اور کتاب آسان الفاظ ہیں۔ انہیں پڑھیں اور لکھنے کی مشق کریں۔",[{q:"کتاب کس کام آتی ہے؟",type:"mcq",options:["پڑھنے","کھانے","دوڑنے"],answer:"پڑھنے"}]],
+ ["Nursery","English","Small Words","Learn: cat, bat, mat, sun, pen. Read each word aloud.",[{q:"Which word names an animal?",type:"mcq",options:["cat","pen","sun"],answer:"cat"}]],
+ ["Nursery","Mathematics","Numbers 1–10","Count forward from 1 to 10. Write each number neatly.",[{q:"What comes before 5?",type:"mcq",options:["4","6","7"],answer:"4"}]],
+ ["Nursery","اسلامیات","بسم اللہ","ہم اچھے کام شروع کرنے سے پہلے بسم اللہ الرحمن الرحیم پڑھتے ہیں۔",[{q:"کام شروع کرتے وقت کیا پڑھتے ہیں؟",type:"mcq",options:["بسم اللہ","الوداع","صبح بخیر"],answer:"بسم اللہ"}]],
+ ["Nursery","General Knowledge","رنگ اور شکلیں","دائرہ، مربع اور مثلث بنیادی شکلیں ہیں۔ اپنے اردگرد ان شکلوں کو تلاش کریں۔",[{q:"گیند عموماً کس شکل کی ہوتی ہے؟",type:"mcq",options:["گول","چوکور","تکونی"],answer:"گول"}]],
+ ["Nursery","General Science","پودے","پودوں کو پانی، ہوا اور روشنی کی ضرورت ہوتی ہے۔ پودے ہماری دنیا کو خوب صورت بناتے ہیں۔",[{q:"پودے کو بڑھنے کے لیے کیا چاہیے؟",type:"mcq",options:["پانی","پلاسٹک","پتھر"],answer:"پانی"}]],
+ ["Prep","اردو","میرا گھر","میرا گھر صاف ستھرا ہے۔ میں اپنے گھر کو صاف رکھنے میں مدد کرتا ہوں۔",[{q:"ہمیں گھر کیسا رکھنا چاہیے؟",type:"mcq",options:["صاف","گندا","بے ترتیب"],answer:"صاف"}]],
+ ["Prep","English","My School","My school is a place to learn. I respect my teachers and love my school.",[{q:"Where do we learn?",type:"mcq",options:["School","Market","Park"],answer:"School"}]],
+ ["Prep","Mathematics","Addition","Add: 2 + 3 = 5. جمع کرنے سے چیزوں کی تعداد بڑھتی ہے۔",[{q:"What is 4 + 1?",type:"mcq",options:["5","3","6"],answer:"5"}]],
+ ["Prep","اسلامیات","صفائی","صفائی اچھی عادت ہے۔ ہمیں اپنے جسم، کپڑوں اور اردگرد کی جگہ کو صاف رکھنا چاہیے۔",[{q:"صفائی کیسی عادت ہے؟",type:"mcq",options:["اچھی","بری","غیر ضروری"],answer:"اچھی"}]],
+ ["Prep","General Knowledge","ہمارا پاکستان","پاکستان ہمارا پیارا وطن ہے۔ اس کا دارالحکومت اسلام آباد ہے۔",[{q:"پاکستان کا دارالحکومت کون سا ہے؟",type:"mcq",options:["اسلام آباد","لاہور","کراچی"],answer:"اسلام آباد"}]],
+ ["Prep","General Science","پانی","پانی زندگی کے لیے ضروری ہے۔ ہمیں صاف پانی پینا چاہیے اور اسے ضائع نہیں کرنا چاہیے۔",[{q:"ہمیں کون سا پانی پینا چاہیے؟",type:"mcq",options:["صاف پانی","گندا پانی","رنگین پانی"],answer:"صاف پانی"}]],
+ ["Class 1","اردو","اچھے اخلاق","ہمیں بڑوں کا ادب اور چھوٹوں سے پیار کرنا چاہیے۔ سچ بولنا اور دوسروں کی مدد کرنا اچھی عادتیں ہیں۔",[{q:"ہمیں ہمیشہ کیا بولنا چاہیے؟",type:"mcq",options:["سچ","جھوٹ","بدتمیزی"],answer:"سچ"}]],
+ ["Class 1","English","The Helpful Child","A good child helps others, speaks politely and keeps things tidy.",[{q:"A good child speaks ____.",type:"mcq",options:["politely","rudely","angrily"],answer:"politely"}]],
+ ["Class 1","Mathematics","Addition and Subtraction","Add: 12 + 5 = 17. Subtract: 17 − 5 = 12. جمع میں اضافہ اور تفریق میں کمی ہوتی ہے۔",[{q:"What is 10 + 7?",type:"mcq",options:["17","15","12"],answer:"17"}]],
+ ["Class 1","اسلامیات","اللہ تعالیٰ کی نعمتیں","اللہ تعالیٰ نے ہمیں ہوا، پانی، روشنی، خوراک اور بہت سی نعمتیں عطا کی ہیں۔ ہمیں شکر ادا کرنا چاہیے۔",[{q:"ہمیں نعمتوں پر کس کا شکر ادا کرنا چاہیے؟",type:"mcq",options:["اللہ تعالیٰ کا","کسی چیز کا نہیں","صرف دوستوں کا"],answer:"اللہ تعالیٰ کا"}]],
+ ["Class 1","General Knowledge","ہفتے کے دن","ایک ہفتے میں سات دن ہوتے ہیں: پیر، منگل، بدھ، جمعرات، جمعہ، ہفتہ اور اتوار۔",[{q:"ایک ہفتے میں کتنے دن ہوتے ہیں؟",type:"mcq",options:["سات","پانچ","دس"],answer:"سات"}]],
+ ["Class 1","General Science","ہوا اور پانی","ہوا اور پانی جانداروں کے لیے ضروری ہیں۔ ہمیں پانی اور ہوا کو آلودہ نہیں کرنا چاہیے۔",[{q:"زندگی کے لیے کون سی چیز ضروری ہے؟",type:"mcq",options:["ہوا اور پانی","دھواں","کچرا"],answer:"ہوا اور پانی"}]],
+ ["Class 2","اردو","وقت کی پابندی","وقت بہت قیمتی ہے۔ ہمیں اپنا کام وقت پر کرنا چاہیے اور پڑھائی، کھیل اور آرام کے لیے وقت مقرر کرنا چاہیے۔",[{q:"وقت کیسا ہے؟",type:"mcq",options:["قیمتی","بے کار","لامحدود"],answer:"قیمتی"}]],
+ ["Class 2","English","A Visit to the Park","We visited a park. We saw green trees, colourful flowers and children playing.",[{q:"What did we see in the park?",type:"mcq",options:["Trees and flowers","Factories","Trains"],answer:"Trees and flowers"}]],
+ ["Class 2","Mathematics","Multiplication","Multiplication is repeated addition. 3 × 2 means 3 groups of 2, so the answer is 6. ضرب بار بار جمع کرنے کا آسان طریقہ ہے۔",[{q:"What is 4 × 2?",type:"mcq",options:["8","6","10"],answer:"8"}]],
+ ["Class 2","اسلامیات","والدین کا احترام","والدین ہمارے لیے بہت محنت کرتے ہیں۔ ہمیں ان سے ادب سے بات کرنی اور ان کی جائز بات ماننی چاہیے۔",[{q:"ہمیں والدین سے کیسے بات کرنی چاہیے؟",type:"mcq",options:["ادب سے","غصے سے","بدتمیزی سے"],answer:"ادب سے"}]],
+ ["Class 2","General Knowledge","پاکستان کے صوبے","پاکستان کے چار صوبے پنجاب، سندھ، خیبر پختونخوا اور بلوچستان ہیں۔",[{q:"پاکستان کا سب سے بڑا صوبہ رقبے کے لحاظ سے کون سا ہے؟",type:"mcq",options:["بلوچستان","پنجاب","سندھ"],answer:"بلوچستان"}]],
+ ["Class 2","General Science","جانوروں کی اقسام","کچھ جانور خشکی پر، کچھ پانی میں اور کچھ خشکی و پانی دونوں جگہ رہتے ہیں۔",[{q:"مچھلی کہاں رہتی ہے؟",type:"mcq",options:["پانی میں","درخت پر","صحرا میں"],answer:"پانی میں"}]],
+ ["Class 3","اردو","محنت کی عظمت","محنت کامیابی کی کنجی ہے۔ جو طالب علم باقاعدگی سے پڑھتا اور کوشش کرتا ہے وہ علم میں ترقی کرتا ہے۔",[{q:"کامیابی کی کنجی کیا ہے؟",type:"mcq",options:["محنت","سستی","غفلت"],answer:"محنت"}]],
+ ["Class 3","English","Clean Environment","A clean environment keeps us healthy. We should use dustbins and plant trees.",[{q:"Where should we put rubbish?",type:"mcq",options:["In dustbins","On roads","In rivers"],answer:"In dustbins"}]],
+ ["Class 3","Mathematics","Fractions","A fraction shows a part of a whole. If a pizza is divided into 2 equal parts, one part is one-half (1/2). کسر کسی پوری چیز کے حصے کو ظاہر کرتی ہے۔",[{q:"Which fraction means one out of two equal parts?",type:"mcq",options:["1/2","1/3","2/2"],answer:"1/2"}]],
+ ["Class 3","اسلامیات","سچائی اور امانت","سچ بولنا اور امانت کی حفاظت کرنا اچھی صفات ہیں۔ ہمیں ہر معاملے میں دیانت داری اختیار کرنی چاہیے۔",[{q:"امانت کے ساتھ کیا کرنا چاہیے؟",type:"mcq",options:["حفاظت","ضائع","انکار"],answer:"حفاظت"}]],
+ ["Class 3","General Knowledge","دنیا اور براعظم","دنیا میں سات براعظم ہیں۔ ایشیا ان میں سب سے بڑا براعظم ہے۔",[{q:"سب سے بڑا براعظم کون سا ہے؟",type:"mcq",options:["ایشیا","یورپ","آسٹریلیا"],answer:"ایشیا"}]],
+ ["Class 3","General Science","مادہ کی حالتیں","مادہ عام طور پر ٹھوس، مائع اور گیس کی حالت میں پایا جاتا ہے۔ برف ٹھوس اور پانی مائع ہے۔",[{q:"برف کس حالت میں ہوتی ہے؟",type:"mcq",options:["ٹھوس","مائع","گیس"],answer:"ٹھوس"}]],
+ ["Class 4","اردو","علم کی اہمیت","علم انسان کو اچھے اور برے میں فرق کرنا سکھاتا ہے۔ علم سے انسان اپنی زندگی اور معاشرے کو بہتر بنا سکتا ہے۔",[{q:"علم ہمیں کیا سکھاتا ہے؟",type:"mcq",options:["اچھے اور برے میں فرق","سستی","بدتمیزی"],answer:"اچھے اور برے میں فرق"}]],
+ ["Class 4","English","The Importance of Trees","Trees provide shade, fruits and oxygen. They protect soil and make our environment beautiful.",[{q:"What do trees provide?",type:"mcq",options:["Shade and oxygen","Plastic","Smoke"],answer:"Shade and oxygen"}]],
+ ["Class 4","Mathematics","Perimeter and Area","Perimeter is the total length around a shape. Area is the surface inside it. مستطیل کا رقبہ = لمبائی × چوڑائی۔",[{q:"What is the perimeter of a square with side 4 cm?",type:"mcq",options:["16 cm","8 cm","12 cm"],answer:"16 cm"}]],
+ ["Class 4","اسلامیات","حقوق العباد","لوگوں کے حقوق کا خیال رکھنا ضروری ہے۔ ہمیں پڑوسیوں، رشتہ داروں اور ضرورت مندوں کے ساتھ اچھا سلوک کرنا چاہیے۔",[{q:"ہمیں پڑوسیوں کے ساتھ کیسا سلوک کرنا چاہیے؟",type:"mcq",options:["اچھا","برا","سخت"],answer:"اچھا"}]],
+ ["Class 4","General Knowledge","پاکستان کی قومی علامتیں","پاکستان کا قومی پھول چنبیلی، قومی جانور مارخور اور قومی پرندہ چکور ہے۔",[{q:"پاکستان کا قومی جانور کون سا ہے؟",type:"mcq",options:["مارخور","شیر","ہاتھی"],answer:"مارخور"}]],
+ ["Class 4","General Science","انسانی جسم اور صحت","دل خون کو جسم میں گردش دینے میں مدد کرتا ہے۔ متوازن غذا، صاف پانی اور صفائی صحت کے لیے اہم ہیں۔",[{q:"خون کو جسم میں گردش دینے میں کون مدد کرتا ہے؟",type:"mcq",options:["دل","معدہ","کان"],answer:"دل"}]]
+ ];
+ seedRows.forEach(r=>data.lessons.push({id:id(),grade:r[0],subject:r[1],title:r[2],text:r[3],questions:r[4],seed:true}));
+ const drawTopics=[["Playgroup","بلی","بلی کے بڑے خاکے میں رنگ بھریں۔","cat"],["Nursery","پھل","پھل کے خاکے میں رنگ بھریں۔","apple"],["Prep","سورج اور بادل","سورج اور بادل میں مناسب رنگ بھریں۔","sun"],["Class 1","گھر","گھر کی چھت، دروازہ اور کھڑکیاں مکمل کریں۔","house"],["Class 2","پھول","پھول کی پنکھڑیوں اور پتوں میں رنگ بھریں۔","flower"],["Class 3","درخت اور گھر","اپنی مرضی سے درخت اور گھر کا منظر بنائیں۔","house"],["Class 4","قدرتی منظر","اپنا قدرتی منظر بنائیں اور رنگ بھریں۔","blank"]];
+ drawTopics.forEach(x=>data.lessons.push({id:id(),grade:x[0],subject:"Drawing & Colouring",title:x[1],text:x[2],drawing:x[3],questions:[],seed:true}));
+ data.seeded=true;save();
+}
