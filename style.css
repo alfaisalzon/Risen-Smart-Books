@@ -278,3 +278,26 @@ body.dark .about-details{background:#142236}
  .text-link{font-size:15px}
  .breadcrumb span{font-size:11px}
 }
+
+.global-search{
+ width:250px;
+ padding:9px 13px;
+ border:1px solid var(--border);
+ border-radius:10px;
+ outline:none;
+ background:var(--bg);
+ color:var(--text);
+ font-family:inherit;
+ font-size:16px;
+}
+.global-search:focus{
+ border-color:var(--primary);
+ box-shadow:0 0 0 3px #1457a620;
+}
+@media(max-width:550px){
+ .global-search{
+  width:135px;
+  font-size:14px;
+  padding:8px;
+ }
+}
