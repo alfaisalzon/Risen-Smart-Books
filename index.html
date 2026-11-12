@@ -264,3 +264,153 @@ $('saveQR').onclick=()=>{
  a.download='Risen-Lesson-QR.png';a.click();
 };
   
+function startTest(){
+ const l=data.lessons.find(x=>x.id===$('testSelect').value);
+ if(!l)return alert('پہلے سبق منتخب کریں۔');
+ if(!l.questions?.length){
+  $('testArea').innerHTML='<p>اس سبق کے لیے MCQs موجود نہیں۔</p>';
+  return;
+ }
+ $('testArea').innerHTML=`
+ <h3>${esc(l.title)} — ٹیسٹ</h3>
+ <form id="quiz">
+ ${l.questions.map((q,i)=>`
+ <div class="question">
+ <b>${i+1}. ${esc(q.q)}</b>
+ ${q.options?.length?q.options.map(o=>`
+ <label class="opt">
+ <input type="radio" name="q${i}" value="${esc(o)}" style="width:auto">
+ ${esc(o)}
+ </label>`).join(''):`<input name="q${i}" placeholder="اپنا جواب لکھیں">`}
+ </div>`).join('')}
+ <button class="primary" type="submit">جواب چیک کریں</button>
+ </form>
+ <div id="result"></div>`;
+ $('quiz').onsubmit=e=>{
+  e.preventDefault();
+  let score=0,total=l.questions.length;
+  l.questions.forEach((q,i)=>{
+   let v=$('quiz').querySelector(`[name="q${i}"]:checked`)?.value||
+   $('quiz').querySelector(`[name="q${i}"]`)?.value||'';
+   if(v.trim().toLowerCase()===String(q.answer||'').trim().toLowerCase())score++;
+  });
+  $('result').innerHTML=`
+  <div class="item">
+  <h3>آپ کے نمبر: ${score} / ${total}</h3>
+  <p>${Math.round(score/total*100)} فیصد</p>
+  </div>`;
+ };
+};
+$('testStart').onclick=startTest;
+$('viewTest').onclick=()=>{
+ tab('test');
+ $('testSelect').value=current?.id||'';
+ startTest();
+};
+$('manualOpen').onclick=()=>{
+ let v=$('manualQR').value.trim();
+ let m=v.match(/lesson=([^&]+)/);
+ let x=m?decodeURIComponent(m[1]):v;
+ openLesson(x);
+};
+$('scanStart').onclick=async()=>{
+ try{
+  if(!('BarcodeDetector'in window))
+   throw Error('اس براؤزر میں QR کیمرہ اسکین دستیاب نہیں۔ لنک دستی طور پر درج کریں۔');
+  stream=await navigator.mediaDevices.getUserMedia({
+   video:{facingMode:'environment'}
+  });
+  $('video').srcObject=stream;
+  await $('video').play();
+  let detector=new BarcodeDetector({formats:['qr_code']});
+  $('scanMsg').textContent='QR Code کیمرے کے سامنے رکھیں۔';
+  scanLoop=setInterval(async()=>{
+   try{
+    let codes=await detector.detect($('video'));
+    if(codes.length){
+     $('manualQR').value=codes[0].rawValue;
+     $('scanStop').click();
+     $('manualOpen').click();
+    }
+   }catch(e){}
+  },500);
+ }catch(e){
+  $('scanMsg').textContent=e.message;
+ }
+};
+$('scanStop').onclick=()=>{
+ if(scanLoop)clearInterval(scanLoop);
+ if(stream)stream.getTracks().forEach(t=>t.stop());
+ stream=null;
+ $('video').srcObject=null;
+};
+$('export').onclick=()=>{
+ let blob=new Blob([JSON.stringify(data,null,2)],{
+  type:'application/json'
+ });
+ let a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);
+ a.download='Risen-Smart-Books-Backup.json';
+ a.click();
+ URL.revokeObjectURL(a.href);
+};
+$('restore').onchange=async e=>{
+ let f=e.target.files[0];
+ if(!f)return;
+ try{
+  let d=JSON.parse(await f.text());
+  if(!Array.isArray(d.lessons))
+   throw Error('غلط بیک اپ فائل');
+  if(confirm('موجودہ ڈیٹا کی جگہ بیک اپ ڈیٹا بحال کیا جائے؟')){
+   data=d;
+   save();
+   renderAll();
+   renderBooks();
+   alert('بیک اپ بحال ہوگیا۔');
+  }
+ }catch(err){
+  alert('فائل درست نہیں: '+err.message);
+ }
+ e.target.value='';
+};
+$('addBook').onclick=()=>{
+ let name=$('customBook').value.trim();
+ let subject=$('customSubject').value.trim();
+ if(!name||!subject)
+  return alert('کتاب اور مضمون کا نام لکھیں۔');
+ data.books.push({
+  grade:$('customGrade').value,
+  subject,
+  name
+ });
+ save();
+ renderCustomBooks();
+ $('customBook').value='';
+ $('customSubject').value='';
+ alert('کتاب محفوظ ہوگئی۔');
+};
+function renderCustomBooks(){
+ $('customBooks').innerHTML=data.books.map((b,i)=>`
+ <div class="item">
+ ${esc(b.grade)} — ${esc(b.subject)} — ${esc(b.name)}
+ <button class="danger" onclick="removeBook(${i})">حذف</button>
+ </div>`).join('');
+}
+window.removeBook=i=>{
+ data.books.splice(i,1);
+ save();
+ renderCustomBooks();
+};
+function openHash(){
+ let m=location.hash.match(/lesson=([^&]+)/);
+ if(m)openLesson(decodeURIComponent(m[1]));
+}
+seed();
+renderBooks();
+renderAll();
+renderCustomBooks();
+openHash();
+window.addEventListener('hashchange',openHash);
+</script>
+</body>
+</html>
