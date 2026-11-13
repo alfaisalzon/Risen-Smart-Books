@@ -1,10 +1,10 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075985">
 <title>Nursery Mathematics | The Risen High School</title>
 
 <style>
@@ -13,74 +13,143 @@ font-family:Jameel;
 src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-margin:0;background:#f1f5f9;color:#263445;
-font-family:Arial,sans-serif;line-height:1.7
+margin:0;
+background:linear-gradient(135deg,#e0f2fe,#fce7f3,#fef3c7);
+color:#263445;
+font-family:Arial,sans-serif;
+line-height:1.8
 }
-.urdu{font-family:Jameel,serif;direction:rtl}
+.urdu{
+font-family:Jameel,serif;
+direction:rtl;
+text-align:right
+}
 header{
-background:linear-gradient(120deg,#075985,#0e7490);
-color:white;text-align:center;padding:25px 12px
+background:linear-gradient(135deg,#075985,#2563eb,#7c3aed);
+color:white;text-align:center;padding:30px 12px;
+border-bottom:6px solid #fbbf24
 }
 header h1{margin:0;font-size:28px}
 header h2{margin:5px;font-size:24px}
 .toolbar{
-position:sticky;top:0;background:white;padding:10px;
-display:flex;justify-content:center;gap:8px;flex-wrap:wrap;z-index:5
+position:sticky;top:0;
+background:#ffffffed;padding:10px;
+display:flex;justify-content:center;
+gap:8px;flex-wrap:wrap;z-index:5;
+box-shadow:0 3px 10px #0002
 }
 button{
-background:#075985;color:white;border:0;border-radius:8px;
-padding:10px 16px;font-size:15px;cursor:pointer
+background:linear-gradient(135deg,#075985,#2563eb);
+color:white;border:0;border-radius:10px;
+padding:10px 16px;font-size:15px;cursor:pointer;
+box-shadow:0 3px 7px #0002
 }
+button:hover{background:#7c3aed}
 .book{max-width:950px;margin:20px auto;padding:15px}
 .cover,.lesson{
-background:white;border-radius:14px;padding:22px;
-margin-bottom:20px;box-shadow:0 3px 12px #0001
+border-radius:18px;padding:22px;
+margin-bottom:22px;
+box-shadow:0 4px 14px #0002;
+border:2px solid #ffffff;
 }
-.cover{text-align:center;padding:35px 15px}
-.cover .big{font-size:85px}
+.cover{
+text-align:center;padding:38px 15px;
+background:linear-gradient(135deg,#fef3c7,#fce7f3,#dbeafe,#dcfce7);
+border:4px solid white
+}
+.cover .big{
+font-size:85px;
+background:linear-gradient(135deg,#dbeafe,#fce7f3);
+border-radius:20px;padding:15px
+}
 .cover h2{color:#075985;font-size:32px}
+.cover h3{color:#7c3aed}
+.cover p{font-weight:bold}
+.lesson:nth-of-type(2){background:linear-gradient(135deg,#e0f2fe,#f0f9ff)}
+.lesson:nth-of-type(3){background:linear-gradient(135deg,#fce7f3,#fff1f2)}
+.lesson:nth-of-type(4){background:linear-gradient(135deg,#dcfce7,#f0fdf4)}
+.lesson:nth-of-type(5){background:linear-gradient(135deg,#fef3c7,#fffbeb)}
+.lesson:nth-of-type(6){background:linear-gradient(135deg,#ede9fe,#f5f3ff)}
+.lesson:nth-of-type(7){background:linear-gradient(135deg,#cffafe,#ecfeff)}
+.lesson:nth-of-type(8){background:linear-gradient(135deg,#ffedd5,#fff7ed)}
+.lesson:nth-of-type(9){background:linear-gradient(135deg,#dbeafe,#eff6ff)}
+.lesson:nth-of-type(10){background:linear-gradient(135deg,#fce7f3,#fdf2f8)}
+.lesson:nth-of-type(11){background:linear-gradient(135deg,#d1fae5,#ecfdf5)}
+.lesson:nth-of-type(12){background:linear-gradient(135deg,#fef9c3,#fefce8)}
+.lesson:nth-of-type(13){background:linear-gradient(135deg,#e0e7ff,#eef2ff)}
+.lesson:nth-of-type(14){background:linear-gradient(135deg,#fae8ff,#fdf4ff)}
+.lesson:nth-of-type(15){background:linear-gradient(135deg,#ccfbf1,#f0fdfa)}
+.lesson:nth-of-type(16){background:linear-gradient(135deg,#ffedd5,#fff7ed)}
+.lesson:nth-of-type(17){background:linear-gradient(135deg,#dbeafe,#f0f9ff)}
+.lesson:nth-of-type(18){background:linear-gradient(135deg,#fce7f3,#fff1f2)}
+.lesson:nth-of-type(19){background:linear-gradient(135deg,#dcfce7,#f0fdf4)}
+.lesson:nth-of-type(20){background:linear-gradient(135deg,#fef3c7,#fff7ed)}
+.lesson:nth-of-type(21){background:linear-gradient(135deg,#ede9fe,#f5f3ff)}
 .lesson h2{
-color:#075985;border-bottom:2px solid #dbeafe;
+color:#075985;
+border-bottom:3px solid #93c5fd;
 padding-bottom:8px
 }
-.lesson h3{color:#b45309}
+.lesson h3{color:#9a3412}
 .picture{
-font-size:55px;text-align:center;background:#f0f9ff;
-border-radius:12px;padding:15px;margin:12px 0
+font-size:55px;text-align:center;
+background:linear-gradient(135deg,#dbeafe,#fef3c7,#fce7f3);
+border-radius:15px;padding:18px;margin:14px 0;
+border:2px solid white
 }
 .number-grid{
 display:grid;grid-template-columns:repeat(5,1fr);gap:9px
 }
 .number-card{
-background:#eff8ff;border:1px solid #bfdbfe;
-border-radius:9px;text-align:center;padding:10px
+background:linear-gradient(135deg,#ffffff,#dbeafe);
+border:2px solid #93c5fd;
+border-radius:12px;text-align:center;padding:10px;
+box-shadow:0 2px 5px #0001
 }
-.number-card b{display:block;font-size:28px;color:#075985}
+.number-card:nth-child(4n+2){background:linear-gradient(135deg,#fff,#fce7f3);border-color:#f9a8d4}
+.number-card:nth-child(4n+3){background:linear-gradient(135deg,#fff,#dcfce7);border-color:#86efac}
+.number-card:nth-child(4n+4){background:linear-gradient(135deg,#fff,#fef3c7);border-color:#fcd34d}
+.number-card b{
+display:block;font-size:28px;color:#075985
+}
 .number-card span{font-size:18px}
 .work-grid{
 display:grid;grid-template-columns:repeat(2,1fr);gap:10px
 }
 .work-card{
-background:#f8fafc;border:1px solid #dbeafe;
-border-radius:10px;padding:12px;text-align:center
+background:linear-gradient(135deg,#fff,#e0f2fe);
+border:2px solid #bfdbfe;
+border-radius:13px;padding:12px;text-align:center;
+box-shadow:0 2px 5px #0001
+}
+.work-card:nth-child(even){
+background:linear-gradient(135deg,#fff,#fce7f3);
+border-color:#f9a8d4
 }
 .big-number{font-size:38px;color:#075985;font-weight:bold}
 .shape-grid{
 display:grid;grid-template-columns:repeat(2,1fr);gap:12px
 }
 .shape-card{
-text-align:center;background:#f8fafc;
-padding:12px;border-radius:10px
+text-align:center;
+background:linear-gradient(135deg,#fff,#ede9fe);
+padding:12px;border-radius:13px;
+border:2px solid #c4b5fd
 }
 .shape{font-size:65px}
 .question{
-background:#fff7ed;border-radius:9px;padding:12px;margin:10px 0
+background:linear-gradient(135deg,#fff7ed,#ffedd5);
+border:2px solid #fdba74;
+border-radius:12px;padding:12px;margin:10px 0
 }
 .line{border-bottom:2px dotted #64748b;display:inline-block;min-width:80px}
+.urdu-text{font-family:Jameel,serif;direction:rtl;text-align:right;font-size:20px;line-height:2}
 .footer{
-background:#075985;color:white;text-align:center;
-padding:20px;border-radius:12px
+background:linear-gradient(135deg,#075985,#2563eb,#7c3aed);
+color:white;text-align:center;padding:22px;
+border-radius:15px;border:3px solid white
 }
 @media(max-width:500px){
 .book{padding:9px}
@@ -88,13 +157,28 @@ padding:20px;border-radius:12px
 .number-card{padding:6px}
 .number-card b{font-size:23px}
 .work-grid,.shape-grid{grid-template-columns:repeat(2,1fr)}
+.cover .big{font-size:65px}
 }
 @media print{
-body{background:white}
+@page{size:A4;margin:12mm}
+body{
+background:white!important;
+-webkit-print-color-adjust:exact;
+print-color-adjust:exact
+}
 .toolbar{display:none}
 .book{margin:0;padding:0}
-.cover,.lesson{box-shadow:none;border:1px solid #ddd}
-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover,.lesson{
+box-shadow:none;
+break-inside:avoid;
+border:1px solid #ddd;
+-webkit-print-color-adjust:exact;
+print-color-adjust:exact
+}
+header,.footer{
+-webkit-print-color-adjust:exact;
+print-color-adjust:exact
+}
 }
 </style>
 </head>
@@ -110,7 +194,7 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 </header>
 
 <div class="toolbar">
-<button onclick="window.print()">Print / Save PDF</button>
+<button onclick="window.print()">🖨️ Print / Save PDF</button>
 <button onclick="document.getElementById('counting').scrollIntoView()">Counting</button>
 <button onclick="document.getElementById('addition').scrollIntoView()">Addition</button>
 <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
@@ -205,12 +289,10 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <p class="urdu">Before کا مطلب ہے کسی نمبر سے پہلے آنے والا نمبر۔</p>
 <div class="question">___ , 3, 4 &nbsp;&nbsp; Answer: 2</div>
 <div class="question">___ , 6, 7 &nbsp;&nbsp; Answer: 5</div>
-
 <p><b>After:</b> The number that comes after another number.</p>
 <p class="urdu">After کا مطلب ہے کسی نمبر کے بعد آنے والا نمبر۔</p>
 <div class="question">4, ___ &nbsp;&nbsp; Answer: 5</div>
 <div class="question">8, ___ &nbsp;&nbsp; Answer: 9</div>
-
 <p><b>Between:</b> The number that comes between two numbers.</p>
 <p class="urdu">Between کا مطلب ہے دو نمبروں کے درمیان آنے والا نمبر۔</p>
 <div class="question">2, ___, 4 &nbsp;&nbsp; Answer: 3</div>
@@ -251,14 +333,8 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <p>More means a greater number. Less means a smaller number.</p>
 <p class="urdu">More کا مطلب زیادہ اور Less کا مطلب کم ہے۔</p>
 <div class="work-grid">
-<div class="work-card">
-<div style="font-size:30px">🍎🍎🍎🍎</div>
-<b>More</b><div class="urdu">زیادہ</div>
-</div>
-<div class="work-card">
-<div style="font-size:30px">🍎</div>
-<b>Less</b><div class="urdu">کم</div>
-</div>
+<div class="work-card"><div style="font-size:30px">🍎🍎🍎🍎</div><b>More</b><div class="urdu">زیادہ</div></div>
+<div class="work-card"><div style="font-size:30px">🍎</div><b>Less</b><div class="urdu">کم</div></div>
 </div>
 <div class="question">2 apples or 5 apples — Which is more?</div>
 <div class="question">1 ball or 4 balls — Which is less?</div>
@@ -269,30 +345,12 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <p>Learn the names of these shapes.</p>
 <p class="urdu">ان اشکال کے نام یاد کریں۔</p>
 <div class="shape-grid">
-<div class="shape-card">
-<div class="shape" style="color:#dc2626">●</div>
-<b>Circle</b><div class="urdu">دائرہ</div>
-</div>
-<div class="shape-card">
-<div class="shape" style="color:#2563eb">■</div>
-<b>Square</b><div class="urdu">مربع</div>
-</div>
-<div class="shape-card">
-<div class="shape" style="color:#16a34a">▲</div>
-<b>Triangle</b><div class="urdu">مثلث</div>
-</div>
-<div class="shape-card">
-<div class="shape" style="color:#9333ea">▭</div>
-<b>Rectangle</b><div class="urdu">مستطیل</div>
-</div>
-<div class="shape-card">
-<div class="shape">⭐</div>
-<b>Star</b><div class="urdu">ستارہ</div>
-</div>
-<div class="shape-card">
-<div class="shape">❤️</div>
-<b>Heart</b><div class="urdu">دل</div>
-</div>
+<div class="shape-card"><div class="shape" style="color:#dc2626">●</div><b>Circle</b><div class="urdu">دائرہ</div></div>
+<div class="shape-card"><div class="shape" style="color:#2563eb">■</div><b>Square</b><div class="urdu">مربع</div></div>
+<div class="shape-card"><div class="shape" style="color:#16a34a">▲</div><b>Triangle</b><div class="urdu">مثلث</div></div>
+<div class="shape-card"><div class="shape" style="color:#9333ea">▭</div><b>Rectangle</b><div class="urdu">مستطیل</div></div>
+<div class="shape-card"><div class="shape">⭐</div><b>Star</b><div class="urdu">ستارہ</div></div>
+<div class="shape-card"><div class="shape">❤️</div><b>Heart</b><div class="urdu">دل</div></div>
 </div>
 <h3>Find the shapes around you</h3>
 <p>Clock — Circle</p>
@@ -320,7 +378,6 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <h2>Chapter 12: Addition — جمع</h2>
 <p>Addition means putting numbers together. The sign of addition is +.</p>
 <p class="urdu">جمع کا مطلب ہے دو یا زیادہ چیزوں کو اکٹھا کرنا۔ جمع کی علامت + ہے۔</p>
-
 <div class="picture">🍎 + 🍎 = 🍎🍎</div>
 <p><b>Example 1:</b></p>
 <div class="question">1 + 1 = 2</div>
@@ -335,7 +392,6 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <div class="question">5 + 3 = 8</div>
 <div class="question">6 + 2 = 8</div>
 <div class="question">5 + 5 = 10</div>
-
 <h3>Picture Addition</h3>
 <div class="picture">🍌🍌 + 🍌 = 🍌🍌🍌</div>
 <p>2 + 1 = 3</p>
@@ -347,7 +403,6 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <h2>Chapter 13: Subtraction — تفریق</h2>
 <p>Subtraction means taking away. The sign of subtraction is −.</p>
 <p class="urdu">تفریق کا مطلب ہے کسی تعداد میں سے کچھ چیزیں نکال دینا۔ تفریق کی علامت − ہے۔</p>
-
 <div class="picture">🍎🍎🍎 − 🍎 = 🍎🍎</div>
 <div class="question">2 − 1 = 1</div>
 <div class="question">3 − 1 = 2</div>
@@ -360,7 +415,6 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <div class="question">8 − 3 = 5</div>
 <div class="question">9 − 4 = 5</div>
 <div class="question">10 − 5 = 5</div>
-
 <h3>Picture Subtraction</h3>
 <div class="picture">🍊🍊🍊🍊 − 🍊🍊 = 🍊🍊</div>
 <p>4 − 2 = 2</p>
@@ -401,7 +455,6 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 </div>
 <p>There are seven days in a week.</p>
 <p class="urdu">ایک ہفتے میں سات دن ہوتے ہیں۔</p>
-
 <h3>Months of the Year</h3>
 <div class="work-grid">
 <div class="work-card">January</div>
@@ -423,30 +476,25 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 
 <section class="lesson">
 <h2>Chapter 17: Practice Work — مشق</h2>
-
 <h3>A. Write numbers from 1 to 10</h3>
 <p>________________________________</p>
 <p>________________________________</p>
-
 <h3>B. Write the missing numbers</h3>
 <p>1, 2, ___, 4, ___</p>
 <p>6, ___, 8, ___, 10</p>
 <p>11, ___, 13, ___, 15</p>
-
 <h3>C. Add the numbers</h3>
 <p>1 + 2 = ______</p>
 <p>2 + 2 = ______</p>
 <p>3 + 2 = ______</p>
 <p>4 + 1 = ______</p>
 <p>5 + 5 = ______</p>
-
 <h3>D. Subtract the numbers</h3>
 <p>3 − 1 = ______</p>
 <p>4 − 2 = ______</p>
 <p>5 − 1 = ______</p>
 <p>6 − 3 = ______</p>
 <p>10 − 5 = ______</p>
-
 <h3>E. Name the shapes</h3>
 <p>● __________</p>
 <p>■ __________</p>
@@ -456,36 +504,30 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 
 <section class="lesson">
 <h2>Chapter 18: Annual Revision Test — سالانہ امتحان</h2>
-
 <h3>Part A: Counting</h3>
 <p>Write counting from 1 to 20.</p>
 <p>________________________________</p>
 <p>________________________________</p>
-
 <h3>Part B: Number Names</h3>
 <p>1 = __________</p>
 <p>2 = __________</p>
 <p>3 = __________</p>
 <p>4 = __________</p>
 <p>5 = __________</p>
-
 <h3>Part C: Before and After</h3>
 <p>___, 5</p>
 <p>8, ___</p>
 <p>3, ___, 5</p>
-
 <h3>Part D: Addition</h3>
 <p>2 + 1 = ______</p>
 <p>3 + 3 = ______</p>
 <p>4 + 2 = ______</p>
 <p>5 + 5 = ______</p>
-
 <h3>Part E: Subtraction</h3>
 <p>3 − 1 = ______</p>
 <p>5 − 2 = ______</p>
 <p>8 − 4 = ______</p>
 <p>10 − 5 = ______</p>
-
 <h3>Part F: Shapes</h3>
 <p>Draw a Circle, Square and Triangle.</p>
 </section>
@@ -496,14 +538,12 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 <p>1, 2, 3, 4, 5</p>
 <p>6, 7, 8, 9, 10</p>
 <p>11, 12, 13, 14, 15</p>
-
 <h3>Addition Answers</h3>
 <p>1 + 2 = 3</p>
 <p>2 + 2 = 4</p>
 <p>3 + 2 = 5</p>
 <p>4 + 1 = 5</p>
 <p>5 + 5 = 10</p>
-
 <h3>Subtraction Answers</h3>
 <p>3 − 1 = 2</p>
 <p>4 − 2 = 2</p>
@@ -536,6 +576,7 @@ header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 
 <script>
 const urduDigits=["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
+
 const urduNames=[
 "صفر","ایک","دو","تین","چار","پانچ","چھ","سات","آٹھ","نو",
 "دس","گیارہ","بارہ","تیرہ","چودہ","پندرہ","سولہ","سترہ","اٹھارہ","انیس",
