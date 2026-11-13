@@ -1,1 +1,550 @@
 
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nursery Islamiat | The Risen High School</title>
+
+<style>
+@font-face{
+  font-family:Jameel;
+  src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#f0f5fb;
+  color:#263445;
+  font-family:Jameel,serif;
+  line-height:2;
+}
+header{
+  background:linear-gradient(120deg,#075985,#0e7490);
+  color:white;
+  text-align:center;
+  padding:25px 12px;
+}
+header h1{font-size:30px;margin:0}
+header h2{font-size:23px;margin:5px}
+header p{margin:3px}
+.toolbar{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:12px;
+  background:white;
+  position:sticky;
+  top:0;
+  z-index:5;
+}
+button{
+  background:#075985;
+  color:white;
+  border:0;
+  padding:9px 16px;
+  border-radius:8px;
+  font-size:16px;
+  font-family:inherit;
+  cursor:pointer;
+}
+.book{
+  max-width:900px;
+  margin:18px auto;
+  padding:20px;
+}
+.cover{
+  background:white;
+  border-radius:15px;
+  padding:30px 15px;
+  text-align:center;
+  box-shadow:0 3px 12px #0001;
+  margin-bottom:20px;
+}
+.cover .symbol{font-size:85px}
+.cover h2{font-size:32px;color:#075985}
+.lesson{
+  background:white;
+  border-radius:13px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 3px 12px #0001;
+  page-break-inside:avoid;
+}
+.lesson h2{
+  color:#075985;
+  border-bottom:2px solid #dbeafe;
+  padding-bottom:8px;
+  font-size:25px;
+}
+.picture{
+  text-align:center;
+  background:#eff8ff;
+  border-radius:12px;
+  padding:12px;
+  margin:12px 0;
+}
+.picture svg{width:180px;height:145px;max-width:100%}
+.picture .emoji{font-size:75px}
+.english{
+  direction:ltr;
+  text-align:left;
+  font-family:Arial,sans-serif;
+  background:#f0f9ff;
+  padding:12px;
+  border-radius:8px;
+  line-height:1.7;
+}
+.arabic{
+  font-size:27px;
+  text-align:center;
+  color:#087443;
+  direction:rtl;
+}
+.section-title{color:#b45309;font-size:21px}
+ul{padding-right:25px}
+.english ul{padding-left:25px}
+.question{
+  background:#fff8e7;
+  padding:10px;
+  border-radius:8px;
+  margin:8px 0;
+}
+.footer{
+  text-align:center;
+  background:#075985;
+  color:white;
+  padding:20px;
+  border-radius:12px;
+}
+@media print{
+  body{background:white}
+  .toolbar{display:none}
+  .book{margin:0;padding:0;max-width:none}
+  .lesson,.cover{box-shadow:none;border:1px solid #ddd}
+  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  button{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>The Risen High School</h1>
+  <h2>اسلامیات — نرسری</h2>
+  <p>Nursery Islamiat Book</p>
+  <p>مصنف: رانا محمد فیصل</p>
+  <p>Author: Rana Muhammad Faisal</p>
+</header>
+
+<div class="toolbar">
+  <button onclick="window.print()">پرنٹ / PDF</button>
+  <button onclick="document.getElementById('contents').scrollIntoView()">فہرستِ اسباق</button>
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">اوپر جائیں</button>
+</div>
+
+<main class="book">
+
+<section class="cover">
+  <div class="symbol">🕌</div>
+  <h2>میری اسلامیات کی کتاب</h2>
+  <h3>My Islamiat Book</h3>
+  <p>نرسری جماعت — سالانہ نصاب</p>
+  <p>Nursery Class — Annual Syllabus</p>
+  <p><strong>مصنف: رانا محمد فیصل</strong></p>
+  <p><strong>Author: Rana Muhammad Faisal</strong></p>
+  <p>بسم اللہ الرحمن الرحیم</p>
+</section>
+
+<section class="lesson" id="contents">
+<h2>فہرستِ اسباق — Contents</h2>
+<ol>
+<li>اللہ تعالیٰ ہمارے خالق ہیں</li>
+<li>ہمارا دین اسلام</li>
+<li>ہمارے پیارے نبی ﷺ</li>
+<li>قرآن مجید</li>
+<li>کلمہ طیبہ</li>
+<li>اسلام کے پانچ ارکان</li>
+<li>نماز</li>
+<li>وضو</li>
+<li>ہماری مسجد</li>
+<li>والدین کا احترام</li>
+<li>سلام کرنا</li>
+<li>بسم اللہ اور الحمدللہ</li>
+<li>کھانے پینے کے آداب</li>
+<li>اچھے اخلاق</li>
+<li>سونے اور جاگنے کے آداب</li>
+<li>صفائی کی اہمیت</li>
+<li>سچ بولنا</li>
+<li>دوسروں کی مدد کرنا</li>
+<li>شکر ادا کرنا</li>
+<li>سالانہ دہرائی</li>
+</ol>
+</section>
+
+<!-- Lesson 1 -->
+<section class="lesson">
+<h2>سبق 1: اللہ تعالیٰ ہمارے خالق ہیں</h2>
+<div class="picture"><div class="emoji">🌍☀️🌙🌳</div></div>
+<p>اللہ تعالیٰ ایک ہیں۔ اللہ تعالیٰ نے ہمیں پیدا کیا۔ اللہ تعالیٰ نے آسمان، زمین، سورج، چاند، ستارے، پہاڑ، دریا، درخت اور تمام جانور پیدا کیے ہیں۔ اللہ تعالیٰ ہمیں کھانا، پانی اور ہوا عطا فرماتے ہیں۔ ہمیں صرف اللہ تعالیٰ کی عبادت کرنی چاہیے اور ہر وقت ان کا شکر ادا کرنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Allah is One. Allah created us and everything around us. He created the sky, earth, sun, moon, stars, trees and animals. Allah gives us food, water and air. We should worship Allah and thank Him.</p>
+</div>
+<h3 class="section-title">یاد رکھنے کی باتیں</h3>
+<ul><li>اللہ تعالیٰ ایک ہیں۔</li><li>اللہ تعالیٰ ہمارے خالق ہیں۔</li><li>ہمیں اللہ تعالیٰ کا شکر ادا کرنا چاہیے۔</li></ul>
+<div class="question">سوال: ہمیں کس نے پیدا کیا؟<br>جواب: اللہ تعالیٰ نے۔</div>
+<div class="question">Question: Who created us?<br>Answer: Allah created us.</div>
+<p><strong>سرگرمی:</strong> اللہ تعالیٰ کی بنائی ہوئی چیزوں کے نام بتائیں۔</p>
+</section>
+
+<!-- Lesson 2 -->
+<section class="lesson">
+<h2>سبق 2: ہمارا دین اسلام</h2>
+<div class="picture"><div class="emoji">☪️🕌</div></div>
+<p>ہمارا دین اسلام ہے۔ اسلام ہمیں اچھے کام کرنے، سچ بولنے، بڑوں کا احترام کرنے، چھوٹوں سے پیار کرنے اور ضرورت مندوں کی مدد کرنے کا درس دیتا ہے۔ مسلمان اللہ تعالیٰ کو ایک مانتے ہیں اور حضرت محمد ﷺ کو اللہ تعالیٰ کا آخری نبی مانتے ہیں۔ ہمیں اسلام کی اچھی تعلیمات پر عمل کرنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Our religion is Islam. Islam teaches us to be kind, truthful and helpful. It teaches us to respect elders and love younger people. Muslims believe in Allah and Prophet Muhammad (peace be upon him).</p>
+</div>
+<ul><li>ہمارا دین اسلام ہے۔</li><li>اسلام ہمیں اچھے کام سکھاتا ہے۔</li><li>ہمیں سب کے ساتھ اچھا سلوک کرنا چاہیے۔</li></ul>
+<div class="question">سوال: ہمارا دین کون سا ہے؟<br>جواب: اسلام۔</div>
+<div class="question">Question: What is our religion?<br>Answer: Islam.</div>
+<p><strong>سرگرمی:</strong> اسلام کے بارے میں دو اچھی باتیں بتائیں۔</p>
+</section>
+
+<!-- Lesson 3 -->
+<section class="lesson">
+<h2>سبق 3: ہمارے پیارے نبی حضرت محمد ﷺ</h2>
+<div class="picture"><div class="emoji">🕌🌙</div></div>
+<p>ہمارے پیارے نبی حضرت محمد ﷺ ہیں۔ آپ ﷺ اللہ تعالیٰ کے آخری نبی ہیں۔ آپ ﷺ مکہ مکرمہ میں پیدا ہوئے۔ آپ ﷺ ہمیشہ سچ بولتے تھے۔ آپ ﷺ سب کے ساتھ محبت اور نرمی سے پیش آتے تھے۔ آپ ﷺ غریبوں، یتیموں اور ضرورت مندوں کی مدد فرماتے تھے۔ ہمیں آپ ﷺ کی اچھی تعلیمات پر عمل کرنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Our beloved Prophet is Prophet Muhammad (peace be upon him). He is the last Prophet of Allah. He was born in Makkah. He was truthful, kind and gentle. He taught people to help others and speak the truth.</p>
+</div>
+<ul><li>ہمارے نبی حضرت محمد ﷺ ہیں۔</li><li>آپ ﷺ آخری نبی ہیں۔</li><li>آپ ﷺ سچ بولتے تھے۔</li></ul>
+<div class="question">سوال: ہمارے نبی کون ہیں؟<br>جواب: حضرت محمد ﷺ۔</div>
+<div class="question">Question: Who is our Prophet?<br>Answer: Prophet Muhammad (peace be upon him).</div>
+</section>
+
+<!-- Lesson 4 -->
+<section class="lesson">
+<h2>سبق 4: قرآن مجید</h2>
+<div class="picture"><div class="emoji">📖✨</div></div>
+<p>قرآن مجید اللہ تعالیٰ کی آخری کتاب ہے۔ یہ ہمارے پیارے نبی حضرت محمد ﷺ پر نازل ہوئی۔ قرآن مجید ہمیں نیکی، سچائی، عبادت، انصاف اور اچھے اخلاق کا درس دیتا ہے۔ ہمیں قرآن مجید کا احترام کرنا چاہیے۔ اسے صاف جگہ پر رکھنا چاہیے اور ادب سے پڑھنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>The Holy Quran is the final Book of Allah. It was revealed to Prophet Muhammad (peace be upon him). It teaches us goodness, truth and good manners. We should respect the Holy Quran and read it with care.</p>
+</div>
+<div class="question">سوال: ہماری مقدس کتاب کون سی ہے؟<br>جواب: قرآن مجید۔</div>
+<div class="question">Question: What is our holy book?<br>Answer: The Holy Quran.</div>
+</section>
+
+<!-- Lesson 5 -->
+<section class="lesson">
+<h2>سبق 5: کلمہ طیبہ</h2>
+<div class="picture"><div class="emoji">☪️</div></div>
+<p>کلمہ طیبہ اسلام کا بنیادی کلمہ ہے۔ اس میں ہم اللہ تعالیٰ کی وحدانیت اور حضرت محمد ﷺ کی رسالت کا اقرار کرتے ہیں۔ ہمیں کلمہ طیبہ درست تلفظ کے ساتھ یاد کرنا چاہیے۔</p>
+<div class="arabic">لَا إِلٰهَ إِلَّا اللّٰهُ مُحَمَّدٌ رَّسُولُ اللّٰهِ</div>
+<p><strong>ترجمہ:</strong> اللہ کے سوا کوئی عبادت کے لائق نہیں، حضرت محمد ﷺ اللہ کے رسول ہیں۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>The First Kalimah teaches us that there is no one worthy of worship except Allah and Muhammad (peace be upon him) is the Messenger of Allah.</p>
+</div>
+<div class="question">سوال: کلمہ طیبہ میں کس بات کا اقرار کیا جاتا ہے؟<br>جواب: اللہ کی وحدانیت اور رسول اللہ ﷺ کی رسالت کا۔</div>
+</section>
+
+<!-- Lesson 6 -->
+<section class="lesson">
+<h2>سبق 6: اسلام کے پانچ ارکان</h2>
+<div class="picture"><div class="emoji">☪️🕌🤲</div></div>
+<p>اسلام کے پانچ ارکان ہیں۔ یہ مسلمان کی زندگی میں بہت اہم ہیں۔ ان میں کلمہ شہادت، نماز، زکوٰۃ، روزہ اور حج شامل ہیں۔ ہمیں اپنے بڑوں سے ان ارکان کے بارے میں سیکھنا چاہیے۔</p>
+<h3 class="section-title">پانچ ارکان</h3>
+<ol><li>کلمہ شہادت</li><li>نماز</li><li>زکوٰۃ</li><li>روزہ</li><li>حج</li></ol>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>The five pillars of Islam are Shahadah, Salah, Zakat, Sawm and Hajj. They are important parts of Muslim life.</p>
+</div>
+<div class="question">سوال: اسلام کے کتنے ارکان ہیں؟<br>جواب: پانچ۔</div>
+<div class="question">Question: How many pillars of Islam are there?<br>Answer: Five.</div>
+</section>
+
+<!-- Lesson 7 -->
+<section class="lesson">
+<h2>سبق 7: نماز</h2>
+<div class="picture"><div class="emoji">🕌🤲</div></div>
+<p>نماز اسلام کا اہم رکن ہے۔ مسلمان دن اور رات میں پانچ وقت نماز ادا کرتے ہیں۔ نماز ہمیں اللہ تعالیٰ کی یاد دلاتی ہے۔ نماز سے نظم و ضبط، پاکیزگی اور اچھے اخلاق کی تربیت ملتی ہے۔ ہمیں اپنے والدین کے ساتھ نماز سیکھنی چاہیے۔</p>
+<h3 class="section-title">پانچ نمازوں کے نام</h3>
+<ul><li>فجر</li><li>ظہر</li><li>عصر</li><li>مغرب</li><li>عشاء</li></ul>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Salah is an important pillar of Islam. Muslims pray five times a day: Fajr, Zuhr, Asr, Maghrib and Isha. Prayer helps us remember Allah.</p>
+</div>
+<div class="question">سوال: مسلمان دن میں کتنی نمازیں پڑھتے ہیں؟<br>جواب: پانچ۔</div>
+</section>
+
+<!-- Lesson 8 -->
+<section class="lesson">
+<h2>سبق 8: وضو</h2>
+<div class="picture"><div class="emoji">🚰💧</div></div>
+<p>وضو نماز سے پہلے پاکیزگی حاصل کرنے کا ایک طریقہ ہے۔ وضو میں ہم ہاتھ، منہ، ناک، چہرہ، بازو اور پاؤں دھوتے ہیں اور سر کا مسح کرتے ہیں۔ وضو ہمیں صفائی اور پاکیزگی کی اہمیت سکھاتا ہے۔ ہمیں وضو درست طریقے سے سیکھنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Wudu is a way of purification before prayer. We wash our hands, mouth, nose, face, arms and feet, and wipe our head. Wudu teaches us cleanliness.</p>
+</div>
+<div class="question">سوال: نماز سے پہلے کیا کرتے ہیں؟<br>جواب: وضو کرتے ہیں۔</div>
+</section>
+
+<!-- Lesson 9 -->
+<section class="lesson">
+<h2>سبق 9: ہماری مسجد</h2>
+<div class="picture"><div class="emoji">🕌</div></div>
+<p>مسجد اللہ تعالیٰ کی عبادت کی جگہ ہے۔ مسلمان مسجد میں نماز ادا کرتے ہیں۔ مسجد میں خاموشی اور ادب سے رہنا چاہیے۔ مسجد کو صاف رکھنا چاہیے۔ ہمیں مسجد میں کھیلنا، شور کرنا یا دوسروں کو پریشان نہیں کرنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>A mosque is a place where Muslims worship Allah. Muslims offer prayers in the mosque. We should keep the mosque clean and behave respectfully.</p>
+</div>
+<div class="question">سوال: مسجد کس کام کے لیے ہوتی ہے؟<br>جواب: اللہ تعالیٰ کی عبادت کے لیے۔</div>
+</section>
+
+<!-- Lesson 10 -->
+<section class="lesson">
+<h2>سبق 10: والدین کا احترام</h2>
+<div class="picture"><div class="emoji">👨‍👩‍👧‍👦❤️</div></div>
+<p>ہمارے والدین ہم سے بہت محبت کرتے ہیں۔ وہ ہماری پرورش کرتے ہیں، ہماری ضروریات پوری کرتے ہیں اور ہمیں اچھی باتیں سکھاتے ہیں۔ ہمیں والدین کی عزت کرنی چاہیے، ان کی بات ادب سے سننی چاہیے اور ان کے کاموں میں مدد کرنی چاہیے۔ والدین سے اونچی آواز میں بات نہیں کرنی چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Our parents love and care for us. They teach us good things and look after us. We should respect our parents, speak politely and help them.</p>
+</div>
+<div class="question">سوال: ہمیں اپنے والدین کے ساتھ کیسا سلوک کرنا چاہیے؟<br>جواب: محبت اور احترام سے۔</div>
+</section>
+
+<!-- Lesson 11 -->
+<section class="lesson">
+<h2>سبق 11: سلام کرنا</h2>
+<div class="picture"><div class="emoji">🤝😊</div></div>
+<p>سلام کرنا ایک اچھی اسلامی عادت ہے۔ جب ہم کسی مسلمان سے ملتے ہیں تو کہتے ہیں: السلام علیکم۔ جواب میں کہا جاتا ہے: وعلیکم السلام۔ سلام سے محبت بڑھتی ہے اور آپس میں تعلق مضبوط ہوتا ہے۔ ہمیں دوسروں کو خوش دلی سے سلام کرنا چاہیے۔</p>
+<div class="arabic">السَّلَامُ عَلَيْكُمْ</div>
+<p>جواب: وَعَلَيْكُمُ السَّلَام</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Assalamu Alaikum is a greeting of peace. We should greet others politely. The reply is Wa Alaikum Assalam.</p>
+</div>
+<div class="question">سوال: مسلمان ملتے وقت کیا کہتے ہیں؟<br>جواب: السلام علیکم۔</div>
+</section>
+
+<!-- Lesson 12 -->
+<section class="lesson">
+<h2>سبق 12: بسم اللہ اور الحمدللہ</h2>
+<div class="picture"><div class="emoji">🤲🌸</div></div>
+<p>ہمیں ہر اچھا کام اللہ تعالیٰ کا نام لے کر شروع کرنا چاہیے۔ اس کے لیے ہم بسم اللہ الرحمن الرحیم پڑھتے ہیں۔ جب اللہ تعالیٰ ہمیں کوئی نعمت عطا فرمائیں تو ہمیں الحمدللہ کہنا چاہیے۔ یہ دونوں الفاظ ہمیں اللہ تعالیٰ کو یاد رکھنے اور شکر ادا کرنے کی تعلیم دیتے ہیں۔</p>
+<div class="arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+<p>ترجمہ: اللہ کے نام سے شروع جو نہایت مہربان، بہت رحم فرمانے والا ہے۔</p>
+<div class="arabic">اَلْحَمْدُ لِلّٰهِ</div>
+<p>ترجمہ: تمام تعریفیں اللہ کے لیے ہیں۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>We say Bismillah before starting a good activity. We say Alhamdulillah to thank Allah for His blessings.</p>
+</div>
+<div class="question">سوال: کام شروع کرتے وقت کیا پڑھتے ہیں؟<br>جواب: بسم اللہ الرحمن الرحیم۔</div>
+</section>
+
+<!-- Lesson 13 -->
+<section class="lesson">
+<h2>سبق 13: کھانے پینے کے آداب</h2>
+<div class="picture"><div class="emoji">🍎🥛🍽️</div></div>
+<p>اسلام ہمیں کھانے پینے کے اچھے آداب سکھاتا ہے۔ کھانا شروع کرنے سے پہلے بسم اللہ پڑھنی چاہیے۔ دائیں ہاتھ سے کھانا چاہیے۔ اپنے سامنے سے کھانا چاہیے۔ کھانے میں عیب نہیں نکالنا چاہیے۔ کھانے کے بعد الحمدللہ کہنا چاہیے۔ پانی بیٹھ کر اور آرام سے پینا اچھی عادت ہے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Islam teaches us good eating manners. We should say Bismillah before eating, use our right hand and eat from what is in front of us. We should thank Allah after eating.</p>
+</div>
+<ul><li>کھانے سے پہلے بسم اللہ پڑھیں۔</li><li>دائیں ہاتھ سے کھائیں۔</li><li>کھانے کے بعد الحمدللہ کہیں۔</li></ul>
+<div class="question">سوال: کھانے سے پہلے کیا پڑھتے ہیں؟<br>جواب: بسم اللہ۔</div>
+</section>
+
+<!-- Lesson 14 -->
+<section class="lesson">
+<h2>سبق 14: اچھے اخلاق</h2>
+<div class="picture"><div class="emoji">😊🌷🤝</div></div>
+<p>اچھے اخلاق کا مطلب ہے دوسروں کے ساتھ اچھا برتاؤ کرنا۔ ہمیں بڑوں کا احترام، چھوٹوں سے شفقت، دوستوں سے محبت اور ضرورت مندوں کی مدد کرنی چاہیے۔ ہمیں جھوٹ، لڑائی، گالی اور بدتمیزی سے بچنا چاہیے۔ اچھے اخلاق سے سب لوگ ہم سے خوش رہتے ہیں۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Good manners mean treating others kindly. We should respect elders, care for younger people, help others and speak politely. We should avoid lying and fighting.</p>
+</div>
+<div class="question">سوال: ہمیں دوسروں سے کیسے بات کرنی چاہیے؟<br>جواب: نرمی اور ادب سے۔</div>
+</section>
+
+<!-- Lesson 15 -->
+<section class="lesson">
+<h2>سبق 15: سونے اور جاگنے کے آداب</h2>
+<div class="picture"><div class="emoji">🌙🛏️☀️</div></div>
+<p>ہمیں سونے سے پہلے اپنے کام مکمل کرنے چاہئیں، دانت صاف کرنے چاہئیں اور اپنے بستر کو صاف رکھنا چاہیے۔ سونے سے پہلے اللہ تعالیٰ کو یاد کرنا چاہیے۔ صبح اٹھ کر اللہ تعالیٰ کا شکر ادا کرنا چاہیے، اپنے بستر کو درست کرنا چاہیے اور دن کا آغاز اچھے کاموں سے کرنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Before sleeping, we should prepare for bed and keep ourselves clean. When we wake up, we should thank Allah and start our day with good activities.</p>
+</div>
+<div class="question">سوال: صبح جاگ کر ہمیں کس کا شکر ادا کرنا چاہیے؟<br>جواب: اللہ تعالیٰ کا۔</div>
+</section>
+
+<!-- Lesson 16 -->
+<section class="lesson">
+<h2>سبق 16: صفائی کی اہمیت</h2>
+<div class="picture"><div class="emoji">🧼🪥🚿</div></div>
+<p>صفائی اچھی عادت ہے۔ ہمیں اپنے جسم، کپڑوں، گھر، کلاس اور اردگرد کی جگہ کو صاف رکھنا چاہیے۔ کھانے سے پہلے اور بعد میں ہاتھ دھونے چاہئیں۔ روزانہ دانت صاف کرنے چاہئیں۔ کوڑا ہمیشہ کوڑے دان میں ڈالنا چاہیے۔ صاف ستھرا رہنے سے ہم صحت مند رہتے ہیں۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Cleanliness is a good habit. We should keep our body, clothes, home and school clean. We should wash our hands, brush our teeth and put rubbish in the dustbin.</p>
+</div>
+<div class="question">سوال: کوڑا کہاں ڈالنا چاہیے؟<br>جواب: کوڑے دان میں۔</div>
+</section>
+
+<!-- Lesson 17 -->
+<section class="lesson">
+<h2>سبق 17: سچ بولنا</h2>
+<div class="picture"><div class="emoji">🗣️💚</div></div>
+<p>سچ بولنا بہت اچھی عادت ہے۔ ہمیں ہر حال میں سچ بولنا چاہیے۔ جھوٹ بولنے سے دوسروں کا اعتماد ختم ہو جاتا ہے۔ سچ بولنے والا شخص قابلِ اعتماد ہوتا ہے۔ اگر ہم سے کوئی غلطی ہو جائے تو ہمیں اسے تسلیم کرنا چاہیے اور آئندہ درست کام کرنے کی کوشش کرنی چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Speaking the truth is a good habit. We should always be honest. People trust those who tell the truth. If we make a mistake, we should accept it and try to do better.</p>
+</div>
+<div class="question">سوال: ہمیں کیا بولنا چاہیے؟<br>جواب: سچ۔</div>
+</section>
+
+<!-- Lesson 18 -->
+<section class="lesson">
+<h2>سبق 18: دوسروں کی مدد کرنا</h2>
+<div class="picture"><div class="emoji">🤝❤️</div></div>
+<p>دوسروں کی مدد کرنا نیکی کا کام ہے۔ ہمیں اپنے والدین، اساتذہ، دوستوں اور ضرورت مند لوگوں کی مدد کرنی چاہیے۔ اگر کوئی بچہ اپنا کام نہ کر سکے تو اس کی مدد کریں۔ کسی کو تکلیف نہ دیں اور سب کے ساتھ محبت سے پیش آئیں۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Helping others is a good deed. We should help our parents, teachers, friends and people in need. We should be kind and caring.</p>
+</div>
+<div class="question">سوال: کیا دوسروں کی مدد کرنا اچھی بات ہے؟<br>جواب: جی ہاں۔</div>
+</section>
+
+<!-- Lesson 19 -->
+<section class="lesson">
+<h2>سبق 19: شکر ادا کرنا</h2>
+<div class="picture"><div class="emoji">🤲🌼</div></div>
+<p>اللہ تعالیٰ نے ہمیں بہت سی نعمتیں عطا کی ہیں۔ ہمیں آنکھیں، کان، ہاتھ، پاؤں، والدین، گھر، کھانا اور پانی دیا ہے۔ ہمیں ہر نعمت پر اللہ تعالیٰ کا شکر ادا کرنا چاہیے۔ جب ہمیں کوئی اچھی چیز ملے تو الحمدللہ کہنا چاہیے۔ دوسروں کی نعمتوں کو دیکھ کر حسد نہیں کرنا چاہیے۔</p>
+<h3 class="section-title">English Explanation</h3>
+<div class="english">
+<p>Allah has given us many blessings, such as our eyes, ears, family, food and water. We should thank Allah for all His blessings and say Alhamdulillah.</p>
+</div>
+<div class="question">سوال: نعمت ملنے پر کیا کہنا چاہیے؟<br>جواب: الحمدللہ۔</div>
+</section>
+
+<!-- Revision -->
+<section class="lesson">
+<h2>سبق 20: سالانہ دہرائی</h2>
+<h3 class="section-title">مختصر سوالات</h3>
+<div class="question">1۔ ہمارا دین کون سا ہے؟<br>جواب: اسلام۔</div>
+<div class="question">2۔ ہمارے نبی کون ہیں؟<br>جواب: حضرت محمد ﷺ۔</div>
+<div class="question">3۔ ہماری مقدس کتاب کون سی ہے؟<br>جواب: قرآن مجید۔</div>
+<div class="question">4۔ اسلام کے کتنے ارکان ہیں؟<br>جواب: پانچ۔</div>
+<div class="question">5۔ مسلمان دن میں کتنی نمازیں پڑھتے ہیں؟<br>جواب: پانچ۔</div>
+<div class="question">6۔ نماز سے پہلے کیا کرتے ہیں؟<br>جواب: وضو۔</div>
+<div class="question">7۔ کھانا شروع کرنے سے پہلے کیا پڑھتے ہیں؟<br>جواب: بسم اللہ۔</div>
+<div class="question">8۔ نعمت ملنے پر کیا کہتے ہیں؟<br>جواب: الحمدللہ۔</div>
+<div class="question">9۔ مسجد کس کام کی جگہ ہے؟<br>جواب: عبادت کی۔</div>
+<div class="question">10۔ ہمیں ہمیشہ کیا بولنا چاہیے؟<br>جواب: سچ۔</div>
+</section>
+
+<section class="lesson">
+<h2>کثیر الانتخابی سوالات — MCQs</h2>
+
+<p>1۔ ہمارا دین کون سا ہے؟</p>
+<label><input type="radio" name="q1"> اسلام</label><br>
+<label><input type="radio" name="q1"> عیسائیت</label><br>
+<label><input type="radio" name="q1"> ہندو مت</label>
+
+<p>2۔ ہمارے نبی کون ہیں؟</p>
+<label><input type="radio" name="q2"> حضرت موسیٰ علیہ السلام</label><br>
+<label><input type="radio" name="q2"> حضرت محمد ﷺ</label><br>
+<label><input type="radio" name="q2"> حضرت عیسیٰ علیہ السلام</label>
+
+<p>3۔ ہماری مقدس کتاب کون سی ہے؟</p>
+<label><input type="radio" name="q3"> قرآن مجید</label><br>
+<label><input type="radio" name="q3"> اخبار</label><br>
+<label><input type="radio" name="q3"> کہانی کی کتاب</label>
+
+<p>4۔ اسلام کے کتنے ارکان ہیں؟</p>
+<label><input type="radio" name="q4"> تین</label><br>
+<label><input type="radio" name="q4"> پانچ</label><br>
+<label><input type="radio" name="q4"> سات</label>
+
+<p>5۔ نماز سے پہلے کیا کرتے ہیں؟</p>
+<label><input type="radio" name="q5"> کھیل</label><br>
+<label><input type="radio" name="q5"> وضو</label><br>
+<label><input type="radio" name="q5"> کھانا</label>
+
+<p>6۔ کھانے سے پہلے کیا پڑھتے ہیں؟</p>
+<label><input type="radio" name="q6"> بسم اللہ</label><br>
+<label><input type="radio" name="q6"> شب بخیر</label><br>
+<label><input type="radio" name="q6"> خدا حافظ</label>
+
+<p>7۔ نعمت ملنے پر کیا کہتے ہیں؟</p>
+<label><input type="radio" name="q7"> الحمدللہ</label><br>
+<label><input type="radio" name="q7"> معاف کیجیے</label><br>
+<label><input type="radio" name="q7"> خدا حافظ</label>
+
+<p>8۔ ہمیں کیا بولنا چاہیے؟</p>
+<label><input type="radio" name="q8"> جھوٹ</label><br>
+<label><input type="radio" name="q8"> سچ</label><br>
+<label><input type="radio" name="q8"> بری بات</label>
+
+</section>
+
+<section class="lesson">
+<h2>اساتذہ کے لیے جوابی کلید — Answer Key</h2>
+<ol>
+<li>اسلام</li>
+<li>حضرت محمد ﷺ</li>
+<li>قرآن مجید</li>
+<li>پانچ</li>
+<li>وضو</li>
+<li>بسم اللہ</li>
+<li>الحمدللہ</li>
+<li>سچ</li>
+</ol>
+</section>
+
+<section class="lesson">
+<h2>زبانی امتحان — Oral Test</h2>
+<ol>
+<li>اپنا دین بتائیں۔</li>
+<li>اپنے نبی کا نام بتائیں۔</li>
+<li>اپنی مقدس کتاب کا نام بتائیں۔</li>
+<li>کلمہ طیبہ سنائیں۔</li>
+<li>پانچ نمازوں کے نام بتائیں۔</li>
+<li>کھانے سے پہلے کیا پڑھتے ہیں؟</li>
+<li>سلام کا جواب کیا ہے؟</li>
+<li>والدین کے ساتھ کیسا سلوک کرنا چاہیے؟</li>
+</ol>
+</section>
+
+<section class="lesson">
+<h2>گھر کا کام — Homework</h2>
+<ul>
+<li>کلمہ طیبہ یاد کریں۔</li>
+<li>پانچ نمازوں کے نام یاد کریں۔</li>
+<li>بسم اللہ اور الحمدللہ یاد کریں۔</li>
+<li>والدین کا احترام کریں۔</li>
+<li>روزانہ ایک اچھا کام کریں۔</li>
+<li>استاد کے سامنے سبق دہرائیں۔</li>
+</ul>
+</section>
+
+<div class="footer">
+<h2>The Risen High School</h2>
+<p>مصنف: رانا محمد فیصل</p>
+<p>Author: Rana Muhammad Faisal</p>
+<p>علم حاصل کرنا ہماری ذمہ داری ہے</p>
+</div>
+
+</main>
+</body>
+</html>
+
