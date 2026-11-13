@@ -1,1 +1,578 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nursery English Book | The Risen High School</title>
+
+<style>
+@font-face{
+font-family:Jameel;
+src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
+}
+*{box-sizing:border-box}
+body{
+margin:0;background:#f1f5f9;color:#263445;
+font-family:Arial,sans-serif;line-height:1.7
+}
+.urdu{font-family:Jameel,serif;direction:rtl}
+header{
+background:linear-gradient(120deg,#075985,#0e7490);
+color:white;text-align:center;padding:25px 12px
+}
+header h1{margin:0;font-size:28px}
+header h2{margin:5px;font-size:24px}
+.toolbar{
+position:sticky;top:0;background:white;padding:10px;
+display:flex;justify-content:center;gap:8px;flex-wrap:wrap;z-index:5
+}
+button{
+background:#075985;color:white;border:0;border-radius:8px;
+padding:10px 16px;font-size:15px;cursor:pointer
+}
+.book{max-width:950px;margin:20px auto;padding:15px}
+.cover,.lesson{
+background:white;border-radius:14px;padding:22px;
+margin-bottom:20px;box-shadow:0 3px 12px #0001
+}
+.cover{text-align:center;padding:35px 15px}
+.cover .big{font-size:90px}
+.cover h2{color:#075985;font-size:34px}
+.lesson h2{
+color:#075985;border-bottom:2px solid #dbeafe;
+padding-bottom:8px
+}
+.alphabet-grid{
+display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px
+}
+.letter-card{
+border:1px solid #dbeafe;border-radius:12px;padding:12px;
+text-align:center;background:#f8fbff;page-break-inside:avoid
+}
+.letter{
+font-size:45px;font-weight:bold;color:#075985;line-height:1.2
+}
+.pic{font-size:65px;margin:5px}
+.word{font-size:22px;font-weight:bold;color:#b45309}
+.urdu-word{font-family:Jameel,serif;font-size:23px;direction:rtl}
+.example{font-size:14px;color:#475569}
+.count-grid{
+display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px
+}
+.count{
+background:#f0f9ff;border:1px solid #dbeafe;
+border-radius:8px;text-align:center;padding:8px
+}
+.count b{display:block;font-size:22px;color:#075985}
+.count .urdu{font-size:18px}
+.section-note{
+background:#fff7ed;padding:12px;border-radius:9px;margin:10px 0
+}
+.word-list{
+display:grid;grid-template-columns:repeat(2,1fr);gap:10px
+}
+.word-item{
+background:#f8fafc;border-radius:8px;padding:10px
+}
+.footer{
+background:#075985;color:white;text-align:center;
+padding:20px;border-radius:12px
+}
+@media(max-width:500px){
+.book{padding:9px}
+.alphabet-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.letter-card{padding:8px}
+.pic{font-size:48px}
+.count-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media print{
+body{background:white}
+.toolbar{display:none}
+.book{margin:0;padding:0}
+.cover,.lesson{box-shadow:none;border:1px solid #ddd}
+header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>The Risen High School</h1>
+<h2>Nursery English Book</h2>
+<p>English Alphabet, Vocabulary, Counting & Basic Grammar</p>
+<p class="urdu">مصنف: رانا محمد فیصل</p>
+<p>Author: Rana Muhammad Faisal</p>
+</header>
+
+<div class="toolbar">
+<button onclick="window.print()">Print / Save PDF</button>
+<button onclick="document.getElementById('alphabet').scrollIntoView()">A to Z</button>
+<button onclick="document.getElementById('counting').scrollIntoView()">Counting</button>
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
+</div>
+
+<main class="book">
+
+<section class="cover">
+<div class="big">📚🔤🍎</div>
+<h2>My First English Book</h2>
+<h3>میری پہلی انگریزی کتاب</h3>
+<p>Nursery Class — Complete Annual Course</p>
+<p>نرسری جماعت — مکمل سالانہ نصاب</p>
+<p><b>Written by: Rana Muhammad Faisal</b></p>
+<p class="urdu">مصنف: رانا محمد فیصل</p>
+<p>Learn • Read • Write • Speak</p>
+</section>
+
+<section class="lesson">
+<h2>Contents — فہرست</h2>
+<ol>
+<li>English Alphabet A to Z</li>
+<li>Capital and Small Letters</li>
+<li>Counting 1 to 100</li>
+<li>English and Urdu Numbers</li>
+<li>Colours</li>
+<li>Names of Fruits</li>
+<li>Names of Animals</li>
+<li>Names of Birds</li>
+<li>Parts of the Body</li>
+<li>Names of Vegetables</li>
+<li>Family Members</li>
+<li>My School</li>
+<li>My Classroom</li>
+<li>Days of the Week</li>
+<li>Months of the Year</li>
+<li>Basic English Words</li>
+<li>Opposite Words</li>
+<li>Simple Sentences</li>
+<li>English Grammar</li>
+<li>Revision and Test</li>
+</ol>
+</section>
+
+<section class="lesson" id="alphabet">
+<h2>Chapter 1: English Alphabet A to Z</h2>
+<p>There are 26 letters in the English alphabet. Each letter has a capital form and a small form. Learn the letters, their sounds and the words that begin with them.</p>
+<p class="urdu">انگریزی حروفِ تہجی میں 26 حروف ہوتے ہیں۔ ہر حرف کی بڑی اور چھوٹی شکل ہوتی ہے۔ حروف کو پہچانیں اور ان سے بننے والے الفاظ یاد کریں۔</p>
+
+<div class="alphabet-grid" id="letters"></div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 2: Capital and Small Letters</h2>
+<p>Learn to recognize capital and small letters.</p>
+<div class="section-note">
+<b>A a</b> &nbsp; <b>B b</b> &nbsp; <b>C c</b> &nbsp; <b>D d</b> &nbsp;
+<b>E e</b> &nbsp; <b>F f</b> &nbsp; <b>G g</b> &nbsp; <b>H h</b> &nbsp;
+<b>I i</b> &nbsp; <b>J j</b> &nbsp; <b>K k</b> &nbsp; <b>L l</b> &nbsp;
+<b>M m</b> &nbsp; <b>N n</b> &nbsp; <b>O o</b> &nbsp; <b>P p</b> &nbsp;
+<b>Q q</b> &nbsp; <b>R r</b> &nbsp; <b>S s</b> &nbsp; <b>T t</b> &nbsp;
+<b>U u</b> &nbsp; <b>V v</b> &nbsp; <b>W w</b> &nbsp; <b>X x</b> &nbsp;
+<b>Y y</b> &nbsp; <b>Z z</b>
+</div>
+<p class="urdu">بڑے حروف کو Capital Letters اور چھوٹے حروف کو Small Letters کہتے ہیں۔</p>
+</section>
+
+<section class="lesson" id="counting">
+<h2>Chapter 3: Counting 1 to 100</h2>
+<p>Learn to count from one to one hundred. Read the English number, Urdu digit and Urdu number name.</p>
+<p class="urdu">ایک سے سو تک گنتی یاد کریں۔ ہر نمبر کے ساتھ انگریزی ہندسہ، اردو ہندسہ اور اردو نام دیا گیا ہے۔</p>
+<div class="count-grid" id="numbers"></div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 4: Colours — رنگوں کے نام</h2>
+<div class="word-list">
+<div class="word-item">🔴 <b>Red</b><br><span class="urdu">لال</span></div>
+<div class="word-item">🔵 <b>Blue</b><br><span class="urdu">نیلا</span></div>
+<div class="word-item">🟢 <b>Green</b><br><span class="urdu">سبز</span></div>
+<div class="word-item">🟡 <b>Yellow</b><br><span class="urdu">پیلا</span></div>
+<div class="word-item">⚫ <b>Black</b><br><span class="urdu">کالا</span></div>
+<div class="word-item">⚪ <b>White</b><br><span class="urdu">سفید</span></div>
+<div class="word-item">🟠 <b>Orange</b><br><span class="urdu">نارنجی</span></div>
+<div class="word-item">🟣 <b>Purple</b><br><span class="urdu">جامنی</span></div>
+<div class="word-item">🟤 <b>Brown</b><br><span class="urdu">بھورا</span></div>
+<div class="word-item">🩷 <b>Pink</b><br><span class="urdu">گلابی</span></div>
+</div>
+<p><b>Activity:</b> Name the colour of your pencil, bag and book.</p>
+<p class="urdu">سرگرمی: اپنی پنسل، بستے اور کتاب کا رنگ بتائیں۔</p>
+</section>
+
+<section class="lesson">
+<h2>Chapter 5: Fruits — پھلوں کے نام</h2>
+<div class="word-list">
+<div class="word-item">🍎 <b>Apple</b><br><span class="urdu">سیب</span></div>
+<div class="word-item">🍌 <b>Banana</b><br><span class="urdu">کیلا</span></div>
+<div class="word-item">🍊 <b>Orange</b><br><span class="urdu">مالٹا</span></div>
+<div class="word-item">🥭 <b>Mango</b><br><span class="urdu">آم</span></div>
+<div class="word-item">🍇 <b>Grapes</b><br><span class="urdu">انگور</span></div>
+<div class="word-item">🍉 <b>Watermelon</b><br><span class="urdu">تربوز</span></div>
+<div class="word-item">🍓 <b>Strawberry</b><br><span class="urdu">اسٹرابیری</span></div>
+<div class="word-item">🍍 <b>Pineapple</b><br><span class="urdu">انناس</span></div>
+<div class="word-item">🍐 <b>Pear</b><br><span class="urdu">ناشپاتی</span></div>
+<div class="word-item">🍑 <b>Peach</b><br><span class="urdu">آڑو</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 6: Animals — جانوروں کے نام</h2>
+<div class="word-list">
+<div class="word-item">🦁 <b>Lion</b><br><span class="urdu">شیر</span></div>
+<div class="word-item">🐘 <b>Elephant</b><br><span class="urdu">ہاتھی</span></div>
+<div class="word-item">🐱 <b>Cat</b><br><span class="urdu">بلی</span></div>
+<div class="word-item">🐶 <b>Dog</b><br><span class="urdu">کتا</span></div>
+<div class="word-item">🐄 <b>Cow</b><br><span class="urdu">گائے</span></div>
+<div class="word-item">🐐 <b>Goat</b><br><span class="urdu">بکری</span></div>
+<div class="word-item">🐴 <b>Horse</b><br><span class="urdu">گھوڑا</span></div>
+<div class="word-item">🐒 <b>Monkey</b><br><span class="urdu">بندر</span></div>
+<div class="word-item">🐻 <b>Bear</b><br><span class="urdu">ریچھ</span></div>
+<div class="word-item">🐰 <b>Rabbit</b><br><span class="urdu">خرگوش</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 7: Birds — پرندوں کے نام</h2>
+<div class="word-list">
+<div class="word-item">🦚 <b>Peacock</b><br><span class="urdu">مور</span></div>
+<div class="word-item">🦜 <b>Parrot</b><br><span class="urdu">طوطا</span></div>
+<div class="word-item">🐦 <b>Sparrow</b><br><span class="urdu">چڑیا</span></div>
+<div class="word-item">🕊️ <b>Pigeon</b><br><span class="urdu">کبوتر</span></div>
+<div class="word-item">🦆 <b>Duck</b><br><span class="urdu">بطخ</span></div>
+<div class="word-item">🦉 <b>Owl</b><br><span class="urdu">الو</span></div>
+<div class="word-item">🦅 <b>Eagle</b><br><span class="urdu">عقاب</span></div>
+<div class="word-item">🐓 <b>Rooster</b><br><span class="urdu">مرغا</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 8: Parts of the Body — جسم کے اعضا</h2>
+<div class="picture"><div style="font-size:90px">🧒</div></div>
+<div class="word-list">
+<div class="word-item"><b>Head</b><br><span class="urdu">سر</span></div>
+<div class="word-item"><b>Hair</b><br><span class="urdu">بال</span></div>
+<div class="word-item"><b>Eye</b><br><span class="urdu">آنکھ</span></div>
+<div class="word-item"><b>Ear</b><br><span class="urdu">کان</span></div>
+<div class="word-item"><b>Nose</b><br><span class="urdu">ناک</span></div>
+<div class="word-item"><b>Mouth</b><br><span class="urdu">منہ</span></div>
+<div class="word-item"><b>Hand</b><br><span class="urdu">ہاتھ</span></div>
+<div class="word-item"><b>Foot</b><br><span class="urdu">پاؤں</span></div>
+<div class="word-item"><b>Leg</b><br><span class="urdu">ٹانگ</span></div>
+<div class="word-item"><b>Arm</b><br><span class="urdu">بازو</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 9: Vegetables — سبزیوں کے نام</h2>
+<div class="word-list">
+<div class="word-item">🥔 <b>Potato</b><br><span class="urdu">آلو</span></div>
+<div class="word-item">🍅 <b>Tomato</b><br><span class="urdu">ٹماٹر</span></div>
+<div class="word-item">🥕 <b>Carrot</b><br><span class="urdu">گاجر</span></div>
+<div class="word-item">🧅 <b>Onion</b><br><span class="urdu">پیاز</span></div>
+<div class="word-item">🥒 <b>Cucumber</b><br><span class="urdu">کھیرا</span></div>
+<div class="word-item">🌽 <b>Corn</b><br><span class="urdu">مکئی</span></div>
+<div class="word-item">🌶️ <b>Chilli</b><br><span class="urdu">مرچ</span></div>
+<div class="word-item">🥬 <b>Cabbage</b><br><span class="urdu">بند گوبھی</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 10: Family Members — خاندان کے افراد</h2>
+<div class="picture"><div style="font-size:85px">👨‍👩‍👧‍👦</div></div>
+<div class="word-list">
+<div class="word-item"><b>Father</b><br><span class="urdu">والد</span></div>
+<div class="word-item"><b>Mother</b><br><span class="urdu">والدہ</span></div>
+<div class="word-item"><b>Brother</b><br><span class="urdu">بھائی</span></div>
+<div class="word-item"><b>Sister</b><br><span class="urdu">بہن</span></div>
+<div class="word-item"><b>Grandfather</b><br><span class="urdu">دادا / نانا</span></div>
+<div class="word-item"><b>Grandmother</b><br><span class="urdu">دادی / نانی</span></div>
+<div class="word-item"><b>Uncle</b><br><span class="urdu">چچا / ماموں</span></div>
+<div class="word-item"><b>Aunt</b><br><span class="urdu">پھوپھی / خالہ</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 11: My School — میرا اسکول</h2>
+<div class="picture"><div style="font-size:80px">🏫🎒</div></div>
+<p>My school is The Risen High School. My school is beautiful. I go to school every day. I learn English, Urdu and Mathematics. I respect my teachers. I love my school.</p>
+<p class="urdu">میرا اسکول دی رائزن ہائی اسکول ہے۔ میرا اسکول خوبصورت ہے۔ میں روزانہ اسکول جاتا ہوں۔ میں انگریزی، اردو اور ریاضی پڑھتا ہوں۔ میں اپنے اساتذہ کا احترام کرتا ہوں۔ مجھے اپنا اسکول بہت پسند ہے۔</p>
+</section>
+
+<section class="lesson">
+<h2>Chapter 12: My Classroom — میرا کلاس روم</h2>
+<div class="picture"><div style="font-size:80px">🪑📚🖍️</div></div>
+<p>This is my classroom. It is clean and beautiful. There are desks and chairs in my classroom. My teacher teaches us. I keep my classroom neat and clean.</p>
+<p class="urdu">یہ میرا کلاس روم ہے۔ یہ صاف اور خوبصورت ہے۔ میرے کلاس روم میں میزیں اور کرسیاں ہیں۔ ہمارے استاد ہمیں پڑھاتے ہیں۔ میں اپنے کلاس روم کو صاف رکھتا ہوں۔</p>
+</section>
+
+<section class="lesson">
+<h2>Chapter 13: Days of the Week — ہفتے کے دن</h2>
+<div class="word-list">
+<div class="word-item"><b>Monday</b><br><span class="urdu">پیر</span></div>
+<div class="word-item"><b>Tuesday</b><br><span class="urdu">منگل</span></div>
+<div class="word-item"><b>Wednesday</b><br><span class="urdu">بدھ</span></div>
+<div class="word-item"><b>Thursday</b><br><span class="urdu">جمعرات</span></div>
+<div class="word-item"><b>Friday</b><br><span class="urdu">جمعہ</span></div>
+<div class="word-item"><b>Saturday</b><br><span class="urdu">ہفتہ</span></div>
+<div class="word-item"><b>Sunday</b><br><span class="urdu">اتوار</span></div>
+</div>
+<p>There are seven days in a week.</p>
+<p class="urdu">ایک ہفتے میں سات دن ہوتے ہیں۔</p>
+</section>
+
+<section class="lesson">
+<h2>Chapter 14: Months of the Year — سال کے مہینے</h2>
+<div class="word-list">
+<div class="word-item"><b>January</b><br><span class="urdu">جنوری</span></div>
+<div class="word-item"><b>February</b><br><span class="urdu">فروری</span></div>
+<div class="word-item"><b>March</b><br><span class="urdu">مارچ</span></div>
+<div class="word-item"><b>April</b><br><span class="urdu">اپریل</span></div>
+<div class="word-item"><b>May</b><br><span class="urdu">مئی</span></div>
+<div class="word-item"><b>June</b><br><span class="urdu">جون</span></div>
+<div class="word-item"><b>July</b><br><span class="urdu">جولائی</span></div>
+<div class="word-item"><b>August</b><br><span class="urdu">اگست</span></div>
+<div class="word-item"><b>September</b><br><span class="urdu">ستمبر</span></div>
+<div class="word-item"><b>October</b><br><span class="urdu">اکتوبر</span></div>
+<div class="word-item"><b>November</b><br><span class="urdu">نومبر</span></div>
+<div class="word-item"><b>December</b><br><span class="urdu">دسمبر</span></div>
+</div>
+<p>There are twelve months in a year.</p>
+<p class="urdu">ایک سال میں بارہ مہینے ہوتے ہیں۔</p>
+</section>
+
+<section class="lesson">
+<h2>Chapter 15: Basic English Words — آسان الفاظ</h2>
+<div class="word-list">
+<div class="word-item">☀️ <b>Sun</b><br><span class="urdu">سورج</span></div>
+<div class="word-item">🌙 <b>Moon</b><br><span class="urdu">چاند</span></div>
+<div class="word-item">⭐ <b>Star</b><br><span class="urdu">ستارہ</span></div>
+<div class="word-item">🏠 <b>House</b><br><span class="urdu">گھر</span></div>
+<div class="word-item">📚 <b>Book</b><br><span class="urdu">کتاب</span></div>
+<div class="word-item">✏️ <b>Pencil</b><br><span class="urdu">پنسل</span></div>
+<div class="word-item">🖊️ <b>Pen</b><br><span class="urdu">قلم</span></div>
+<div class="word-item">🚗 <b>Car</b><br><span class="urdu">گاڑی</span></div>
+<div class="word-item">🌳 <b>Tree</b><br><span class="urdu">درخت</span></div>
+<div class="word-item">🌸 <b>Flower</b><br><span class="urdu">پھول</span></div>
+<div class="word-item">💧 <b>Water</b><br><span class="urdu">پانی</span></div>
+<div class="word-item">⚽ <b>Ball</b><br><span class="urdu">گیند</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 16: Opposite Words — متضاد الفاظ</h2>
+<div class="word-list">
+<div class="word-item"><b>Big — Small</b><br><span class="urdu">بڑا — چھوٹا</span></div>
+<div class="word-item"><b>Hot — Cold</b><br><span class="urdu">گرم — ٹھنڈا</span></div>
+<div class="word-item"><b>Up — Down</b><br><span class="urdu">اوپر — نیچے</span></div>
+<div class="word-item"><b>Day — Night</b><br><span class="urdu">دن — رات</span></div>
+<div class="word-item"><b>Happy — Sad</b><br><span class="urdu">خوش — اداس</span></div>
+<div class="word-item"><b>Open — Close</b><br><span class="urdu">کھولنا — بند کرنا</span></div>
+<div class="word-item"><b>Fast — Slow</b><br><span class="urdu">تیز — آہستہ</span></div>
+<div class="word-item"><b>Good — Bad</b><br><span class="urdu">اچھا — برا</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 17: Simple English Sentences — آسان جملے</h2>
+<div class="word-list">
+<div class="word-item"><b>My name is Ali.</b><br><span class="urdu">میرا نام علی ہے۔</span></div>
+<div class="word-item"><b>I am a student.</b><br><span class="urdu">میں ایک طالب علم ہوں۔</span></div>
+<div class="word-item"><b>This is a book.</b><br><span class="urdu">یہ ایک کتاب ہے۔</span></div>
+<div class="word-item"><b>This is my bag.</b><br><span class="urdu">یہ میرا بستہ ہے۔</span></div>
+<div class="word-item"><b>I love my school.</b><br><span class="urdu">مجھے اپنا اسکول پسند ہے۔</span></div>
+<div class="word-item"><b>I am happy.</b><br><span class="urdu">میں خوش ہوں۔</span></div>
+<div class="word-item"><b>It is a cat.</b><br><span class="urdu">یہ ایک بلی ہے۔</span></div>
+<div class="word-item"><b>The sun is hot.</b><br><span class="urdu">سورج گرم ہے۔</span></div>
+<div class="word-item"><b>I can read.</b><br><span class="urdu">میں پڑھ سکتا ہوں۔</span></div>
+<div class="word-item"><b>I can write.</b><br><span class="urdu">میں لکھ سکتا ہوں۔</span></div>
+</div>
+</section>
+
+<section class="lesson">
+<h2>Chapter 18: English Grammar — بنیادی گرامر</h2>
+<h3>Naming Words (Nouns)</h3>
+<p>A naming word is the name of a person, place, animal or thing.</p>
+<p class="urdu">کسی شخص، جگہ، جانور یا چیز کے نام کو Noun کہتے ہیں۔</p>
+<p>Examples: Ali, School, Cat, Book.</p>
+
+<h3>One and Many</h3>
+<div class="word-list">
+<div class="word-item">One Book — Many Books</div>
+<div class="word-item">One Cat — Many Cats</div>
+<div class="word-item">One Ball — Many Balls</div>
+<div class="word-item">One Apple — Many Apples</div>
+</div>
+
+<h3>Use of A and An</h3>
+<p>We use A before many words that begin with a consonant sound.</p>
+<p>We use An before words that begin with a vowel sound.</p>
+<div class="word-list">
+<div class="word-item">A Ball ⚽</div>
+<div class="word-item">A Cat 🐱</div>
+<div class="word-item">An Apple 🍎</div>
+<div class="word-item">An Egg 🥚</div>
+</div>
+<p class="urdu">A اور An دونوں کا مطلب ایک ہے۔ ان کا استعمال لفظ کی ابتدائی آواز کے مطابق ہوتا ہے۔</p>
+</section>
+
+<section class="lesson">
+<h2>Chapter 19: Practice Work — مشق</h2>
+<h3>Fill in the missing letters</h3>
+<p>1. A, B, __, D</p>
+<p>2. E, __, G, H</p>
+<p>3. I, J, __, L</p>
+<p>4. M, __, O, P</p>
+<p>5. Q, R, __, T</p>
+<p>6. U, __, W, X</p>
+<p>7. Y, __</p>
+
+<h3>Match the words</h3>
+<p>Apple — 🍎</p>
+<p>Ball — ⚽</p>
+<p>Cat — 🐱</p>
+<p>Dog — 🐶</p>
+<p>Sun — ☀️</p>
+
+<h3>Write the numbers</h3>
+<p>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p>
+</section>
+
+<section class="lesson">
+<h2>Chapter 20: Annual Revision Test — سالانہ امتحان</h2>
+<h3>Part A: Answer the questions</h3>
+<ol>
+<li>How many letters are there in the English alphabet?</li>
+<li>How many numbers are there from 1 to 100?</li>
+<li>What is the English word for سیب?</li>
+<li>What is the English word for پانی?</li>
+<li>How many days are there in a week?</li>
+<li>How many months are there in a year?</li>
+</ol>
+
+<h3>Part B: Write the missing letters</h3>
+<p>A, __, C, __, E</p>
+<p>F, __, H, __, J</p>
+<p>K, __, M, __, O</p>
+
+<h3>Part C: Translate into Urdu</h3>
+<p>1. This is a book.</p>
+<p>2. I love my school.</p>
+<p>3. The sun is hot.</p>
+<p>4. I am a student.</p>
+
+<h3>Part D: Write in English</h3>
+<p>1. سیب</p>
+<p>2. کتاب</p>
+<p>3. پانی</p>
+<p>4. سورج</p>
+</section>
+
+<section class="lesson">
+<h2>Answer Key — جوابی کلید</h2>
+<p><b>Missing Letters:</b></p>
+<p>1. C &nbsp; 2. F &nbsp; 3. K &nbsp; 4. N &nbsp; 5. S &nbsp; 6. V &nbsp; 7. Z</p>
+<p><b>Translations:</b></p>
+<p>1. یہ ایک کتاب ہے۔</p>
+<p>2. مجھے اپنا اسکول پسند ہے۔</p>
+<p>3. سورج گرم ہے۔</p>
+<p>4. میں ایک طالب علم ہوں۔</p>
+<p><b>English Words:</b></p>
+<p>سیب = Apple</p>
+<p>کتاب = Book</p>
+<p>پانی = Water</p>
+<p>سورج = Sun</p>
+</section>
+
+<div class="footer">
+<h2>The Risen High School</h2>
+<p>Nursery English Book</p>
+<p>Written by: Rana Muhammad Faisal</p>
+<p class="urdu">مصنف: رانا محمد فیصل</p>
+<p>Learn Today, Lead Tomorrow</p>
+</div>
+
+</main>
+
+<script>
+const alphabet = [
+["A","a","Apple","سیب","🍎","This is an apple."],
+["B","b","Ball","گیند","⚽","This is a ball."],
+["C","c","Cat","بلی","🐱","This is a cat."],
+["D","d","Dog","کتا","🐶","This is a dog."],
+["E","e","Elephant","ہاتھی","🐘","It is an elephant."],
+["F","f","Fish","مچھلی","🐟","This is a fish."],
+["G","g","Grapes","انگور","🍇","These are grapes."],
+["H","h","House","گھر","🏠","This is a house."],
+["I","i","Ice Cream","آئس کریم","🍦","I like ice cream."],
+["J","j","Jug","جگ","🏺","This is a jug."],
+["K","k","Kite","پتنگ","🪁","This is a kite."],
+["L","l","Lion","شیر","🦁","The lion is strong."],
+["M","m","Mango","آم","🥭","Mango is a fruit."],
+["N","n","Nest","گھونسلہ","🪺","This is a nest."],
+["O","o","Orange","مالٹا","🍊","This is an orange."],
+["P","p","Parrot","طوطا","🦜","The parrot is green."],
+["Q","q","Queen","ملکہ","👑","She is a queen."],
+["R","r","Rabbit","خرگوش","🐰","This is a rabbit."],
+["S","s","Sun","سورج","☀️","The sun is bright."],
+["T","t","Tiger","شیر (ٹائیگر)","🐯","The tiger is strong."],
+["U","u","Umbrella","چھتری","☂️","This is an umbrella."],
+["V","v","Van","وین","🚐","This is a van."],
+["W","w","Watch","گھڑی","⌚","This is a watch."],
+["X","x","Xylophone","ایک ساز","🎼","This is a xylophone."],
+["Y","y","Yak","یاک جانور","🐂","This is a yak."],
+["Z","z","Zebra","زیبرا","🦓","This is a zebra."]
+];
+
+document.getElementById("letters").innerHTML = alphabet.map(item=>`
+<div class="letter-card">
+<div class="letter">${item[0]} ${item[1]}</div>
+<div class="pic">${item[4]}</div>
+<div class="word">${item[2]}</div>
+<div class="urdu-word">${item[3]}</div>
+<div class="example">${item[5]}</div>
+</div>
+`).join("");
+
+const urduDigits = ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
+const urduNames = [
+"صفر","ایک","دو","تین","چار","پانچ","چھ","سات","آٹھ","نو",
+"دس","گیارہ","بارہ","تیرہ","چودہ","پندرہ","سولہ","سترہ","اٹھارہ","انیس",
+"بیس","اکیس","بائیس","تئیس","چوبیس","پچیس","چھبیس","ستائیس","اٹھائیس","انتیس",
+"تیس","اکتیس","بتیس","تینتیس","چونتیس","پینتیس","چھتیس","سینتیس","اڑتیس","انتالیس",
+"چالیس","اکتالیس","بیالیس","تینتالیس","چوالیس","پینتالیس","چھیالیس","سینتالیس","اڑتالیس","انچاس",
+"پچاس","اکیاون","باون","ترپن","چون","پچپن","چھپن","ستاون","اٹھاون","انسٹھ",
+"ساٹھ","اکسٹھ","باسٹھ","تریسٹھ","چونسٹھ","پینسٹھ","چھیاسٹھ","سڑسٹھ","اڑسٹھ","انہتر",
+"ستر","اکہتر","بہتر","تہتر","چوہتر","پچھتر","چھہتر","ستتر","اٹھہتر","اناسی",
+"اسی","اکیاسی","بیاسی","تراسی","چوراسی","پچاسی","چھیاسی","ستاسی","اٹھاسی","نواسی",
+"نوے","اکانوے","بانوے","ترانوے","چورانوے","پچانوے","چھیانوے","ستانوے"," اٹھانوے","ننانوے","سو"
+];
+
+function toUrduDigits(n){
+return String(n).split("").map(d=>urduDigits[Number(d)]).join("");
+}
+const englishNames = [
+"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine",
+"Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen",
+"Twenty","Twenty-one","Twenty-two","Twenty-three","Twenty-four","Twenty-five","Twenty-six","Twenty-seven","Twenty-eight","Twenty-nine",
+"Thirty","Thirty-one","Thirty-two","Thirty-three","Thirty-four","Thirty-five","Thirty-six","Thirty-seven","Thirty-eight","Thirty-nine",
+"Forty","Forty-one","Forty-two","Forty-three","Forty-four","Forty-five","Forty-six","Forty-seven","Forty-eight","Forty-nine",
+"Fifty","Fifty-one","Fifty-two","Fifty-three","Fifty-four","Fifty-five","Fifty-six","Fifty-seven","Fifty-eight","Fifty-nine",
+"Sixty","Sixty-one","Sixty-two","Sixty-three","Sixty-four","Sixty-five","Sixty-six","Sixty-seven","Sixty-eight","Sixty-nine",
+"Seventy","Seventy-one","Seventy-two","Seventy-three","Seventy-four","Seventy-five","Seventy-six","Seventy-seven","Seventy-eight","Seventy-nine",
+"Eighty","Eighty-one","Eighty-two","Eighty-three","Eighty-four","Eighty-five","Eighty-six","Eighty-seven","Eighty-eight","Eighty-nine",
+"Ninety","Ninety-one","Ninety-two","Ninety-three","Ninety-four","Ninety-five","Ninety-six","Ninety-seven","Ninety-eight","Ninety-nine",
+"One hundred"
+];
+
+document.getElementById("numbers").innerHTML = Array.from({length:100},(_,i)=>{
+const n=i+1;
+return `<div class="count">
+<b>${n}</b>
+<div>${englishNames[n]}</div>
+<div class="urdu">${toUrduDigits(n)} — ${urduNames[n]}</div>
+</div>`;
+}).join("");
+</script>
+</body>
+</html>
