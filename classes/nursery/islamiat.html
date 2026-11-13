@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075985">
 <title>Nursery Islamiat | The Risen High School</title>
 
 <style>
@@ -11,119 +12,259 @@
   font-family:Jameel;
   src:url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
 }
+
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
 body{
   margin:0;
-  background:#f0f5fb;
+  background:linear-gradient(135deg,#eaf4ff,#fdf0f7,#fff8e8);
   color:#263445;
   font-family:Jameel,serif;
   line-height:2;
 }
+
 header{
-  background:linear-gradient(120deg,#075985,#0e7490);
+  background:linear-gradient(125deg,#075985,#2563eb,#7c3aed);
   color:white;
   text-align:center;
-  padding:25px 12px;
+  padding:28px 12px;
+  box-shadow:0 5px 18px #173b6725;
 }
+
 header h1{font-size:30px;margin:0}
-header h2{font-size:23px;margin:5px}
+header h2{font-size:25px;margin:5px}
 header p{margin:3px}
+
 .toolbar{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:8px;
+  gap:9px;
   padding:12px;
-  background:white;
+  background:#ffffffed;
   position:sticky;
   top:0;
   z-index:5;
+  box-shadow:0 3px 12px #0001;
 }
+
 button{
-  background:#075985;
+  background:linear-gradient(135deg,#075985,#2563eb);
   color:white;
   border:0;
-  padding:9px 16px;
-  border-radius:8px;
+  padding:9px 17px;
+  border-radius:10px;
   font-size:16px;
   font-family:inherit;
   cursor:pointer;
+  box-shadow:0 3px 8px #07598530;
 }
+
 .book{
   max-width:900px;
-  margin:18px auto;
-  padding:20px;
+  margin:20px auto;
+  padding:18px;
 }
+
 .cover{
-  background:white;
-  border-radius:15px;
-  padding:30px 15px;
+  background:linear-gradient(145deg,#dbeafe,#f3e8ff,#fce7f3,#fef3c7);
+  border:3px solid #93c5fd;
+  border-radius:22px;
+  padding:35px 15px;
   text-align:center;
-  box-shadow:0 3px 12px #0001;
-  margin-bottom:20px;
+  box-shadow:0 5px 18px #0002;
+  margin-bottom:25px;
 }
-.cover .symbol{font-size:85px}
-.cover h2{font-size:32px;color:#075985}
-.lesson{
-  background:white;
-  border-radius:13px;
-  padding:20px;
-  margin-bottom:20px;
-  box-shadow:0 3px 12px #0001;
-  page-break-inside:avoid;
+
+.cover .symbol{
+  font-size:90px;
+  background:#ffffffa8;
+  display:inline-block;
+  padding:10px 30px;
+  border-radius:50%;
 }
-.lesson h2{
+
+.cover h2{
+  font-size:34px;
   color:#075985;
-  border-bottom:2px solid #dbeafe;
-  padding-bottom:8px;
+  margin:10px 0;
+}
+
+.cover h3{
+  color:#7c3aed;
   font-size:25px;
 }
+
+.cover p{
+  font-size:19px;
+  margin:5px;
+}
+
+.lesson{
+  background:linear-gradient(145deg,#ffffff,#f0f9ff);
+  border:2px solid #bfdbfe;
+  border-radius:18px;
+  padding:22px;
+  margin-bottom:23px;
+  box-shadow:0 4px 14px #00000012;
+  page-break-inside:avoid;
+}
+
+.lesson:nth-of-type(3n+1){
+  background:linear-gradient(145deg,#fff7ed,#ffedd5);
+  border-color:#fdba74;
+}
+
+.lesson:nth-of-type(3n+2){
+  background:linear-gradient(145deg,#f0fdf4,#dcfce7);
+  border-color:#86efac;
+}
+
+.lesson:nth-of-type(3n){
+  background:linear-gradient(145deg,#f5f3ff,#ede9fe);
+  border-color:#c4b5fd;
+}
+
+.lesson h2{
+  color:#075985;
+  border-bottom:3px solid #93c5fd;
+  padding-bottom:9px;
+  font-size:27px;
+}
+
+.lesson h3{margin-top:14px}
+
 .picture{
   text-align:center;
-  background:#eff8ff;
-  border-radius:12px;
-  padding:12px;
-  margin:12px 0;
+  background:linear-gradient(135deg,#dbeafe,#fce7f3);
+  border:2px dashed #93c5fd;
+  border-radius:16px;
+  padding:15px;
+  margin:15px 0;
 }
-.picture svg{width:180px;height:145px;max-width:100%}
-.picture .emoji{font-size:75px}
+
+.picture svg{
+  width:180px;
+  height:145px;
+  max-width:100%;
+}
+
+.picture .emoji{
+  font-size:78px;
+  line-height:1.5;
+}
+
 .english{
   direction:ltr;
   text-align:left;
   font-family:Arial,sans-serif;
-  background:#f0f9ff;
-  padding:12px;
-  border-radius:8px;
-  line-height:1.7;
+  background:linear-gradient(135deg,#e0f2fe,#f0f9ff);
+  border-left:5px solid #0284c7;
+  padding:14px;
+  border-radius:12px;
+  line-height:1.8;
+  color:#164e63;
 }
+
 .arabic{
-  font-size:27px;
+  font-size:29px;
   text-align:center;
   color:#087443;
   direction:rtl;
+  background:linear-gradient(135deg,#dcfce7,#f0fdf4);
+  border:2px solid #86efac;
+  border-radius:12px;
+  padding:14px;
+  margin:14px 0;
 }
-.section-title{color:#b45309;font-size:21px}
-ul{padding-right:25px}
-.english ul{padding-left:25px}
+
+.section-title{
+  color:#b45309;
+  font-size:22px;
+}
+
+ul,ol{padding-right:28px}
+li{padding:2px 0}
+
+.english ul,.english ol{
+  padding-left:25px;
+  padding-right:0;
+}
+
 .question{
-  background:#fff8e7;
-  padding:10px;
-  border-radius:8px;
-  margin:8px 0;
+  background:linear-gradient(135deg,#fff7cc,#ffedd5);
+  border-right:5px solid #f59e0b;
+  padding:12px 15px;
+  border-radius:10px;
+  margin:10px 0;
+  color:#713f12;
 }
+
+.lesson label{
+  display:inline-block;
+  background:#ffffffb8;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  padding:3px 10px;
+  margin:4px 0;
+}
+
+.lesson input[type="radio"]{
+  accent-color:#2563eb;
+  transform:scale(1.1);
+  margin-left:5px;
+}
+
 .footer{
   text-align:center;
-  background:#075985;
+  background:linear-gradient(120deg,#075985,#2563eb,#7c3aed);
   color:white;
-  padding:20px;
-  border-radius:12px;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 4px 15px #0002;
 }
+
+.footer h2{font-size:27px}
+
+@media(max-width:600px){
+  .book{padding:10px}
+  .cover{padding:25px 10px}
+  .cover h2{font-size:28px}
+  .lesson{padding:15px}
+  .lesson h2{font-size:23px}
+  header h1{font-size:25px}
+  .picture .emoji{font-size:65px}
+}
+
 @media print{
+  @page{size:A4;margin:12mm}
+
+  *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }
+
   body{background:white}
-  .toolbar{display:none}
-  .book{margin:0;padding:0;max-width:none}
-  .lesson,.cover{box-shadow:none;border:1px solid #ddd}
-  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .toolbar{display:none !important}
+
+  .book{
+    margin:0;
+    padding:0;
+    max-width:none;
+  }
+
+  .lesson,.cover{
+    box-shadow:none;
+    page-break-inside:avoid;
+  }
+
+  header,.footer,.cover,.lesson,.picture,.english,.arabic,.question{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+  }
+
   button{display:none}
 }
 </style>
@@ -141,7 +282,7 @@ ul{padding-right:25px}
 
 <div class="toolbar">
   <button onclick="window.print()">پرنٹ / PDF</button>
-  <button onclick="document.getElementById('contents').scrollIntoView()">فہرستِ اسباق</button>
+  <button onclick="document.getElementById('contents').scrollIntoView({behavior:'smooth'})">فہرستِ اسباق</button>
   <button onclick="window.scrollTo({top:0,behavior:'smooth'})">اوپر جائیں</button>
 </div>
 
@@ -184,7 +325,6 @@ ul{padding-right:25px}
 </ol>
 </section>
 
-<!-- Lesson 1 -->
 <section class="lesson">
 <h2>سبق 1: اللہ تعالیٰ ہمارے خالق ہیں</h2>
 <div class="picture"><div class="emoji">🌍☀️🌙🌳</div></div>
@@ -200,7 +340,6 @@ ul{padding-right:25px}
 <p><strong>سرگرمی:</strong> اللہ تعالیٰ کی بنائی ہوئی چیزوں کے نام بتائیں۔</p>
 </section>
 
-<!-- Lesson 2 -->
 <section class="lesson">
 <h2>سبق 2: ہمارا دین اسلام</h2>
 <div class="picture"><div class="emoji">☪️🕌</div></div>
@@ -215,7 +354,6 @@ ul{padding-right:25px}
 <p><strong>سرگرمی:</strong> اسلام کے بارے میں دو اچھی باتیں بتائیں۔</p>
 </section>
 
-<!-- Lesson 3 -->
 <section class="lesson">
 <h2>سبق 3: ہمارے پیارے نبی حضرت محمد ﷺ</h2>
 <div class="picture"><div class="emoji">🕌🌙</div></div>
@@ -229,7 +367,6 @@ ul{padding-right:25px}
 <div class="question">Question: Who is our Prophet?<br>Answer: Prophet Muhammad (peace be upon him).</div>
 </section>
 
-<!-- Lesson 4 -->
 <section class="lesson">
 <h2>سبق 4: قرآن مجید</h2>
 <div class="picture"><div class="emoji">📖✨</div></div>
@@ -242,7 +379,6 @@ ul{padding-right:25px}
 <div class="question">Question: What is our holy book?<br>Answer: The Holy Quran.</div>
 </section>
 
-<!-- Lesson 5 -->
 <section class="lesson">
 <h2>سبق 5: کلمہ طیبہ</h2>
 <div class="picture"><div class="emoji">☪️</div></div>
@@ -256,7 +392,6 @@ ul{padding-right:25px}
 <div class="question">سوال: کلمہ طیبہ میں کس بات کا اقرار کیا جاتا ہے؟<br>جواب: اللہ کی وحدانیت اور رسول اللہ ﷺ کی رسالت کا۔</div>
 </section>
 
-<!-- Lesson 6 -->
 <section class="lesson">
 <h2>سبق 6: اسلام کے پانچ ارکان</h2>
 <div class="picture"><div class="emoji">☪️🕌🤲</div></div>
@@ -271,7 +406,6 @@ ul{padding-right:25px}
 <div class="question">Question: How many pillars of Islam are there?<br>Answer: Five.</div>
 </section>
 
-<!-- Lesson 7 -->
 <section class="lesson">
 <h2>سبق 7: نماز</h2>
 <div class="picture"><div class="emoji">🕌🤲</div></div>
@@ -285,7 +419,6 @@ ul{padding-right:25px}
 <div class="question">سوال: مسلمان دن میں کتنی نمازیں پڑھتے ہیں؟<br>جواب: پانچ۔</div>
 </section>
 
-<!-- Lesson 8 -->
 <section class="lesson">
 <h2>سبق 8: وضو</h2>
 <div class="picture"><div class="emoji">🚰💧</div></div>
@@ -297,7 +430,6 @@ ul{padding-right:25px}
 <div class="question">سوال: نماز سے پہلے کیا کرتے ہیں؟<br>جواب: وضو کرتے ہیں۔</div>
 </section>
 
-<!-- Lesson 9 -->
 <section class="lesson">
 <h2>سبق 9: ہماری مسجد</h2>
 <div class="picture"><div class="emoji">🕌</div></div>
@@ -309,7 +441,6 @@ ul{padding-right:25px}
 <div class="question">سوال: مسجد کس کام کے لیے ہوتی ہے؟<br>جواب: اللہ تعالیٰ کی عبادت کے لیے۔</div>
 </section>
 
-<!-- Lesson 10 -->
 <section class="lesson">
 <h2>سبق 10: والدین کا احترام</h2>
 <div class="picture"><div class="emoji">👨‍👩‍👧‍👦❤️</div></div>
@@ -321,7 +452,6 @@ ul{padding-right:25px}
 <div class="question">سوال: ہمیں اپنے والدین کے ساتھ کیسا سلوک کرنا چاہیے؟<br>جواب: محبت اور احترام سے۔</div>
 </section>
 
-<!-- Lesson 11 -->
 <section class="lesson">
 <h2>سبق 11: سلام کرنا</h2>
 <div class="picture"><div class="emoji">🤝😊</div></div>
@@ -335,7 +465,6 @@ ul{padding-right:25px}
 <div class="question">سوال: مسلمان ملتے وقت کیا کہتے ہیں؟<br>جواب: السلام علیکم۔</div>
 </section>
 
-<!-- Lesson 12 -->
 <section class="lesson">
 <h2>سبق 12: بسم اللہ اور الحمدللہ</h2>
 <div class="picture"><div class="emoji">🤲🌸</div></div>
@@ -351,7 +480,6 @@ ul{padding-right:25px}
 <div class="question">سوال: کام شروع کرتے وقت کیا پڑھتے ہیں؟<br>جواب: بسم اللہ الرحمن الرحیم۔</div>
 </section>
 
-<!-- Lesson 13 -->
 <section class="lesson">
 <h2>سبق 13: کھانے پینے کے آداب</h2>
 <div class="picture"><div class="emoji">🍎🥛🍽️</div></div>
@@ -364,7 +492,6 @@ ul{padding-right:25px}
 <div class="question">سوال: کھانے سے پہلے کیا پڑھتے ہیں؟<br>جواب: بسم اللہ۔</div>
 </section>
 
-<!-- Lesson 14 -->
 <section class="lesson">
 <h2>سبق 14: اچھے اخلاق</h2>
 <div class="picture"><div class="emoji">😊🌷🤝</div></div>
@@ -376,7 +503,6 @@ ul{padding-right:25px}
 <div class="question">سوال: ہمیں دوسروں سے کیسے بات کرنی چاہیے؟<br>جواب: نرمی اور ادب سے۔</div>
 </section>
 
-<!-- Lesson 15 -->
 <section class="lesson">
 <h2>سبق 15: سونے اور جاگنے کے آداب</h2>
 <div class="picture"><div class="emoji">🌙🛏️☀️</div></div>
@@ -388,7 +514,6 @@ ul{padding-right:25px}
 <div class="question">سوال: صبح جاگ کر ہمیں کس کا شکر ادا کرنا چاہیے؟<br>جواب: اللہ تعالیٰ کا۔</div>
 </section>
 
-<!-- Lesson 16 -->
 <section class="lesson">
 <h2>سبق 16: صفائی کی اہمیت</h2>
 <div class="picture"><div class="emoji">🧼🪥🚿</div></div>
@@ -400,7 +525,6 @@ ul{padding-right:25px}
 <div class="question">سوال: کوڑا کہاں ڈالنا چاہیے؟<br>جواب: کوڑے دان میں۔</div>
 </section>
 
-<!-- Lesson 17 -->
 <section class="lesson">
 <h2>سبق 17: سچ بولنا</h2>
 <div class="picture"><div class="emoji">🗣️💚</div></div>
@@ -412,7 +536,6 @@ ul{padding-right:25px}
 <div class="question">سوال: ہمیں کیا بولنا چاہیے؟<br>جواب: سچ۔</div>
 </section>
 
-<!-- Lesson 18 -->
 <section class="lesson">
 <h2>سبق 18: دوسروں کی مدد کرنا</h2>
 <div class="picture"><div class="emoji">🤝❤️</div></div>
@@ -424,7 +547,6 @@ ul{padding-right:25px}
 <div class="question">سوال: کیا دوسروں کی مدد کرنا اچھی بات ہے؟<br>جواب: جی ہاں۔</div>
 </section>
 
-<!-- Lesson 19 -->
 <section class="lesson">
 <h2>سبق 19: شکر ادا کرنا</h2>
 <div class="picture"><div class="emoji">🤲🌼</div></div>
@@ -436,7 +558,6 @@ ul{padding-right:25px}
 <div class="question">سوال: نعمت ملنے پر کیا کہنا چاہیے؟<br>جواب: الحمدللہ۔</div>
 </section>
 
-<!-- Revision -->
 <section class="lesson">
 <h2>سبق 20: سالانہ دہرائی</h2>
 <h3 class="section-title">مختصر سوالات</h3>
@@ -494,7 +615,6 @@ ul{padding-right:25px}
 <label><input type="radio" name="q8"> جھوٹ</label><br>
 <label><input type="radio" name="q8"> سچ</label><br>
 <label><input type="radio" name="q8"> بری بات</label>
-
 </section>
 
 <section class="lesson">
@@ -547,4 +667,3 @@ ul{padding-right:25px}
 </main>
 </body>
 </html>
-
