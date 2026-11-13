@@ -1,1 +1,940 @@
 
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#164e9b">
+<title>Nursery General Knowledge | The Risen High School</title>
+
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:linear-gradient(135deg,#eaf4ff,#fff0f6,#effff5);
+ color:#24344d;
+ font-family:Arial,sans-serif;
+}
+.urdu{font-family:Jameel,serif;line-height:2}
+header{
+ background:linear-gradient(120deg,#123b78,#287bd2,#7046b8);
+ color:white;text-align:center;padding:22px 10px;
+ box-shadow:0 4px 15px #0002;
+}
+header h1{margin:5px;font-size:27px}
+header p{margin:5px}
+.toolbar{
+ position:sticky;top:0;z-index:10;
+ background:#fff;padding:10px;
+ display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+ box-shadow:0 3px 12px #0002;
+}
+button{
+ border:0;border-radius:10px;padding:10px 15px;
+ background:#1768bd;color:white;font-weight:bold;
+ cursor:pointer;font-size:14px;
+}
+button:hover{filter:brightness(.9)}
+.book{max-width:900px;margin:18px auto;padding:12px}
+.cover{
+ min-height:570px;border-radius:25px;padding:35px 18px;
+ text-align:center;color:#fff;
+ background:
+ radial-gradient(circle at 15% 15%,#ffffff55 0 8%,transparent 9%),
+ radial-gradient(circle at 85% 25%,#ffffff55 0 7%,transparent 8%),
+ radial-gradient(circle at 20% 80%,#ffffff44 0 9%,transparent 10%),
+ linear-gradient(145deg,#ff8b35,#ed4b85,#7652c8,#287bd2);
+ display:flex;flex-direction:column;align-items:center;
+ justify-content:center;box-shadow:0 8px 25px #0002;
+}
+.school{font-size:22px;font-weight:bold}
+.cover .bookicon{font-size:100px;margin:18px}
+.cover h1{font-size:39px;margin:8px 0}
+.cover h2{font-size:28px;margin:5px}
+.cover .urdu{font-size:27px}
+.cover p{font-size:17px}
+.cover .class{
+ background:#fff;color:#7b3eaa;border-radius:30px;
+ padding:10px 25px;margin-top:18px;font-weight:bold;
+}
+.page{
+ background:white;border-radius:20px;margin:20px 0;
+ padding:22px 20px;box-shadow:0 5px 18px #17385a15;
+ border-top:7px solid var(--accent,#3986db);
+ page-break-after:always;
+}
+.page h2{
+ color:var(--accent,#2878bd);font-size:25px;
+ margin:0 0 15px;border-bottom:2px dashed #dce6f3;
+ padding-bottom:10px;
+}
+.page h3{color:#245c91;margin-bottom:5px}
+.page p{font-size:17px;line-height:1.8;margin:8px 0}
+.lesson-number{
+ display:inline-block;background:var(--accent,#2878bd);
+ color:white;border-radius:20px;padding:5px 14px;
+ margin-bottom:10px;font-weight:bold;
+}
+.picture{
+ background:linear-gradient(135deg,var(--light,#e8f4ff),#fff);
+ border-radius:18px;padding:18px;text-align:center;
+ margin:15px 0;font-size:65px;
+ border:2px solid #ffffff;
+}
+.picture small{display:block;font-size:15px;color:#52647a;margin-top:8px}
+.info{
+ background:var(--light,#edf6ff);padding:13px 16px;
+ border-radius:12px;margin:12px 0;
+}
+.info h3{margin-top:0}
+.words{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));
+ gap:10px;margin:12px 0;
+}
+.word{
+ background:var(--light,#eaf4ff);border-radius:13px;
+ padding:12px 6px;text-align:center;border:1px solid #e1eaf5;
+}
+.word b{display:block;font-size:23px;color:var(--accent,#2878bd)}
+.word span{display:block;font-size:17px;margin-top:5px}
+.questions{
+ background:#fff8e8;border-right:5px solid #f2a52b;
+ padding:12px 16px;border-radius:12px;margin-top:15px;
+}
+.questions li{margin:8px 0;font-size:16px;line-height:1.7}
+.activity{
+ background:#eafff2;border-right:5px solid #35a76d;
+ padding:12px 16px;border-radius:12px;margin-top:12px;
+}
+footer{
+ background:#153f76;color:white;text-align:center;
+ padding:18px;border-radius:15px;margin:20px 0;
+}
+.contents{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+ gap:10px;
+}
+.contents a{
+ color:#245c91;text-decoration:none;background:#f0f6ff;
+ padding:12px;border-radius:10px;font-weight:bold;
+}
+@media(max-width:600px){
+ .cover{min-height:500px}
+ .cover h1{font-size:31px}
+ .book{padding:8px}
+ .page{padding:17px 13px}
+ .page h2{font-size:22px}
+}
+@media print{
+ body{background:white}
+ .toolbar{display:none!important}
+ .book{max-width:100%;margin:0;padding:0}
+ .cover,.page,footer{
+  box-shadow:none;break-after:page;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+ }
+ .page{margin:0;border-radius:0;min-height:95vh}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h1>The Risen High School</h1>
+ <p class="urdu">علم، کردار اور روشن مستقبل</p>
+ <p>Digital Learning Book</p>
+</header>
+
+<div class="toolbar">
+ <button onclick="window.print()">🖨 Print / PDF</button>
+ <button onclick="document.getElementById('contents').scrollIntoView({behavior:'smooth'})">📚 Contents</button>
+ <button onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆ Top</button>
+</div>
+
+<main class="book">
+
+<section class="cover">
+ <div class="school">THE RISEN HIGH SCHOOL</div>
+ <div class="bookicon">🌍📘</div>
+ <h1>GENERAL KNOWLEDGE</h1>
+ <h2>Nursery</h2>
+ <div class="urdu">عمومی معلومات</div>
+ <p>Learn About Yourself, Your World and Your Country</p>
+ <p class="urdu">اپنے آپ، اپنے اردگرد اور دنیا کے بارے میں جانیں</p>
+ <div class="class">ENGLISH + اردو</div>
+ <p style="margin-top:35px">Prepared for Young Learners</p>
+</section>
+
+<section class="page" style="--accent:#7652c8;--light:#f1eaff">
+ <h2>📚 کتاب کا فہرستِ مضامین | Contents</h2>
+ <div class="contents" id="contents">
+  <a href="#l1">1. Myself | میرا تعارف</a>
+  <a href="#l2">2. My Family | میرا خاندان</a>
+  <a href="#l3">3. My School | میرا اسکول</a>
+  <a href="#l4">4. Parts of Body | جسم کے حصے</a>
+  <a href="#l5">5. Five Senses | پانچ حواس</a>
+  <a href="#l6">6. Colours | رنگ</a>
+  <a href="#l7">7. Shapes | اشکال</a>
+  <a href="#l8">8. Fruits | پھل</a>
+  <a href="#l9">9. Vegetables | سبزیاں</a>
+  <a href="#l10">10. Animals | جانور</a>
+  <a href="#l11">11. Birds | پرندے</a>
+  <a href="#l12">12. Insects | کیڑے مکوڑے</a>
+  <a href="#l13">13. Transport | ذرائع آمدورفت</a>
+  <a href="#l14">14. Our Home | ہمارا گھر</a>
+  <a href="#l15">15. Food | غذا</a>
+  <a href="#l16">16. Cleanliness | صفائی</a>
+  <a href="#l17">17. Plants | پودے</a>
+  <a href="#l18">18. Weather | موسم</a>
+  <a href="#l19">19. Days and Months | دن اور مہینے</a>
+  <a href="#l20">20. Time | وقت</a>
+  <a href="#l21">21. Pakistan | پاکستان</a>
+  <a href="#l22">22. Islamic Knowledge | اسلامی معلومات</a>
+  <a href="#l23">23. Good Manners | اچھے آداب</a>
+  <a href="#l24">24. Safety Rules | حفاظتی اصول</a>
+  <a href="#l25">25. Computer | کمپیوٹر</a>
+  <a href="#l26">26. Universe | کائنات</a>
+  <a href="#l27">27. Water | پانی</a>
+  <a href="#l28">28. Community Helpers | ہمارے مددگار</a>
+  <a href="#l29">29. Sports | کھیل</a>
+  <a href="#l30">30. Revision | دہرائی</a>
+ </div>
+</section>
+
+<section class="page" id="l1" style="--accent:#e85d75;--light:#fff0f2">
+ <span class="lesson-number">Lesson 01</span>
+ <h2>Myself | میرا تعارف</h2>
+ <div class="picture">👦🏻👧🏻<small>Children introducing themselves | بچے اپنا تعارف کرواتے ہوئے</small></div>
+ <h3>English</h3>
+ <p>My name is a special name that tells other people who I am. Every child has a name. I am a young student. I live with my family. I love my parents and teachers. I go to school to learn new things. I should speak politely, keep myself clean and help others.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">میرا نام میری پہچان ہے۔ ہر بچے کا ایک نام ہوتا ہے۔ میں ایک طالب علم ہوں۔ میں اپنے خاندان کے ساتھ رہتا ہوں۔ میں اپنے والدین اور اساتذہ سے محبت کرتا ہوں۔ میں نئی نئی باتیں سیکھنے کے لیے اسکول جاتا ہوں۔ مجھے ہمیشہ اچھے طریقے سے بات کرنی چاہیے، صاف ستھرا رہنا چاہیے اور دوسروں کی مدد کرنی چاہیے۔</p>
+ <div class="info">
+  <h3>Learn These Words | یہ الفاظ سیکھیں</h3>
+  <div class="words">
+   <div class="word"><b>Name</b><span class="urdu">نام</span></div>
+   <div class="word"><b>Age</b><span class="urdu">عمر</span></div>
+   <div class="word"><b>School</b><span class="urdu">اسکول</span></div>
+   <div class="word"><b>Student</b><span class="urdu">طالب علم</span></div>
+  </div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What is your name? | آپ کا نام کیا ہے؟</li><li>Where do you study? | آپ کہاں پڑھتے ہیں؟</li><li>Do you love your school? | کیا آپ اپنے اسکول سے محبت کرتے ہیں؟</li></ol>
+ </div>
+ <div class="activity">✏️ Activity: Say your name, age and school name in English. | اپنا نام، عمر اور اسکول کا نام بتائیں۔</div>
+</section>
+
+<section class="page" id="l2" style="--accent:#df8b36;--light:#fff4df">
+ <span class="lesson-number">Lesson 02</span>
+ <h2>My Family | میرا خاندان</h2>
+ <div class="picture">👨‍👩‍👧‍👦🏡<small>A loving family | ایک پیارا خاندان</small></div>
+ <h3>English</h3>
+ <p>A family is a group of people who live together and care for one another. Our family gives us love, care and protection. A family may include a father, mother, brothers, sisters and grandparents. Parents teach us good habits. Grandparents share stories and experiences. We should respect every family member and help one another.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">خاندان ایسے لوگوں کے گروہ کو کہتے ہیں جو ایک دوسرے کے ساتھ رہتے ہیں اور ایک دوسرے کا خیال رکھتے ہیں۔ ہمارا خاندان ہمیں محبت، توجہ اور حفاظت فراہم کرتا ہے۔ خاندان میں والد، والدہ، بھائی، بہنیں اور دادا دادی یا نانا نانی شامل ہو سکتے ہیں۔ والدین ہمیں اچھی عادتیں سکھاتے ہیں۔ بزرگ ہمیں کہانیاں اور اپنے تجربات بتاتے ہیں۔ ہمیں خاندان کے تمام افراد کی عزت کرنی چاہیے اور ایک دوسرے کی مدد کرنی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Father</b><span class="urdu">والد</span></div>
+  <div class="word"><b>Mother</b><span class="urdu">والدہ</span></div>
+  <div class="word"><b>Brother</b><span class="urdu">بھائی</span></div>
+  <div class="word"><b>Sister</b><span class="urdu">بہن</span></div>
+  <div class="word"><b>Grandfather</b><span class="urdu">دادا / نانا</span></div>
+  <div class="word"><b>Grandmother</b><span class="urdu">دادی / نانی</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What is a family? | خاندان کسے کہتے ہیں؟</li><li>Name two family members. | خاندان کے دو افراد کے نام بتائیں۔</li><li>How should we treat our elders? | ہمیں بزرگوں کے ساتھ کیسا سلوک کرنا چاہیے؟</li></ol>
+ </div>
+ <div class="activity">🎨 Draw your family and tell the class about them. | اپنے خاندان کی تصویر بنائیں اور کلاس کو اس کے بارے میں بتائیں۔</div>
+</section>
+
+<section class="page" id="l3" style="--accent:#298cbb;--light:#e7f6ff">
+ <span class="lesson-number">Lesson 03</span>
+ <h2>My School | میرا اسکول</h2>
+ <div class="picture">🏫📚🎒<small>Our school | ہمارا اسکول</small></div>
+ <h3>English</h3>
+ <p>A school is a place where children learn. We go to school to read, write, count, play and discover new things. Our school has classrooms, teachers, books and a playground. Teachers help us learn good manners and useful knowledge. We should come to school on time, wear a neat uniform and keep our classroom clean. We must respect our teachers and classmates.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">اسکول ایک ایسی جگہ ہے جہاں بچے تعلیم حاصل کرتے ہیں۔ ہم پڑھنے، لکھنے، گنتی سیکھنے، کھیلنے اور نئی چیزیں جاننے کے لیے اسکول جاتے ہیں۔ ہمارے اسکول میں جماعتیں، اساتذہ، کتابیں اور کھیل کا میدان ہوتا ہے۔ اساتذہ ہمیں اچھی عادتیں اور مفید علم سکھاتے ہیں۔ ہمیں وقت پر اسکول آنا، صاف یونیفارم پہننا اور اپنی جماعت کو صاف رکھنا چاہیے۔ ہمیں اساتذہ اور ساتھی طلبہ کی عزت کرنی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Teacher</b><span class="urdu">استاد</span></div>
+  <div class="word"><b>Student</b><span class="urdu">طالب علم</span></div>
+  <div class="word"><b>Classroom</b><span class="urdu">جماعت</span></div>
+  <div class="word"><b>Book</b><span class="urdu">کتاب</span></div>
+  <div class="word"><b>Bag</b><span class="urdu">بیگ</span></div>
+  <div class="word"><b>Playground</b><span class="urdu">کھیل کا میدان</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Where do children learn? | بچے کہاں تعلیم حاصل کرتے ہیں؟</li><li>Who teaches us? | ہمیں کون پڑھاتا ہے؟</li><li>Name two things in a school. | اسکول کی دو چیزوں کے نام بتائیں۔</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l4" style="--accent:#37a477;--light:#e9fff4">
+ <span class="lesson-number">Lesson 04</span>
+ <h2>Parts of the Body | جسم کے حصے</h2>
+ <div class="picture">🧒🏻👀👂👃👄✋<small>Our body parts | ہمارے جسم کے حصے</small></div>
+ <h3>English</h3>
+ <p>Our body is made up of different parts. Every body part has an important job. We use our head to think. Our eyes help us see. Our ears help us hear. Our nose helps us smell. Our tongue helps us taste. Our hands help us hold things and our legs help us walk and run. We should take care of our body by eating healthy food, bathing and exercising.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">ہمارا جسم مختلف حصوں سے مل کر بنا ہے۔ جسم کے ہر حصے کا اپنا اہم کام ہے۔ ہم سوچنے کے لیے دماغ استعمال کرتے ہیں۔ آنکھیں دیکھنے، کان سننے، ناک سونگھنے اور زبان چکھنے میں مدد دیتی ہے۔ ہاتھ چیزیں پکڑنے اور ٹانگیں چلنے اور دوڑنے میں مدد دیتی ہیں۔ ہمیں اچھی غذا کھا کر، نہا کر اور ورزش کر کے اپنے جسم کا خیال رکھنا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Head</b><span class="urdu">سر</span></div>
+  <div class="word"><b>Eyes</b><span class="urdu">آنکھیں</span></div>
+  <div class="word"><b>Ears</b><span class="urdu">کان</span></div>
+  <div class="word"><b>Nose</b><span class="urdu">ناک</span></div>
+  <div class="word"><b>Mouth</b><span class="urdu">منہ</span></div>
+  <div class="word"><b>Hands</b><span class="urdu">ہاتھ</span></div>
+  <div class="word"><b>Legs</b><span class="urdu">ٹانگیں</span></div>
+  <div class="word"><b>Feet</b><span class="urdu">پاؤں</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Which body part helps us see? | ہم کس حصے سے دیکھتے ہیں؟</li><li>Which body part helps us hear? | ہم کس حصے سے سنتے ہیں؟</li><li>How many hands do we have? | ہمارے کتنے ہاتھ ہیں؟</li></ol>
+ </div>
+ <div class="activity">👆 Point to your eyes, ears, nose and hands. | اپنی آنکھوں، کانوں، ناک اور ہاتھوں کی طرف اشارہ کریں۔</div>
+</section>
+
+<section class="page" id="l5" style="--accent:#a15ac2;--light:#f8edff">
+ <span class="lesson-number">Lesson 05</span>
+ <h2>Five Senses | پانچ حواس</h2>
+ <div class="picture">👁️👂👃👅🤚<small>Five senses | پانچ حواس</small></div>
+ <h3>English</h3>
+ <p>We have five main senses. They help us understand the world around us. Eyes are used for seeing. Ears are used for hearing. The nose is used for smelling. The tongue is used for tasting. Skin helps us feel touch, such as soft, hard, hot or cold things. We should protect our sense organs and never put harmful things near them.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">ہمارے پانچ اہم حواس ہیں۔ یہ ہمیں اپنے اردگرد کی دنیا کو سمجھنے میں مدد دیتے ہیں۔ آنکھوں سے ہم دیکھتے ہیں۔ کانوں سے سنتے ہیں۔ ناک سے خوشبو اور بدبو محسوس کرتے ہیں۔ زبان سے ذائقہ چکھتے ہیں۔ جلد سے ہم چھونے کا احساس کرتے ہیں، مثلاً نرم، سخت، گرم یا ٹھنڈی چیز۔ ہمیں اپنے حواس کے اعضا کی حفاظت کرنی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>See</b><span class="urdu">دیکھنا</span></div>
+  <div class="word"><b>Hear</b><span class="urdu">سننا</span></div>
+  <div class="word"><b>Smell</b><span class="urdu">سونگھنا</span></div>
+  <div class="word"><b>Taste</b><span class="urdu">چکھنا</span></div>
+  <div class="word"><b>Touch</b><span class="urdu">چھونا</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>How many main senses do we have? | ہمارے کتنے اہم حواس ہیں؟</li><li>Which sense helps us smell? | کون سا حس ہمیں سونگھنے میں مدد دیتا ہے؟</li><li>Which organ helps us feel touch? | چھونے کا احساس کس عضو سے ہوتا ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l6" style="--accent:#e45d43;--light:#fff0e9">
+ <span class="lesson-number">Lesson 06</span>
+ <h2>Colours | رنگ</h2>
+ <div class="picture">🌈🎨🖍️<small>Beautiful colours | خوبصورت رنگ</small></div>
+ <h3>English</h3>
+ <p>Colours make our world beautiful. We see many colours in flowers, fruits, clothes, toys and nature. Red is the colour of many apples. Green is the colour of grass. The sky often looks blue during a clear day. Yellow is the colour of a ripe banana. We can learn colours by looking carefully at things around us.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">رنگ ہماری دنیا کو خوبصورت بناتے ہیں۔ ہم پھولوں، پھلوں، کپڑوں، کھلونوں اور قدرتی چیزوں میں بہت سے رنگ دیکھتے ہیں۔ بہت سے سیب سرخ ہوتے ہیں۔ گھاس سبز ہوتی ہے۔ صاف موسم میں آسمان نیلا دکھائی دیتا ہے۔ پکا ہوا کیلا پیلا ہوتا ہے۔ ہم اپنے اردگرد کی چیزوں کو غور سے دیکھ کر رنگوں کے نام سیکھ سکتے ہیں۔</p>
+ <div class="words">
+  <div class="word"><b style="color:red">Red 🔴</b><span class="urdu">سرخ</span></div>
+  <div class="word"><b style="color:blue">Blue 🔵</b><span class="urdu">نیلا</span></div>
+  <div class="word"><b style="color:green">Green 🟢</b><span class="urdu">سبز</span></div>
+  <div class="word"><b style="color:#e0a000">Yellow 🟡</b><span class="urdu">پیلا</span></div>
+  <div class="word"><b style="color:orange">Orange 🟠</b><span class="urdu">نارنجی</span></div>
+  <div class="word"><b style="color:#a15ac2">Purple 🟣</b><span class="urdu">جامنی</span></div>
+  <div class="word"><b style="color:#111">Black ⚫</b><span class="urdu">کالا</span></div>
+  <div class="word"><b style="color:#888">White ⚪</b><span class="urdu">سفید</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What is the colour of grass? | گھاس کا رنگ کیا ہے؟</li><li>What is the colour of the sky on a clear day? | صاف دن میں آسمان کا رنگ کیا ہوتا ہے؟</li><li>Name three colours. | تین رنگوں کے نام بتائیں۔</li></ol>
+ </div>
+ <div class="activity">🎨 Colour a picture using red, blue, yellow and green. | تصویر میں سرخ، نیلا، پیلا اور سبز رنگ بھریں۔</div>
+</section>
+
+<section class="page" id="l7" style="--accent:#328bba;--light:#e9f7ff">
+ <span class="lesson-number">Lesson 07</span>
+ <h2>Shapes | اشکال</h2>
+ <div class="picture">🔴 🟦 🔺 ⭐ ❤️<small>Different shapes | مختلف اشکال</small></div>
+ <h3>English</h3>
+ <p>Shapes tell us about the form of objects. We see shapes everywhere. A ball is round like a circle. A book may look like a rectangle. A window may be square or rectangular. A slice of some foods may look like a triangle. Learning shapes helps us recognize and describe objects.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">اشکال ہمیں چیزوں کی بناوٹ اور شکل کے بارے میں بتاتی ہیں۔ ہم اپنے اردگرد ہر جگہ مختلف اشکال دیکھتے ہیں۔ گیند دائرے جیسی گول ہوتی ہے۔ کتاب مستطیل جیسی ہو سکتی ہے۔ کھڑکی مربع یا مستطیل ہو سکتی ہے۔ کچھ کھانوں کے ٹکڑے تکون جیسے ہوتے ہیں۔ اشکال سیکھنے سے ہمیں چیزوں کو پہچاننے اور ان کے بارے میں بتانے میں مدد ملتی ہے۔</p>
+ <div class="words">
+  <div class="word"><b>Circle 🔴</b><span class="urdu">دائرہ</span></div>
+  <div class="word"><b>Square 🟦</b><span class="urdu">مربع</span></div>
+  <div class="word"><b>Triangle 🔺</b><span class="urdu">تکون</span></div>
+  <div class="word"><b>Rectangle ▭</b><span class="urdu">مستطیل</span></div>
+  <div class="word"><b>Star ⭐</b><span class="urdu">ستارہ</span></div>
+  <div class="word"><b>Heart ❤️</b><span class="urdu">دل کی شکل</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What is the shape of a ball? | گیند کی شکل کیا ہوتی ہے؟</li><li>How many sides does a triangle have? | تکون کے کتنے کنارے ہوتے ہیں؟</li><li>Name a shape you see in your classroom. | اپنی جماعت میں نظر آنے والی ایک شکل بتائیں۔</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l8" style="--accent:#e36c35;--light:#fff2e7">
+ <span class="lesson-number">Lesson 08</span>
+ <h2>Fruits | پھل</h2>
+ <div class="picture">🍎🍌🍇🍊🍉🥭<small>Fresh fruits | تازہ پھل</small></div>
+ <h3>English</h3>
+ <p>Fruits are an important part of healthy food. They contain vitamins, water and other nutrients that help our bodies stay healthy. Apples, bananas, oranges, mangoes, grapes and guavas are common fruits. We should wash fruits with clean water before eating them. Eating different fruits is a good habit.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پھل صحت مند غذا کا اہم حصہ ہیں۔ ان میں وٹامنز، پانی اور دوسرے غذائی اجزا پائے جاتے ہیں جو ہمارے جسم کو صحت مند رکھنے میں مدد دیتے ہیں۔ سیب، کیلا، مالٹا، آم، انگور اور امرود عام پھل ہیں۔ پھل کھانے سے پہلے انہیں صاف پانی سے دھونا چاہیے۔ مختلف پھل کھانا اچھی عادت ہے۔</p>
+ <div class="words">
+  <div class="word"><b>Apple 🍎</b><span class="urdu">سیب</span></div>
+  <div class="word"><b>Banana 🍌</b><span class="urdu">کیلا</span></div>
+  <div class="word"><b>Mango 🥭</b><span class="urdu">آم</span></div>
+  <div class="word"><b>Orange 🍊</b><span class="urdu">مالٹا</span></div>
+  <div class="word"><b>Grapes 🍇</b><span class="urdu">انگور</span></div>
+  <div class="word"><b>Watermelon 🍉</b><span class="urdu">تربوز</span></div>
+  <div class="word"><b>Guava</b><span class="urdu">امرود</span></div>
+  <div class="word"><b>Dates</b><span class="urdu">کھجور</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Name three fruits. | تین پھلوں کے نام بتائیں۔</li><li>Which fruit is called the king of fruits in Pakistan? | پاکستان میں کس پھل کو پھلوں کا بادشاہ کہا جاتا ہے؟</li><li>Why should we wash fruits? | ہمیں پھل کیوں دھونے چاہئیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l9" style="--accent:#48a66a;--light:#edfff0">
+ <span class="lesson-number">Lesson 09</span>
+ <h2>Vegetables | سبزیاں</h2>
+ <div class="picture">🥕🥔🍅🥒🌽🥬<small>Fresh vegetables | تازہ سبزیاں</small></div>
+ <h3>English</h3>
+ <p>Vegetables are healthy foods that help our bodies grow and remain strong. We eat many kinds of vegetables. Carrots, potatoes, tomatoes, peas, spinach, cucumbers and onions are common vegetables. Some vegetables grow under the ground, while others grow above the ground. We should wash vegetables before cooking or eating them.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">سبزیاں صحت مند غذائیں ہیں جو ہمارے جسم کو بڑھنے اور مضبوط رہنے میں مدد دیتی ہیں۔ ہم کئی قسم کی سبزیاں کھاتے ہیں۔ گاجر، آلو، ٹماٹر، مٹر، پالک، کھیرا اور پیاز عام سبزیاں ہیں۔ کچھ سبزیاں زمین کے اندر اگتی ہیں جبکہ کچھ زمین کے اوپر اگتی ہیں۔ سبزیوں کو پکانے یا کھانے سے پہلے دھونا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Carrot 🥕</b><span class="urdu">گاجر</span></div>
+  <div class="word"><b>Potato 🥔</b><span class="urdu">آلو</span></div>
+  <div class="word"><b>Tomato 🍅</b><span class="urdu">ٹماٹر</span></div>
+  <div class="word"><b>Cucumber 🥒</b><span class="urdu">کھیرا</span></div>
+  <div class="word"><b>Spinach</b><span class="urdu">پالک</span></div>
+  <div class="word"><b>Onion</b><span class="urdu">پیاز</span></div>
+  <div class="word"><b>Peas</b><span class="urdu">مٹر</span></div>
+  <div class="word"><b>Cauliflower</b><span class="urdu">گوبھی</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Name two green vegetables. | دو سبز سبزیوں کے نام بتائیں۔</li><li>Which vegetable grows under the ground? | کون سی سبزی زمین کے اندر اگتی ہے؟</li><li>Why do we eat vegetables? | ہم سبزیاں کیوں کھاتے ہیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l10" style="--accent:#ae8242;--light:#fff6e6">
+ <span class="lesson-number">Lesson 10</span>
+ <h2>Animals | جانور</h2>
+ <div class="picture">🦁🐘🐄🐐🐈🐕<small>Animals around us | ہمارے اردگرد جانور</small></div>
+ <h3>English</h3>
+ <p>Animals are living things. Some animals live with people, while others live in forests, deserts, rivers and oceans. A cow gives us milk. A horse can carry people. A lion is a wild animal. An elephant is a very large land animal. We should treat animals kindly, give pets proper care and never hurt them.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">جانور جاندار مخلوق ہیں۔ کچھ جانور انسانوں کے ساتھ رہتے ہیں جبکہ کچھ جنگلات، صحراؤں، دریاؤں اور سمندروں میں رہتے ہیں۔ گائے ہمیں دودھ دیتی ہے۔ گھوڑا انسانوں کو اٹھا کر لے جا سکتا ہے۔ شیر ایک جنگلی جانور ہے۔ ہاتھی خشکی پر رہنے والا بہت بڑا جانور ہے۔ ہمیں جانوروں کے ساتھ نرمی کرنی چاہیے، پالتو جانوروں کا خیال رکھنا چاہیے اور انہیں تکلیف نہیں دینی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Lion 🦁</b><span class="urdu">شیر</span></div>
+  <div class="word"><b>Elephant 🐘</b><span class="urdu">ہاتھی</span></div>
+  <div class="word"><b>Cow 🐄</b><span class="urdu">گائے</span></div>
+  <div class="word"><b>Goat 🐐</b><span class="urdu">بکری</span></div>
+  <div class="word"><b>Cat 🐈</b><span class="urdu">بلی</span></div>
+  <div class="word"><b>Dog 🐕</b><span class="urdu">کتا</span></div>
+  <div class="word"><b>Horse 🐎</b><span class="urdu">گھوڑا</span></div>
+  <div class="word"><b>Monkey 🐒</b><span class="urdu">بندر</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Which animal gives us milk? | ہمیں دودھ کون سا جانور دیتا ہے؟</li><li>Name a wild animal. | ایک جنگلی جانور کا نام بتائیں۔</li><li>Where do lions live? | شیر کہاں رہتے ہیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l11" style="--accent:#3886c7;--light:#eaf5ff">
+ <span class="lesson-number">Lesson 11</span>
+ <h2>Birds | پرندے</h2>
+ <div class="picture">🦜🕊️🦚🦆🐓🦉<small>Beautiful birds | خوبصورت پرندے</small></div>
+ <h3>English</h3>
+ <p>Birds are animals with feathers, wings and beaks. Most birds have two legs. Many birds can fly, but some birds, such as ostriches and penguins, cannot fly. Birds build nests to lay eggs and care for their young ones. A parrot is known for its colourful feathers. A peacock is famous for its beautiful tail.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پرندے ایسے جانور ہیں جن کے جسم پر پر ہوتے ہیں، ان کے پر اور چونچ ہوتی ہے۔ زیادہ تر پرندوں کی دو ٹانگیں ہوتی ہیں۔ بہت سے پرندے اڑ سکتے ہیں لیکن شتر مرغ اور پینگوئن جیسے کچھ پرندے نہیں اڑ سکتے۔ پرندے انڈے دینے اور اپنے بچوں کی حفاظت کے لیے گھونسلے بناتے ہیں۔ طوطا اپنے رنگ برنگے پروں کے لیے مشہور ہے۔ مور اپنی خوبصورت دم کے لیے مشہور ہے۔</p>
+ <div class="words">
+  <div class="word"><b>Parrot 🦜</b><span class="urdu">طوطا</span></div>
+  <div class="word"><b>Peacock 🦚</b><span class="urdu">مور</span></div>
+  <div class="word"><b>Pigeon 🕊️</b><span class="urdu">کبوتر</span></div>
+  <div class="word"><b>Duck 🦆</b><span class="urdu">بطخ</span></div>
+  <div class="word"><b>Owl 🦉</b><span class="urdu">اُلّو</span></div>
+  <div class="word"><b>Hen 🐔</b><span class="urdu">مرغی</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What do birds have on their bodies? | پرندوں کے جسم پر کیا ہوتا ہے؟</li><li>Which bird has a beautiful tail? | کس پرندے کی خوبصورت دم ہوتی ہے؟</li><li>Where do birds lay eggs? | پرندے انڈے کہاں دیتے ہیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l12" style="--accent:#b58b32;--light:#fff9e6">
+ <span class="lesson-number">Lesson 12</span>
+ <h2>Insects | کیڑے مکوڑے</h2>
+ <div class="picture">🦋🐝🐜🐞🦗<small>Small insects | چھوٹے کیڑے</small></div>
+ <h3>English</h3>
+ <p>Insects are small animals. Most insects have six legs and three main body parts: head, thorax and abdomen. Butterflies have colourful wings. Bees collect nectar from flowers and help in pollination. Ants often live together in colonies. Some insects can be harmful, so we should not touch unknown insects.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">کیڑے مکوڑے چھوٹے جانور ہوتے ہیں۔ زیادہ تر کیڑوں کی چھ ٹانگیں اور جسم کے تین بنیادی حصے ہوتے ہیں: سر، درمیانی حصہ اور پیٹ۔ تتلی کے رنگ برنگے پر ہوتے ہیں۔ شہد کی مکھیاں پھولوں سے رس جمع کرتی ہیں اور پودوں میں زیرگی کے عمل میں مدد دیتی ہیں۔ چیونٹیاں عموماً گروہوں میں رہتی ہیں۔ کچھ کیڑے نقصان دہ ہو سکتے ہیں، اس لیے نامعلوم کیڑوں کو ہاتھ نہیں لگانا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Butterfly 🦋</b><span class="urdu">تتلی</span></div>
+  <div class="word"><b>Bee 🐝</b><span class="urdu">شہد کی مکھی</span></div>
+  <div class="word"><b>Ant 🐜</b><span class="urdu">چیونٹی</span></div>
+  <div class="word"><b>Ladybird 🐞</b><span class="urdu">سرخ دھبوں والا بھونرا</span></div>
+  <div class="word"><b>Grasshopper 🦗</b><span class="urdu">ٹڈی</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>How many legs do most insects have? | زیادہ تر کیڑوں کی کتنی ٹانگیں ہوتی ہیں؟</li><li>Which insect makes honey? | کون سا کیڑا شہد بناتا ہے؟</li><li>What comes out of a butterfly's body? | تتلی کے جسم پر کیا ہوتا ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l13" style="--accent:#328fbd;--light:#e8f8ff">
+ <span class="lesson-number">Lesson 13</span>
+ <h2>Means of Transport | ذرائع آمدورفت</h2>
+ <div class="picture">🚗🚌🚲🚂✈️🚢<small>Different ways to travel | سفر کے مختلف ذرائع</small></div>
+ <h3>English</h3>
+ <p>Transport helps people and goods move from one place to another. Cars, buses, bicycles and trains travel on land. Boats and ships travel on water. Aeroplanes and helicopters travel in the air. We should follow traffic rules, wear seat belts in cars and use safe places to cross roads.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">ذرائع آمدورفت لوگوں اور سامان کو ایک جگہ سے دوسری جگہ لے جانے میں مدد دیتے ہیں۔ کاریں، بسیں، سائیکلیں اور ٹرینیں زمین پر چلتی ہیں۔ کشتیاں اور جہاز پانی میں سفر کرتے ہیں۔ ہوائی جہاز اور ہیلی کاپٹر فضا میں سفر کرتے ہیں۔ ہمیں ٹریفک کے اصولوں پر عمل کرنا، گاڑی میں سیٹ بیلٹ باندھنا اور سڑک پار کرنے کے لیے محفوظ جگہ استعمال کرنی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Car 🚗</b><span class="urdu">گاڑی</span></div>
+  <div class="word"><b>Bus 🚌</b><span class="urdu">بس</span></div>
+  <div class="word"><b>Train 🚂</b><span class="urdu">ریل گاڑی</span></div>
+  <div class="word"><b>Bicycle 🚲</b><span class="urdu">سائیکل</span></div>
+  <div class="word"><b>Aeroplane ✈️</b><span class="urdu">ہوائی جہاز</span></div>
+  <div class="word"><b>Ship 🚢</b><span class="urdu">بحری جہاز</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Name a means of air transport. | ہوائی سفر کے ایک ذریعے کا نام بتائیں۔</li><li>Which transport travels on water? | پانی میں کون سا ذریعہ سفر کرتا ہے؟</li><li>Why do we wear seat belts? | ہم سیٹ بیلٹ کیوں باندھتے ہیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l14" style="--accent:#bd8051;--light:#fff1e8">
+ <span class="lesson-number">Lesson 14</span>
+ <h2>Our Home | ہمارا گھر</h2>
+ <div class="picture">🏡🛏️🪑🚪<small>A safe home | ایک محفوظ گھر</small></div>
+ <h3>English</h3>
+ <p>A home is a place where we live with our family. It protects us from heat, cold, rain and wind. A home may have rooms such as a bedroom, kitchen, bathroom and living room. We sleep in the bedroom, cook food in the kitchen and wash in the bathroom. We should keep our home neat, clean and safe.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">گھر وہ جگہ ہے جہاں ہم اپنے خاندان کے ساتھ رہتے ہیں۔ یہ ہمیں گرمی، سردی، بارش اور ہوا سے محفوظ رکھتا ہے۔ گھر میں مختلف کمرے ہو سکتے ہیں، جیسے سونے کا کمرہ، باورچی خانہ، غسل خانہ اور بیٹھک۔ ہم سونے کے کمرے میں سوتے ہیں، باورچی خانے میں کھانا پکاتے ہیں اور غسل خانے میں نہاتے ہیں۔ ہمیں اپنے گھر کو صاف ستھرا اور محفوظ رکھنا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Bedroom</b><span class="urdu">سونے کا کمرہ</span></div>
+  <div class="word"><b>Kitchen</b><span class="urdu">باورچی خانہ</span></div>
+  <div class="word"><b>Bathroom</b><span class="urdu">غسل خانہ</span></div>
+  <div class="word"><b>Door</b><span class="urdu">دروازہ</span></div>
+  <div class="word"><b>Window</b><span class="urdu">کھڑکی</span></div>
+  <div class="word"><b>Roof</b><span class="urdu">چھت</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Why do we need a home? | ہمیں گھر کی ضرورت کیوں ہوتی ہے؟</li><li>Where do we cook food? | ہم کھانا کہاں پکاتے ہیں؟</li><li>Name two rooms in a home. | گھر کے دو کمروں کے نام بتائیں۔</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l15" style="--accent:#d89a2e;--light:#fff7e5">
+ <span class="lesson-number">Lesson 15</span>
+ <h2>Food | غذا</h2>
+ <div class="picture">🥛🍞🥚🍚🥗🍎<small>Healthy food | صحت مند غذا</small></div>
+ <h3>English</h3>
+ <p>Food gives us energy to work, learn and play. Healthy food helps our bodies grow. We eat fruits, vegetables, milk, eggs, grains and other foods. We should drink clean water and eat meals at suitable times. We should wash our hands before eating. Too many sugary snacks are not good for our health.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">غذا ہمیں کام کرنے، پڑھنے اور کھیلنے کے لیے توانائی دیتی ہے۔ صحت مند غذا ہمارے جسم کی نشوونما میں مدد کرتی ہے۔ ہم پھل، سبزیاں، دودھ، انڈے، اناج اور دوسری غذائیں کھاتے ہیں۔ ہمیں صاف پانی پینا اور مناسب اوقات میں کھانا کھانا چاہیے۔ کھانا کھانے سے پہلے ہاتھ دھونے چاہئیں۔ بہت زیادہ میٹھی چیزیں صحت کے لیے اچھی نہیں ہوتیں۔</p>
+ <div class="words">
+  <div class="word"><b>Milk 🥛</b><span class="urdu">دودھ</span></div>
+  <div class="word"><b>Bread 🍞</b><span class="urdu">ڈبل روٹی</span></div>
+  <div class="word"><b>Egg 🥚</b><span class="urdu">انڈا</span></div>
+  <div class="word"><b>Rice 🍚</b><span class="urdu">چاول</span></div>
+  <div class="word"><b>Vegetables 🥗</b><span class="urdu">سبزیاں</span></div>
+  <div class="word"><b>Water 💧</b><span class="urdu">پانی</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Why do we need food? | ہمیں غذا کی ضرورت کیوں ہے؟</li><li>Name two healthy foods. | دو صحت مند غذاؤں کے نام بتائیں۔</li><li>When should we wash our hands? | ہمیں ہاتھ کب دھونے چاہئیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l16" style="--accent:#2b9c83;--light:#eafff8">
+ <span class="lesson-number">Lesson 16</span>
+ <h2>Cleanliness | صفائی</h2>
+ <div class="picture">🧼🪥🛁🧹🧴<small>Keep clean and healthy | صاف ستھرے اور صحت مند رہیں</small></div>
+ <h3>English</h3>
+ <p>Cleanliness is important for good health. We should take a bath regularly, brush our teeth twice a day and wash our hands with soap. We should wear clean clothes, cut our nails when needed and keep our surroundings tidy. We must put rubbish in a dustbin. Clean habits help prevent the spread of germs.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">اچھی صحت کے لیے صفائی بہت ضروری ہے۔ ہمیں باقاعدگی سے نہانا، دن میں دو مرتبہ دانت صاف کرنا اور صابن سے ہاتھ دھونا چاہیے۔ ہمیں صاف کپڑے پہننے، ضرورت کے مطابق ناخن کاٹنے اور اپنے اردگرد کی جگہ صاف رکھنے کی عادت اپنانی چاہیے۔ کچرا ہمیشہ کوڑے دان میں ڈالنا چاہیے۔ صفائی کی اچھی عادتیں جراثیم کے پھیلاؤ کو روکنے میں مدد دیتی ہیں۔</p>
+ <div class="words">
+  <div class="word"><b>Soap 🧼</b><span class="urdu">صابن</span></div>
+  <div class="word"><b>Brush 🪥</b><span class="urdu">برش</span></div>
+  <div class="word"><b>Bath 🛁</b><span class="urdu">غسل</span></div>
+  <div class="word"><b>Clean</b><span class="urdu">صاف</span></div>
+  <div class="word"><b>Dustbin 🗑️</b><span class="urdu">کوڑے دان</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>How many times should we brush our teeth daily? | ہمیں روزانہ کتنی مرتبہ دانت صاف کرنے چاہئیں؟</li><li>Where should we throw rubbish? | ہمیں کچرا کہاں ڈالنا چاہیے؟</li><li>Why is cleanliness important? | صفائی کیوں ضروری ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l17" style="--accent:#3b9b54;--light:#edffed">
+ <span class="lesson-number">Lesson 17</span>
+ <h2>Plants | پودے</h2>
+ <div class="picture">🌱🌳🌻🌷🍃<small>Plants around us | ہمارے اردگرد پودے</small></div>
+ <h3>English</h3>
+ <p>Plants are living things. They grow in soil and need water, air and sunlight. Roots hold a plant in the soil and take in water. The stem supports the plant. Leaves help the plant make its food. Flowers can develop into fruits that contain seeds. Plants give us food, shade, wood and oxygen. We should plant trees and care for them.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پودے جاندار چیزیں ہیں۔ یہ مٹی میں اگتے ہیں اور انہیں پانی، ہوا اور سورج کی روشنی کی ضرورت ہوتی ہے۔ جڑیں پودے کو مٹی میں مضبوط رکھتی ہیں اور پانی جذب کرتی ہیں۔ تنا پودے کو سہارا دیتا ہے۔ پتے پودے کی غذا بنانے میں مدد دیتے ہیں۔ پھولوں سے پھل بن سکتے ہیں جن میں بیج ہوتے ہیں۔ پودے ہمیں خوراک، سایہ، لکڑی اور آکسیجن دیتے ہیں۔ ہمیں درخت لگانے اور ان کی حفاظت کرنے کی عادت اپنانی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Root</b><span class="urdu">جڑ</span></div>
+  <div class="word"><b>Stem</b><span class="urdu">تنا</span></div>
+  <div class="word"><b>Leaf</b><span class="urdu">پتا</span></div>
+  <div class="word"><b>Flower 🌻</b><span class="urdu">پھول</span></div>
+  <div class="word"><b>Fruit</b><span class="urdu">پھل</span></div>
+  <div class="word"><b>Seed</b><span class="urdu">بیج</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What do plants need to grow? | پودوں کو بڑھنے کے لیے کن چیزوں کی ضرورت ہوتی ہے؟</li><li>Which part holds a plant in the soil? | پودے کو مٹی میں کون سا حصہ مضبوط رکھتا ہے؟</li><li>Why are trees important? | درخت کیوں اہم ہیں؟</li></ol>
+ </div>
+ <div class="activity">🌱 Plant a small seed with your teacher and observe it. | استاد کی مدد سے ایک بیج لگائیں اور اس کی نشوونما دیکھیں۔</div>
+</section>
+
+<section class="page" id="l18" style="--accent:#4589ce;--light:#edf7ff">
+ <span class="lesson-number">Lesson 18</span>
+ <h2>Weather | موسم</h2>
+ <div class="picture">☀️🌧️⛅🌬️❄️<small>Different weather | مختلف موسم</small></div>
+ <h3>English</h3>
+ <p>Weather tells us what the air and sky are like at a particular time. A sunny day is bright and warm. A rainy day has falling rain. A cloudy day has many clouds in the sky. Windy weather means the air is moving. Cold weather makes us wear warm clothes. We should choose suitable clothes according to the weather.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">موسم ہمیں بتاتا ہے کہ کسی وقت ہوا اور آسمان کی کیفیت کیسی ہے۔ دھوپ والا دن روشن اور گرم ہوتا ہے۔ بارش والے دن پانی برستا ہے۔ ابر آلود دن میں آسمان پر بہت سے بادل ہوتے ہیں۔ ہوا والے موسم میں ہوا چلتی ہے۔ سرد موسم میں ہم گرم کپڑے پہنتے ہیں۔ ہمیں موسم کے مطابق مناسب لباس پہننا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Sunny ☀️</b><span class="urdu">دھوپ والا</span></div>
+  <div class="word"><b>Rainy 🌧️</b><span class="urdu">بارش والا</span></div>
+  <div class="word"><b>Cloudy ☁️</b><span class="urdu">ابر آلود</span></div>
+  <div class="word"><b>Windy 🌬️</b><span class="urdu">ہوا والا</span></div>
+  <div class="word"><b>Cold ❄️</b><span class="urdu">سرد</span></div>
+  <div class="word"><b>Hot 🔆</b><span class="urdu">گرم</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What do we use in rainy weather? | بارش کے موسم میں ہم کیا استعمال کرتے ہیں؟</li><li>What do we wear in cold weather? | سرد موسم میں ہم کیا پہنتے ہیں؟</li><li>What is a sunny day like? | دھوپ والا دن کیسا ہوتا ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l19" style="--accent:#8c5cbd;--light:#f6efff">
+ <span class="lesson-number">Lesson 19</span>
+ <h2>Days and Months | دن اور مہینے</h2>
+ <div class="picture">📅🗓️⏰<small>Calendar | کیلنڈر</small></div>
+ <h3>English</h3>
+ <p>A week has seven days. A year has twelve months. We use a calendar to know the days, dates and months. School days help us learn, while holidays give us time to rest and enjoy with family. We should learn the names of all seven days and twelve months in order.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">ایک ہفتے میں سات دن ہوتے ہیں اور ایک سال میں بارہ مہینے ہوتے ہیں۔ ہم دن، تاریخ اور مہینہ معلوم کرنے کے لیے کیلنڈر استعمال کرتے ہیں۔ اسکول کے دنوں میں ہم تعلیم حاصل کرتے ہیں جبکہ چھٹیوں میں آرام کرتے اور خاندان کے ساتھ وقت گزارتے ہیں۔ ہمیں ساتوں دنوں اور بارہ مہینوں کے نام ترتیب سے یاد کرنے چاہئیں۔</p>
+ <h3>Days of the Week | ہفتے کے دن</h3>
+ <div class="words">
+  <div class="word"><b>Monday</b><span class="urdu">پیر</span></div>
+  <div class="word"><b>Tuesday</b><span class="urdu">منگل</span></div>
+  <div class="word"><b>Wednesday</b><span class="urdu">بدھ</span></div>
+  <div class="word"><b>Thursday</b><span class="urdu">جمعرات</span></div>
+  <div class="word"><b>Friday</b><span class="urdu">جمعہ</span></div>
+  <div class="word"><b>Saturday</b><span class="urdu">ہفتہ</span></div>
+  <div class="word"><b>Sunday</b><span class="urdu">اتوار</span></div>
+ </div>
+ <h3>Months of the Year | سال کے مہینے</h3>
+ <div class="words">
+  <div class="word"><b>January</b><span>جنوری</span></div>
+  <div class="word"><b>February</b><span>فروری</span></div>
+  <div class="word"><b>March</b><span>مارچ</span></div>
+  <div class="word"><b>April</b><span>اپریل</span></div>
+  <div class="word"><b>May</b><span>مئی</span></div>
+  <div class="word"><b>June</b><span>جون</span></div>
+  <div class="word"><b>July</b><span>جولائی</span></div>
+  <div class="word"><b>August</b><span>اگست</span></div>
+  <div class="word"><b>September</b><span>ستمبر</span></div>
+  <div class="word"><b>October</b><span>اکتوبر</span></div>
+  <div class="word"><b>November</b><span>نومبر</span></div>
+  <div class="word"><b>December</b><span>دسمبر</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>How many days are in a week? | ایک ہفتے میں کتنے دن ہوتے ہیں؟</li><li>How many months are in a year? | ایک سال میں کتنے مہینے ہوتے ہیں؟</li><li>Which day comes after Monday? | پیر کے بعد کون سا دن آتا ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l20" style="--accent:#d28a35;--light:#fff6e8">
+ <span class="lesson-number">Lesson 20</span>
+ <h2>Time | وقت</h2>
+ <div class="picture">⏰🕰️⌚<small>Time and clocks | وقت اور گھڑیاں</small></div>
+ <h3>English</h3>
+ <p>Time helps us organize our daily activities. A clock tells us the time. We wake up, eat breakfast, go to school, play and sleep at different times. We should reach school on time and complete our work without unnecessary delay. A day has morning, afternoon, evening and night.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">وقت ہمیں اپنے روزمرہ کام ترتیب سے کرنے میں مدد دیتا ہے۔ گھڑی ہمیں وقت بتاتی ہے۔ ہم مختلف اوقات میں جاگتے، ناشتہ کرتے، اسکول جاتے، کھیلتے اور سوتے ہیں۔ ہمیں وقت پر اسکول پہنچنا اور اپنے کام بلاوجہ دیر کیے بغیر مکمل کرنا چاہیے۔ دن کے مختلف حصے صبح، دوپہر، شام اور رات ہیں۔</p>
+ <div class="words">
+  <div class="word"><b>Morning 🌅</b><span class="urdu">صبح</span></div>
+  <div class="word"><b>Afternoon ☀️</b><span class="urdu">دوپہر</span></div>
+  <div class="word"><b>Evening 🌇</b><span class="urdu">شام</span></div>
+  <div class="word"><b>Night 🌙</b><span class="urdu">رات</span></div>
+  <div class="word"><b>Clock ⏰</b><span class="urdu">گھڑی</span></div>
+  <div class="word"><b>Time</b><span class="urdu">وقت</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What tells us the time? | ہمیں وقت کون بتاتا ہے؟</li><li>When do we see the moon? | ہم چاند کب دیکھتے ہیں؟</li><li>Name the four parts of a day. | دن کے چار حصوں کے نام بتائیں۔</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l21" style="--accent:#19845a;--light:#eafff2">
+ <span class="lesson-number">Lesson 21</span>
+ <h2>My Country Pakistan | میرا ملک پاکستان</h2>
+ <div class="picture">🇵🇰🏞️🕌<small>Pakistan Zindabad | پاکستان زندہ باد</small></div>
+ <h3>English</h3>
+ <p>Pakistan is our beloved country. It came into being on 14 August 1947. Its founder was Quaid-e-Azam Muhammad Ali Jinnah. The capital city of Pakistan is Islamabad. The national language is Urdu. The national animal is the markhor, the national bird is the chukar and the national flower is jasmine. The national flag is green and white. We should love our country, follow its laws and keep it clean.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پاکستان ہمارا پیارا وطن ہے۔ یہ 14 اگست 1947ء کو معرضِ وجود میں آیا۔ اس کے بانی قائداعظم محمد علی جناح تھے۔ پاکستان کا دارالحکومت اسلام آباد ہے۔ قومی زبان اردو ہے۔ قومی جانور مارخور، قومی پرندہ چکور اور قومی پھول چنبیلی ہے۔ پاکستان کا قومی پرچم سبز اور سفید رنگ کا ہے۔ ہمیں اپنے وطن سے محبت کرنی، اس کے قوانین پر عمل کرنا اور اسے صاف رکھنا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Country</b><span class="urdu">ملک</span></div>
+  <div class="word"><b>Flag 🇵🇰</b><span class="urdu">پرچم</span></div>
+  <div class="word"><b>Capital</b><span class="urdu">دارالحکومت</span></div>
+  <div class="word"><b>Founder</b><span class="urdu">بانی</span></div>
+  <div class="word"><b>National</b><span class="urdu">قومی</span></div>
+  <div class="word"><b>Freedom</b><span class="urdu">آزادی</span></div>
+ </div>
+ <div class="info">
+  <h3>Important Facts | اہم معلومات</h3>
+  <p>Capital: Islamabad | دارالحکومت: اسلام آباد</p>
+  <p>Founder: Quaid-e-Azam | بانی: قائداعظم</p>
+  <p>Independence Day: 14 August | یومِ آزادی: 14 اگست</p>
+  <p>National Language: Urdu | قومی زبان: اردو</p>
+  <p>National Animal: Markhor | قومی جانور: مارخور</p>
+  <p>National Bird: Chukar | قومی پرندہ: چکور</p>
+  <p>National Flower: Jasmine | قومی پھول: چنبیلی</p>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What is the name of our country? | ہمارے ملک کا نام کیا ہے؟</li><li>When did Pakistan become independent? | پاکستان کب آزاد ہوا؟</li><li>What is the capital of Pakistan? | پاکستان کا دارالحکومت کیا ہے؟</li><li>Who was the founder of Pakistan? | پاکستان کے بانی کون تھے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l22" style="--accent:#29936c;--light:#eafff5">
+ <span class="lesson-number">Lesson 22</span>
+ <h2>Basic Islamic Knowledge | بنیادی اسلامی معلومات</h2>
+ <div class="picture">🕌🌙📿<small>Learning about Islam | اسلام کے بارے میں سیکھیں</small></div>
+ <h3>English</h3>
+ <p>Islam teaches us to worship Allah, speak the truth, help others and show kindness. Muslims believe in one Allah. The Holy Quran is our holy book. Prophet Muhammad ﷺ is the last Prophet of Allah. Muslims offer five daily prayers. Ramadan is a blessed month in which Muslims fast. We should respect our parents, teachers, neighbours and all people.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">اسلام ہمیں اللہ تعالیٰ کی عبادت کرنے، سچ بولنے، دوسروں کی مدد کرنے اور نرمی سے پیش آنے کی تعلیم دیتا ہے۔ مسلمان ایک اللہ پر ایمان رکھتے ہیں۔ قرآن مجید ہماری مقدس کتاب ہے۔ حضرت محمد ﷺ اللہ تعالیٰ کے آخری نبی ہیں۔ مسلمان روزانہ پانچ نمازیں ادا کرتے ہیں۔ رمضان ایک بابرکت مہینہ ہے جس میں مسلمان روزے رکھتے ہیں۔ ہمیں اپنے والدین، اساتذہ، پڑوسیوں اور تمام لوگوں کا احترام کرنا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Allah</b><span class="urdu">اللہ تعالیٰ</span></div>
+  <div class="word"><b>Quran</b><span class="urdu">قرآن مجید</span></div>
+  <div class="word"><b>Prayer</b><span class="urdu">نماز</span></div>
+  <div class="word"><b>Masjid 🕌</b><span class="urdu">مسجد</span></div>
+  <div class="word"><b>Ramadan</b><span class="urdu">رمضان</span></div>
+  <div class="word"><b>Fast</b><span class="urdu">روزہ</span></div>
+ </div>
+ <div class="info">
+  <h3>Remember | یاد رکھیں</h3>
+  <p>Our religion is Islam. | ہمارا دین اسلام ہے۔</p>
+  <p>Our holy book is the Holy Quran. | ہماری مقدس کتاب قرآن مجید ہے۔</p>
+  <p>Muslims pray five times a day. | مسلمان دن میں پانچ مرتبہ نماز پڑھتے ہیں۔</p>
+  <p>Our Prophet is Muhammad ﷺ. | ہمارے نبی حضرت محمد ﷺ ہیں۔</p>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What is our religion? | ہمارا دین کیا ہے؟</li><li>What is our holy book? | ہماری مقدس کتاب کون سی ہے؟</li><li>How many daily prayers do Muslims offer? | مسلمان روزانہ کتنی نمازیں پڑھتے ہیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l23" style="--accent:#c06a9b;--light:#fff0f7">
+ <span class="lesson-number">Lesson 23</span>
+ <h2>Good Manners | اچھے آداب</h2>
+ <div class="picture">🤝😊🙏💐<small>Be kind and respectful | مہربان اور باادب بنیں</small></div>
+ <h3>English</h3>
+ <p>Good manners make us kind and respectful people. We should say please when asking for something and thank you when someone helps us. We should greet others politely, listen when someone speaks and wait for our turn. We should share our things, speak the truth and say sorry when we make a mistake. Respecting elders and caring for younger children are good habits.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">اچھے آداب ہمیں مہربان اور باادب انسان بناتے ہیں۔ کسی سے چیز مانگتے وقت براہِ کرم اور کسی کی مدد پر شکریہ کہنا چاہیے۔ ہمیں دوسروں کو اچھے طریقے سے سلام کرنا، بات سنتے وقت توجہ دینا اور اپنی باری کا انتظار کرنا چاہیے۔ ہمیں اپنی چیزیں دوسروں کے ساتھ بانٹنی، سچ بولنا اور غلطی ہونے پر معذرت کرنی چاہیے۔ بڑوں کی عزت اور چھوٹے بچوں سے شفقت اچھے اخلاق ہیں۔</p>
+ <div class="words">
+  <div class="word"><b>Please</b><span class="urdu">براہِ کرم</span></div>
+  <div class="word"><b>Thank You</b><span class="urdu">شکریہ</span></div>
+  <div class="word"><b>Sorry</b><span class="urdu">معذرت</span></div>
+  <div class="word"><b>Welcome</b><span class="urdu">خوش آمدید</span></div>
+  <div class="word"><b>Respect</b><span class="urdu">احترام</span></div>
+  <div class="word"><b>Kindness</b><span class="urdu">مہربانی</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What should we say when someone helps us? | کوئی ہماری مدد کرے تو ہمیں کیا کہنا چاہیے؟</li><li>How should we speak to elders? | ہمیں بڑوں سے کیسے بات کرنی چاہیے؟</li><li>Why are good manners important? | اچھے آداب کیوں ضروری ہیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l24" style="--accent:#d05d43;--light:#fff0eb">
+ <span class="lesson-number">Lesson 24</span>
+ <h2>Safety Rules | حفاظتی اصول</h2>
+ <div class="picture">🚦🚸🛑⛑️<small>Stay safe | محفوظ رہیں</small></div>
+ <h3>English</h3>
+ <p>Safety rules protect us from accidents. We should cross the road at a zebra crossing and look both ways before crossing. We should hold an adult's hand near busy roads. We must not play with matches, sharp tools or electrical sockets. We should never talk to or go anywhere with a stranger without permission from a trusted adult. If we need help, we should tell our parents or teachers.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">حفاظتی اصول ہمیں حادثات سے بچاتے ہیں۔ ہمیں زیبرا کراسنگ سے سڑک پار کرنی چاہیے اور سڑک پار کرنے سے پہلے دونوں طرف دیکھنا چاہیے۔ مصروف سڑک کے قریب کسی بڑے کا ہاتھ پکڑنا چاہیے۔ ماچس، تیز دھار اوزار یا بجلی کے ساکٹ سے نہیں کھیلنا چاہیے۔ کسی اجنبی کے ساتھ اس وقت تک کہیں نہیں جانا چاہیے جب تک والدین یا قابلِ اعتماد بڑے اجازت نہ دیں۔ مدد کی ضرورت ہو تو والدین یا استاد کو بتانا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Safe</b><span class="urdu">محفوظ</span></div>
+  <div class="word"><b>Road</b><span class="urdu">سڑک</span></div>
+  <div class="word"><b>Traffic Light 🚦</b><span class="urdu">ٹریفک سگنل</span></div>
+  <div class="word"><b>Stop 🛑</b><span class="urdu">رکیں</span></div>
+  <div class="word"><b>Danger</b><span class="urdu">خطرہ</span></div>
+  <div class="word"><b>Help</b><span class="urdu">مدد</span></div>
+ </div>
+ <div class="info">
+  <h3>Traffic Lights | ٹریفک سگنل</h3>
+  <p>Red means Stop. | سرخ کا مطلب رکنا ہے۔</p>
+  <p>Yellow means Wait. | پیلے کا مطلب انتظار کرنا ہے۔</p>
+  <p>Green means Go when safe. | سبز کا مطلب محفوظ ہونے پر چلنا ہے۔</p>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Where should we cross the road? | ہمیں سڑک کہاں سے پار کرنی چاہیے؟</li><li>What does a red traffic light mean? | سرخ بتی کا کیا مطلب ہے؟</li><li>Whom should we tell if we need help? | مدد کی ضرورت ہو تو ہمیں کس کو بتانا چاہیے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l25" style="--accent:#397db8;--light:#edf5ff">
+ <span class="lesson-number">Lesson 25</span>
+ <h2>Computer | کمپیوٹر</h2>
+ <div class="picture">💻🖥️⌨️🖱️<small>Learn about computers | کمپیوٹر کے بارے میں جانیں</small></div>
+ <h3>English</h3>
+ <p>A computer is an electronic machine. It helps us write, draw, learn and do many other tasks. A computer has different parts. The monitor shows pictures and words. The keyboard helps us type. The mouse helps us point and click. The CPU is an important processing part in many desktop computers. We should use computers carefully and with the guidance of an adult.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">کمپیوٹر ایک الیکٹرانک مشین ہے۔ یہ ہمیں لکھنے، تصویریں بنانے، سیکھنے اور بہت سے دوسرے کام کرنے میں مدد دیتا ہے۔ کمپیوٹر کے مختلف حصے ہوتے ہیں۔ مانیٹر ہمیں تصویریں اور الفاظ دکھاتا ہے۔ کی بورڈ سے ہم ٹائپ کرتے ہیں۔ ماؤس سے ہم چیزوں کی طرف اشارہ اور کلک کرتے ہیں۔ ڈیسک ٹاپ کمپیوٹر میں سی پی یو ایک اہم حصہ ہوتا ہے جو معلومات پر عمل کرتا ہے۔ ہمیں کمپیوٹر احتیاط سے اور کسی بڑے کی رہنمائی میں استعمال کرنا چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Computer 💻</b><span class="urdu">کمپیوٹر</span></div>
+  <div class="word"><b>Monitor 🖥️</b><span class="urdu">مانیٹر</span></div>
+  <div class="word"><b>Keyboard ⌨️</b><span class="urdu">کی بورڈ</span></div>
+  <div class="word"><b>Mouse 🖱️</b><span class="urdu">ماؤس</span></div>
+  <div class="word"><b>Printer 🖨️</b><span class="urdu">پرنٹر</span></div>
+  <div class="word"><b>Speaker 🔊</b><span class="urdu">اسپیکر</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What is a computer? | کمپیوٹر کیا ہے؟</li><li>Which part helps us type? | ٹائپ کرنے کے لیے کون سا حصہ استعمال ہوتا ہے؟</li><li>Which part shows pictures? | تصویریں کون سا حصہ دکھاتا ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l26" style="--accent:#6659bd;--light:#f1efff">
+ <span class="lesson-number">Lesson 26</span>
+ <h2>Universe | کائنات</h2>
+ <div class="picture">🌍🌙☀️⭐🪐🚀<small>Our wonderful universe | ہماری حیرت انگیز کائنات</small></div>
+ <h3>English</h3>
+ <p>The universe is very vast. It contains stars, planets, moons and many other objects. The Sun is a star that gives us light and heat. Earth is the planet on which we live. The Moon is Earth's natural satellite. During the day we usually see the Sun, and at night we can often see the Moon and stars. We should learn about nature and take care of our planet.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">کائنات بہت وسیع ہے۔ اس میں ستارے، سیارے، چاند اور بہت سی دوسری چیزیں شامل ہیں۔ سورج ایک ستارہ ہے جو ہمیں روشنی اور حرارت دیتا ہے۔ زمین وہ سیارہ ہے جس پر ہم رہتے ہیں۔ چاند زمین کا قدرتی سیارہ نما ساتھی یعنی قدرتی سیارچہ ہے۔ دن کے وقت عموماً ہمیں سورج نظر آتا ہے اور رات کو اکثر چاند اور ستارے دکھائی دیتے ہیں۔ ہمیں قدرت کے بارے میں سیکھنا اور اپنے سیارے کی حفاظت کرنی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Sun ☀️</b><span class="urdu">سورج</span></div>
+  <div class="word"><b>Moon 🌙</b><span class="urdu">چاند</span></div>
+  <div class="word"><b>Earth 🌍</b><span class="urdu">زمین</span></div>
+  <div class="word"><b>Star ⭐</b><span class="urdu">ستارہ</span></div>
+  <div class="word"><b>Planet 🪐</b><span class="urdu">سیارہ</span></div>
+  <div class="word"><b>Space 🚀</b><span class="urdu">خلا</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>What gives us light and heat? | ہمیں روشنی اور حرارت کون دیتا ہے؟</li><li>On which planet do we live? | ہم کس سیارے پر رہتے ہیں؟</li><li>What can we see in the night sky? | رات کے آسمان میں ہمیں کیا نظر آ سکتا ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l27" style="--accent:#2699c5;--light:#eafaff">
+ <span class="lesson-number">Lesson 27</span>
+ <h2>Water | پانی</h2>
+ <div class="picture">💧🌊🚰☔🐟<small>Water is precious | پانی قیمتی ہے</small></div>
+ <h3>English</h3>
+ <p>Water is necessary for all living things. People, animals and plants need water to live. We use water for drinking, cooking, washing and cleaning. Rain fills rivers, lakes and dams. We should drink clean and safe water. We must not waste water by leaving taps open. Saving water helps protect our future.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پانی تمام جانداروں کے لیے ضروری ہے۔ انسانوں، جانوروں اور پودوں کو زندہ رہنے کے لیے پانی کی ضرورت ہوتی ہے۔ ہم پانی پینے، کھانا پکانے، دھونے اور صفائی کے لیے استعمال کرتے ہیں۔ بارش سے دریا، جھیلیں اور ڈیم بھر سکتے ہیں۔ ہمیں صاف اور محفوظ پانی پینا چاہیے۔ نل کھلا چھوڑ کر پانی ضائع نہیں کرنا چاہیے۔ پانی بچانا ہمارے مستقبل کی حفاظت میں مدد دیتا ہے۔</p>
+ <div class="words">
+  <div class="word"><b>Water 💧</b><span class="urdu">پانی</span></div>
+  <div class="word"><b>River</b><span class="urdu">دریا</span></div>
+  <div class="word"><b>Lake</b><span class="urdu">جھیل</span></div>
+  <div class="word"><b>Rain ☔</b><span class="urdu">بارش</span></div>
+  <div class="word"><b>Ocean 🌊</b><span class="urdu">سمندر</span></div>
+  <div class="word"><b>Tap 🚰</b><span class="urdu">نل</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Why do living things need water? | جانداروں کو پانی کی ضرورت کیوں ہے؟</li><li>Name two uses of water. | پانی کے دو استعمال بتائیں۔</li><li>How can we save water? | ہم پانی کیسے بچا سکتے ہیں؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l28" style="--accent:#d17b38;--light:#fff3e7">
+ <span class="lesson-number">Lesson 28</span>
+ <h2>Community Helpers | ہمارے مددگار</h2>
+ <div class="picture">👨‍🏫👨‍⚕️👮‍♂️👨‍🚒👨‍🌾<small>People who help us | ہماری مدد کرنے والے لوگ</small></div>
+ <h3>English</h3>
+ <p>Community helpers are people who work to help others. Teachers educate children. Doctors and nurses care for sick people. Farmers grow crops and produce food. Police officers help maintain law and order. Firefighters help put out fires. Cleaners help keep places tidy. We should respect all honest workers and thank them for their services.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">معاشرے کے مددگار وہ لوگ ہیں جو دوسروں کی مدد کے لیے کام کرتے ہیں۔ اساتذہ بچوں کو تعلیم دیتے ہیں۔ ڈاکٹر اور نرسیں بیمار لوگوں کی دیکھ بھال کرتی ہیں۔ کسان فصلیں اگاتے اور خوراک پیدا کرتے ہیں۔ پولیس کے اہلکار قانون اور امن قائم رکھنے میں مدد دیتے ہیں۔ فائر فائٹرز آگ بجھانے میں مدد کرتے ہیں۔ صفائی کرنے والے جگہوں کو صاف رکھتے ہیں۔ ہمیں تمام محنت کرنے والے لوگوں کی عزت کرنی چاہیے۔</p>
+ <div class="words">
+  <div class="word"><b>Teacher 👨‍🏫</b><span class="urdu">استاد</span></div>
+  <div class="word"><b>Doctor 👨‍⚕️</b><span class="urdu">ڈاکٹر</span></div>
+  <div class="word"><b>Farmer 👨‍🌾</b><span class="urdu">کسان</span></div>
+  <div class="word"><b>Police 👮</b><span class="urdu">پولیس اہلکار</span></div>
+  <div class="word"><b>Firefighter 👨‍🚒</b><span class="urdu">آگ بجھانے والا</span></div>
+  <div class="word"><b>Nurse</b><span class="urdu">نرس</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Who teaches children? | بچوں کو کون پڑھاتا ہے؟</li><li>Who grows crops? | فصلیں کون اگاتا ہے؟</li><li>Who helps sick people? | بیمار لوگوں کی مدد کون کرتا ہے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l29" style="--accent:#4a9a55;--light:#efffed">
+ <span class="lesson-number">Lesson 29</span>
+ <h2>Sports and Games | کھیل</h2>
+ <div class="picture">⚽🏏🏸🏀🏃‍♂️<small>Play and stay active | کھیلیں اور سرگرم رہیں</small></div>
+ <h3>English</h3>
+ <p>Sports and games are good for our health. They help us stay active, learn teamwork and follow rules. Children enjoy playing football, cricket, badminton and many other games. Some games are played outdoors, while others can be played indoors. We should play safely, share equipment and respect other players. Winning and losing are both parts of a game.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">کھیل ہماری صحت کے لیے اچھے ہوتے ہیں۔ یہ ہمیں سرگرم رہنے، مل جل کر کام کرنے اور اصولوں کی پابندی سیکھنے میں مدد دیتے ہیں۔ بچے فٹ بال، کرکٹ، بیڈمنٹن اور بہت سے دوسرے کھیل کھیلنا پسند کرتے ہیں۔ کچھ کھیل باہر کھیلے جاتے ہیں جبکہ کچھ گھر یا ہال کے اندر کھیلے جا سکتے ہیں۔ ہمیں احتیاط سے کھیلنا، سامان دوسروں کے ساتھ بانٹنا اور دوسرے کھلاڑیوں کی عزت کرنی چاہیے۔ جیت اور ہار دونوں کھیل کا حصہ ہیں۔</p>
+ <div class="words">
+  <div class="word"><b>Football ⚽</b><span class="urdu">فٹ بال</span></div>
+  <div class="word"><b>Cricket 🏏</b><span class="urdu">کرکٹ</span></div>
+  <div class="word"><b>Badminton 🏸</b><span class="urdu">بیڈمنٹن</span></div>
+  <div class="word"><b>Basketball 🏀</b><span class="urdu">باسکٹ بال</span></div>
+  <div class="word"><b>Player</b><span class="urdu">کھلاڑی</span></div>
+  <div class="word"><b>Team</b><span class="urdu">ٹیم</span></div>
+ </div>
+ <div class="questions"><b>Questions | سوالات</b>
+  <ol><li>Name two sports. | دو کھیلوں کے نام بتائیں۔</li><li>Why should we play games? | ہمیں کھیل کیوں کھیلنے چاہئیں؟</li><li>Should we respect other players? | کیا ہمیں دوسرے کھلاڑیوں کی عزت کرنی چاہیے؟</li></ol>
+ </div>
+</section>
+
+<section class="page" id="l30" style="--accent:#8a5ab6;--light:#f6efff">
+ <span class="lesson-number">Lesson 30</span>
+ <h2>Revision and Practice | دہرائی اور مشق</h2>
+ <div class="picture">📖✏️🧠🌟<small>Let's revise what we learned! | آئیے سیکھی ہوئی باتیں دہرائیں!</small></div>
+ <h3>Part A: Answer in English</h3>
+ <ol>
+  <li>What is the name of your school?</li>
+  <li>How many days are in a week?</li>
+  <li>Name two fruits.</li>
+  <li>Which animal gives us milk?</li>
+  <li>What is the capital of Pakistan?</li>
+  <li>Which part of the body helps us see?</li>
+  <li>What do plants need to grow?</li>
+  <li>How many main senses do we have?</li>
+  <li>Which part of a computer helps us type?</li>
+  <li>What is our holy book?</li>
+ </ol>
+ <h3 class="urdu">حصہ ب: اردو میں جواب دیں</h3>
+ <ol class="urdu">
+  <li>ہمارے ملک کا نام کیا ہے؟</li>
+  <li>ایک ہفتے میں کتنے دن ہوتے ہیں؟</li>
+  <li>دو سبزیوں کے نام بتائیں۔</li>
+  <li>ہمیں صاف پانی کیوں پینا چاہیے؟</li>
+  <li>پاکستان کب آزاد ہوا؟</li>
+  <li>ہمیں اپنے اساتذہ کے ساتھ کیسا سلوک کرنا چاہیے؟</li>
+  <li>سورج ہمیں کیا دیتا ہے؟</li>
+  <li>پرندے کہاں گھونسلے بناتے ہیں؟</li>
+ </ol>
+ <h3>Part C: Match the Following | درست جوڑ ملائیں</h3>
+ <div class="info">
+  <p>1. Cow — Milk | گائے — دودھ</p>
+  <p>2. Sun — Light | سورج — روشنی</p>
+  <p>3. Teacher — Education | استاد — تعلیم</p>
+  <p>4. Doctor — Patients | ڈاکٹر — مریض</p>
+  <p>5. Fish — Water | مچھلی — پانی</p>
+ </div>
+ <h3>Part D: Fill in the Blanks | خالی جگہ پُر کریں</h3>
+ <ol>
+  <li>There are ______ days in a week.</li>
+  <li>We see with our ______.</li>
+  <li>Pakistan became independent on ______ August 1947.</li>
+  <li>A ______ gives us milk.</li>
+  <li>Plants need water and ______ to grow.</li>
+ </ol>
+ <h3 class="urdu">حصہ ہ: درست یا غلط لکھیں</h3>
+ <ol class="urdu">
+  <li>ہم آنکھوں سے سنتے ہیں۔</li>
+  <li>پاکستان کا دارالحکومت اسلام آباد ہے۔</li>
+  <li>پودوں کو پانی کی ضرورت ہوتی ہے۔</li>
+  <li>کچرا سڑک پر پھینکنا چاہیے۔</li>
+  <li>ایک سال میں بارہ مہینے ہوتے ہیں۔</li>
+ </ol>
+ <div class="activity">
+  ⭐ Teacher's Activity: Ask children to name objects, colours, animals, fruits and body parts around them. Let every child answer in both English and Urdu.
+  <p class="urdu">استاد کی سرگرمی: بچوں سے اپنے اردگرد موجود چیزوں، رنگوں، جانوروں، پھلوں اور جسم کے حصوں کے نام پوچھیں۔ ہر بچے کو اردو اور انگلش دونوں میں جواب دینے کا موقع دیں۔</p>
+ </div>
+</section>
+
+<footer>
+ <h2>THE RISEN HIGH SCHOOL</h2>
+ <p class="urdu">علم حاصل کرنا ہر بچے کا حق ہے</p>
+ <p>Nursery General Knowledge</p>
+ <p>English + Urdu | Learn • Explore • Grow</p>
+ <p>© The Risen High School</p>
+</footer>
+
+</main>
+</body>
+</html>
