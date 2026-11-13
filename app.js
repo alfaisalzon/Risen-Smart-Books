@@ -100,6 +100,7 @@ const subjects = [
 
 /* BOOK FILE NAME CORRECTION */
 const bookFileNames = {
+ "mathematics":"math",
  "general-science":"science"
 };
 
