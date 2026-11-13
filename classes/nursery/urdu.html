@@ -6,8 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>نرسری اردو کی کتاب | The Risen High School</title>
 
-<script src="../../images/nursery/pictures.js"></script>
-
 <style>
 @font-face{
  font-family:Jameel;
@@ -59,7 +57,7 @@ h3{color:#0f766e;font-size:24px}
  border:1px solid #dbeafe;border-radius:12px;padding:8px;
 }
 .photo-card img{
- width:100%;height:125px;object-fit:cover;
+ width:100%;height:125px;object-fit:contain;
  border-radius:8px;background:#e2e8f0;
 }
 .photo-card b{display:block;color:#075985}
@@ -104,8 +102,7 @@ footer{text-align:center;padding:20px;color:#64748b}
 
 <section class="cover">
  <h2>اردو کی پیاری کتاب</h2>
- <img class="hero" src="../../images/nursery/cover.jpg"
- alt="کتاب کا سرورق" onerror="this.style.display='none'">
+ <div style="font-size:100px;padding:25px;background:#dbeafe;border-radius:15px">📚🌈</div>
  <h3>جماعت: نرسری</h3>
  <p>سالانہ تعلیمی نصاب</p>
  <p>آؤ پڑھیں، لکھیں اور سیکھیں۔</p>
@@ -295,19 +292,96 @@ q:["کہانی سننے سے کیا فائدہ ہوتا ہے؟","ہمیں کون
 }
 ];
 
+const pictureData = {
+ pomegranate:["🍎","#fee2e2"],
+ goat:["🐐","#dcfce7"],
+ kite:["🪁","#dbeafe"],
+ butterfly:["🦋","#fce7f3"],
+ tomato:["🍅","#fee2e2"],
+ airplane:["✈️","#dbeafe"],
+ sparrow:["🐦","#fef3c7"],
+ tree:["🌳","#dcfce7"],
+ mango:["🥭","#fef3c7"],
+ grapes:["🍇","#f3e8ff"],
+ egg:["🥚","#fef9c3"],
+ family:["👨‍👩‍👧‍👦","#fce7f3"],
+ father:["👨","#dbeafe"],
+ mother:["👩","#fce7f3"],
+ sister:["👧","#fce7f3"],
+ brother:["👦","#dbeafe"],
+ house:["🏠","#ffedd5"],
+ door:["🚪","#dbeafe"],
+ window:["🪟","#e0f2fe"],
+ room:["🛋️","#fef3c7"],
+ kitchen:["🍳","#ffedd5"],
+ school:["🏫","#dbeafe"],
+ book:["📚","#fef3c7"],
+ pen:["🖊️","#dbeafe"],
+ backpack:["🎒","#fce7f3"],
+ blackboard:["📋","#dcfce7"],
+ cow:["🐄","#dcfce7"],
+ horse:["🐎","#fef3c7"],
+ cat:["🐈","#fce7f3"],
+ elephant:["🐘","#dbeafe"],
+ lion:["🦁","#fef3c7"],
+ parrot:["🦜","#dcfce7"],
+ peacock:["🦚","#dbeafe"],
+ pigeon:["🕊️","#fef3c7"],
+ duck:["🦆","#dbeafe"],
+ apple:["🍎","#fee2e2"],
+ banana:["🍌","#fef3c7"],
+ carrot:["🥕","#ffedd5"],
+ potato:["🥔","#fef3c7"],
+ onion:["🧅","#fce7f3"],
+ spinach:["🥬","#dcfce7"],
+ okra:["🥒","#dcfce7"],
+ rose:["🌹","#fce7f3"],
+ sunflower:["🌻","#fef3c7"],
+ marigold:["🌼","#fef3c7"],
+ jasmine:["🌸","#fce7f3"],
+ red:["🔴","#fee2e2"],
+ blue:["🔵","#dbeafe"],
+ yellow:["🟡","#fef3c7"],
+ green:["🟢","#dcfce7"],
+ white:["⚪","#f1f5f9"],
+ orange:["🟠","#ffedd5"],
+ eye:["👁️","#dbeafe"],
+ ear:["👂","#fce7f3"],
+ nose:["👃","#ffedd5"],
+ hand:["✋","#fef3c7"],
+ foot:["🦶","#fce7f3"],
+ mouth:["👄","#fee2e2"],
+ chair:["🪑","#ffedd5"],
+ glass:["🥛","#dbeafe"],
+ soap:["🧼","#dbeafe"],
+ comb:["🪮","#fce7f3"],
+ bicycle:["🚲","#dcfce7"],
+ motorcycle:["🏍️","#dbeafe"],
+ car:["🚗","#fee2e2"],
+ bus:["🚌","#fef3c7"],
+ train:["🚆","#dbeafe"],
+ sun:["☀️","#fef3c7"],
+ clouds:["☁️","#dbeafe"],
+ rain:["🌧️","#dbeafe"],
+ flower:["🌺","#fce7f3"],
+ towel:["🧻","#f1f5f9"],
+ toothbrush:["🪥","#dbeafe"],
+ child:["🧒","#fce7f3"]
+};
+
 function getImage(key){
- return window.RISEN_PICTURES && window.RISEN_PICTURES[key]
- ? window.RISEN_PICTURES[key] : "";
+ const item=pictureData[key] || ["📖","#e2e8f0"];
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260">
+ <rect width="400" height="260" rx="25" fill="${item[1]}"/>
+ <circle cx="200" cy="130" r="90" fill="#ffffff" opacity=".65"/>
+ <text x="200" y="165" text-anchor="middle" font-size="115">${item[0]}</text>
+ </svg>`;
+ return "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(svg);
 }
 
-function makePhoto(word,index){
- const url=getImage(word[1]);
- if(!url){
-  return `<div class="photo-card"><div style="height:125px;background:#e2e8f0;border-radius:8px;display:grid;place-items:center">تصویر موجود نہیں</div><b>${word[0]}</b></div>`;
- }
+function makePhoto(word){
  return `<div class="photo-card">
- <img loading="lazy" src="${url}" alt="${word[0]}"
- onerror="this.style.display='none';this.nextElementSibling.textContent='تصویر لوڈ نہیں ہوئی'">
+ <img loading="lazy" src="${getImage(word[1])}" alt="${word[0]}">
  <b>${word[0]}</b>
  </div>`;
 }
@@ -320,8 +394,7 @@ function render(){
   const id="lesson"+(i+1);
   contents.innerHTML+=`<li><a href="#${id}">${lesson.t}</a></li>`;
 
-  const cards=lesson.w.map((w,j)=>makePhoto(w,j)).join("");
-
+  const cards=lesson.w.map(makePhoto).join("");
   const section=document.createElement("section");
   section.className="lesson";
   section.id=id;
@@ -342,12 +415,6 @@ function render(){
    </div>
    <h3>گھر کا کام</h3>
    <p>سبق پڑھیں، نئے الفاظ یاد کریں اور اپنی کاپی میں خوبصورت لکھائی سے لکھیں۔</p>
-   <div class="qr">
-    <img loading="lazy"
-    src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("The Risen High School Nursery Urdu "+lesson.t)}"
-    alt="QR Code">
-    <p class="small">سبق نمبر ${i+1} کا QR کوڈ</p>
-   </div>
    <p class="small">مصنف: رانا محمد فیصل | Rana Muhammad Faisal</p>
   `;
   book.appendChild(section);
