@@ -3,83 +3,78 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نرسری اردو — The Risen High School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نرسری اردو کتاب | The Risen High School</title>
 
 <style>
 @font-face{
-  font-family:Jameel;
-  src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
+font-family:Jameel;
+src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
 }
 *{box-sizing:border-box}
 body{
-  margin:0;background:#f1f5f9;color:#263445;
-  font-family:Jameel,serif;font-size:21px;line-height:2;
+margin:0;background:#f1f5f9;color:#263445;
+font-family:Jameel,serif;font-size:21px;line-height:2;
 }
 header{
-  background:linear-gradient(135deg,#075985,#2563eb);
-  color:white;text-align:center;padding:28px 12px;
+background:linear-gradient(135deg,#075985,#2563eb);
+color:white;text-align:center;padding:25px 12px;
 }
 header h1{font-size:34px;margin:0}
-header p{margin:3px}
+header p{margin:0}
 .container{max-width:1000px;margin:auto;padding:12px}
-.cover{
-  background:white;text-align:center;padding:30px 15px;
-  border-radius:18px;margin:15px 0;border:3px solid #0ea5e9;
+.cover,.contents,.lesson,.exam{
+background:white;border-radius:15px;padding:18px;margin:15px 0;
+box-shadow:0 3px 12px #00000010;
 }
+.cover{text-align:center;border:3px solid #0ea5e9;padding:25px 12px}
 .cover h2{font-size:34px;color:#075985}
 .cover img{width:100%;max-width:500px;height:220px;object-fit:cover;border-radius:14px}
 .author{color:#075985;font-weight:bold}
-.contents,.lesson,.exam{
-  background:white;border-radius:15px;padding:18px;
-  margin:15px 0;box-shadow:0 3px 12px #00000010;
-}
 .contents h2,.lesson h2,.exam h2{color:#075985}
 .contents a{
-  display:block;text-decoration:none;color:#1d4ed8;
-  border-bottom:1px dashed #ddd;padding:5px;
+display:block;text-decoration:none;color:#1d4ed8;
+border-bottom:1px dashed #ddd;padding:5px;
 }
 .lesson{scroll-margin-top:12px}
 .lesson h2{border-bottom:2px solid #bae6fd;padding-bottom:8px}
 .lesson-image{
-  width:100%;height:230px;object-fit:cover;border-radius:12px;
-  margin:8px 0;
+width:100%;height:230px;object-fit:cover;border-radius:12px;
+display:block;margin:8px 0;
 }
 .word-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
-  gap:12px;margin:15px 0;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
+gap:12px;margin:15px 0;
 }
 .word-card{
-  background:#f0f9ff;border:1px solid #bae6fd;
-  border-radius:12px;text-align:center;padding:9px;
+background:#f0f9ff;border:1px solid #bae6fd;
+border-radius:12px;text-align:center;padding:9px;
 }
 .word-card img{
-  width:100%;height:105px;object-fit:cover;border-radius:9px;
+width:100%;height:105px;object-fit:cover;border-radius:9px;
 }
 .word-card strong{display:block;color:#075985;font-size:22px}
 .word-card small{font-family:Arial,sans-serif;color:#475569}
 h3{color:#0f766e}
 .activity{
-  background:#ecfdf5;border-right:5px solid #10b981;
-  padding:10px 15px;border-radius:8px;margin:12px 0;
+background:#ecfdf5;border-right:5px solid #10b981;
+padding:10px 15px;border-radius:8px;margin:12px 0;
 }
-.question{
-  background:#fff7ed;padding:10px 14px;
-  border-radius:9px;margin:10px 0;
-}
+.question{background:#fff7ed;padding:10px 14px;border-radius:9px;margin:10px 0}
 .qr{text-align:center;margin:18px}
 .qr img{width:130px;height:130px}
 button{
-  background:#075985;color:white;border:0;padding:10px 20px;
-  border-radius:9px;font-family:inherit;font-size:19px;margin:5px;
+background:#075985;color:white;border:0;padding:10px 20px;
+border-radius:9px;font-family:inherit;font-size:19px;margin:5px;
 }
 footer{text-align:center;background:#0f172a;color:white;padding:20px}
+.image-status{font-size:15px;color:#64748b}
 @media print{
-  body{background:white;font-size:18px}
-  header{background:#075985!important;color:white!important}
-  button,.contents{display:none}
-  .lesson,.exam,.cover{box-shadow:none;break-inside:avoid}
-  .lesson-image{height:180px}
+body{background:white;font-size:18px}
+header{background:#075985!important;color:white!important}
+button,.contents{display:none}
+.lesson,.exam,.cover{box-shadow:none;break-inside:avoid}
+.lesson-image{height:180px}
 }
 </style>
 </head>
@@ -87,21 +82,21 @@ footer{text-align:center;background:#0f172a;color:white;padding:20px}
 <body>
 
 <header>
-  <h1>دی رائزن ہائی اسکول</h1>
-  <p>The Risen High School</p>
-  <p>نرسری — اردو کی مکمل کتاب</p>
-  <p>سالانہ تعلیمی نصاب</p>
+<h1>دی رائزن ہائی اسکول</h1>
+<p>The Risen High School</p>
+<p>نرسری — اردو کی کتاب</p>
+<p>سالانہ تعلیمی نصاب</p>
 </header>
 
 <div class="container">
 
 <section class="cover">
-  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900" alt="بچوں کی تعلیم">
-  <h2>اردو کی کتاب</h2>
-  <h3>جماعت: نرسری</h3>
-  <p>پیارے بچوں کے لیے آسان اور دلچسپ اردو کتاب</p>
-  <p class="author">مصنف: رانا محمد فیصل</p>
-  <p class="author">Author: Rana Muhammad Faisal</p>
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900" alt="بچوں کی تعلیم">
+<h2>اردو کی کتاب</h2>
+<h3>جماعت: نرسری</h3>
+<p>پیارے بچوں کے لیے آسان اور دلچسپ اردو کتاب</p>
+<p class="author">مصنف: رانا محمد فیصل</p>
+<p class="author">Author: Rana Muhammad Faisal</p>
 </section>
 
 <section class="contents">
@@ -116,30 +111,24 @@ footer{text-align:center;background:#0f172a;color:white;padding:20px}
 <p><b>جماعت:</b> نرسری</p>
 <p><b>کل نمبر:</b> 50</p>
 <p><b>وقت:</b> 2 گھنٹے</p>
-
 <h3>سوال نمبر 1: حروفِ تہجی لکھیں۔ (10 نمبر)</h3>
 <p>ا، ب، پ، ت، ٹ، ث، ج، چ، ح، خ</p>
-
 <h3>سوال نمبر 2: خالی جگہ پُر کریں۔ (10 نمبر)</h3>
 <p>1۔ ا سے ______۔</p>
 <p>2۔ ب سے ______۔</p>
 <p>3۔ پ سے ______۔</p>
 <p>4۔ ت سے ______۔</p>
 <p>5۔ م سے ______۔</p>
-
 <h3>سوال نمبر 3: پانچ پھلوں کے نام لکھیں۔ (5 نمبر)</h3>
 <p>________________________________</p>
-
 <h3>سوال نمبر 4: پانچ جانوروں کے نام لکھیں۔ (5 نمبر)</h3>
 <p>________________________________</p>
-
 <h3>سوال نمبر 5: مختصر جواب دیں۔ (10 نمبر)</h3>
 <p>1۔ آپ کا نام کیا ہے؟</p>
 <p>2۔ آپ کے اسکول کا نام کیا ہے؟</p>
 <p>3۔ آپ کے والد کا کیا نام ہے؟</p>
 <p>4۔ ہمیں صفائی کیوں رکھنی چاہیے؟</p>
 <p>5۔ ہمیں بڑوں کے ساتھ کیسا سلوک کرنا چاہیے؟</p>
-
 <h3>سوال نمبر 6: دو اچھے جملے لکھیں۔ (10 نمبر)</h3>
 <p>1۔ ______________________________</p>
 <p>2۔ ______________________________</p>
@@ -147,229 +136,269 @@ footer{text-align:center;background:#0f172a;color:white;padding:20px}
 
 <section class="exam">
 <h2>استاد کے لیے جوابی رہنمائی</h2>
-<p>1۔ الفاظ کی مثالیں: انار، بکری، پتنگ، تتلی، مچھلی۔</p>
-<p>2۔ پھل: سیب، آم، کیلا، انگور، انار۔</p>
-<p>3۔ جانور: بکری، گائے، گھوڑا، بلی، کتا۔</p>
-<p>4۔ بچے کے اپنے درست جوابات قبول کیے جائیں۔</p>
-<p>5۔ اچھے جملوں کی مثال: میں روز اسکول جاتا ہوں۔ ہمیں سچ بولنا چاہیے۔</p>
+<p>الفاظ کی مثالیں: انار، بکری، پتنگ، تتلی، مچھلی۔</p>
+<p>پھل: سیب، آم، کیلا، انگور، انار۔</p>
+<p>جانور: بکری، گائے، گھوڑا، بلی، کتا۔</p>
+<p>بچے کے اپنے درست جوابات بھی قبول کیے جائیں۔</p>
 </section>
 
 <div style="text-align:center">
 <button onclick="window.print()">کتاب پرنٹ کریں / PDF بنائیں</button>
 <button onclick="window.scrollTo({top:0,behavior:'smooth'})">اوپر جائیں</button>
 </div>
-
 </div>
 
 <footer>
-  <h3 style="color:white">The Risen High School</h3>
-  <p>مصنف: رانا محمد فیصل</p>
-  <p>Rana Muhammad Faisal</p>
-  <p>علم روشنی ہے</p>
+<h3 style="color:white">The Risen High School</h3>
+<p>مصنف: رانا محمد فیصل</p>
+<p>Rana Muhammad Faisal</p>
+<p>علم روشنی ہے</p>
 </footer>
 
 <script>
 const lessons = [
 {
 title:"حروفِ تہجی",
-image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900",
-intro:"اردو زبان کے حروف کو حروفِ تہجی کہتے ہیں۔ ان حروف کی مدد سے ہم الفاظ اور جملے بناتے ہیں۔ ہمیں حروف کو پہچاننا، ان کی آواز سننا اور انہیں درست طریقے سے لکھنا سیکھنا چاہیے۔",
-detail:"اردو حروفِ تہجی کو پڑھتے وقت ہر حرف کی آواز پر توجہ دیں۔ استاد پہلے حرف پڑھیں اور بچے اس کے بعد دہرائیں۔ پھر تختی یا کاپی پر حرف لکھنے کی مشق کریں۔",
-words:[["ا","انار","https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400"],["ب","بکری","https://images.unsplash.com/photo-1524024973431-2ad916746881?w=400"],["پ","پتنگ","https://images.unsplash.com/photo-1529958986175-1cacd4a8b5e7?w=400"],["ت","تتلی","https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=400"]],
-activity:"استاد ایک حرف بولیں۔ بچے اس حرف کو کتاب میں تلاش کریں اور ہوا میں انگلی سے لکھیں۔",
-questions:["اردو حروفِ تہجی کسے کہتے ہیں؟","ا سے کون سا لفظ بنتا ہے؟","ب سے کون سا لفظ بنتا ہے؟"]
+image:"Urdu alphabet educational chart",
+intro:"اردو زبان کے حروف کو حروفِ تہجی کہتے ہیں۔ ان حروف کی مدد سے ہم الفاظ اور جملے بناتے ہیں۔ ہر حرف کی اپنی آواز ہوتی ہے۔ جب ہم حروف کو پہچان لیتے ہیں تو آسان الفاظ پڑھنا اور لکھنا سیکھ جاتے ہیں۔",
+detail:"استاد پہلے ایک حرف بولیں اور بچے اس کے بعد دہرائیں۔ پھر حرف کی شکل دیکھیں، اس کی آواز پہچانیں اور کاپی پر لکھنے کی کوشش کریں۔ روزانہ تھوڑی مشق کرنے سے حروف یاد ہو جاتے ہیں۔",
+words:[["ا","انار","pomegranate fruit"],["ب","بکری","goat animal"],["پ","پتنگ","kite flying"],["ت","تتلی","butterfly insect"]],
+activity:"استاد ایک حرف بولیں۔ بچے کتاب میں وہ حرف تلاش کریں اور ہوا میں انگلی سے لکھیں۔",
+questions:["حروفِ تہجی کسے کہتے ہیں؟","ا سے کون سا لفظ بنتا ہے؟","ب سے کون سا لفظ بنتا ہے؟"]
 },
 {
 title:"الف سے الفاظ",
-image:"https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=900",
-intro:"الفاظ حروف کو ملا کر بنتے ہیں۔ ہر لفظ کا اپنا مطلب ہوتا ہے۔ ہم روزمرہ زندگی میں بہت سے الفاظ استعمال کرتے ہیں۔ چیزوں کے نام سیکھنے سے ہماری زبان بہتر ہوتی ہے۔",
-detail:"الف سے انار، آ سے آم، ب سے بکری، پ سے پتنگ اور م سے مچھلی بنتی ہے۔ بچے ہر تصویر دیکھیں، نام سنیں اور نام کو تین مرتبہ دہرائیں۔",
-words:[["ا","انار","https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400"],["آ","آم","https://images.unsplash.com/photo-1553279768-865429fa0078?w=400"],["ب","بکری","https://images.unsplash.com/photo-1524024973431-2ad916746881?w=400"],["پ","پتنگ","https://images.unsplash.com/photo-1529958986175-1cacd4a8b5e7?w=400"],["م","مچھلی","https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=400"]],
+image:"pomegranate fruit",
+intro:"الفاظ حروف کو ملا کر بنتے ہیں۔ ہر لفظ کا اپنا مطلب ہوتا ہے۔ ہم روزانہ بہت سے الفاظ بولتے اور سنتے ہیں۔ چیزوں کے نام سیکھنے سے ہماری زبان بہتر ہوتی ہے۔",
+detail:"الف سے انار، آ سے آم، ب سے بکری، پ سے پتنگ اور م سے مچھلی بنتی ہے۔ ہر تصویر دیکھیں، اس کا نام بولیں اور پہلے حرف کو پہچانیں۔",
+words:[["ا","انار","pomegranate fruit"],["آ","آم","mango fruit"],["ب","بکری","goat animal"],["پ","پتنگ","colorful kite"],["م","مچھلی","fish underwater"]],
 activity:"تصویر دیکھ کر اس کا نام بولیں اور پہلے حرف کی نشاندہی کریں۔",
 questions:["انار کس حرف سے شروع ہوتا ہے؟","آم کس حرف سے شروع ہوتا ہے؟","مچھلی کا پہلا حرف کون سا ہے؟"]
 },
 {
 title:"میرا خاندان",
-image:"https://images.unsplash.com/photo-1511895426328-dc8714191300?w=900",
+image:"family parents children together",
 intro:"خاندان ان لوگوں کا گروہ ہے جو آپس میں محبت اور رشتے سے جڑے ہوتے ہیں۔ خاندان میں والد، والدہ، بہن، بھائی، دادا، دادی، نانا اور نانی شامل ہو سکتے ہیں۔ خاندان ہمیں محبت، حفاظت اور اچھی تربیت دیتا ہے۔",
-detail:"والد ہمارے لیے محنت کرتے ہیں۔ والدہ ہماری دیکھ بھال کرتی ہیں۔ بہن بھائی ہمارے ساتھ کھیلتے اور چیزیں بانٹتے ہیں۔ دادا دادی اور نانا نانی ہمیں پیاری باتیں اور اچھی نصیحتیں بتاتے ہیں۔ ہمیں گھر کے تمام افراد کا احترام کرنا چاہیے۔ ہمیں ایک دوسرے کی مدد کرنی چاہیے اور پیار سے بات کرنی چاہیے۔",
-words:[["والد","ابو","https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"],["والدہ","امی","https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400"],["بہن","بہن","https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400"],["بھائی","بھائی","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400"]],
-activity:"اپنے خاندان کے افراد کے نام بتائیں۔ گھر جا کر خاندان کے افراد کی تصویر بنائیں۔",
+detail:"والد ہمارے لیے محنت کرتے ہیں۔ والدہ ہماری دیکھ بھال کرتی ہیں۔ بہن بھائی ہمارے ساتھ کھیلتے اور چیزیں بانٹتے ہیں۔ دادا دادی اور نانا نانی ہمیں پیاری باتیں اور اچھی نصیحتیں بتاتے ہیں۔ ہمیں گھر کے تمام افراد کا احترام کرنا چاہیے۔ ایک دوسرے کی مدد کرنی چاہیے اور پیار سے بات کرنی چاہیے۔",
+words:[["والد","ابو","father parent"],["والدہ","امی","mother parent"],["بہن","بہن","sister child"],["بھائی","بھائی","brother child"]],
+activity:"اپنے خاندان کے افراد کے نام بتائیں۔ اپنے خاندان کی تصویر بنائیں۔",
 questions:["خاندان کسے کہتے ہیں؟","والدین ہمارے لیے کیا کرتے ہیں؟","ہمیں گھر کے بڑوں کے ساتھ کیسا سلوک کرنا چاہیے؟"]
 },
 {
 title:"میرا گھر",
-image:"https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=900",
-intro:"گھر وہ جگہ ہے جہاں ہم اپنے خاندان کے ساتھ رہتے ہیں۔ گھر ہمیں دھوپ، بارش اور سردی سے بچاتا ہے۔ ہمیں اپنے گھر کو صاف ستھرا رکھنا چاہیے۔",
+image:"family house exterior",
+intro:"گھر وہ جگہ ہے جہاں ہم اپنے خاندان کے ساتھ رہتے ہیں۔ گھر ہمیں دھوپ، بارش اور سردی سے بچاتا ہے۔ گھر میں ہم آرام کرتے، کھانا کھاتے اور خاندان کے ساتھ وقت گزارتے ہیں۔",
 detail:"گھر میں مختلف کمرے ہوتے ہیں۔ ہم سونے کے کمرے میں آرام کرتے ہیں۔ باورچی خانے میں کھانا تیار ہوتا ہے۔ غسل خانے میں نہاتے ہیں۔ گھر کی چیزوں کو ترتیب سے رکھنا چاہیے۔ کچرا ہمیشہ کوڑے دان میں ڈالنا چاہیے۔",
-words:[["دروازہ","دروازہ","https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400"],["کھڑکی","کھڑکی","https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400"],["کرسی","کرسی","https://images.unsplash.com/photo-1503602642458-232111445657?w=400"],["میز","میز","https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400"]],
+words:[["دروازہ","دروازہ","house door"],["کھڑکی","کھڑکی","house window"],["کرسی","کرسی","wooden chair"],["میز","میز","wooden table"]],
 activity:"اپنے گھر کے کمرے گنیں اور گھر کی ایک تصویر بنائیں۔",
 questions:["ہم کہاں رہتے ہیں؟","گھر ہمیں کن چیزوں سے بچاتا ہے؟","کچرا کہاں ڈالنا چاہیے؟"]
 },
 {
 title:"میرا اسکول",
-image:"https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900",
+image:"primary school building",
 intro:"اسکول وہ جگہ ہے جہاں بچے تعلیم حاصل کرتے ہیں۔ یہاں استاد ہمیں پڑھنا، لکھنا، گنتی کرنا اور اچھے اخلاق سکھاتے ہیں۔ اسکول میں ہم نئے دوست بناتے ہیں۔",
 detail:"ہمیں وقت پر اسکول آنا چاہیے۔ استاد کی بات غور سے سننی چاہیے۔ کتابیں اور کاپیاں صاف رکھنی چاہئیں۔ اپنے ساتھیوں کے ساتھ محبت سے رہنا چاہیے۔ اسکول کی چیزوں کی حفاظت کرنا ہر بچے کی ذمہ داری ہے۔",
-words:[["کتاب","کتاب","https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400"],["قلم","قلم","https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400"],["بیگ","بیگ","https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400"],["تختہ","تختہ","https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400"]],
+words:[["کتاب","کتاب","school book"],["قلم","قلم","writing pen"],["بیگ","بیگ","school backpack"],["تختہ","تختہ","classroom blackboard"]],
 activity:"اپنے اسکول کا نام بولیں اور اپنی پسندیدہ کتاب کا نام بتائیں۔",
 questions:["ہم اسکول کیوں جاتے ہیں؟","ہمیں استاد کی بات کیسے سننی چاہیے؟","اسکول کی چیزوں کی حفاظت کون کرے گا؟"]
 },
 {
 title:"جانوروں کے نام",
-image:"https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=900",
+image:"farm animals goat cow horse",
 intro:"جانور اللہ تعالیٰ کی مخلوق ہیں۔ کچھ جانور ہمارے گھروں اور کھیتوں میں رہتے ہیں۔ کچھ جنگلوں میں رہتے ہیں۔ جانور ہمیں مختلف فائدے دیتے ہیں۔ ہمیں جانوروں کے ساتھ نرمی کرنی چاہیے۔",
 detail:"گائے ہمیں دودھ دیتی ہے۔ بکری بھی دودھ دیتی ہے۔ گھوڑا سواری اور سامان اٹھانے میں مدد دیتا ہے۔ بلی چوہے پکڑتی ہے۔ شیر جنگل کا طاقتور جانور ہے۔ ہر جانور کی اپنی شکل اور عادت ہوتی ہے۔",
-words:[["گائے","Cow","https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=400"],["بکری","Goat","https://images.unsplash.com/photo-1524024973431-2ad916746881?w=400"],["گھوڑا","Horse","https://images.unsplash.com/photo-1534307678726-8e1f1a2b3b4c?w=400"],["بلی","Cat","https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400"],["شیر","Lion","https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400"]],
+words:[["گائے","Cow","cow animal"],["بکری","Goat","goat animal"],["گھوڑا","Horse","horse animal"],["بلی","Cat","domestic cat"],["شیر","Lion","lion animal"]],
 activity:"جانوروں کی آوازیں پہچانیں اور ان کے نام دہرائیں۔",
 questions:["گائے ہمیں کیا دیتی ہے؟","شیر کہاں رہتا ہے؟","ہمیں جانوروں کے ساتھ کیسا سلوک کرنا چاہیے؟"]
 },
 {
 title:"پرندوں کے نام",
-image:"https://images.unsplash.com/photo-1444464666168-49d633b86797?w=900",
+image:"pigeon parrot peacock sparrow birds",
 intro:"پرندے خوبصورت جاندار ہیں۔ زیادہ تر پرندوں کے دو پر، دو ٹانگیں اور چونچ ہوتی ہے۔ بہت سے پرندے اڑ سکتے ہیں۔ وہ درختوں پر گھونسلے بناتے ہیں۔",
 detail:"کبوتر ایک عام پرندہ ہے۔ طوطا سبز رنگ کا ہوتا ہے۔ مور کے خوبصورت پر ہوتے ہیں۔ چڑیا چھوٹی ہوتی ہے۔ کوّا سیاہ رنگ کا ہوتا ہے۔ ہمیں پرندوں کو تنگ نہیں کرنا چاہیے اور ان کے لیے پانی رکھنا چاہیے۔",
-words:[["کبوتر","Pigeon","https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400"],["طوطا","Parrot","https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400"],["مور","Peacock","https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400"],["چڑیا","Sparrow","https://images.unsplash.com/photo-1444464666168-49d633b86797?w=400"]],
+words:[["کبوتر","Pigeon","pigeon bird"],["طوطا","Parrot","green parrot bird"],["مور","Peacock","peacock bird"],["چڑیا","Sparrow","sparrow bird"]],
 activity:"پرندوں کی تصویریں دیکھ کر ان کے نام بولیں۔",
 questions:["پرندوں کے کتنے پر ہوتے ہیں؟","طوطے کا رنگ کیا ہوتا ہے؟","پرندے گھونسلے کہاں بناتے ہیں؟"]
 },
 {
 title:"پھلوں کے نام",
-image:"https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=900",
+image:"fresh fruits mango apple banana grapes orange",
 intro:"پھل قدرت کی نعمت ہیں۔ پھل کھانے سے ہمیں توانائی اور مختلف غذائی اجزا ملتے ہیں۔ ہمیں صاف اور تازہ پھل کھانے چاہئیں۔ پھل کھانے سے پہلے انہیں اچھی طرح دھونا چاہیے۔",
 detail:"آم کو پھلوں کا بادشاہ کہا جاتا ہے۔ سیب سرخ یا سبز ہو سکتا ہے۔ کیلا نرم اور میٹھا ہوتا ہے۔ انگور چھوٹے چھوٹے دانوں کی شکل میں ہوتے ہیں۔ مالٹا رس دار پھل ہے۔",
-words:[["آم","Mango","https://images.unsplash.com/photo-1553279768-865429fa0078?w=400"],["سیب","Apple","https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400"],["کیلا","Banana","https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400"],["انگور","Grapes","https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=400"],["مالٹا","Orange","https://images.unsplash.com/photo-1547514701-42782101795e?w=400"]],
+words:[["آم","Mango","mango fruit"],["سیب","Apple","red apple fruit"],["کیلا","Banana","banana fruit"],["انگور","Grapes","grapes fruit"],["مالٹا","Orange","orange fruit"]],
 activity:"اپنے پسندیدہ پھل کا نام بتائیں اور اس کی تصویر میں رنگ بھریں۔",
 questions:["پھل کھانے سے ہمیں کیا ملتا ہے؟","آم کو کیا کہا جاتا ہے؟","پھل کھانے سے پہلے کیا کرنا چاہیے؟"]
 },
 {
 title:"سبزیوں کے نام",
-image:"https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900",
+image:"fresh vegetables carrot tomato potato spinach",
 intro:"سبزیاں ہماری غذا کا اہم حصہ ہیں۔ ہمیں روزانہ مختلف سبزیاں کھانی چاہئیں۔ سبزیاں صحت مند رہنے میں مدد دیتی ہیں۔",
 detail:"آلو زمین کے اندر اگتا ہے۔ گاجر نارنجی رنگ کی ہوتی ہے۔ ٹماٹر سرخ ہوتا ہے۔ پالک سبز پتوں والی سبزی ہے۔ بھنڈی ایک لمبی سبزی ہے۔ سبزیوں کو کھانے سے پہلے اچھی طرح دھونا چاہیے۔",
-words:[["آلو","Potato","https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400"],["گاجر","Carrot","https://images.unsplash.com/photo-1445282768818-728615cc910a?w=400"],["ٹماٹر","Tomato","https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=400"],["پالک","Spinach","https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400"]],
+words:[["آلو","Potato","potato vegetable"],["گاجر","Carrot","carrot vegetable"],["ٹماٹر","Tomato","tomato vegetable"],["پالک","Spinach","spinach leaves"]],
 activity:"سبزیوں کے نام بولیں اور ان کے رنگ پہچانیں۔",
 questions:["گاجر کا رنگ کیا ہے؟","آلو کہاں اگتا ہے؟","سبزیاں کھانے سے ہمیں کیا فائدہ ہوتا ہے؟"]
 },
 {
 title:"پھولوں کے نام",
-image:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=900",
+image:"rose sunflower jasmine marigold flowers",
 intro:"پھول قدرت کی خوبصورت نعمت ہیں۔ پھول مختلف رنگوں اور خوشبوؤں کے ہوتے ہیں۔ باغ میں بہت سے خوبصورت پھول کھلتے ہیں۔",
 detail:"گلاب خوشبودار پھول ہے۔ سورج مکھی کا رخ سورج کی طرف ہوتا ہے۔ چنبیلی سفید اور خوشبودار ہوتی ہے۔ گیندا پیلے یا نارنجی رنگ کا ہوتا ہے۔ ہمیں پھولوں کو بلاوجہ نہیں توڑنا چاہیے۔",
-words:[["گلاب","Rose","https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=400"],["سورج مکھی","Sunflower","https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400"],["چنبیلی","Jasmine","https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400"],["گیندا","Marigold","https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400"]],
+words:[["گلاب","Rose","rose flower"],["سورج مکھی","Sunflower","sunflower flower"],["چنبیلی","Jasmine","jasmine flower"],["گیندا","Marigold","marigold flower"]],
 activity:"اپنا پسندیدہ پھول بنائیں اور اس میں رنگ بھریں۔",
 questions:["پھول ہمیں کیا دیتے ہیں؟","گلاب کیسا پھول ہے؟","ہمیں پھولوں کے ساتھ کیا کرنا چاہیے؟"]
 },
 {
 title:"رنگوں کے نام",
-image:"https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=900",
+image:"colorful paint color chart",
 intro:"دنیا میں بہت سے خوبصورت رنگ ہیں۔ رنگوں کی مدد سے ہم چیزوں کو پہچانتے ہیں۔ ہمیں مختلف چیزوں کے رنگوں کے نام یاد کرنے چاہئیں۔",
 detail:"آسمان عام طور پر نیلا دکھائی دیتا ہے۔ گھاس سبز ہوتی ہے۔ دودھ سفید ہوتا ہے۔ کوئلہ سیاہ ہوتا ہے۔ ٹماٹر اکثر سرخ ہوتا ہے۔ ہر رنگ کا اپنا نام ہے۔",
-words:[["لال","Red","https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=400"],["نیلا","Blue","https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400"],["سبز","Green","https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400"],["پیلا","Yellow","https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400"],["سفید","White","https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=400"]],
+words:[["لال","Red","red color swatch"],["نیلا","Blue","blue color swatch"],["سبز","Green","green color swatch"],["پیلا","Yellow","yellow color swatch"],["سفید","White","white color swatch"]],
 activity:"استاد کسی چیز کا نام لیں۔ بچے اس کا رنگ بتائیں۔",
 questions:["گھاس کا رنگ کیا ہے؟","دودھ کا رنگ کیا ہے؟","آسمان کا رنگ کیسا دکھائی دیتا ہے؟"]
 },
 {
 title:"میرے جسم کے حصے",
-image:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900",
+image:"human body parts educational illustration",
 intro:"ہمارا جسم بہت قیمتی ہے۔ جسم کے مختلف حصے مختلف کام کرتے ہیں۔ ہمیں اپنے جسم کی حفاظت اور صفائی کرنی چاہیے۔",
 detail:"آنکھوں سے ہم دیکھتے ہیں۔ کانوں سے سنتے ہیں۔ ناک سے خوشبو سونگھتے ہیں۔ زبان سے ذائقہ محسوس کرتے ہیں۔ ہاتھوں سے کام کرتے ہیں۔ پاؤں سے چلتے ہیں۔ ہمیں روزانہ نہانا اور ہاتھ دھونا چاہیے۔",
-words:[["آنکھ","Eye","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400"],["کان","Ear","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400"],["ناک","Nose","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400"],["ہاتھ","Hand","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400"],["پاؤں","Foot","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400"]],
+words:[["آنکھ","Eye","human eye closeup"],["کان","Ear","human ear"],["ناک","Nose","human nose"],["ہاتھ","Hand","human hand"],["پاؤں","Foot","human foot"]],
 activity:"اپنے جسم کے حصوں کی طرف اشارہ کریں اور ان کے نام بتائیں۔",
 questions:["ہم آنکھوں سے کیا کرتے ہیں؟","ہم کانوں سے کیا کرتے ہیں؟","ہم پاؤں سے کیا کرتے ہیں؟"]
 },
 {
 title:"روزمرہ استعمال کی چیزیں",
-image:"https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900",
+image:"everyday household objects",
 intro:"ہم روزانہ بہت سی چیزیں استعمال کرتے ہیں۔ ان چیزوں کی مدد سے ہمارے کام آسان ہوتے ہیں۔ ہمیں اپنی چیزوں کی حفاظت کرنی چاہیے۔",
 detail:"ہم پانی پینے کے لیے گلاس استعمال کرتے ہیں۔ لکھنے کے لیے قلم یا پنسل استعمال کرتے ہیں۔ کتاب پڑھنے سے علم حاصل ہوتا ہے۔ گھڑی وقت بتاتی ہے۔ کنگھی بال سنوارنے کے کام آتی ہے۔",
-words:[["گلاس","Glass","https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?w=400"],["قلم","Pen","https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400"],["کتاب","Book","https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400"],["گھڑی","Clock","https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=400"]],
+words:[["گلاس","Glass","drinking glass"],["قلم","Pen","writing pen"],["کتاب","Book","open book"],["گھڑی","Clock","wall clock"]],
 activity:"اپنے بستے سے تین چیزیں نکالیں اور ان کے نام بتائیں۔",
 questions:["وقت کون بتاتا ہے؟","ہم کس چیز سے لکھتے ہیں؟","پانی کس چیز میں پیتے ہیں؟"]
 },
 {
 title:"سواریوں کے نام",
-image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900",
+image:"bus car boat airplane vehicles",
 intro:"ایک جگہ سے دوسری جگہ جانے کے لیے ہم سواری استعمال کرتے ہیں۔ کچھ سواریاں سڑک پر چلتی ہیں، کچھ پانی میں اور کچھ ہوا میں اڑتی ہیں۔",
 detail:"بس اور کار سڑک پر چلتی ہیں۔ کشتی پانی میں چلتی ہے۔ ہوائی جہاز آسمان میں اڑتا ہے۔ سائیکل پیڈل سے چلتی ہے۔ ہمیں سڑک پار کرتے وقت بڑوں کی مدد لینی چاہیے۔",
-words:[["بس","Bus","https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=400"],["کار","Car","https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400"],["کشتی","Boat","https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400"],["ہوائی جہاز","Airplane","https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400"]],
+words:[["بس","Bus","public bus"],["کار","Car","car vehicle"],["کشتی","Boat","boat on water"],["ہوائی جہاز","Airplane","airplane flying"]],
 activity:"بتائیں کون سی سواری سڑک، پانی اور ہوا میں چلتی ہے۔",
 questions:["ہوائی جہاز کہاں اڑتا ہے؟","کشتی کہاں چلتی ہے؟","سڑک پار کرتے وقت کس کی مدد لینی چاہیے؟"]
 },
 {
 title:"موسم اور قدرت",
-image:"https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900",
+image:"sun moon tree rain nature",
 intro:"قدرت میں سورج، چاند، ستارے، درخت، پہاڑ، دریا اور آسمان شامل ہیں۔ موسم کبھی گرم، کبھی سرد اور کبھی بارش والا ہوتا ہے۔",
 detail:"گرمیوں میں ہمیں زیادہ گرمی محسوس ہوتی ہے۔ سردیوں میں گرم کپڑے پہنتے ہیں۔ بارش کے موسم میں پانی برستا ہے۔ سورج دن میں روشنی دیتا ہے اور چاند رات کو دکھائی دیتا ہے۔ درخت ہمیں سایہ دیتے ہیں۔",
-words:[["سورج","Sun","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400"],["چاند","Moon","https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400"],["درخت","Tree","https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400"],["بارش","Rain","https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=400"]],
+words:[["سورج","Sun","sun in sky"],["چاند","Moon","moon in night sky"],["درخت","Tree","green tree"],["بارش","Rain","rain falling"]],
 activity:"آج کے موسم کے بارے میں دو جملے بولیں۔",
 questions:["سورج کب روشنی دیتا ہے؟","سردیوں میں ہم کیا پہنتے ہیں؟","درخت ہمیں کیا دیتے ہیں؟"]
 },
 {
 title:"صفائی اور اچھی عادتیں",
-image:"https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=900",
+image:"hand washing soap toothbrush hygiene",
 intro:"صفائی اچھی صحت کے لیے ضروری ہے۔ ہمیں اپنا جسم، کپڑے، گھر اور اسکول صاف رکھنا چاہیے۔ اچھی عادتیں ہمیں اچھا انسان بناتی ہیں۔",
 detail:"کھانے سے پہلے اور بیت الخلا کے بعد ہاتھ دھوئیں۔ روزانہ دانت صاف کریں۔ ناخن چھوٹے اور صاف رکھیں۔ کچرا کوڑے دان میں ڈالیں۔ بڑوں سے ادب سے بات کریں۔ سچ بولیں اور دوسروں کی مدد کریں۔",
-words:[["صابن","Soap","https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=400"],["تولیہ","Towel","https://images.unsplash.com/photo-1600369671236-e74521d4b6ad?w=400"],["دانتوں کا برش","Toothbrush","https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400"],["کنگھی","Comb","https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400"]],
+words:[["صابن","Soap","bar soap"],["تولیہ","Towel","clean towel"],["دانتوں کا برش","Toothbrush","toothbrush"],["کنگھی","Comb","hair comb"]],
 activity:"ہاتھ دھونے کے درست طریقے کی مشق کریں۔",
 questions:["کھانے سے پہلے کیا کرنا چاہیے؟","کچرا کہاں ڈالنا چاہیے؟","ہمیں سچ بولنا چاہیے یا جھوٹ؟"]
 },
 {
 title:"آسان الفاظ اور جملے",
-image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900",
+image:"children Urdu reading book",
 intro:"الفاظ مل کر جملہ بناتے ہیں۔ جملے سے ہمیں پوری بات سمجھ آتی ہے۔ ہمیں آسان اور درست جملے بولنے کی مشق کرنی چاہیے۔",
 detail:"مثلاً: یہ میرا گھر ہے۔ میرا نام علی ہے۔ میں اسکول جاتا ہوں۔ یہ ایک کتاب ہے۔ مجھے پھل پسند ہیں۔ ہر جملہ ایک مکمل بات بتاتا ہے۔",
-words:[["گھر","یہ میرا گھر ہے۔","https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400"],["کتاب","یہ میری کتاب ہے۔","https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400"],["اسکول","میں اسکول جاتا ہوں۔","https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400"]],
+words:[["گھر","یہ میرا گھر ہے۔","family house"],["کتاب","یہ میری کتاب ہے۔","open book"],["اسکول","میں اسکول جاتا ہوں۔","school building"]],
 activity:"اپنے بارے میں تین آسان جملے بولیں۔",
 questions:["جملہ کسے کہتے ہیں؟","اپنے گھر کے بارے میں ایک جملہ بولیں۔","اپنے اسکول کا نام بتائیں۔"]
 },
 {
 title:"نظمیں اور کہانیاں",
-image:"https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=900",
+image:"children story books",
 intro:"نظمیں اور کہانیاں بچوں کو اچھی باتیں سکھاتی ہیں۔ نظم سے زبان میں روانی پیدا ہوتی ہے اور کہانی سے اخلاقی سبق ملتا ہے۔",
 detail:"بچے استاد کے ساتھ نظم پڑھیں اور الفاظ دہرائیں۔ کہانی سنتے وقت توجہ سے سنیں۔ کہانی کے کرداروں اور واقعات کے بارے میں سوالات کے جواب دیں۔",
-words:[["کتاب","Book","https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400"],["بچہ","Child","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400"]],
+words:[["کتاب","Book","children story book"],["بچہ","Child","young child reading"]],
 activity:"استاد سے ایک مختصر کہانی سنیں اور اس کا سبق بتائیں۔",
 questions:["نظم پڑھنے سے کیا فائدہ ہوتا ہے؟","کہانی سنتے وقت ہمیں کیا کرنا چاہیے؟","کہانی سے ہمیں کیا ملتا ہے؟"]
 }
 ];
 
-const contents=document.getElementById("contents");
-const book=document.getElementById("book");
+// Wikimedia Commons پر مخصوص تصویر تلاش کرنا
+const imageCache = {};
+
+async function findRealImage(searchTerm){
+  if(imageCache[searchTerm]) return imageCache[searchTerm];
+
+  try{
+    const api =
+      "https://commons.wikimedia.org/w/api.php?action=query" +
+      "&generator=search&gsrnamespace=6&gsrlimit=10" +
+      "&gsrsearch=" + encodeURIComponent(searchTerm) +
+      "&prop=imageinfo&iiprop=url&iiurlwidth=900" +
+      "&format=json&origin=*";
+
+    const response = await fetch(api);
+    if(!response.ok) throw new Error("Network error");
+
+    const data = await response.json();
+    const pages = data.query?.pages;
+    if(!pages) throw new Error("No results");
+
+    const results = Object.values(pages)
+      .filter(p => p.imageinfo?.[0]?.thumburl);
+
+    if(!results.length) throw new Error("No image");
+
+    imageCache[searchTerm] = results[0].imageinfo[0].thumburl;
+    return imageCache[searchTerm];
+  }catch(error){
+    console.log("تصویر نہیں ملی:",searchTerm);
+    return null;
+  }
+}
+
+function imageHTML(search,alt,cls){
+  return `
+  <div>
+    <img class="${cls}" data-search="${search}"
+    alt="${alt}"
+    src="https://placehold.co/700x350/e0f2fe/075985?text=تصویر+تلاش+ہو+رہی+ہے">
+    <div class="image-status" data-status="${search}"></div>
+  </div>`;
+}
+
+const contents = document.getElementById("contents");
+const book = document.getElementById("book");
 
 lessons.forEach((lesson,index)=>{
-  const id="lesson-"+(index+1);
-  const link=document.createElement("a");
-  link.href="#"+id;
-  link.textContent=(index+1)+". "+lesson.title;
+  const id = "lesson-" + (index+1);
+
+  const link = document.createElement("a");
+  link.href = "#"+id;
+  link.textContent = (index+1)+". "+lesson.title;
   contents.appendChild(link);
 
-  const section=document.createElement("section");
-  section.className="lesson";
-  section.id=id;
-
-  const cards=lesson.words.map(word=>`
+  const cards = lesson.words.map(word=>`
     <div class="word-card">
-      <img src="${word[2]}" alt="${word[1]}"
-       loading="lazy"
-       onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0f2fe/075985?text=Picture';">
+      ${imageHTML(word[2],word[0],"word-image")}
       <strong>${word[0]}</strong>
       <small>${word[1]}</small>
     </div>
   `).join("");
 
-  const questions=lesson.questions.map((q,i)=>`
+  const questions = lesson.questions.map((q,i)=>`
     <div class="question">${i+1}. ${q}<br>جواب: __________________</div>
   `).join("");
 
-  const qrUrl="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data="+
-    encodeURIComponent(window.location.origin+window.location.pathname+"#"+id);
+  const qr =
+  "https://api.qrserver.com/v1/create-qr-code/?size=160x160&data="+
+  encodeURIComponent(location.origin+location.pathname+"#"+id);
 
-  section.innerHTML=`
+  const section = document.createElement("section");
+  section.className = "lesson";
+  section.id = id;
+
+  section.innerHTML = `
     <h2>سبق ${index+1}: ${lesson.title}</h2>
-    <img class="lesson-image" src="${lesson.image}" alt="${lesson.title}"
-      loading="lazy"
-      onerror="this.onerror=null;this.src='https://placehold.co/900x350/e0f2fe/075985?text=Lesson+Picture';">
+    ${imageHTML(lesson.image,lesson.title,"lesson-image")}
     <h3>سبق کی وضاحت</h3>
     <p>${lesson.intro}</p>
     <h3>مزید تفصیل</h3>
@@ -384,13 +413,39 @@ lessons.forEach((lesson,index)=>{
     ${questions}
     <div class="qr">
       <h3>سبق کا QR کوڈ</h3>
-      <img src="${qrUrl}" alt="QR Code">
-      <p>اس QR کوڈ کو اسکین کرکے اس سبق کو کھولا جا سکتا ہے۔</p>
+      <img src="${qr}" alt="QR Code">
+      <p>اس QR کوڈ کو اسکین کرکے یہ سبق کھولا جا سکتا ہے۔</p>
     </div>
     <p class="author">مصنف: رانا محمد فیصل — Rana Muhammad Faisal</p>
   `;
   book.appendChild(section);
 });
+
+// ہر تصویر الگ تلاش ہوگی
+async function loadAllImages(){
+  const images = [...document.querySelectorAll("img[data-search]")];
+
+  for(const img of images){
+    const search = img.dataset.search;
+    const status = document.querySelector(
+      `[data-status="${CSS.escape(search)}"]`
+    );
+
+    if(status) status.textContent = "تصویر تلاش کی جا رہی ہے...";
+
+    const url = await findRealImage(search);
+
+    if(url){
+      img.src = url;
+      if(status) status.textContent = "";
+    }else{
+      img.src = "https://placehold.co/700x350/f1f5f9/475569?text=متعلقہ+تصویر+نہیں+ملی";
+      if(status) status.textContent = "اس لفظ کی متعلقہ تصویر دستیاب نہیں۔";
+    }
+  }
+}
+
+loadAllImages();
 </script>
 
 </body>
