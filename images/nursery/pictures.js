@@ -1,80 +1,77 @@
 
-/* The Risen High School
-   Nursery Picture Library
-   Author: Rana Muhammad Faisal
-*/
-
 window.RISEN_PICTURES = {
-
-  "pomegranate": "https://commons.wikimedia.org/wiki/Special:FilePath/Pomegranate_Fruit.jpg",
-
-  "mango": "https://commons.wikimedia.org/wiki/Special:FilePath/Mango_fruit.jpg",
-
-  "goat": "https://commons.wikimedia.org/wiki/Special:FilePath/Goat.jpg",
-
-  "cow": "https://commons.wikimedia.org/wiki/Special:FilePath/Cow.jpg",
-
-  "kite": "https://commons.wikimedia.org/wiki/Special:FilePath/Kite.jpg",
-
-  "butterfly": "https://commons.wikimedia.org/wiki/Special:FilePath/Butterfly.jpg",
-
-  "tomato": "https://commons.wikimedia.org/wiki/Special:FilePath/Tomato.jpg",
-
-  "airplane": "https://commons.wikimedia.org/wiki/Special:FilePath/Airplane.jpg",
-
-  "sparrow": "https://commons.wikimedia.org/wiki/Special:FilePath/House_sparrow.jpg",
-
-  "tree": "https://commons.wikimedia.org/wiki/Special:FilePath/Tree.jpg",
-
-  "parrot": "https://commons.wikimedia.org/wiki/Special:FilePath/Rose-ringed_parakeet.jpg",
-
-  "peacock": "https://commons.wikimedia.org/wiki/Special:FilePath/Indian_peafowl.jpg",
-
-  "pigeon": "https://commons.wikimedia.org/wiki/Special:FilePath/Rock_Pigeon.jpg",
-
-  "duck": "https://commons.wikimedia.org/wiki/Special:FilePath/Domestic_duck.jpg",
-
-  "apple": "https://commons.wikimedia.org/wiki/Special:FilePath/Apple.jpg",
-
-  "banana": "https://commons.wikimedia.org/wiki/Special:FilePath/Banana.jpg",
-
-  "grapes": "https://commons.wikimedia.org/wiki/Special:FilePath/Grapes.jpg",
-
-  "orange fruit": "https://commons.wikimedia.org/wiki/Special:FilePath/Orange_(fruit).jpg",
-
-  "carrot": "https://commons.wikimedia.org/wiki/Special:FilePath/Carrot.jpg",
-
-  "potato": "https://commons.wikimedia.org/wiki/Special:FilePath/Potato.jpg",
-
-  "onion": "https://commons.wikimedia.org/wiki/Special:FilePath/Onion.jpg",
-
-  "spinach": "https://commons.wikimedia.org/wiki/Special:FilePath/Spinach.jpg",
-
-  "okra": "https://commons.wikimedia.org/wiki/Special:FilePath/Okra.jpg",
-
-  "rose flower": "https://commons.wikimedia.org/wiki/Special:FilePath/Rose.jpg",
-
-  "sunflower": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower.jpg",
-
-  "marigold flower": "https://commons.wikimedia.org/wiki/Special:FilePath/Tagetes_erecta.jpg",
-
-  "jasmine flower": "https://commons.wikimedia.org/wiki/Special:FilePath/Jasminum_sambac.jpg",
-
-  "school building": "https://commons.wikimedia.org/wiki/Special:FilePath/School_building.jpg",
-
-  "house": "https://commons.wikimedia.org/wiki/Special:FilePath/House.jpg",
-
-  "book": "https://commons.wikimedia.org/wiki/Special:FilePath/Book.jpg",
-
-  "pen": "https://commons.wikimedia.org/wiki/Special:FilePath/Pen.jpg",
-
-  "chair": "https://commons.wikimedia.org/wiki/Special:FilePath/Chair.jpg",
-
-  "sun": "https://commons.wikimedia.org/wiki/Special:FilePath/Sun.jpg",
-
-  "clouds": "https://commons.wikimedia.org/wiki/Special:FilePath/Clouds.jpg",
-
-  "rain": "https://commons.wikimedia.org/wiki/Special:FilePath/Rain.jpg"
-
+  pomegranate:"https://commons.wikimedia.org/wiki/Special:FilePath/Pomegranate_Fruit.jpg",
+  mango:"https://commons.wikimedia.org/wiki/Special:FilePath/Mango_fruit.jpg",
+  grapes:"https://commons.wikimedia.org/wiki/Special:FilePath/Table_grapes_on_white.jpg",
+  egg:"https://commons.wikimedia.org/wiki/Special:FilePath/Chicken_egg.jpg",
+  goat:"https://commons.wikimedia.org/wiki/Special:FilePath/Goat.jpg",
+  cow:"https://commons.wikimedia.org/wiki/Special:FilePath/Cow.jpg",
+  horse:"https://commons.wikimedia.org/wiki/Special:FilePath/Horse.jpg",
+  cat:"https://commons.wikimedia.org/wiki/Special:FilePath/Cat_poster_1.jpg",
+  elephant:"https://commons.wikimedia.org/wiki/Special:FilePath/African_Bush_Elephant.jpg",
+  lion:"https://commons.wikimedia.org/wiki/Special:FilePath/Lion_waiting_in_Namibia.jpg",
+  parrot:"https://commons.wikimedia.org/wiki/Special:FilePath/Rose-ringed_parakeet.jpg",
+  peacock:"https://commons.wikimedia.org/wiki/Special:FilePath/Indian_peafowl.jpg",
+  pigeon:"https://commons.wikimedia.org/wiki/Special:FilePath/Rock_Pigeon.jpg",
+  sparrow:"https://commons.wikimedia.org/wiki/Special:FilePath/House_sparrow.jpg",
+  duck:"https://commons.wikimedia.org/wiki/Special:FilePath/Domestic_duck.jpg",
+  apple:"https://commons.wikimedia.org/wiki/Special:FilePath/Apple.jpg",
+  banana:"https://commons.wikimedia.org/wiki/Special:FilePath/Banana.jpg",
+  carrot:"https://commons.wikimedia.org/wiki/Special:FilePath/Carrot.jpg",
+  potato:"https://commons.wikimedia.org/wiki/Special:FilePath/Potato.jpg",
+  tomato:"https://commons.wikimedia.org/wiki/Special:FilePath/Tomato.jpg",
+  onion:"https://commons.wikimedia.org/wiki/Special:FilePath/Onion.jpg",
+  spinach:"https://commons.wikimedia.org/wiki/Special:FilePath/Spinach.jpg",
+  okra:"https://commons.wikimedia.org/wiki/Special:FilePath/Okra.jpg",
+  rose:"https://commons.wikimedia.org/wiki/Special:FilePath/Rose.jpg",
+  sunflower:"https://commons.wikimedia.org/wiki/Special:FilePath/Sunflower.jpg",
+  marigold:"https://commons.wikimedia.org/wiki/Special:FilePath/Tagetes_erecta.jpg",
+  jasmine:"https://commons.wikimedia.org/wiki/Special:FilePath/Jasminum_sambac.jpg",
+  house:"https://commons.wikimedia.org/wiki/Special:FilePath/House.jpg",
+  school:"https://commons.wikimedia.org/wiki/Special:FilePath/School_building.jpg",
+  book:"https://commons.wikimedia.org/wiki/Special:FilePath/Book.jpg",
+  pen:"https://commons.wikimedia.org/wiki/Special:FilePath/Pen.jpg",
+  chair:"https://commons.wikimedia.org/wiki/Special:FilePath/Chair.jpg",
+  bicycle:"https://commons.wikimedia.org/wiki/Special:FilePath/Bicycle.jpg",
+  motorcycle:"https://commons.wikimedia.org/wiki/Special:FilePath/Motorcycle.jpg",
+  car:"https://commons.wikimedia.org/wiki/Special:FilePath/Car.jpg",
+  bus:"https://commons.wikimedia.org/wiki/Special:FilePath/Bus.jpg",
+  train:"https://commons.wikimedia.org/wiki/Special:FilePath/Train.jpg",
+  airplane:"https://commons.wikimedia.org/wiki/Special:FilePath/Airplane.jpg",
+  sun:"https://commons.wikimedia.org/wiki/Special:FilePath/Sun.jpg",
+  clouds:"https://commons.wikimedia.org/wiki/Special:FilePath/Clouds.jpg",
+  rain:"https://commons.wikimedia.org/wiki/Special:FilePath/Rain.jpg",
+  tree:"https://commons.wikimedia.org/wiki/Special:FilePath/Tree.jpg",
+  flower:"https://commons.wikimedia.org/wiki/Special:FilePath/Flower.jpg",
+  butterfly:"https://commons.wikimedia.org/wiki/Special:FilePath/Butterfly.jpg",
+  kite:"https://commons.wikimedia.org/wiki/Special:FilePath/Kite.jpg",
+  door:"https://commons.wikimedia.org/wiki/Special:FilePath/Door.jpg",
+  window:"https://commons.wikimedia.org/wiki/Special:FilePath/Window.jpg",
+  room:"https://commons.wikimedia.org/wiki/Special:FilePath/Room.jpg",
+  kitchen:"https://commons.wikimedia.org/wiki/Special:FilePath/Kitchen.jpg",
+  backpack:"https://commons.wikimedia.org/wiki/Special:FilePath/Backpack.jpg",
+  blackboard:"https://commons.wikimedia.org/wiki/Special:FilePath/Blackboard.jpg",
+  soap:"https://commons.wikimedia.org/wiki/Special:FilePath/Soap.jpg",
+  towel:"https://commons.wikimedia.org/wiki/Special:FilePath/Towel.jpg",
+  toothbrush:"https://commons.wikimedia.org/wiki/Special:FilePath/Toothbrush.jpg",
+  comb:"https://commons.wikimedia.org/wiki/Special:FilePath/Hair_comb.jpg",
+  glass:"https://commons.wikimedia.org/wiki/Special:FilePath/Drinking_glass.jpg",
+  eye:"https://commons.wikimedia.org/wiki/Special:FilePath/Human_eye.jpg",
+  ear:"https://commons.wikimedia.org/wiki/Special:FilePath/Human_ear.jpg",
+  nose:"https://commons.wikimedia.org/wiki/Special:FilePath/Human_nose.jpg",
+  hand:"https://commons.wikimedia.org/wiki/Special:FilePath/Hand.jpg",
+  foot:"https://commons.wikimedia.org/wiki/Special:FilePath/Human_foot.jpg",
+  mouth:"https://commons.wikimedia.org/wiki/Special:FilePath/Mouth.jpg",
+  family:"https://commons.wikimedia.org/wiki/Special:FilePath/Family_portrait.jpg",
+  father:"https://commons.wikimedia.org/wiki/Special:FilePath/Father_and_child.jpg",
+  mother:"https://commons.wikimedia.org/wiki/Special:FilePath/Mother_and_child.jpg",
+  sister:"https://commons.wikimedia.org/wiki/Special:FilePath/Siblings.jpg",
+  brother:"https://commons.wikimedia.org/wiki/Special:FilePath/Siblings.jpg",
+  child:"https://commons.wikimedia.org/wiki/Special:FilePath/Child_reading.jpg",
+  red:"https://commons.wikimedia.org/wiki/Special:FilePath/Red_color.jpg",
+  blue:"https://commons.wikimedia.org/wiki/Special:FilePath/Blue_color.jpg",
+  yellow:"https://commons.wikimedia.org/wiki/Special:FilePath/Yellow_color.jpg",
+  green:"https://commons.wikimedia.org/wiki/Special:FilePath/Green_color.jpg",
+  white:"https://commons.wikimedia.org/wiki/Special:FilePath/White_color.jpg",
+  orange:"https://commons.wikimedia.org/wiki/Special:FilePath/Orange_color.jpg"
 };
-
