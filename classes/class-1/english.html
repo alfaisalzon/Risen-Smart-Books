@@ -1,1 +1,698 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b75">
+<title>English Class 1 | The Risen High School</title>
+
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff") format("woff");
+ font-display:swap;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;background:#edf2fb;color:#26364d;
+ font-family:Arial,sans-serif;font-size:18px;line-height:1.8;
+}
+.ur{font-family:Jameel,"Noto Nastaliq Urdu",serif;direction:rtl;line-height:2.2}
+.topbar{
+ background:#102f5d;color:white;padding:10px 14px;
+ display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.topbar button{
+ border:0;border-radius:10px;padding:8px 14px;
+ background:#ffd34e;color:#18345d;font-size:16px;font-weight:bold;
+}
+.book{max-width:950px;margin:22px auto;padding:12px}
+.cover{
+ min-height:690px;position:relative;overflow:hidden;
+ border-radius:25px;padding:24px 15px;text-align:center;color:white;
+ background:
+ radial-gradient(circle at 10% 15%,#ffdf62 0 5%,transparent 5.5%),
+ radial-gradient(circle at 90% 25%,#ff8cb4 0 7%,transparent 7.5%),
+ radial-gradient(circle at 15% 85%,#51e1c0 0 8%,transparent 8.5%),
+ linear-gradient(145deg,#092b62,#315ac4 42%,#783fc2 75%,#e34e9b);
+ border:7px solid #f8d66c;box-shadow:0 15px 35px #152e6040;
+}
+.cover:before,.cover:after{
+ content:"";position:absolute;border:2px solid #ffffff55;
+ border-radius:50%;width:300px;height:300px;pointer-events:none;
+}
+.cover:before{top:-170px;right:-100px}
+.cover:after{bottom:-180px;left:-100px}
+.cover-inner{position:relative;z-index:2}
+.school{
+ display:inline-block;background:white;color:#173d78;
+ border:3px solid #ffd34e;border-radius:18px;padding:8px 20px;
+ font-size:clamp(17px,4vw,25px);font-weight:900;
+ direction:ltr;box-shadow:0 5px 15px #0003;margin-top:12px;
+}
+.cover h1{
+ font-size:clamp(46px,10vw,82px);line-height:1.2;
+ text-shadow:3px 5px 0 #172d69,0 8px 18px #0005;margin:25px 0 5px;
+}
+.cover h2{margin:0;color:#ffeb9a;font-size:30px}
+.badge{
+ display:inline-block;margin-top:22px;background:#ffcf38;
+ color:#193c76;border-radius:30px;padding:5px 24px;font-size:22px;
+}
+.cover-art{width:min(94%,440px);height:auto;margin:18px auto;display:block}
+.cover-line{
+ display:inline-block;padding:6px 20px;background:#ffffff25;
+ border:1px solid #ffffff88;border-radius:30px;font-size:20px;
+}
+.cover-footer{margin-top:20px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.cover-footer span{background:#ffffff25;border:1px solid #ffffff77;border-radius:12px;padding:5px 13px}
+.contents,.lesson,.revision{
+ background:white;border-radius:20px;margin:22px 0;padding:20px;
+ box-shadow:0 5px 18px #173b7012;
+}
+.contents{border-top:7px solid #ffbf35}
+.section-title{text-align:center;color:#173d78;font-size:30px;margin:0 0 15px}
+.contents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.contents a{
+ text-decoration:none;color:#23416c;
+ background:linear-gradient(110deg,#edf4ff,#fff5e4);
+ border:1px solid #dce6f6;border-radius:12px;padding:8px 13px;display:block;
+}
+.lesson{border-right:7px solid #3d78ce;page-break-inside:avoid}
+.lesson:nth-of-type(even){border-right-color:#e96c9c}
+.lesson:nth-of-type(odd){border-right-color:#20a58a}
+.lesson-head{
+ display:flex;align-items:center;gap:12px;margin-bottom:15px;
+ padding:10px 14px;border-radius:14px;
+ background:linear-gradient(100deg,#e5efff,#f7eaff);
+}
+.num{
+ width:48px;height:48px;display:grid;place-items:center;
+ border-radius:50%;flex-shrink:0;color:white;
+ background:linear-gradient(140deg,#164b9b,#8b4bc2);
+ font-size:22px;font-weight:bold;
+}
+.lesson h2{margin:0;font-size:26px;color:#173d78}
+.lesson h3{font-size:22px;color:#a13f76;margin:15px 0 5px}
+.lesson p{margin:8px 0}
+.art{
+ margin:12px auto;width:min(100%,450px);min-height:120px;
+ display:flex;align-items:center;justify-content:center;gap:15px;
+ flex-wrap:wrap;padding:14px;border-radius:17px;
+ background:linear-gradient(120deg,#e6f6ff,#fff0f5);
+ border:1px solid #d8e9f5;text-align:center;
+}
+.emoji{font-size:50px;line-height:1.4}
+.art small{display:block;color:#284c78}
+.meaning{
+ background:#fff7e7;border:1px solid #f5d89a;
+ border-radius:13px;padding:12px 16px;margin:12px 0;
+}
+.info{
+ background:#f0f7ff;border-right:5px solid #4789d6;
+ padding:12px 15px;border-radius:12px;margin:12px 0;
+}
+.urdubox{
+ background:#f8f2ff;border-right:5px solid #9b65c9;
+ padding:12px 15px;border-radius:12px;margin:12px 0;
+}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:17px}
+th{background:#244e91;color:white}
+th,td{border:1px solid #d6e0ef;padding:7px;text-align:center}
+tr:nth-child(even){background:#f2f6ff}
+.exercise{
+ margin-top:17px;padding:15px;border-radius:15px;
+ background:#f0fff9;border:2px dashed #66bca1;
+}
+.exercise h3{color:#13785f;margin-top:0}
+.question{padding:8px 0;border-bottom:1px dashed #b9d9ce}
+.words{display:flex;gap:9px;flex-wrap:wrap;margin:8px 0}
+.words span{background:#e7edff;border:1px solid #cbd8ff;border-radius:10px;padding:4px 12px}
+.revision{border-top:7px solid #ffb73c}
+.footer{
+ text-align:center;padding:25px 10px;color:white;
+ background:#173d78;border-radius:18px;margin:25px 0;
+}
+@media(max-width:600px){
+ body{font-size:17px}
+ .book{padding:7px;margin:10px auto}
+ .cover{min-height:570px;padding:17px 10px;border-width:5px}
+ .lesson,.contents,.revision{padding:13px;margin:15px 0}
+ .lesson h2{font-size:23px}
+ .section-title{font-size:26px}
+}
+@media print{
+ @page{size:A4;margin:12mm}
+ body{background:white;font-size:16px}
+ .topbar{display:none}
+ .book{max-width:none;margin:0;padding:0}
+ .cover{
+  min-height:270mm;border-radius:0;page-break-after:always;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+ }
+ .contents,.lesson,.revision,.footer{
+  box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact;
+ }
+ .lesson{page-break-inside:avoid}
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">
+ <strong>THE RISEN HIGH SCHOOL</strong>
+ <div>
+  <button onclick="window.print()">Print / PDF</button>
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</button>
+ </div>
+</div>
+
+<main class="book">
+
+<!-- COVER -->
+<section class="cover">
+ <div class="cover-inner">
+  <div class="school">THE RISEN HIGH SCHOOL</div>
+  <p class="ur">علم • کردار • کامیابی</p>
+  <div class="badge ur">ڈیجیٹل درسی کتاب</div>
+  <h1>ENGLISH</h1>
+  <h2>CLASS ONE</h2>
+
+  <svg class="cover-art" viewBox="0 0 500 330" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <linearGradient id="leftPage" x1="0" y1="0" x2="1" y2="1">
+     <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d8e9ff"/>
+    </linearGradient>
+    <linearGradient id="rightPage" x1="0" y1="0" x2="1" y2="1">
+     <stop offset="0" stop-color="#fff9db"/><stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="coverBook" x1="0" y1="0" x2="0" y2="1">
+     <stop offset="0" stop-color="#ffdb55"/><stop offset="1" stop-color="#f18a34"/>
+    </linearGradient>
+   </defs>
+   <ellipse cx="250" cy="278" rx="190" ry="22" fill="#061e58" opacity=".25"/>
+   <path d="M55 90 Q150 45 247 105 L247 265 Q150 208 55 255Z" fill="url(#coverBook)" stroke="#fff2b1" stroke-width="8"/>
+   <path d="M253 105 Q350 45 445 90 L445 255 Q350 208 253 265Z" fill="#e9a12e" stroke="#fff2b1" stroke-width="8"/>
+   <path d="M65 82 Q155 38 246 100 L246 249 Q155 193 65 242Z" fill="url(#leftPage)" stroke="white" stroke-width="5"/>
+   <path d="M254 100 Q345 38 435 82 L435 242 Q345 193 254 249Z" fill="url(#rightPage)" stroke="white" stroke-width="5"/>
+   <path d="M250 100 L250 255" stroke="#8d5b34" stroke-width="7"/>
+   <g fill="none" stroke="#6c8fc2" stroke-width="4" stroke-linecap="round">
+    <path d="M93 120 Q160 103 215 132"/><path d="M91 150 Q160 133 215 162"/>
+    <path d="M91 180 Q160 163 215 192"/><path d="M286 132 Q345 103 408 120"/>
+    <path d="M286 162 Q345 133 408 150"/><path d="M286 192 Q345 163 408 180"/>
+   </g>
+   <path d="M250 28 L259 51 L284 52 L265 68 L271 91 L250 78 L229 91 L235 68 L216 52 L241 51Z" fill="#ffca3a"/>
+   <g fill="#ed6a8c"><circle cx="153" cy="91" r="9"/><circle cx="345" cy="91" r="9"/></g>
+  </svg>
+
+  <div class="cover-line ur">پڑھیں، سیکھیں اور آگے بڑھیں</div>
+  <div class="cover-footer">
+   <span>📘 English</span><span>⭐ Class 1</span><span>🌈 Colourful Edition</span>
+  </div>
+ </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents">
+ <h2 class="section-title">Contents | فہرستِ مضامین</h2>
+ <div class="contents-grid">
+  <a href="#l1">1. My Alphabet | حروفِ تہجی</a>
+  <a href="#l2">2. My Family | میرا خاندان</a>
+  <a href="#l3">3. My School | میرا اسکول</a>
+  <a href="#l4">4. My Body | میرے جسم کے اعضاء</a>
+  <a href="#l5">5. Colours | رنگ</a>
+  <a href="#l6">6. Fruits | پھل</a>
+  <a href="#l7">7. Animals | جانور</a>
+  <a href="#l8">8. Birds | پرندے</a>
+  <a href="#l9">9. My House | میرا گھر</a>
+  <a href="#l10">10. Good Manners | اچھے اخلاق</a>
+  <a href="#l11">11. Days of the Week | ہفتے کے دن</a>
+  <a href="#l12">12. Numbers | گنتی</a>
+  <a href="#l13">13. Action Words | کام کے الفاظ</a>
+  <a href="#l14">14. A Rainy Day | بارش کا دن</a>
+  <a href="#revision">Revision | دہرائی</a>
+ </div>
+</section>
+
+<!-- LESSON 1 -->
+<section class="lesson" id="l1">
+ <div class="lesson-head"><div class="num">1</div><h2>My Alphabet | حروفِ تہجی</h2></div>
+ <div class="art"><div class="emoji">🔤 🅰️ 📖</div><small>English Letters | انگریزی حروف</small></div>
+ <p><b>English:</b> The English alphabet has 26 letters. We use these letters to read and write words. There are capital letters and small letters.</p>
+ <p class="ur"><b>اردو:</b> انگریزی حروفِ تہجی میں ۲۶ حروف ہوتے ہیں۔ ہم ان حروف کی مدد سے الفاظ پڑھتے اور لکھتے ہیں۔ انگریزی میں بڑے اور چھوٹے حروف ہوتے ہیں۔</p>
+ <h3>Capital Letters | بڑے حروف</h3>
+ <p style="font-size:25px;letter-spacing:5px;text-align:center;color:#24549a">A B C D E F G H I J K L M<br>N O P Q R S T U V W X Y Z</p>
+ <h3>Small Letters | چھوٹے حروف</h3>
+ <p style="font-size:25px;letter-spacing:5px;text-align:center;color:#a13f76">a b c d e f g h i j k l m<br>n o p q r s t u v w x y z</p>
+ <h3>Letters and Words | حروف اور الفاظ</h3>
+ <table>
+  <tr><th>Letter</th><th>Word</th><th>اردو معنی</th></tr>
+  <tr><td>A a</td><td>Apple 🍎</td><td class="ur">سیب</td></tr>
+  <tr><td>B b</td><td>Ball ⚽</td><td class="ur">گیند</td></tr>
+  <tr><td>C c</td><td>Cat 🐈</td><td class="ur">بلی</td></tr>
+  <tr><td>D d</td><td>Dog 🐕</td><td class="ur">کتا</td></tr>
+  <tr><td>E e</td><td>Egg 🥚</td><td class="ur">انڈا</td></tr>
+  <tr><td>F f</td><td>Fish 🐟</td><td class="ur">مچھلی</td></tr>
+  <tr><td>G g</td><td>Goat 🐐</td><td class="ur">بکری</td></tr>
+  <tr><td>H h</td><td>Hen 🐔</td><td class="ur">مرغی</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. How many letters are there in the English alphabet? <span class="ur">انگریزی میں کتنے حروف ہیں؟</span></div>
+  <div class="question">2. Write the first five capital letters.</div>
+  <div class="question">3. Complete: A, B, __, D, __.</div>
+  <div class="question">4. Write the small letters of A, B, C.</div>
+  <div class="question">5. Write one word beginning with B.</div>
+ </div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="lesson" id="l2">
+ <div class="lesson-head"><div class="num">2</div><h2>My Family | میرا خاندان</h2></div>
+ <div class="art"><div class="emoji">👨‍👩‍👧‍👦 ❤️</div><small>A Happy Family | خوش خاندان</small></div>
+ <p><b>English:</b> I have a lovely family. My father loves me. My mother takes care of me. I have brothers and sisters. We live together and help one another. I love my family.</p>
+ <p class="ur"><b>اردو:</b> میرا ایک پیارا خاندان ہے۔ میرے والد مجھ سے محبت کرتے ہیں۔ میری والدہ میرا خیال رکھتی ہیں۔ میرے بہن بھائی ہیں۔ ہم سب مل جل کر رہتے اور ایک دوسرے کی مدد کرتے ہیں۔ مجھے اپنا خاندان بہت پیارا ہے۔</p>
+ <h3>New Words | نئے الفاظ</h3>
+ <table>
+  <tr><th>English</th><th>اردو معنی</th></tr>
+  <tr><td>Father</td><td class="ur">والد</td></tr>
+  <tr><td>Mother</td><td class="ur">والدہ</td></tr>
+  <tr><td>Brother</td><td class="ur">بھائی</td></tr>
+  <tr><td>Sister</td><td class="ur">بہن</td></tr>
+  <tr><td>Family</td><td class="ur">خاندان</td></tr>
+  <tr><td>Love</td><td class="ur">محبت</td></tr>
+  <tr><td>Help</td><td class="ur">مدد کرنا</td></tr>
+ </table>
+ <div class="meaning">
+  <b>Read and Learn:</b>
+  <p>This is my father. — <span class="ur">یہ میرے والد ہیں۔</span></p>
+  <p>This is my mother. — <span class="ur">یہ میری والدہ ہیں۔</span></p>
+  <p>I love my family. — <span class="ur">مجھے اپنے خاندان سے محبت ہے۔</span></p>
+ </div>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. Who takes care of you? <span class="ur">آپ کا خیال کون رکھتا ہے؟</span></div>
+  <div class="question">2. Write the names of four family members.</div>
+  <div class="question">3. Complete: I love my ______.</div>
+  <div class="question">4. Write two sentences about your family.</div>
+ </div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="lesson" id="l3">
+ <div class="lesson-head"><div class="num">3</div><h2>My School | میرا اسکول</h2></div>
+ <div class="art"><div class="emoji">🏫 🎒 📚</div><small>A Beautiful School | خوبصورت اسکول</small></div>
+ <p><b>English:</b> My school is a nice place. Its name is The Risen High School. I go to school every day. My teachers teach me English, Urdu, Mathematics and other subjects. I keep my books neat and clean. I respect my teachers and love my school.</p>
+ <p class="ur"><b>اردو:</b> میرا اسکول ایک اچھی جگہ ہے۔ اس کا نام دی رائزن ہائی اسکول ہے۔ میں ہر روز اسکول جاتا/جاتی ہوں۔ میرے اساتذہ مجھے انگریزی، اردو، ریاضی اور دوسرے مضامین پڑھاتے ہیں۔ میں اپنی کتابیں صاف رکھتا/رکھتی ہوں۔ میں اپنے اساتذہ کا احترام کرتا/کرتی ہوں اور اپنے اسکول سے محبت کرتا/کرتی ہوں۔</p>
+ <table>
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>School</td><td class="ur">اسکول</td></tr>
+  <tr><td>Teacher</td><td class="ur">استاد</td></tr>
+  <tr><td>Student</td><td class="ur">طالب علم</td></tr>
+  <tr><td>Book</td><td class="ur">کتاب</td></tr>
+  <tr><td>Classroom</td><td class="ur">کلاس روم</td></tr>
+  <tr><td>Learn</td><td class="ur">سیکھنا</td></tr>
+ </table>
+ <div class="info">
+  <b>Remember:</b> We should come to school on time.<br>
+  <span class="ur">یاد رکھیں: ہمیں وقت پر اسکول آنا چاہیے۔</span>
+ </div>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. What is the name of your school?</div>
+  <div class="question">2. Who teaches you?</div>
+  <div class="question">3. Name two school things.</div>
+  <div class="question">4. Complete: I go to ______ every day.</div>
+  <div class="question">5. Write two sentences about your school.</div>
+ </div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="lesson" id="l4">
+ <div class="lesson-head"><div class="num">4</div><h2>My Body | میرے جسم کے اعضاء</h2></div>
+ <div class="art"><div class="emoji">👀 👃 👂 ✋ 👣</div><small>Parts of the Body | جسم کے حصے</small></div>
+ <p><b>English:</b> I have a body. I have two eyes, two ears, one nose and one mouth. I have two hands and two feet. I use my eyes to see. I use my ears to hear. I use my nose to smell. I use my hands to hold things.</p>
+ <p class="ur"><b>اردو:</b> میرا ایک جسم ہے۔ میری دو آنکھیں، دو کان، ایک ناک اور ایک منہ ہے۔ میرے دو ہاتھ اور دو پاؤں ہیں۔ میں آنکھوں سے دیکھتا/دیکھتی ہوں، کانوں سے سنتا/سنتی ہوں، ناک سے سونگھتا/سونگھتی ہوں اور ہاتھوں سے چیزیں پکڑتا/پکڑتی ہوں۔</p>
+ <table>
+  <tr><th>English</th><th>اردو معنی</th></tr>
+  <tr><td>Head</td><td class="ur">سر</td></tr>
+  <tr><td>Eyes</td><td class="ur">آنکھیں</td></tr>
+  <tr><td>Ears</td><td class="ur">کان</td></tr>
+  <tr><td>Nose</td><td class="ur">ناک</td></tr>
+  <tr><td>Mouth</td><td class="ur">منہ</td></tr>
+  <tr><td>Hands</td><td class="ur">ہاتھ</td></tr>
+  <tr><td>Feet</td><td class="ur">پاؤں</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. How many eyes do you have?</div>
+  <div class="question">2. Which body part helps you to hear?</div>
+  <div class="question">3. We smell with our ______.</div>
+  <div class="question">4. Write the names of five body parts.</div>
+ </div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="lesson" id="l5">
+ <div class="lesson-head"><div class="num">5</div><h2>Colours | رنگ</h2></div>
+ <div class="art"><div class="emoji">🌈 🔴 🟡 🔵 🟢</div><small>Beautiful Colours | خوبصورت رنگ</small></div>
+ <p><b>English:</b> There are many colours in the world. The sky is blue. Grass is green. A rose can be red. A banana is yellow. Milk is white. Coal is black. Colours make our world beautiful.</p>
+ <p class="ur"><b>اردو:</b> دنیا میں بہت سے رنگ ہیں۔ آسمان نیلا ہے۔ گھاس سبز ہے۔ گلاب سرخ ہو سکتا ہے۔ کیلا پیلا ہوتا ہے۔ دودھ سفید ہوتا ہے۔ کوئلہ کالا ہوتا ہے۔ رنگ ہماری دنیا کو خوبصورت بناتے ہیں۔</p>
+ <table>
+  <tr><th>Colour</th><th>اردو معنی</th><th>Example</th></tr>
+  <tr><td>Red 🔴</td><td class="ur">سرخ</td><td>Rose 🌹</td></tr>
+  <tr><td>Blue 🔵</td><td class="ur">نیلا</td><td>Sky</td></tr>
+  <tr><td>Green 🟢</td><td class="ur">سبز</td><td>Grass</td></tr>
+  <tr><td>Yellow 🟡</td><td class="ur">پیلا</td><td>Banana</td></tr>
+  <tr><td>White ⚪</td><td class="ur">سفید</td><td>Milk</td></tr>
+  <tr><td>Black ⚫</td><td class="ur">کالا</td><td>Coal</td></tr>
+  <tr><td>Pink 🌸</td><td class="ur">گلابی</td><td>Flower</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. What is the colour of the sky?</div>
+  <div class="question">2. What is the colour of grass?</div>
+  <div class="question">3. Write five colour names.</div>
+  <div class="question">4. Complete: A banana is ______.</div>
+ </div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="lesson" id="l6">
+ <div class="lesson-head"><div class="num">6</div><h2>Fruits | پھل</h2></div>
+ <div class="art"><div class="emoji">🍎 🍌 🍇 🍊 🥭</div><small>Fresh and Healthy Fruits | تازہ اور صحت مند پھل</small></div>
+ <p><b>English:</b> Fruits are good for our health. Apple, banana, mango, orange, grapes and guava are fruits. Fruits have different colours and tastes. We should wash fruits before eating them.</p>
+ <p class="ur"><b>اردو:</b> پھل ہماری صحت کے لیے اچھے ہوتے ہیں۔ سیب، کیلا، آم، مالٹا، انگور اور امرود پھل ہیں۔ پھلوں کے رنگ اور ذائقے مختلف ہوتے ہیں۔ ہمیں پھل کھانے سے پہلے دھونے چاہئیں۔</p>
+ <table>
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Apple 🍎</td><td class="ur">سیب</td></tr>
+  <tr><td>Banana 🍌</td><td class="ur">کیلا</td></tr>
+  <tr><td>Mango 🥭</td><td class="ur">آم</td></tr>
+  <tr><td>Orange 🍊</td><td class="ur">مالٹا</td></tr>
+  <tr><td>Grapes 🍇</td><td class="ur">انگور</td></tr>
+  <tr><td>Guava</td><td class="ur">امرود</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. Name four fruits.</div>
+  <div class="question">2. Which fruit is yellow?</div>
+  <div class="question">3. Why should we eat fruits?</div>
+  <div class="question">4. Complete: We should ______ fruits before eating.</div>
+ </div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="lesson" id="l7">
+ <div class="lesson-head"><div class="num">7</div><h2>Animals | جانور</h2></div>
+ <div class="art"><div class="emoji">🐄 🐐 🐈 🐘 🐇</div><small>Animals Around Us | ہمارے اردگرد جانور</small></div>
+ <p><b>English:</b> Many animals live on the earth. A cow gives us milk. A goat gives us milk. A horse can run fast. A cat likes milk. An elephant is a big animal. We should be kind to animals.</p>
+ <p class="ur"><b>اردو:</b> زمین پر بہت سے جانور رہتے ہیں۔ گائے ہمیں دودھ دیتی ہے۔ بکری بھی دودھ دیتی ہے۔ گھوڑا تیز دوڑ سکتا ہے۔ بلی کو دودھ پسند ہے۔ ہاتھی ایک بڑا جانور ہے۔ ہمیں جانوروں کے ساتھ نرمی کرنی چاہیے۔</p>
+ <table>
+  <tr><th>Animal</th><th>اردو معنی</th></tr>
+  <tr><td>Cow 🐄</td><td class="ur">گائے</td></tr>
+  <tr><td>Goat 🐐</td><td class="ur">بکری</td></tr>
+  <tr><td>Horse 🐎</td><td class="ur">گھوڑا</td></tr>
+  <tr><td>Cat 🐈</td><td class="ur">بلی</td></tr>
+  <tr><td>Dog 🐕</td><td class="ur">کتا</td></tr>
+  <tr><td>Elephant 🐘</td><td class="ur">ہاتھی</td></tr>
+  <tr><td>Rabbit 🐇</td><td class="ur">خرگوش</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. Which animal gives us milk?</div>
+  <div class="question">2. Which animal can run fast?</div>
+  <div class="question">3. Name five animals.</div>
+  <div class="question">4. Complete: An elephant is a ______ animal.</div>
+ </div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="lesson" id="l8">
+ <div class="lesson-head"><div class="num">8</div><h2>Birds | پرندے</h2></div>
+ <div class="art"><div class="emoji">🐦 🦜 🕊️ 🦚</div><small>Beautiful Birds | خوبصورت پرندے</small></div>
+ <p><b>English:</b> Birds are beautiful animals. Most birds have two wings and two legs. Many birds can fly in the sky. A parrot is green. A peacock has beautiful feathers. A pigeon is a common bird. Birds make nests in trees.</p>
+ <p class="ur"><b>اردو:</b> پرندے خوبصورت جانور ہیں۔ زیادہ تر پرندوں کے دو پر اور دو ٹانگیں ہوتی ہیں۔ بہت سے پرندے آسمان میں اڑ سکتے ہیں۔ طوطا سبز ہوتا ہے۔ مور کے خوبصورت پر ہوتے ہیں۔ کبوتر ایک عام پرندہ ہے۔ پرندے درختوں پر گھونسلے بناتے ہیں۔</p>
+ <table>
+  <tr><th>Bird</th><th>اردو معنی</th></tr>
+  <tr><td>Parrot 🦜</td><td class="ur">طوطا</td></tr>
+  <tr><td>Peacock 🦚</td><td class="ur">مور</td></tr>
+  <tr><td>Pigeon 🕊️</td><td class="ur">کبوتر</td></tr>
+  <tr><td>Sparrow 🐦</td><td class="ur">چڑیا</td></tr>
+  <tr><td>Hen 🐔</td><td class="ur">مرغی</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. How many wings do most birds have?</div>
+  <div class="question">2. Which bird is green?</div>
+  <div class="question">3. Where do birds make nests?</div>
+  <div class="question">4. Write the names of three birds.</div>
+ </div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="lesson" id="l9">
+ <div class="lesson-head"><div class="num">9</div><h2>My House | میرا گھر</h2></div>
+ <div class="art"><div class="emoji">🏠 🪟 🚪 🛏️</div><small>A Lovely Home | پیارا گھر</small></div>
+ <p><b>English:</b> My house is beautiful. It has rooms, doors and windows. We sleep in our bedrooms. We cook food in the kitchen. We sit together in the living room. I keep my house clean and tidy.</p>
+ <p class="ur"><b>اردو:</b> میرا گھر خوبصورت ہے۔ اس میں کمرے، دروازے اور کھڑکیاں ہیں۔ ہم اپنے سونے کے کمرے میں سوتے ہیں۔ ہم باورچی خانے میں کھانا پکاتے ہیں۔ ہم بیٹھک میں اکٹھے بیٹھتے ہیں۔ میں اپنے گھر کو صاف ستھرا رکھتا/رکھتی ہوں۔</p>
+ <table>
+  <tr><th>English</th><th>اردو معنی</th></tr>
+  <tr><td>House</td><td class="ur">گھر</td></tr>
+  <tr><td>Room</td><td class="ur">کمرہ</td></tr>
+  <tr><td>Door</td><td class="ur">دروازہ</td></tr>
+  <tr><td>Window</td><td class="ur">کھڑکی</td></tr>
+  <tr><td>Kitchen</td><td class="ur">باورچی خانہ</td></tr>
+  <tr><td>Bed</td><td class="ur">بستر</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. Where do we cook food?</div>
+  <div class="question">2. Where do we sleep?</div>
+  <div class="question">3. Name three things in your house.</div>
+  <div class="question">4. Write two sentences about your house.</div>
+ </div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="lesson" id="l10">
+ <div class="lesson-head"><div class="num">10</div><h2>Good Manners | اچھے اخلاق</h2></div>
+ <div class="art"><div class="emoji">🤝 ❤️ 😊</div><small>Kindness and Respect | محبت اور احترام</small></div>
+ <p><b>English:</b> Good manners make us good people. We should speak politely. We should respect our elders and love younger children. We should always tell the truth. We should say please, thank you and sorry. We should help others.</p>
+ <p class="ur"><b>اردو:</b> اچھے اخلاق ہمیں اچھا انسان بناتے ہیں۔ ہمیں نرمی سے بات کرنی چاہیے۔ بڑوں کا احترام اور چھوٹوں سے پیار کرنا چاہیے۔ ہمیں ہمیشہ سچ بولنا چاہیے۔ ہمیں پلیز، شکریہ اور معاف کیجیے جیسے الفاظ استعمال کرنے چاہئیں۔ ہمیں دوسروں کی مدد کرنی چاہیے۔</p>
+ <h3>Magic Words | اچھے الفاظ</h3>
+ <table>
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Please</td><td class="ur">براہِ کرم</td></tr>
+  <tr><td>Thank you</td><td class="ur">شکریہ</td></tr>
+  <tr><td>Sorry</td><td class="ur">معاف کیجیے</td></tr>
+  <tr><td>Welcome</td><td class="ur">خوش آمدید</td></tr>
+  <tr><td>Good morning</td><td class="ur">صبح بخیر</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. What makes us good people?</div>
+  <div class="question">2. What should we do with elders?</div>
+  <div class="question">3. Write three magic words.</div>
+  <div class="question">4. Why should we help others?</div>
+ </div>
+</section>
+
+<!-- LESSON 11 -->
+<section class="lesson" id="l11">
+ <div class="lesson-head"><div class="num">11</div><h2>Days of the Week | ہفتے کے دن</h2></div>
+ <div class="art"><div class="emoji">📅 🗓️ ☀️</div><small>Seven Days | سات دن</small></div>
+ <p><b>English:</b> There are seven days in a week. Monday is the first working day of our school week. We go to school from Monday to Saturday. Sunday is a holiday for our school.</p>
+ <p class="ur"><b>اردو:</b> ایک ہفتے میں سات دن ہوتے ہیں۔ پیر ہمارے اسکول کے ہفتے کا پہلا کام کا دن ہے۔ ہم پیر سے ہفتہ تک اسکول جاتے ہیں۔ اتوار کو ہمارے اسکول کی چھٹی ہوتی ہے۔</p>
+ <table>
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Monday</td><td class="ur">پیر</td></tr>
+  <tr><td>Tuesday</td><td class="ur">منگل</td></tr>
+  <tr><td>Wednesday</td><td class="ur">بدھ</td></tr>
+  <tr><td>Thursday</td><td class="ur">جمعرات</td></tr>
+  <tr><td>Friday</td><td class="ur">جمعہ</td></tr>
+  <tr><td>Saturday</td><td class="ur">ہفتہ</td></tr>
+  <tr><td>Sunday</td><td class="ur">اتوار</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. How many days are there in a week?</div>
+  <div class="question">2. Which day comes after Monday?</div>
+  <div class="question">3. Which day is your school holiday?</div>
+  <div class="question">4. Write the names of all seven days.</div>
+ </div>
+</section>
+
+<!-- LESSON 12 -->
+<section class="lesson" id="l12">
+ <div class="lesson-head"><div class="num">12</div><h2>Numbers | گنتی</h2></div>
+ <div class="art"><div class="emoji">🔢 1️⃣ 2️⃣ 3️⃣</div><small>Counting Numbers | گنتی کے اعداد</small></div>
+ <p><b>English:</b> Numbers help us count things. We use numbers every day. We count books, pencils, toys and many other things.</p>
+ <p class="ur"><b>اردو:</b> اعداد ہمیں چیزیں گننے میں مدد دیتے ہیں۔ ہم روزانہ اعداد استعمال کرتے ہیں۔ ہم کتابیں، پنسلیں، کھلونے اور بہت سی دوسری چیزیں گنتے ہیں۔</p>
+ <table>
+  <tr><th>Number</th><th>Word</th><th>اردو</th></tr>
+  <tr><td>1</td><td>One</td><td class="ur">ایک</td></tr>
+  <tr><td>2</td><td>Two</td><td class="ur">دو</td></tr>
+  <tr><td>3</td><td>Three</td><td class="ur">تین</td></tr>
+  <tr><td>4</td><td>Four</td><td class="ur">چار</td></tr>
+  <tr><td>5</td><td>Five</td><td class="ur">پانچ</td></tr>
+  <tr><td>6</td><td>Six</td><td class="ur">چھ</td></tr>
+  <tr><td>7</td><td>Seven</td><td class="ur">سات</td></tr>
+  <tr><td>8</td><td>Eight</td><td class="ur">آٹھ</td></tr>
+  <tr><td>9</td><td>Nine</td><td class="ur">نو</td></tr>
+  <tr><td>10</td><td>Ten</td><td class="ur">دس</td></tr>
+  <tr><td>11</td><td>Eleven</td><td class="ur">گیارہ</td></tr>
+  <tr><td>12</td><td>Twelve</td><td class="ur">بارہ</td></tr>
+  <tr><td>13</td><td>Thirteen</td><td class="ur">تیرہ</td></tr>
+  <tr><td>14</td><td>Fourteen</td><td class="ur">چودہ</td></tr>
+  <tr><td>15</td><td>Fifteen</td><td class="ur">پندرہ</td></tr>
+  <tr><td>16</td><td>Sixteen</td><td class="ur">سولہ</td></tr>
+  <tr><td>17</td><td>Seventeen</td><td class="ur">سترہ</td></tr>
+  <tr><td>18</td><td>Eighteen</td><td class="ur">اٹھارہ</td></tr>
+  <tr><td>19</td><td>Nineteen</td><td class="ur">انیس</td></tr>
+  <tr><td>20</td><td>Twenty</td><td class="ur">بیس</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. Write numbers from 1 to 10 in words.</div>
+  <div class="question">2. What comes after 5?</div>
+  <div class="question">3. What comes before 10?</div>
+  <div class="question">4. Write the spelling of 7, 8 and 9.</div>
+ </div>
+</section>
+
+<!-- LESSON 13 -->
+<section class="lesson" id="l13">
+ <div class="lesson-head"><div class="num">13</div><h2>Action Words | کام کے الفاظ</h2></div>
+ <div class="art"><div class="emoji">🏃 📖 ✍️ ⚽</div><small>Things We Do | ہمارے کام</small></div>
+ <p><b>English:</b> Action words tell us what someone does. I read a book. I write with a pencil. I play with my friends. I run in the playground. I eat food and drink water.</p>
+ <p class="ur"><b>اردو:</b> کام کے الفاظ ہمیں بتاتے ہیں کہ کوئی کیا کام کرتا ہے۔ میں کتاب پڑھتا/پڑھتی ہوں۔ میں پنسل سے لکھتا/لکھتی ہوں۔ میں اپنے دوستوں کے ساتھ کھیلتا/کھیلتی ہوں۔ میں میدان میں دوڑتا/دوڑتی ہوں۔ میں کھانا کھاتا/کھاتی اور پانی پیتا/پیتی ہوں۔</p>
+ <table>
+  <tr><th>Action Word</th><th>اردو معنی</th></tr>
+  <tr><td>Read</td><td class="ur">پڑھنا</td></tr>
+  <tr><td>Write</td><td class="ur">لکھنا</td></tr>
+  <tr><td>Play</td><td class="ur">کھیلنا</td></tr>
+  <tr><td>Run</td><td class="ur">دوڑنا</td></tr>
+  <tr><td>Eat</td><td class="ur">کھانا</td></tr>
+  <tr><td>Drink</td><td class="ur">پینا</td></tr>
+  <tr><td>Sleep</td><td class="ur">سونا</td></tr>
+  <tr><td>Walk</td><td class="ur">چلنا</td></tr>
+ </table>
+ <div class="meaning">
+  <b>Boy and Girl Sentences | لڑکے اور لڑکی کے جملے</b>
+  <p>Ali reads a book. — <span class="ur">علی کتاب پڑھتا ہے۔</span></p>
+  <p>Ayesha reads a book. — <span class="ur">عائشہ کتاب پڑھتی ہے۔</span></p>
+  <p>The boy plays. — <span class="ur">لڑکا کھیلتا ہے۔</span></p>
+  <p>The girl plays. — <span class="ur">لڑکی کھیلتی ہے۔</span></p>
+ </div>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. Write five action words.</div>
+  <div class="question">2. What do you do with a book?</div>
+  <div class="question">3. Complete: I ______ water.</div>
+  <div class="question">4. Make two sentences using action words.</div>
+ </div>
+</section>
+
+<!-- LESSON 14 -->
+<section class="lesson" id="l14">
+ <div class="lesson-head"><div class="num">14</div><h2>A Rainy Day | بارش کا دن</h2></div>
+ <div class="art"><div class="emoji">🌧️ ☂️ 🌈 💧</div><small>A Beautiful Rainy Day | بارش کا خوبصورت دن</small></div>
+ <p><b>English:</b> It is a rainy day. Dark clouds are in the sky. Rain is falling. The trees look fresh and green. Children enjoy the cool weather. We use umbrellas to keep ourselves dry. Rain gives water to plants and fields.</p>
+ <p class="ur"><b>اردو:</b> آج بارش کا دن ہے۔ آسمان پر گہرے بادل ہیں۔ بارش ہو رہی ہے۔ درخت تازہ اور سبز نظر آ رہے ہیں۔ بچے ٹھنڈے موسم سے لطف اندوز ہوتے ہیں۔ ہم خود کو بارش سے بچانے کے لیے چھتری استعمال کرتے ہیں۔ بارش پودوں اور کھیتوں کو پانی دیتی ہے۔</p>
+ <table>
+  <tr><th>English</th><th>اردو معنی</th></tr>
+  <tr><td>Rain</td><td class="ur">بارش</td></tr>
+  <tr><td>Cloud</td><td class="ur">بادل</td></tr>
+  <tr><td>Sky</td><td class="ur">آسمان</td></tr>
+  <tr><td>Umbrella</td><td class="ur">چھتری</td></tr>
+  <tr><td>Weather</td><td class="ur">موسم</td></tr>
+  <tr><td>Tree</td><td class="ur">درخت</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise | مشق</h3>
+  <div class="question">1. What is falling from the sky?</div>
+  <div class="question">2. What do we use in the rain?</div>
+  <div class="question">3. What does rain give to plants?</div>
+  <div class="question">4. Write two sentences about rain.</div>
+ </div>
+</section>
+
+<!-- REVISION -->
+<section class="revision" id="revision">
+ <h2 class="section-title">Revision | مکمل دہرائی</h2>
+
+ <h3>1. A, An | اے اور این</h3>
+ <p>We use <b>a</b> before many words that begin with a consonant sound. We use <b>an</b> before words that begin with a vowel sound.</p>
+ <p class="ur">ہم عام طور پر consonant کی آواز سے شروع ہونے والے الفاظ سے پہلے A اور vowel کی آواز سے شروع ہونے والے الفاظ سے پہلے An استعمال کرتے ہیں۔</p>
+ <div class="meaning">
+  <p>A cat — ایک بلی</p>
+  <p>A ball — ایک گیند</p>
+  <p>An apple — ایک سیب</p>
+  <p>An egg — ایک انڈا</p>
+ </div>
+
+ <h3>2. This is / That is</h3>
+ <p>This is a book. — <span class="ur">یہ ایک کتاب ہے۔</span></p>
+ <p>That is a tree. — <span class="ur">وہ ایک درخت ہے۔</span></p>
+
+ <h3>3. He / She</h3>
+ <p>He is a boy. — <span class="ur">وہ ایک لڑکا ہے۔</span></p>
+ <p>She is a girl. — <span class="ur">وہ ایک لڑکی ہے۔</span></p>
+
+ <h3>4. Opposite Words | متضاد الفاظ</h3>
+ <table>
+  <tr><th>Word</th><th>Opposite</th><th>اردو معنی</th></tr>
+  <tr><td>Big</td><td>Small</td><td class="ur">بڑا — چھوٹا</td></tr>
+  <tr><td>Hot</td><td>Cold</td><td class="ur">گرم — ٹھنڈا</td></tr>
+  <tr><td>Day</td><td>Night</td><td class="ur">دن — رات</td></tr>
+  <tr><td>Up</td><td>Down</td><td class="ur">اوپر — نیچے</td></tr>
+  <tr><td>Happy</td><td>Sad</td><td class="ur">خوش — اداس</td></tr>
+  <tr><td>Good</td><td>Bad</td><td class="ur">اچھا — برا</td></tr>
+ </table>
+
+ <h3>5. Singular and Plural | واحد اور جمع</h3>
+ <table>
+  <tr><th>Singular</th><th>Plural</th><th>اردو</th></tr>
+  <tr><td>Book</td><td>Books</td><td class="ur">کتاب — کتابیں</td></tr>
+  <tr><td>Pen</td><td>Pens</td><td class="ur">قلم — قلم</td></tr>
+  <tr><td>Cat</td><td>Cats</td><td class="ur">بلی — بلیاں</td></tr>
+  <tr><td>Ball</td><td>Balls</td><td class="ur">گیند — گیندیں</td></tr>
+ </table>
+
+ <h3>6. Short Sentences | آسان جملے</h3>
+ <div class="meaning">
+  <p>I am a student. — <span class="ur">میں ایک طالب علم ہوں۔</span></p>
+  <p>This is my book. — <span class="ur">یہ میری کتاب ہے۔</span></p>
+  <p>The sun is hot. — <span class="ur">سورج گرم ہے۔</span></p>
+  <p>I love Pakistan. — <span class="ur">مجھے پاکستان سے محبت ہے۔</span></p>
+  <p>We should help others. — <span class="ur">ہمیں دوسروں کی مدد کرنی چاہیے۔</span></p>
+ </div>
+
+ <div class="exercise">
+  <h3>Final Practice | آخری مشق</h3>
+  <div class="question">1. Write five English alphabet letters.</div>
+  <div class="question">2. Write the names of five colours.</div>
+  <div class="question">3. Write the names of five fruits.</div>
+  <div class="question">4. Write three animal names.</div>
+  <div class="question">5. Complete: An ______.</div>
+  <div class="question">6. Write the opposite of Big.</div>
+  <div class="question">7. Write the plural of Book.</div>
+  <div class="question">8. Translate: I love my school.</div>
+  <div class="question">9. Write five sentences about yourself.</div>
+  <div class="question">10. Write the seven days of the week.</div>
+ </div>
+</section>
+
+<footer class="footer">
+ <h2 class="ur">شاباش! 🌟</h2>
+ <p>You have completed your English book.</p>
+ <p class="ur">آپ نے اپنی انگریزی کی کتاب مکمل کر لی ہے۔</p>
+ <strong>THE RISEN HIGH SCHOOL</strong>
+ <p class="ur">علم کی روشنی، کامیابی کی منزل</p>
+</footer>
+
+</main>
+</body>
+</html>
+
