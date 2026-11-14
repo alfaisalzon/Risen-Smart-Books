@@ -112,12 +112,108 @@ th{background:#dff3e7;color:#075e48}
  .school{font-size:18px}
  .page{padding:17px}
 }
+
+/* PRINT COLOR FIX - ONLY PRINT SETTINGS */
 @media print{
- body{background:white}
- header,.topbar{display:none!important}
- .book{max-width:none;margin:0;padding:0}
- .page,.cover{box-shadow:none;border-radius:0;margin:0;break-after:page}
- button{display:none}
+
+ @page{
+  size:A4;
+  margin:10mm;
+ }
+
+ *,
+ *:before,
+ *:after{
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
+  color-adjust:exact !important;
+ }
+
+ html,body{
+  background:white !important;
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
+ }
+
+ header,.topbar,.footer{
+  display:none !important;
+ }
+
+ .book{
+  max-width:none;
+  margin:0;
+  padding:0;
+ }
+
+ .cover{
+  background:linear-gradient(145deg,#064e3b,#087f66,#45b58a,#f2c66d) !important;
+  color:white !important;
+  box-shadow:none !important;
+  border-radius:0;
+  margin:0;
+  break-after:page;
+  page-break-after:always;
+ }
+
+ .cover:before,.cover:after{
+  background:#ffffff20 !important;
+ }
+
+ .school{
+  background:#ffffff25 !important;
+  color:white !important;
+ }
+
+ .cover .grade{
+  background:#ffffff !important;
+  color:#08775a !important;
+ }
+
+ .page{
+  background:white !important;
+  box-shadow:none !important;
+  border-radius:0;
+  margin:0;
+  break-after:page;
+  page-break-after:always;
+ }
+
+ .intro{
+  background:#e8f7ef !important;
+ }
+
+ .example{
+  background:#fff8e5 !important;
+  border-right-color:#e6b84b !important;
+ }
+
+ .card{
+  background:#effaf4 !important;
+  border-color:#d3eee0 !important;
+ }
+
+ th{
+  background:#dff3e7 !important;
+  color:#075e48 !important;
+ }
+
+ .exercise{
+  background:#f1fff5 !important;
+  border-color:#bce8ca !important;
+ }
+
+ .dua{
+  background:#f0f9f4 !important;
+  border-color:#cde8d8 !important;
+ }
+
+ .page[style*="linear-gradient"]{
+  background:linear-gradient(135deg,#e1f7eb,#fff4d9) !important;
+ }
+
+ button{
+  display:none !important;
+ }
 }
 </style>
 </head>
