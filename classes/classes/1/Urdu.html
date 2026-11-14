@@ -1,1 +1,912 @@
 
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b75">
+<title>جماعت اول اردو | The Risen High School</title>
+
+<style>
+@font-face {
+  font-family: Jameel;
+  src: url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff") format("woff");
+  font-display: swap;
+}
+
+*{box-sizing:border-box}
+
+:root{
+  --blue:#123b75;
+  --purple:#673ab7;
+  --pink:#f06292;
+  --gold:#ffc928;
+  --green:#168c72;
+  --ink:#26364d;
+}
+
+body{
+  margin:0;
+  background:#edf2fb;
+  color:var(--ink);
+  font-family:Jameel,"Noto Nastaliq Urdu",serif;
+  font-size:20px;
+  line-height:2.1;
+}
+
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
+.topbar{
+  background:#102f5d;
+  color:white;
+  padding:10px 14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  box-shadow:0 3px 12px #0002;
+}
+
+.topbar strong{font-size:21px}
+
+.topbar button{
+  border:0;
+  border-radius:10px;
+  padding:7px 15px;
+  background:#ffd34e;
+  color:#18345d;
+  font-size:17px;
+}
+
+.book{
+  max-width:950px;
+  margin:22px auto;
+  padding:12px;
+}
+
+.cover{
+  min-height:690px;
+  position:relative;
+  overflow:hidden;
+  border-radius:25px;
+  padding:24px 18px;
+  text-align:center;
+  color:white;
+  background:
+    radial-gradient(circle at 10% 15%,#ffdf62 0 5%,transparent 5.5%),
+    radial-gradient(circle at 90% 25%,#ff8cb4 0 7%,transparent 7.5%),
+    radial-gradient(circle at 15% 85%,#51e1c0 0 8%,transparent 8.5%),
+    linear-gradient(145deg,#092b62,#315ac4 42%,#783fc2 75%,#e34e9b);
+  box-shadow:0 15px 35px #152e6040;
+  border:7px solid #f8d66c;
+}
+
+.cover:before,.cover:after{
+  content:"";
+  position:absolute;
+  border:2px solid #ffffff55;
+  border-radius:50%;
+  width:300px;height:300px;
+  pointer-events:none;
+}
+.cover:before{top:-170px;right:-100px}
+.cover:after{bottom:-180px;left:-100px}
+
+.cover-inner{
+  position:relative;
+  z-index:2;
+}
+
+.school-name{
+  display:inline-block;
+  background:#fff;
+  color:#173d78;
+  border:3px solid #ffd34e;
+  border-radius:18px;
+  padding:7px 22px;
+  font-family:Arial,sans-serif;
+  font-size:clamp(17px,4vw,25px);
+  font-weight:900;
+  letter-spacing:.5px;
+  direction:ltr;
+  box-shadow:0 5px 15px #0003;
+  margin-top:12px;
+}
+
+.school-sub{
+  font-size:19px;
+  color:#fff6c9;
+  margin:8px 0 0;
+}
+
+.cover-badge{
+  display:inline-block;
+  margin-top:24px;
+  background:#ffcf38;
+  color:#193c76;
+  border-radius:30px;
+  padding:4px 25px;
+  font-size:23px;
+  font-weight:bold;
+  box-shadow:0 4px 12px #0003;
+}
+
+.cover h1{
+  font-size:clamp(45px,9vw,78px);
+  line-height:1.5;
+  color:#fff;
+  text-shadow:3px 5px 0 #172d69,0 8px 18px #0005;
+  margin:10px 0 0;
+}
+
+.cover h2{
+  margin:0;
+  font-size:29px;
+  color:#ffeb9a;
+}
+
+.cover-art{
+  display:block;
+  width:min(92%,430px);
+  height:auto;
+  margin:5px auto 0;
+  filter:drop-shadow(0 14px 13px #061b5555);
+}
+
+.cover-line{
+  display:inline-block;
+  margin-top:4px;
+  padding:5px 22px;
+  background:#ffffff20;
+  border:1px solid #ffffff88;
+  border-radius:30px;
+  color:white;
+  font-size:21px;
+}
+
+.cover-footer{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.cover-footer span{
+  background:#ffffff24;
+  border:1px solid #ffffff77;
+  border-radius:12px;
+  padding:5px 16px;
+  font-size:18px;
+}
+
+.contents{
+  background:white;
+  border-radius:20px;
+  margin:22px 0;
+  padding:20px;
+  box-shadow:0 5px 18px #173b7012;
+  border-top:7px solid #ffbf35;
+}
+
+.section-title{
+  text-align:center;
+  color:#173d78;
+  font-size:32px;
+  margin:0 0 15px;
+}
+
+.contents-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:10px;
+}
+
+.contents a{
+  text-decoration:none;
+  color:#23416c;
+  background:linear-gradient(110deg,#edf4ff,#fff5e4);
+  border:1px solid #dce6f6;
+  border-radius:12px;
+  padding:8px 13px;
+  display:block;
+  transition:.2s;
+}
+
+.contents a:hover{
+  background:#e4edff;
+  transform:translateY(-2px);
+}
+
+.lesson{
+  background:#fff;
+  border-radius:20px;
+  margin:22px 0;
+  padding:20px;
+  box-shadow:0 5px 18px #173b7012;
+  border-right:7px solid #3d78ce;
+  page-break-inside:avoid;
+}
+
+.lesson:nth-of-type(even){border-right-color:#e96c9c}
+.lesson:nth-of-type(odd){border-right-color:#20a58a}
+
+.lesson-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:15px;
+  padding:10px 14px;
+  border-radius:14px;
+  background:linear-gradient(100deg,#e5efff,#f7eaff);
+}
+
+.lesson-number{
+  width:48px;height:48px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  flex-shrink:0;
+  color:white;
+  background:linear-gradient(140deg,#164b9b,#8b4bc2);
+  font-size:23px;
+}
+
+.lesson h2{
+  margin:0;
+  font-size:29px;
+  color:#173d78;
+}
+
+.lesson h3{
+  font-size:24px;
+  color:#a13f76;
+  margin:15px 0 5px;
+}
+
+.lesson p{margin:8px 0}
+
+.lesson-art{
+  margin:12px auto;
+  width:min(100%,440px);
+  min-height:125px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  padding:14px;
+  border-radius:17px;
+  background:linear-gradient(120deg,#e6f6ff,#fff0f5);
+  border:1px solid #d8e9f5;
+}
+
+.emoji-art{
+  font-family:Arial,sans-serif;
+  font-size:52px;
+  line-height:1.4;
+  text-align:center;
+}
+
+.art-label{
+  display:block;
+  font-size:18px;
+  color:#284c78;
+}
+
+.info-box{
+  background:#f0f7ff;
+  border-right:5px solid #4789d6;
+  padding:12px 15px;
+  border-radius:12px;
+  margin:12px 0;
+}
+
+.example-box{
+  background:#fff7e7;
+  border:1px solid #f5d89a;
+  border-radius:13px;
+  padding:12px 16px;
+  margin:12px 0;
+}
+
+.exercise{
+  margin-top:17px;
+  padding:15px;
+  border-radius:15px;
+  background:#f0fff9;
+  border:2px dashed #66bca1;
+}
+
+.exercise h3{color:#13785f;margin-top:0}
+
+.question{
+  padding:8px 0;
+  border-bottom:1px dashed #b9d9ce;
+}
+
+.word-pills{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin:8px 0;
+}
+
+.word-pills span{
+  background:#e7edff;
+  border:1px solid #cbd8ff;
+  border-radius:10px;
+  padding:3px 13px;
+}
+
+.footer{
+  text-align:center;
+  padding:25px 10px;
+  color:#fff;
+  background:#173d78;
+  border-radius:18px;
+  margin:25px 0;
+}
+
+@media(max-width:600px){
+  body{font-size:18px}
+  .book{padding:7px;margin:10px auto}
+  .cover{min-height:570px;padding:17px 10px;border-width:5px}
+  .cover-art{width:100%}
+  .lesson{padding:13px;margin:15px 0}
+  .lesson h2{font-size:25px}
+  .section-title{font-size:27px}
+}
+
+@media print{
+  @page{size:A4;margin:12mm}
+  body{background:white;font-size:17px}
+  .topbar{display:none}
+  .book{max-width:none;margin:0;padding:0}
+  .cover{
+    min-height:270mm;
+    border-radius:0;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    page-break-after:always;
+  }
+  .contents,.lesson,.footer{
+    box-shadow:none;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .lesson{page-break-inside:avoid}
+  .contents a{color:#23416c}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <strong>The Risen High School</strong>
+  <div>
+    <button onclick="window.print()">پرنٹ / PDF</button>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">اوپر جائیں</button>
+  </div>
+</div>
+
+<main class="book">
+
+<!-- FRONT COVER -->
+<section class="cover">
+  <div class="cover-inner">
+
+    <div class="school-name">THE RISEN HIGH SCHOOL</div>
+    <div class="school-sub">علم • کردار • کامیابی</div>
+
+    <div class="cover-badge">ڈیجیٹل درسی کتاب</div>
+
+    <h1>اردو</h1>
+    <h2>جماعت اوّل</h2>
+
+    <!-- Transparent book illustration: no external image required -->
+    <svg class="cover-art" viewBox="0 0 500 330"
+         xmlns="http://www.w3.org/2000/svg"
+         role="img" aria-label="رنگین کھلی کتاب">
+
+      <defs>
+        <linearGradient id="pageLeft" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff"/>
+          <stop offset="1" stop-color="#d8e9ff"/>
+        </linearGradient>
+        <linearGradient id="pageRight" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff9db"/>
+          <stop offset="1" stop-color="#ffffff"/>
+        </linearGradient>
+        <linearGradient id="bookCover" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffdb55"/>
+          <stop offset="1" stop-color="#f18a34"/>
+        </linearGradient>
+      </defs>
+
+      <ellipse cx="250" cy="278" rx="190" ry="22" fill="#061e58" opacity=".25"/>
+
+      <path d="M55 90 Q150 45 247 105 L247 265 Q150 208 55 255Z"
+            fill="url(#bookCover)" stroke="#fff2b1" stroke-width="8"/>
+      <path d="M253 105 Q350 45 445 90 L445 255 Q350 208 253 265Z"
+            fill="#e9a12e" stroke="#fff2b1" stroke-width="8"/>
+
+      <path d="M65 82 Q155 38 246 100 L246 249 Q155 193 65 242Z"
+            fill="url(#pageLeft)" stroke="#ffffff" stroke-width="5"/>
+      <path d="M254 100 Q345 38 435 82 L435 242 Q345 193 254 249Z"
+            fill="url(#pageRight)" stroke="#ffffff" stroke-width="5"/>
+
+      <path d="M250 100 L250 255" stroke="#8d5b34" stroke-width="7"/>
+
+      <g fill="none" stroke="#6c8fc2" stroke-width="4" stroke-linecap="round">
+        <path d="M93 120 Q160 103 215 132"/>
+        <path d="M91 150 Q160 133 215 162"/>
+        <path d="M91 180 Q160 163 215 192"/>
+        <path d="M286 132 Q345 103 408 120"/>
+        <path d="M286 162 Q345 133 408 150"/>
+        <path d="M286 192 Q345 163 408 180"/>
+      </g>
+
+      <g fill="#ed6a8c">
+        <circle cx="153" cy="91" r="9"/>
+        <circle cx="345" cy="91" r="9"/>
+      </g>
+      <g fill="#ffca3a">
+        <path d="M250 28 L259 51 L284 52 L265 68 L271 91 L250 78 L229 91 L235 68 L216 52 L241 51Z"/>
+      </g>
+
+      <g fill="#ffffff" opacity=".95">
+        <path d="M102 43 Q119 22 138 43 Q119 38 102 43Z"/>
+        <path d="M362 43 Q379 22 398 43 Q379 38 362 43Z"/>
+      </g>
+    </svg>
+
+    <div class="cover-line">پڑھیں، سیکھیں اور آگے بڑھیں</div>
+
+    <div class="cover-footer">
+      <span>📘 اردو کتاب</span>
+      <span>⭐ جماعت اوّل</span>
+      <span>🌈 رنگین ایڈیشن</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents">
+  <h2 class="section-title">فہرستِ مضامین</h2>
+  <div class="contents-grid">
+    <a href="#lesson1">سبق ۱: میرا تعارف</a>
+    <a href="#lesson2">سبق ۲: میرا خاندان</a>
+    <a href="#lesson3">سبق ۳: ہمارا اسکول</a>
+    <a href="#lesson4">سبق ۴: میرا وطن پاکستان</a>
+    <a href="#lesson5">سبق ۵: صفائی کی اہمیت</a>
+    <a href="#lesson6">سبق ۶: پھول اور پودے</a>
+    <a href="#lesson7">سبق ۷: جانور اور پرندے</a>
+    <a href="#lesson8">سبق ۸: اچھے اخلاق</a>
+    <a href="#lesson9">سبق ۹: وقت کی پابندی</a>
+    <a href="#lesson10">سبق ۱۰: موسم</a>
+  </div>
+</section>
+
+<!-- LESSON 1 -->
+<section class="lesson" id="lesson1">
+  <div class="lesson-head">
+    <div class="lesson-number">۱</div>
+    <h2>میرا تعارف</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">👦 👧</div>
+    <span class="art-label">بچے اپنا تعارف کروا رہے ہیں</span>
+  </div>
+
+  <p>ہر انسان کی اپنی پہچان ہوتی ہے۔ اپنے بارے میں دوسروں کو بتانا تعارف کہلاتا ہے۔ تعارف میں ہم اپنا نام، جماعت، اسکول اور دوسری ضروری باتیں بتاتے ہیں۔</p>
+
+  <p>میرا نام علی ہے۔ میں پہلی جماعت میں پڑھتا ہوں۔ میں روزانہ صبح سویرے اٹھتا ہوں۔ منہ ہاتھ دھوتا ہوں، ناشتہ کرتا ہوں اور اسکول جاتا ہوں۔ مجھے پڑھنا، لکھنا اور کھیلنا پسند ہے۔ میں اپنے والدین اور استاد کا احترام کرتا ہوں۔</p>
+
+  <p>میری دوست عائشہ ہے۔ وہ پہلی جماعت میں پڑھتی ہے۔ وہ روزانہ وقت پر اسکول آتی ہے۔ وہ صاف ستھری رہتی ہے اور اپنا کام محنت سے کرتی ہے۔</p>
+
+  <div class="example-box">
+    <h3>لڑکا اور لڑکی کے جملے</h3>
+    <p>لڑکا کہتا ہے: میں اسکول جاتا ہوں۔</p>
+    <p>لڑکی کہتی ہے: میں اسکول جاتی ہوں۔</p>
+    <p>لڑکا کہتا ہے: میں کتاب پڑھتا ہوں۔</p>
+    <p>لڑکی کہتی ہے: میں کتاب پڑھتی ہوں۔</p>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ اپنا نام بتائیں۔</div>
+    <div class="question">۲۔ آپ کس جماعت میں پڑھتے ہیں؟</div>
+    <div class="question">۳۔ آپ کے اسکول کا نام کیا ہے؟</div>
+    <div class="question">۴۔ لڑکا اسکول جاتا ہے یا جاتی ہے؟</div>
+    <div class="question">۵۔ لڑکی کتاب پڑھتا ہے یا پڑھتی ہے؟</div>
+  </div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="lesson" id="lesson2">
+  <div class="lesson-head">
+    <div class="lesson-number">۲</div>
+    <h2>میرا خاندان</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">👨‍👩‍👧‍👦</div>
+    <span class="art-label">خاندان کے افراد</span>
+  </div>
+
+  <p>خاندان ان لوگوں کے مجموعے کو کہتے ہیں جو آپس میں رشتے دار ہوتے ہیں اور ایک دوسرے سے محبت کرتے ہیں۔ ہمارے خاندان میں والد، والدہ، بہن، بھائی، دادا، دادی، نانا اور نانی شامل ہو سکتے ہیں۔</p>
+
+  <p>ہمارے والد محنت کرتے ہیں اور گھر کی ضروریات پوری کرنے میں مدد دیتے ہیں۔ ہماری والدہ ہماری دیکھ بھال کرتی ہیں۔ وہ ہمیں اچھے کام سکھاتی ہیں۔ بہن بھائی آپس میں کھیلتے ہیں، پڑھتے ہیں اور ایک دوسرے کی مدد کرتے ہیں۔</p>
+
+  <p>ہمیں اپنے خاندان کے تمام افراد سے محبت کرنی چاہیے۔ بڑوں کا ادب کرنا چاہیے اور چھوٹوں سے پیار کرنا چاہیے۔ گھر کے کاموں میں ایک دوسرے کا ہاتھ بٹانا اچھی عادت ہے۔</p>
+
+  <div class="info-box">
+    **یاد رکھیں:** خاندان محبت، احترام، تعاون اور خیال رکھنے کا نام ہے۔
+  </div>
+
+  <div class="example-box">
+    <h3>جملے</h3>
+    <p>میرا بھائی کھیلتا ہے۔</p>
+    <p>میری بہن کھیلتی ہے۔</p>
+    <p>دادا اخبار پڑھتے ہیں۔</p>
+    <p>دادی کہانی سناتی ہیں۔</p>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ خاندان کسے کہتے ہیں؟</div>
+    <div class="question">۲۔ ہمیں بڑوں کے ساتھ کیسا سلوک کرنا چاہیے؟</div>
+    <div class="question">۳۔ خاندان کے چار افراد کے نام لکھیں۔</div>
+    <div class="question">۴۔ خالی جگہ پُر کریں: والدہ ہماری ______ کرتی ہیں۔</div>
+    <div class="question">۵۔ بہن اور بھائی کے بارے میں ایک ایک جملہ لکھیں۔</div>
+  </div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="lesson" id="lesson3">
+  <div class="lesson-head">
+    <div class="lesson-number">۳</div>
+    <h2>ہمارا اسکول</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">🏫 📚 🎒</div>
+    <span class="art-label">اسکول، کتابیں اور بستہ</span>
+  </div>
+
+  <p>اسکول وہ جگہ ہے جہاں بچے تعلیم حاصل کرتے ہیں۔ اسکول میں استاد ہمیں پڑھنا، لکھنا، گنتی کرنا اور اچھے اخلاق سکھاتے ہیں۔ اسکول علم حاصل کرنے کی ایک اہم جگہ ہے۔</p>
+
+  <p>ہمارے اسکول کا نام The Risen High School ہے۔ ہمارے اسکول میں مختلف جماعتوں کے بچے پڑھتے ہیں۔ اسکول میں کلاس روم، کتابیں، کرسیاں، میزیں اور تختہ ہوتا ہے۔ ہم روزانہ اپنا بستہ لے کر اسکول آتے ہیں۔</p>
+
+  <p>ہمیں اسکول وقت پر پہنچنا چاہیے۔ استاد کی بات غور سے سننی چاہیے۔ کلاس روم صاف رکھنا چاہیے۔ اپنے ساتھیوں سے محبت اور احترام سے بات کرنی چاہیے۔</p>
+
+  <div class="example-box">
+    <h3>لڑکا اور لڑکی کے جملے</h3>
+    <p>لڑکا بستہ اٹھاتا ہے۔</p>
+    <p>لڑکی بستہ اٹھاتی ہے۔</p>
+    <p>لڑکا سبق یاد کرتا ہے۔</p>
+    <p>لڑکی سبق یاد کرتی ہے۔</p>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ اسکول میں ہم کیا حاصل کرتے ہیں؟</div>
+    <div class="question">۲۔ ہمارے اسکول کا نام کیا ہے؟</div>
+    <div class="question">۳۔ استاد ہمیں کیا سکھاتے ہیں؟</div>
+    <div class="question">۴۔ اسکول کو صاف کیوں رکھنا چاہیے؟</div>
+    <div class="question">۵۔ اسکول کے بارے میں تین جملے لکھیں۔</div>
+  </div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="lesson" id="lesson4">
+  <div class="lesson-head">
+    <div class="lesson-number">۴</div>
+    <h2>میرا وطن پاکستان</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">🇵🇰 🌙 ⭐</div>
+    <span class="art-label">ہمارا پیارا وطن</span>
+  </div>
+
+  <p>پاکستان ہمارا پیارا وطن ہے۔ ہم پاکستان میں رہتے ہیں۔ پاکستان ۱۴ اگست ۱۹۴۷ء کو آزاد ہوا۔ ہمارے وطن کا قومی پرچم سبز اور سفید رنگ کا ہے۔ اس پر چاند اور ستارہ بھی بنا ہوا ہے۔</p>
+
+  <p>پاکستان میں بڑے شہر، خوبصورت پہاڑ، دریا، میدان اور سرسبز کھیت ہیں۔ اسلام آباد پاکستان کا دارالحکومت ہے۔ لاہور، کراچی، کوئٹہ اور پشاور ہمارے اہم شہر ہیں۔</p>
+
+  <p>ہمیں اپنے وطن سے محبت کرنی چاہیے۔ ہمیں محنت سے پڑھنا چاہیے اور اچھے شہری بننا چاہیے۔ اپنے ملک کو صاف رکھنا اور اس کی ترقی میں حصہ لینا ہماری ذمہ داری ہے۔</p>
+
+  <div class="info-box">
+    **ہمارا قومی پرچم:** سبز رنگ اکثریتی مسلم آبادی اور سفید حصہ اقلیتوں کی نمائندگی کرتا ہے۔
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ ہمارے وطن کا نام کیا ہے؟</div>
+    <div class="question">۲۔ پاکستان کب آزاد ہوا؟</div>
+    <div class="question">۳۔ پاکستان کا دارالحکومت کون سا ہے؟</div>
+    <div class="question">۴۔ قومی پرچم میں کون سے رنگ ہیں؟</div>
+    <div class="question">۵۔ وطن سے محبت کے دو طریقے لکھیں۔</div>
+  </div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="lesson" id="lesson5">
+  <div class="lesson-head">
+    <div class="lesson-number">۵</div>
+    <h2>صفائی کی اہمیت</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">🧼 🪥 🧹</div>
+    <span class="art-label">صفائی اچھی عادت ہے</span>
+  </div>
+
+  <p>صفائی ہماری زندگی میں بہت اہم ہے۔ صاف ستھرا رہنے سے ہم تروتازہ محسوس کرتے ہیں۔ ہمیں روزانہ نہانا، دانت صاف کرنا، ہاتھ دھونا اور صاف کپڑے پہننے چاہئیں۔</p>
+
+  <p>کھانا کھانے سے پہلے اور بعد میں ہاتھ دھونے چاہئیں۔ ناخن صاف اور چھوٹے رکھنے چاہئیں۔ کچرا ہمیشہ کوڑے دان میں ڈالنا چاہیے۔ گلی، گھر اور اسکول کو صاف رکھنا چاہیے۔</p>
+
+  <p>صفائی صرف اپنے جسم کی نہیں بلکہ اپنے ماحول کی بھی ضروری ہے۔ ہمیں پانی ضائع نہیں کرنا چاہیے اور اپنے اردگرد گندگی نہیں پھیلانی چاہیے۔</p>
+
+  <div class="example-box">
+    <h3>اچھی عادتیں</h3>
+    <p>علی ہاتھ دھوتا ہے۔</p>
+    <p>عائشہ دانت صاف کرتی ہے۔</p>
+    <p>بچے کچرا کوڑے دان میں ڈالتے ہیں۔</p>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ صفائی کیوں ضروری ہے؟</div>
+    <div class="question">۲۔ کھانا کھانے سے پہلے کیا کرنا چاہیے؟</div>
+    <div class="question">۳۔ کچرا کہاں ڈالنا چاہیے؟</div>
+    <div class="question">۴۔ صفائی کی تین اچھی عادتیں لکھیں۔</div>
+    <div class="question">۵۔ اپنے کمرے کو صاف رکھنے کے دو طریقے لکھیں۔</div>
+  </div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="lesson" id="lesson6">
+  <div class="lesson-head">
+    <div class="lesson-number">۶</div>
+    <h2>پھول اور پودے</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">🌷 🌻 🌳 🌱</div>
+    <span class="art-label">پھول، پودے اور درخت</span>
+  </div>
+
+  <p>پھول اور پودے قدرت کا خوبصورت تحفہ ہیں۔ باغ میں مختلف رنگوں کے پھول کھلتے ہیں۔ گلاب، چنبیلی اور سورج مکھی خوبصورت پھول ہیں۔ پھولوں سے خوشبو آتی ہے۔</p>
+
+  <p>پودوں کو زندہ رہنے کے لیے پانی، ہوا اور روشنی کی ضرورت ہوتی ہے۔ درخت ہمیں سایہ دیتے ہیں۔ بعض درخت ہمیں پھل بھی دیتے ہیں۔ آم، امرود اور سیب مشہور پھل ہیں۔</p>
+
+  <p>ہمیں پودے لگانے چاہئیں اور ان کی حفاظت کرنی چاہیے۔ پودوں کو وقت پر پانی دینا چاہیے۔ درختوں کو بلاوجہ نہیں کاٹنا چاہیے۔</p>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ تین پھولوں کے نام لکھیں۔</div>
+    <div class="question">۲۔ پودوں کو کن چیزوں کی ضرورت ہوتی ہے؟</div>
+    <div class="question">۳۔ درخت ہمیں کیا دیتے ہیں؟</div>
+    <div class="question">۴۔ دو پھلوں کے نام لکھیں۔</div>
+    <div class="question">۵۔ پودوں کی حفاظت کیسے کر سکتے ہیں؟</div>
+  </div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="lesson" id="lesson7">
+  <div class="lesson-head">
+    <div class="lesson-number">۷</div>
+    <h2>جانور اور پرندے</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">🐄 🐈 🐦 🦜</div>
+    <span class="art-label">مختلف جانور اور پرندے</span>
+  </div>
+
+  <p>دنیا میں بہت سے جانور اور پرندے پائے جاتے ہیں۔ گائے، بکری، گھوڑا، بلی اور کتا جانور ہیں۔ چڑیا، کبوتر، طوطا اور مور پرندے ہیں۔</p>
+
+  <p>گائے ہمیں دودھ دیتی ہے۔ گھوڑا سواری اور سامان اٹھانے کے کام آتا ہے۔ پرندوں کے پر ہوتے ہیں اور بہت سے پرندے اڑ سکتے ہیں۔ چڑیا درختوں پر گھونسلہ بناتی ہے۔</p>
+
+  <p>جانوروں اور پرندوں کے ساتھ اچھا سلوک کرنا چاہیے۔ انہیں بلاوجہ تنگ نہیں کرنا چاہیے۔ ہمیں ان کے لیے پانی اور خوراک کا انتظام بھی کرنا چاہیے۔</p>
+
+  <div class="example-box">
+    <h3>جملے</h3>
+    <p>گھوڑا دوڑتا ہے۔</p>
+    <p>بلی دودھ پیتی ہے۔</p>
+    <p>طوطا سبز ہوتا ہے۔</p>
+    <p>چڑیا چہچہاتی ہے۔</p>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ تین جانوروں کے نام لکھیں۔</div>
+    <div class="question">۲۔ تین پرندوں کے نام لکھیں۔</div>
+    <div class="question">۳۔ کون سا جانور ہمیں دودھ دیتا ہے؟</div>
+    <div class="question">۴۔ چڑیا کہاں گھونسلہ بناتی ہے؟</div>
+    <div class="question">۵۔ جانوروں کے ساتھ کیسا سلوک کرنا چاہیے؟</div>
+  </div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="lesson" id="lesson8">
+  <div class="lesson-head">
+    <div class="lesson-number">۸</div>
+    <h2>اچھے اخلاق</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">🤝 ❤️ 😊</div>
+    <span class="art-label">محبت، احترام اور مدد</span>
+  </div>
+
+  <p>اچھے اخلاق انسان کی اچھی پہچان ہیں۔ ہمیں سب سے نرمی اور محبت سے بات کرنی چاہیے۔ بڑوں کا احترام کرنا چاہیے اور چھوٹوں سے پیار کرنا چاہیے۔</p>
+
+  <p>ہمیں ہمیشہ سچ بولنا چاہیے۔ کسی کا مذاق نہیں اڑانا چاہیے۔ دوسروں کی چیزیں اجازت کے بغیر نہیں لینی چاہئیں۔ اگر ہم سے کوئی غلطی ہو جائے تو معافی مانگنی چاہیے۔</p>
+
+  <p>سلام کرنا، شکریہ کہنا، معافی مانگنا اور ضرورت مند کی مدد کرنا اچھی عادتیں ہیں۔ اچھے اخلاق سے سب لوگ خوش رہتے ہیں۔</p>
+
+  <div class="example-box">
+    <h3>اچھے الفاظ</h3>
+    <div class="word-pills">
+      <span>السلام علیکم</span>
+      <span>شکریہ</span>
+      <span>معاف کیجیے</span>
+      <span>براہِ کرم</span>
+      <span>خوش آمدید</span>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ اچھے اخلاق کسے کہتے ہیں؟</div>
+    <div class="question">۲۔ ہمیں ہمیشہ کیا بولنا چاہیے؟</div>
+    <div class="question">۳۔ غلطی ہو جائے تو کیا کرنا چاہیے؟</div>
+    <div class="question">۴۔ تین اچھے الفاظ لکھیں۔</div>
+    <div class="question">۵۔ دوسروں کی مدد کرنا کیوں اچھی بات ہے؟</div>
+  </div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="lesson" id="lesson9">
+  <div class="lesson-head">
+    <div class="lesson-number">۹</div>
+    <h2>وقت کی پابندی</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">⏰ 📚 🌞</div>
+    <span class="art-label">وقت پر کام کرنا</span>
+  </div>
+
+  <p>وقت بہت قیمتی ہوتا ہے۔ جو شخص وقت کی قدر کرتا ہے وہ اپنے کام اچھے طریقے سے مکمل کرتا ہے۔ ہمیں ہر کام وقت پر کرنا چاہیے۔</p>
+
+  <p>ہمیں صبح جلدی اٹھنا چاہیے۔ وقت پر اسکول جانا چاہیے۔ گھر آ کر اپنا کام مکمل کرنا چاہیے اور کھیلنے کے لیے بھی وقت نکالنا چاہیے۔</p>
+
+  <p>کام کو بلاوجہ نہیں ٹالنا چاہیے۔ وقت ضائع کرنے سے ہمارے ضروری کام رہ جاتے ہیں۔ وقت کی پابندی سے ہم منظم اور ذمہ دار بنتے ہیں۔</p>
+
+  <div class="example-box">
+    <h3>جملے</h3>
+    <p>علی وقت پر اسکول جاتا ہے۔</p>
+    <p>عائشہ اپنا کام وقت پر کرتی ہے۔</p>
+    <p>ہمیں وقت کی قدر کرنی چاہیے۔</p>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ وقت کیسا ہوتا ہے؟</div>
+    <div class="question">۲۔ ہمیں اسکول کب جانا چاہیے؟</div>
+    <div class="question">۳۔ وقت ضائع کرنے سے کیا ہوتا ہے؟</div>
+    <div class="question">۴۔ وقت کی پابندی کے دو فائدے لکھیں۔</div>
+  </div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="lesson" id="lesson10">
+  <div class="lesson-head">
+    <div class="lesson-number">۱۰</div>
+    <h2>موسم</h2>
+  </div>
+
+  <div class="lesson-art">
+    <div class="emoji-art">☀️ 🌧️ ❄️ 🌈</div>
+    <span class="art-label">گرمی، سردی اور بارش</span>
+  </div>
+
+  <p>سال میں مختلف موسم آتے ہیں۔ گرمیوں میں دھوپ تیز ہوتی ہے۔ لوگ ہلکے کپڑے پہنتے ہیں اور ٹھنڈا پانی پیتے ہیں۔ سردیوں میں موسم ٹھنڈا ہوتا ہے۔ لوگ گرم کپڑے پہنتے ہیں۔</p>
+
+  <p>بارش کے موسم میں بادل آسمان پر چھا جاتے ہیں۔ بارش سے پودوں اور کھیتوں کو پانی ملتا ہے۔ بارش کے بعد موسم خوشگوار ہو سکتا ہے اور آسمان پر قوسِ قزح بھی نظر آ سکتی ہے۔</p>
+
+  <p>ہمیں ہر موسم میں اپنی صحت کا خیال رکھنا چاہیے۔ گرمی میں پانی پینا اور سردی میں گرم کپڑے پہننا مفید ہے۔</p>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ گرمیوں میں موسم کیسا ہوتا ہے؟</div>
+    <div class="question">۲۔ سردیوں میں ہم کیسے کپڑے پہنتے ہیں؟</div>
+    <div class="question">۳۔ بارش سے پودوں کو کیا فائدہ ہوتا ہے؟</div>
+    <div class="question">۴۔ قوسِ قزح کب نظر آ سکتی ہے؟</div>
+    <div class="question">۵۔ گرمی اور سردی کے بارے میں ایک ایک جملہ لکھیں۔</div>
+  </div>
+</section>
+
+<!-- BASIC LANGUAGE PRACTICE -->
+<section class="lesson" id="language">
+  <div class="lesson-head">
+    <div class="lesson-number">۱۱</div>
+    <h2>اردو زبان کی بنیادی مشقیں</h2>
+  </div>
+
+  <h3>حروفِ تہجی</h3>
+  <p>اردو زبان کے حروف کو حروفِ تہجی کہتے ہیں۔</p>
+  <div class="info-box">
+    ا، ب، پ، ت، ٹ، ث، ج، چ، ح، خ، د، ڈ، ذ، ر، ڑ، ز، ژ، س، ش، ص، ض، ط، ظ، ع، غ، ف، ق، ک، گ، ل، م، ن، ں، و، ہ، ھ، ء، ی، ے
+  </div>
+
+  <h3>واحد اور جمع</h3>
+  <div class="example-box">
+    <p>کتاب — کتابیں</p>
+    <p>لڑکا — لڑکے</p>
+    <p>بچہ — بچے</p>
+    <p>کرسی — کرسیاں</p>
+    <p>کھلونا — کھلونے</p>
+  </div>
+
+  <h3>مذکر اور مؤنث</h3>
+  <div class="example-box">
+    <p>لڑکا — لڑکی</p>
+    <p>بیٹا — بیٹی</p>
+    <p>بھائی — بہن</p>
+    <p>استاد — استانی</p>
+    <p>بادشاہ — ملکہ</p>
+  </div>
+
+  <h3>متضاد الفاظ</h3>
+  <div class="example-box">
+    <p>دن — رات</p>
+    <p>اچھا — برا</p>
+    <p>گرم — ٹھنڈا</p>
+    <p>بڑا — چھوٹا</p>
+    <p>اوپر — نیچے</p>
+  </div>
+
+  <h3>آسان جملے</h3>
+  <div class="example-box">
+    <p>یہ میری کتاب ہے۔</p>
+    <p>آسمان نیلا ہے۔</p>
+    <p>پھول خوبصورت ہے۔</p>
+    <p>بچے کھیل رہے ہیں۔</p>
+    <p>ہم پاکستان سے محبت کرتے ہیں۔</p>
+  </div>
+
+  <div class="exercise">
+    <h3>مشق</h3>
+    <div class="question">۱۔ پانچ حروفِ تہجی لکھیں۔</div>
+    <div class="question">۲۔ کتاب کی جمع لکھیں۔</div>
+    <div class="question">۳۔ لڑکا کا مؤنث لکھیں۔</div>
+    <div class="question">۴۔ دن کا متضاد لکھیں۔</div>
+    <div class="question">۵۔ اپنی کتاب کے بارے میں دو جملے لکھیں۔</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <h2>شاباش! 🌟</h2>
+  <p>محنت سے پڑھیں، اچھے انسان بنیں اور ہمیشہ سچ بولیں۔</p>
+  <strong style="font-family:Arial,sans-serif;direction:ltr;display:block">
+    THE RISEN HIGH SCHOOL
+  </strong>
+  <p>علم کی روشنی، کامیابی کی منزل</p>
+</footer>
+
+</main>
+
+</body>
+</html>
