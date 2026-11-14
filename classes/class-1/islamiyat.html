@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#176b55">
+<title>Class 1 Islamic Studies | The Risen High School</title>
+
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
+}
+*{box-sizing:border-box}
+body{
+ margin:0;background:#edf7f1;color:#263d35;
+ font-family:Arial,sans-serif;
+}
+header{
+ background:linear-gradient(135deg,#075e48,#159b79,#65b99a);
+ color:white;text-align:center;padding:22px 12px;
+}
+header h1{margin:5px;font-size:25px}
+header p{margin:5px;font-size:14px}
+.topbar{
+ position:sticky;top:0;z-index:10;background:white;
+ padding:10px;display:flex;gap:8px;justify-content:center;
+ flex-wrap:wrap;box-shadow:0 3px 12px #0002;
+}
+button{
+ border:0;border-radius:9px;padding:10px 15px;
+ background:#08775a;color:white;font-weight:bold;
+ cursor:pointer;font-size:14px;
+}
+.book{max-width:950px;margin:18px auto;padding:0 12px}
+.urdu{font-family:Jameel,serif;direction:rtl;text-align:right;line-height:2.1;font-size:23px}
+.cover{
+ min-height:570px;border-radius:24px;overflow:hidden;
+ background:linear-gradient(145deg,#064e3b,#087f66,#45b58a,#f2c66d);
+ color:white;text-align:center;padding:30px 15px;
+ position:relative;box-shadow:0 8px 25px #0002;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.cover:before,.cover:after{
+ content:"";position:absolute;border-radius:50%;background:#ffffff20;
+}
+.cover:before{width:300px;height:300px;top:-100px;left:-90px}
+.cover:after{width:260px;height:260px;bottom:-100px;right:-60px}
+.school{
+ position:relative;font-size:23px;font-weight:bold;
+ background:#ffffff25;padding:12px 22px;border-radius:30px;
+}
+.cover .moon{font-size:75px;margin:25px 0;position:relative}
+.cover h2{position:relative;font-size:48px;margin:5px;text-shadow:2px 4px 5px #0003}
+.cover h3{position:relative;font-size:31px;margin:5px}
+.cover .grade{
+ position:relative;background:#fff;color:#08775a;
+ padding:12px 28px;border-radius:30px;font-weight:bold;margin-top:25px;
+}
+.page{
+ background:white;border-radius:18px;margin:18px 0;padding:25px;
+ box-shadow:0 4px 15px #2342;
+ border-top:7px solid #36a982;page-break-after:always;
+}
+.page h2{
+ color:#08775a;border-bottom:2px dashed #b8e3d1;
+ padding-bottom:12px;margin-top:0;font-size:25px;
+}
+.page h3{color:#b47b1e;margin-top:22px}
+.intro{
+ background:#e8f7ef;padding:15px;border-radius:12px;
+ line-height:1.8;
+}
+.example{
+ background:#fff8e5;border-right:5px solid #e6b84b;
+ padding:14px;border-radius:10px;margin:12px 0;
+}
+.cards{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+ gap:12px;margin:15px 0;
+}
+.card{
+ border-radius:13px;padding:17px 9px;text-align:center;
+ background:#effaf4;border:2px solid #d3eee0;
+ font-size:18px;font-weight:bold;
+}
+.card .big{font-size:39px;display:block;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{border:1px solid #c9dfd3;padding:10px;text-align:center}
+th{background:#dff3e7;color:#075e48}
+.exercise{
+ background:#f1fff5;border:2px solid #bce8ca;
+ border-radius:13px;padding:15px;margin-top:18px;
+}
+.exercise h3{color:#16834c;margin-top:0}
+.question{padding:9px 4px;border-bottom:1px dashed #b8d9c2;line-height:1.9}
+.blank{display:inline-block;min-width:65px;border-bottom:2px solid #333;margin:0 5px}
+.arabic{
+ font-size:27px;line-height:2.2;text-align:center;
+ color:#075e48;font-weight:bold;
+ direction:rtl;
+}
+.dua{
+ background:#f0f9f4;border:1px solid #cde8d8;
+ padding:15px;border-radius:12px;margin:12px 0;
+}
+.footer{text-align:center;color:#647b70;padding:20px}
+@media(max-width:550px){
+ .cover{min-height:490px}
+ .cover h2{font-size:39px}
+ .school{font-size:18px}
+ .page{padding:17px}
+}
+@media print{
+ body{background:white}
+ header,.topbar{display:none!important}
+ .book{max-width:none;margin:0;padding:0}
+ .page,.cover{box-shadow:none;border-radius:0;margin:0;break-after:page}
+ button{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h1>THE RISEN HIGH SCHOOL</h1>
+ <p>Digital School Library</p>
+ <p>Class 1 | Islamic Studies</p>
+</header>
+
+<div class="topbar">
+ <button onclick="window.print()">🖨 پرنٹ / PDF</button>
+ <button onclick="document.getElementById('contents').scrollIntoView({behavior:'smooth'})">📚 فہرست</button>
+ <button onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆ اوپر</button>
+</div>
+
+<main class="book">
+
+<!-- COVER -->
+<section class="cover">
+ <div class="school">THE RISEN HIGH SCHOOL</div>
+ <div class="moon">☪️</div>
+ <h2>ISLAMIC STUDIES</h2>
+ <h3 class="urdu">اسلامیات</h3>
+ <p class="urdu" style="position:relative">دینِ اسلام کی پیاری تعلیمات</p>
+ <div class="grade">CLASS ONE | جماعت اوّل</div>
+ <p style="position:relative;margin-top:35px">Learn Goodness • Love Islam • Be Kind</p>
+</section>
+
+<!-- CONTENTS -->
+<section class="page" id="contents">
+<h2>📚 فہرستِ مضامین</h2>
+<table>
+<tr><th>نمبر</th><th>سبق کا نام</th></tr>
+<tr><td>1</td><td>اللہ تعالیٰ ہمارا خالق ہے</td></tr>
+<tr><td>2</td><td>اللہ تعالیٰ کی نعمتیں</td></tr>
+<tr><td>3</td><td>ہمارے پیارے نبی ﷺ</td></tr>
+<tr><td>4</td><td>کلمہ طیبہ</td></tr>
+<tr><td>5</td><td>اسلام کے پانچ ارکان</td></tr>
+<tr><td>6</td><td>ایمان کے بنیادی عقائد</td></tr>
+<tr><td>7</td><td>قرآن مجید</td></tr>
+<tr><td>8</td><td>پاکیزگی اور وضو</td></tr>
+<tr><td>9</td><td>نماز</td></tr>
+<tr><td>10</td><td>روزمرہ کی دعائیں</td></tr>
+<tr><td>11</td><td>اچھے اخلاق</td></tr>
+<tr><td>12</td><td>والدین اور اساتذہ کا ادب</td></tr>
+<tr><td>13</td><td>اسلامی مہینے اور عیدین</td></tr>
+<tr><td>14</td><td>سچائی، صفائی اور مدد</td></tr>
+<tr><td>15</td><td>سالانہ دہرائی اور امتحان</td></tr>
+</table>
+</section>
+
+<!-- LESSON 1 -->
+<section class="page">
+<h2>سبق 1: اللہ تعالیٰ ہمارا خالق ہے</h2>
+<div class="intro urdu">
+اللہ تعالیٰ ایک ہے۔ وہ ہمارا خالق اور مالک ہے۔ اللہ تعالیٰ نے آسمان، زمین، سورج، چاند، ستارے، درخت اور تمام مخلوقات پیدا کیں۔ ہمیں صرف اللہ تعالیٰ کی عبادت کرنی چاہیے۔
+</div>
+<h3>Allah is Our Creator</h3>
+<p>Allah is One. He is our Creator. He made the sky, the earth, the sun, the moon, the stars, animals and plants. We should worship Allah alone.</p>
+<div class="cards">
+<div class="card"><span class="big">🌞</span>Sun<br>سورج</div>
+<div class="card"><span class="big">🌙</span>Moon<br>چاند</div>
+<div class="card"><span class="big">🌳</span>Trees<br>درخت</div>
+<div class="card"><span class="big">🐦</span>Birds<br>پرندے</div>
+</div>
+<div class="example urdu">ہمیں ہر وقت اللہ تعالیٰ کا شکر ادا کرنا چاہیے۔</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ ہمارا خالق کون ہے؟</div>
+<div class="question">2۔ اللہ تعالیٰ کتنے ہیں؟</div>
+<div class="question">3۔ اللہ تعالیٰ نے ہمیں کیا کیا چیزیں عطا کی ہیں؟</div>
+<div class="question">4۔ خالی جگہ پُر کریں: اللہ تعالیٰ ہمارا ______ ہے۔</div>
+<div class="question">5۔ درست یا غلط: اللہ تعالیٰ ایک ہے۔</div>
+</div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="page">
+<h2>سبق 2: اللہ تعالیٰ کی نعمتیں</h2>
+<div class="intro urdu">
+اللہ تعالیٰ نے ہمیں بے شمار نعمتیں عطا فرمائی ہیں۔ آنکھیں، کان، ہاتھ، پاؤں، پانی، ہوا، کھانا اور گھر اللہ تعالیٰ کی نعمتیں ہیں۔ ہمیں ان نعمتوں کی قدر کرنی چاہیے اور اللہ کا شکر ادا کرنا چاہیے۔
+</div>
+<h3>Allah's Blessings</h3>
+<p>Allah has given us many blessings. Our eyes, ears, hands, feet, water, air, food and home are blessings from Allah.</p>
+<div class="cards">
+<div class="card"><span class="big">👀</span>Eyes<br>آنکھیں</div>
+<div class="card"><span class="big">👂</span>Ears<br>کان</div>
+<div class="card"><span class="big">🖐️</span>Hands<br>ہاتھ</div>
+<div class="card"><span class="big">💧</span>Water<br>پانی</div>
+<div class="card"><span class="big">🍎</span>Food<br>کھانا</div>
+<div class="card"><span class="big">🏠</span>Home<br>گھر</div>
+</div>
+<div class="example urdu">کسی نعمت کو ضائع نہیں کرنا چاہیے۔ کھانے، پانی اور دوسری نعمتوں کی قدر کریں۔</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ اللہ تعالیٰ کی چار نعمتوں کے نام لکھیں۔</div>
+<div class="question">2۔ ہمیں کس کا شکر ادا کرنا چاہیے؟</div>
+<div class="question">3۔ پانی کس کام آتا ہے؟</div>
+<div class="question">4۔ خالی جگہ: اللہ تعالیٰ نے ہمیں بہت سی ______ عطا کی ہیں۔</div>
+<div class="question">5۔ ایک ایسی نعمت کا نام بتائیں جس سے ہم دیکھتے ہیں۔</div>
+</div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="page">
+<h2>سبق 3: ہمارے پیارے نبی حضرت محمد ﷺ</h2>
+<div class="intro urdu">
+ہمارے آخری نبی حضرت محمد ﷺ ہیں۔ آپ ﷺ مکہ مکرمہ میں پیدا ہوئے۔ آپ ﷺ بہت سچے، امانت دار اور مہربان تھے۔ آپ ﷺ نے ہمیں اللہ تعالیٰ کی عبادت، سچ بولنے، دوسروں کی مدد کرنے اور اچھے اخلاق کی تعلیم دی۔
+</div>
+<h3>Our Beloved Prophet Muhammad ﷺ</h3>
+<p>Prophet Muhammad ﷺ is our last Prophet. He was born in Makkah. He was truthful, kind and trustworthy. He taught us to worship Allah and treat everyone kindly.</p>
+<div class="cards">
+<div class="card"><span class="big">❤️</span>Kindness<br>مہربانی</div>
+<div class="card"><span class="big">🤝</span>Honesty<br>سچائی</div>
+<div class="card"><span class="big">🌸</span>Good Manners<br>اچھے اخلاق</div>
+</div>
+<div class="example urdu">
+ہمیں اپنے پیارے نبی حضرت محمد ﷺ کی تعلیمات پر عمل کرنا چاہیے اور آپ ﷺ پر درود بھیجنا چاہیے۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ ہمارے آخری نبی کون ہیں؟</div>
+<div class="question">2۔ آپ ﷺ کہاں پیدا ہوئے؟</div>
+<div class="question">3۔ آپ ﷺ کی دو اچھی صفات لکھیں۔</div>
+<div class="question">4۔ ہمیں کس کے بتائے ہوئے اچھے راستے پر چلنا چاہیے؟</div>
+<div class="question">5۔ خالی جگہ: حضرت محمد ﷺ ہمارے ______ نبی ہیں۔</div>
+</div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="page">
+<h2>سبق 4: کلمہ طیبہ</h2>
+<div class="intro urdu">
+کلمہ طیبہ اسلام کا پہلا کلمہ ہے۔ اس میں اللہ تعالیٰ کی وحدانیت اور حضرت محمد ﷺ کی رسالت کا اقرار کیا جاتا ہے۔
+</div>
+<h3>First Kalimah - Kalimah Tayyibah</h3>
+<div class="dua">
+<div class="arabic">لَا إِلٰهَ إِلَّا اللّٰهُ مُحَمَّدٌ رَّسُولُ اللّٰهِ</div>
+<p class="urdu">ترجمہ: اللہ کے سوا کوئی معبود نہیں، حضرت محمد ﷺ اللہ کے رسول ہیں۔</p>
+<p>Translation: There is no god but Allah; Muhammad ﷺ is the Messenger of Allah.</p>
+</div>
+<div class="example urdu">
+ہمیں کلمہ طیبہ صحیح تلفظ کے ساتھ یاد کرنا چاہیے اور اس کا مطلب بھی سمجھنا چاہیے۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ کلمہ طیبہ کا نام لکھیں۔</div>
+<div class="question">2۔ کلمہ طیبہ میں کس کی وحدانیت کا اقرار ہے؟</div>
+<div class="question">3۔ حضرت محمد ﷺ کون ہیں؟</div>
+<div class="question">4۔ کلمہ طیبہ اپنے استاد کو سنائیں۔</div>
+</div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="page">
+<h2>سبق 5: اسلام کے پانچ ارکان</h2>
+<div class="intro urdu">
+اسلام کے پانچ بنیادی ارکان ہیں۔ ہر مسلمان کو ان کی اہمیت سمجھنی چاہیے۔ نماز، روزہ، زکوٰۃ اور حج کے احکام اپنی استطاعت اور شرعی شرائط کے مطابق ادا کیے جاتے ہیں۔
+</div>
+<h3>Five Pillars of Islam</h3>
+<div class="cards">
+<div class="card"><span class="big">☪️</span>Shahadah<br>کلمہ شہادت</div>
+<div class="card"><span class="big">🕌</span>Salah<br>نماز</div>
+<div class="card"><span class="big">🌙</span>Sawm<br>روزہ</div>
+<div class="card"><span class="big">🤲</span>Zakat<br>زکوٰۃ</div>
+<div class="card"><span class="big">🕋</span>Hajj<br>حج</div>
+</div>
+<table>
+<tr><th>نمبر</th><th>رکن</th><th>English</th></tr>
+<tr><td>1</td><td>کلمہ شہادت</td><td>Shahadah</td></tr>
+<tr><td>2</td><td>نماز</td><td>Salah</td></tr>
+<tr><td>3</td><td>روزہ</td><td>Sawm</td></tr>
+<tr><td>4</td><td>زکوٰۃ</td><td>Zakat</td></tr>
+<tr><td>5</td><td>حج</td><td>Hajj</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ اسلام کے کتنے ارکان ہیں؟</div>
+<div class="question">2۔ پانچ ارکان کے نام لکھیں۔</div>
+<div class="question">3۔ رمضان المبارک میں مسلمان کیا رکھتے ہیں؟</div>
+<div class="question">4۔ مسلمان کس گھر کا حج کرتے ہیں؟</div>
+<div class="question">5۔ درست یا غلط: نماز اسلام کا ایک رکن ہے۔</div>
+</div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="page">
+<h2>سبق 6: ایمان کے بنیادی عقائد</h2>
+<div class="intro urdu">
+ایمان کا مطلب دل سے سچا یقین رکھنا ہے۔ مسلمان اللہ تعالیٰ، فرشتوں، آسمانی کتابوں، رسولوں، قیامت کے دن اور تقدیر پر ایمان رکھتے ہیں۔
+</div>
+<h3>Basic Beliefs of Islam</h3>
+<table>
+<tr><th>نمبر</th><th>عقیدہ</th><th>English</th></tr>
+<tr><td>1</td><td>اللہ تعالیٰ پر ایمان</td><td>Belief in Allah</td></tr>
+<tr><td>2</td><td>فرشتوں پر ایمان</td><td>Belief in Angels</td></tr>
+<tr><td>3</td><td>آسمانی کتابوں پر ایمان</td><td>Holy Books</td></tr>
+<tr><td>4</td><td>رسولوں پر ایمان</td><td>Prophets</td></tr>
+<tr><td>5</td><td>قیامت کے دن پر ایمان</td><td>Day of Judgment</td></tr>
+<tr><td>6</td><td>تقدیر پر ایمان</td><td>Divine Decree</td></tr>
+</table>
+<div class="example urdu">
+ہمیں اللہ تعالیٰ پر پختہ ایمان رکھنا چاہیے اور نیک کام کرنے چاہییں۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ ایمان کا کیا مطلب ہے؟</div>
+<div class="question">2۔ مسلمان کس پر ایمان رکھتے ہیں؟</div>
+<div class="question">3۔ فرشتے کس کی مخلوق ہیں؟</div>
+<div class="question">4۔ ایمان کے چھ بنیادی عقائد کے نام لکھیں۔</div>
+</div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="page">
+<h2>سبق 7: قرآن مجید</h2>
+<div class="intro urdu">
+قرآن مجید اللہ تعالیٰ کی آخری آسمانی کتاب ہے۔ یہ ہمارے پیارے نبی حضرت محمد ﷺ پر نازل ہوئی۔ قرآن مجید عربی زبان میں ہے۔ ہمیں قرآن مجید ادب اور احترام سے پڑھنا اور اس کی تعلیمات پر عمل کرنا چاہیے۔
+</div>
+<h3>The Holy Quran</h3>
+<p>The Holy Quran is the final revealed book of Allah. It was revealed to Prophet Muhammad ﷺ in Arabic. Muslims read the Quran with respect and follow its teachings.</p>
+<div class="cards">
+<div class="card"><span class="big">📖</span>Quran<br>قرآن مجید</div>
+<div class="card"><span class="big">🌙</span>Ramadan<br>رمضان</div>
+<div class="card"><span class="big">🤲</span>Respect<br>احترام</div>
+</div>
+<div class="example urdu">
+قرآن مجید پڑھنے سے پہلے پاکیزگی کا خیال رکھیں۔ اسے صاف اور بلند جگہ پر ادب سے رکھیں۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ قرآن مجید کس کی کتاب ہے؟</div>
+<div class="question">2۔ قرآن مجید کس نبی ﷺ پر نازل ہوا؟</div>
+<div class="question">3۔ قرآن مجید کس زبان میں ہے؟</div>
+<div class="question">4۔ ہمیں قرآن مجید کے ساتھ کیسا سلوک کرنا چاہیے؟</div>
+</div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="page">
+<h2>سبق 8: پاکیزگی اور وضو</h2>
+<div class="intro urdu">
+اسلام پاکیزگی کو پسند کرتا ہے۔ ہمیں اپنے جسم، کپڑوں اور جگہ کو صاف رکھنا چاہیے۔ نماز سے پہلے وضو کیا جاتا ہے۔
+</div>
+<h3>Cleanliness and Wudu</h3>
+<p>Islam teaches cleanliness. We should keep our body, clothes and surroundings clean. Muslims perform Wudu before Salah.</p>
+<h3>وضو کا آسان طریقہ</h3>
+<div class="cards">
+<div class="card"><span class="big">💧</span>ہاتھ دھونا</div>
+<div class="card"><span class="big">💦</span>کلی کرنا</div>
+<div class="card"><span class="big">👃</span>ناک میں پانی ڈالنا</div>
+<div class="card"><span class="big">🙂</span>چہرہ دھونا</div>
+<div class="card"><span class="big">🤲</span>بازو دھونا</div>
+<div class="card"><span class="big">🧑</span>سر کا مسح کرنا</div>
+<div class="card"><span class="big">🦶</span>پاؤں دھونا</div>
+</div>
+<div class="example urdu">
+وضو کے فرائض اور مکمل طریقہ استاد سے سیکھیں۔ پانی ضائع نہ کریں۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ اسلام کس چیز کو پسند کرتا ہے؟</div>
+<div class="question">2۔ نماز سے پہلے کیا کیا جاتا ہے؟</div>
+<div class="question">3۔ وضو میں کون سے اعضا دھوئے جاتے ہیں؟</div>
+<div class="question">4۔ کیا پانی ضائع کرنا چاہیے؟</div>
+<div class="question">5۔ وضو کا عملی مظاہرہ کریں۔</div>
+</div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="page">
+<h2>سبق 9: نماز</h2>
+<div class="intro urdu">
+نماز اسلام کا اہم رکن ہے۔ مسلمان دن اور رات میں پانچ وقت نماز ادا کرتے ہیں۔ نماز ہمیں اللہ تعالیٰ کی یاد دلاتی ہے۔ ہمیں نماز کی پابندی سیکھنی چاہیے۔
+</div>
+<h3>Salah / Prayer</h3>
+<p>Salah is an important pillar of Islam. Muslims offer five daily prayers. Prayer reminds us of Allah.</p>
+<table>
+<tr><th>نماز</th><th>English</th></tr>
+<tr><td>فجر</td><td>Fajr</td></tr>
+<tr><td>ظہر</td><td>Zuhr</td></tr>
+<tr><td>عصر</td><td>Asr</td></tr>
+<tr><td>مغرب</td><td>Maghrib</td></tr>
+<tr><td>عشاء</td><td>Isha</td></tr>
+</table>
+<div class="cards">
+<div class="card"><span class="big">🕌</span>Mosque<br>مسجد</div>
+<div class="card"><span class="big">🤲</span>Prayer<br>دعا</div>
+<div class="card"><span class="big">🧎</span>Salah<br>نماز</div>
+</div>
+<div class="example urdu">
+نماز سے پہلے وضو کریں، پاک کپڑے پہنیں اور قبلہ رخ کھڑے ہوں۔ نماز کا مکمل طریقہ استاد سے سیکھیں۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ نماز اسلام کا کون سا اہم رکن ہے؟</div>
+<div class="question">2۔ دن رات میں کتنی فرض نمازیں ہیں؟</div>
+<div class="question">3۔ پانچ نمازوں کے نام لکھیں۔</div>
+<div class="question">4۔ نماز سے پہلے کیا کیا جاتا ہے؟</div>
+</div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="page">
+<h2>سبق 10: روزمرہ کی دعائیں</h2>
+<div class="intro urdu">
+ہمیں ہر اچھے کام کے آغاز اور اختتام پر اللہ تعالیٰ کو یاد کرنا چاہیے۔ چند آسان دعائیں یاد کریں۔
+</div>
+<h3>Daily Islamic Duas</h3>
+
+<div class="dua">
+<h3>کھانا شروع کرنے کی دعا</h3>
+<div class="arabic">بِسْمِ اللّٰهِ</div>
+<p class="urdu">ترجمہ: اللہ کے نام سے شروع کرتا ہوں۔</p>
+<p>Translation: In the name of Allah.</p>
+</div>
+
+<div class="dua">
+<h3>کھانا ختم کرنے کے بعد</h3>
+<div class="arabic">الْحَمْدُ لِلّٰهِ</div>
+<p class="urdu">ترجمہ: سب تعریفیں اللہ کے لیے ہیں۔</p>
+</div>
+
+<div class="dua">
+<h3>سلام کرنا</h3>
+<div class="arabic">السَّلَامُ عَلَيْكُمْ</div>
+<p class="urdu">ترجمہ: آپ پر سلامتی ہو۔</p>
+</div>
+
+<div class="dua">
+<h3>سلام کا جواب</h3>
+<div class="arabic">وَعَلَيْكُمُ السَّلَامُ</div>
+<p class="urdu">ترجمہ: اور آپ پر بھی سلامتی ہو۔</p>
+</div>
+
+<div class="dua">
+<h3>علم میں اضافے کی دعا</h3>
+<div class="arabic">رَبِّ زِدْنِي عِلْمًا</div>
+<p class="urdu">ترجمہ: اے میرے رب! میرے علم میں اضافہ فرما۔</p>
+</div>
+
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ کھانا شروع کرنے سے پہلے کیا پڑھتے ہیں؟</div>
+<div class="question">2۔ سلام کا جواب کیا ہے؟</div>
+<div class="question">3۔ علم میں اضافے کی دعا لکھیں۔</div>
+<div class="question">4۔ پانچ دعائیں زبانی یاد کریں۔</div>
+</div>
+</section>
+
+<!-- LESSON 11 -->
+<section class="page">
+<h2>سبق 11: اچھے اخلاق</h2>
+<div class="intro urdu">
+اچھے اخلاق مسلمان کی پہچان ہیں۔ ہمیں سچ بولنا، نرم لہجے میں بات کرنا، دوسروں کی مدد کرنا، معاف کرنا اور سب کے ساتھ اچھا سلوک کرنا چاہیے۔
+</div>
+<h3>Good Manners</h3>
+<div class="cards">
+<div class="card"><span class="big">😊</span>Be Kind<br>مہربان بنیں</div>
+<div class="card"><span class="big">🤝</span>Help Others<br>مدد کریں</div>
+<div class="card"><span class="big">🗣️</span>Speak Truth<br>سچ بولیں</div>
+<div class="card"><span class="big">🙏</span>Say Thank You<br>شکریہ کہیں</div>
+<div class="card"><span class="big">🌸</span>Be Polite<br>نرمی سے بات کریں</div>
+<div class="card"><span class="big">🧹</span>Keep Clean<br>صفائی رکھیں</div>
+</div>
+<div class="example urdu">
+ہمیں کسی کا مذاق نہیں اڑانا چاہیے۔ چھوٹوں سے پیار اور بڑوں کا احترام کرنا چاہیے۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ اچھے اخلاق سے کیا مراد ہے؟</div>
+<div class="question">2۔ ہمیں دوسروں کے ساتھ کیسا سلوک کرنا چاہیے؟</div>
+<div class="question">3۔ کیا جھوٹ بولنا اچھی عادت ہے؟</div>
+<div class="question">4۔ اچھے اخلاق کی چار مثالیں لکھیں۔</div>
+<div class="question">5۔ ایک ہفتے تک اپنی تین اچھی عادتوں پر عمل کریں۔</div>
+</div>
+</section>
+
+<!-- LESSON 12 -->
+<section class="page">
+<h2>سبق 12: والدین اور اساتذہ کا ادب</h2>
+<div class="intro urdu">
+والدین ہم سے بہت محبت کرتے ہیں اور ہماری پرورش کرتے ہیں۔ ہمیں ان کی عزت کرنی چاہیے اور ان کی جائز بات ماننی چاہیے۔ اساتذہ ہمیں علم سکھاتے ہیں، اس لیے ہمیں ان کا احترام کرنا چاہیے۔
+</div>
+<h3>Respect Parents and Teachers</h3>
+<p>Our parents love and care for us. We should respect them. Teachers help us learn, so we should listen to them and behave politely.</p>
+<div class="cards">
+<div class="card"><span class="big">👨‍👩‍👧</span>Parents<br>والدین</div>
+<div class="card"><span class="big">👩‍🏫</span>Teacher<br>استاد</div>
+<div class="card"><span class="big">❤️</span>Respect<br>احترام</div>
+</div>
+<div class="example urdu">
+والدین سے نرم لہجے میں بات کریں، ان کی خدمت کریں اور استاد کی بات توجہ سے سنیں۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ ہمیں والدین کے ساتھ کیسا سلوک کرنا چاہیے؟</div>
+<div class="question">2۔ استاد ہمیں کیا سکھاتے ہیں؟</div>
+<div class="question">3۔ والدین کی دو خدمتیں لکھیں۔</div>
+<div class="question">4۔ کیا استاد کا احترام کرنا چاہیے؟</div>
+</div>
+</section>
+
+<!-- LESSON 13 -->
+<section class="page">
+<h2>سبق 13: اسلامی مہینے اور عیدین</h2>
+<div class="intro urdu">
+اسلامی کیلنڈر قمری ہے۔ اس میں بارہ مہینے ہوتے ہیں۔ مسلمان عیدالفطر اور عیدالاضحی خوشی سے مناتے ہیں۔
+</div>
+<h3>Islamic Months</h3>
+<table>
+<tr><th>نمبر</th><th>اسلامی مہینہ</th></tr>
+<tr><td>1</td><td>محرم الحرام</td></tr>
+<tr><td>2</td><td>صفر</td></tr>
+<tr><td>3</td><td>ربیع الاول</td></tr>
+<tr><td>4</td><td>ربیع الثانی</td></tr>
+<tr><td>5</td><td>جمادی الاولیٰ</td></tr>
+<tr><td>6</td><td>جمادی الثانیہ</td></tr>
+<tr><td>7</td><td>رجب</td></tr>
+<tr><td>8</td><td>شعبان</td></tr>
+<tr><td>9</td><td>رمضان</td></tr>
+<tr><td>10</td><td>شوال</td></tr>
+<tr><td>11</td><td>ذوالقعدہ</td></tr>
+<tr><td>12</td><td>ذوالحجہ</td></tr>
+</table>
+<h3>Our Two Eids</h3>
+<div class="cards">
+<div class="card"><span class="big">🌙</span>Eid-ul-Fitr<br>عیدالفطر</div>
+<div class="card"><span class="big">🐑</span>Eid-ul-Adha<br>عیدالاضحی</div>
+</div>
+<div class="example urdu">
+عیدالفطر رمضان المبارک کے بعد آتی ہے۔ عیدالاضحی ذوالحجہ میں منائی جاتی ہے۔
+</div>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ اسلامی سال میں کتنے مہینے ہیں؟</div>
+<div class="question">2۔ رمضان کے بعد کون سا مہینہ آتا ہے؟</div>
+<div class="question">3۔ دونوں عیدوں کے نام لکھیں۔</div>
+<div class="question">4۔ عیدالاضحی کس اسلامی مہینے میں ہوتی ہے؟</div>
+</div>
+</section>
+
+<!-- LESSON 14 -->
+<section class="page">
+<h2>سبق 14: سچائی، صفائی اور دوسروں کی مدد</h2>
+<div class="intro urdu">
+اسلام ہمیں سچ بولنے، صفائی رکھنے اور دوسروں کی مدد کرنے کی تعلیم دیتا ہے۔ ہمیں جھوٹ سے بچنا چاہیے، اپنے گھر اور اسکول کو صاف رکھنا چاہیے اور ضرورت مندوں کی مدد کرنی چاہیے۔
+</div>
+<h3>Truth, Cleanliness and Helping Others</h3>
+<div class="cards">
+<div class="card"><span class="big">✅</span>Truth<br>سچائی</div>
+<div class="card"><span class="big">🧼</span>Cleanliness<br>صفائی</div>
+<div class="card"><span class="big">🤲</span>Helping<br>مدد</div>
+</div>
+<h3>اچھی عادتیں</h3>
+<ul class="urdu">
+<li>ہمیشہ سچ بولیں۔</li>
+<li>اپنے دانت صاف کریں۔</li>
+<li>کھانے سے پہلے ہاتھ دھوئیں۔</li>
+<li>کچرا کوڑے دان میں ڈالیں۔</li>
+<li>ضرورت مند کی مدد کریں۔</li>
+<li>جانوروں کے ساتھ نرمی کریں۔</li>
+</ul>
+<div class="exercise">
+<h3>✏️ مشق</h3>
+<div class="question">1۔ ہمیں ہمیشہ کیا بولنا چاہیے؟</div>
+<div class="question">2۔ کچرا کہاں ڈالنا چاہیے؟</div>
+<div class="question">3۔ دوسروں کی مدد کیوں کرنی چاہیے؟</div>
+<div class="question">4۔ صفائی کی تین اچھی عادتیں لکھیں۔</div>
+<div class="question">5۔ اپنے گھر میں ایک اچھا کام کرکے اس کے بارے میں بتائیں۔</div>
+</div>
+</section>
+
+<!-- REVISION -->
+<section class="page">
+<h2>🌟 سالانہ دہرائی اور امتحان</h2>
+<div class="intro">
+<b>Class 1 - Islamic Studies</b><br>
+Time: 1 Hour | Total Marks: 30
+<div class="urdu">جماعت اوّل اسلامیات کا سالانہ امتحان</div>
+</div>
+<h3>حصہ اوّل: خالی جگہ پُر کریں (10 نمبر)</h3>
+<div class="question">1۔ اللہ تعالیٰ ہمارا ______ ہے۔</div>
+<div class="question">2۔ ہمارے آخری نبی حضرت محمد ______ ہیں۔</div>
+<div class="question">3۔ اسلام کے ______ ارکان ہیں۔</div>
+<div class="question">4۔ قرآن مجید اللہ تعالیٰ کی ______ کتاب ہے۔</div>
+<div class="question">5۔ دن رات میں ______ فرض نمازیں ہیں۔</div>
+<div class="question">6۔ نماز سے پہلے ______ کیا جاتا ہے۔</div>
+<div class="question">7۔ اسلامی سال میں ______ مہینے ہوتے ہیں۔</div>
+<div class="question">8۔ رمضان کے بعد عید ______ آتی ہے۔</div>
+<div class="question">9۔ ہمیں ہمیشہ ______ بولنا چاہیے۔</div>
+<div class="question">10۔ ہمیں والدین کا ______ کرنا چاہیے۔</div>
+
+<h3>حصہ دوم: مختصر سوالات (10 نمبر)</h3>
+<div class="question">1۔ اللہ تعالیٰ کی چار نعمتوں کے نام لکھیں۔</div>
+<div class="question">2۔ اسلام کے پانچ ارکان لکھیں۔</div>
+<div class="question">3۔ پانچ نمازوں کے نام لکھیں۔</div>
+<div class="question">4۔ قرآن مجید کس نبی ﷺ پر نازل ہوا؟</div>
+<div class="question">5۔ اچھے اخلاق کی تین مثالیں لکھیں۔</div>
+
+<h3>حصہ سوم: زبانی سوالات (10 نمبر)</h3>
+<div class="question">1۔ کلمہ طیبہ سنائیں۔</div>
+<div class="question">2۔ کھانا شروع کرنے کی دعا سنائیں۔</div>
+<div class="question">3۔ علم میں اضافے کی دعا سنائیں۔</div>
+<div class="question">4۔ اسلامی مہینوں کے نام سنائیں۔</div>
+<div class="question">5۔ وضو کا طریقہ بتائیں۔</div>
+</section>
+
+<!-- END PAGE -->
+<section class="page" style="text-align:center;background:linear-gradient(135deg,#e1f7eb,#fff4d9)">
+<h2 style="border:0">🌟 شاباش! 🌟</h2>
+<div style="font-size:70px">📖 ☪️ 🌙</div>
+<h2 style="border:0">اسلامیات کی کتاب مکمل ہوگئی!</h2>
+<div class="urdu" style="text-align:center">
+اللہ تعالیٰ ہمیں دینِ اسلام کی اچھی تعلیمات پر عمل کرنے کی توفیق عطا فرمائے۔ آمین۔
+</div>
+<h3 style="color:#08775a">THE RISEN HIGH SCHOOL</h3>
+<p>Learn Today, Lead Tomorrow</p>
+</section>
+
+</main>
+
+<div class="footer">
+© The Risen High School | Class 1 Islamic Studies
+</div>
+
+</body>
+</html>
