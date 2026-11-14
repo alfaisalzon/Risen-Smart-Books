@@ -1,0 +1,1239 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#713cb5">
+<title>Nursery Drawing & Colouring | The Risen High School</title>
+
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:linear-gradient(135deg,#fff0f7,#edf5ff,#effff2);
+ color:#26364c;
+ font-family:Arial,sans-serif;
+}
+.urdu{font-family:Jameel,serif;line-height:2}
+header{
+ background:linear-gradient(120deg,#713cb5,#e64c91,#ff9d45);
+ color:white;text-align:center;padding:22px 10px;
+ box-shadow:0 4px 15px #0002;
+}
+header h1{margin:5px;font-size:26px}
+header p{margin:5px}
+.toolbar{
+ position:sticky;top:0;z-index:20;
+ display:flex;justify-content:center;gap:8px;
+ flex-wrap:wrap;background:white;padding:10px;
+ box-shadow:0 3px 12px #0002;
+}
+button{
+ border:0;border-radius:10px;padding:10px 14px;
+ background:#713cb5;color:white;font-weight:bold;
+ cursor:pointer;font-size:14px;
+}
+button:hover{filter:brightness(.9)}
+.book{max-width:950px;margin:18px auto;padding:12px}
+.cover{
+ min-height:560px;border-radius:25px;padding:30px 15px;
+ text-align:center;color:white;
+ display:flex;flex-direction:column;align-items:center;
+ justify-content:center;
+ background:
+ radial-gradient(circle at 15% 15%,#ffffff66 0 7%,transparent 8%),
+ radial-gradient(circle at 85% 20%,#ffffff55 0 8%,transparent 9%),
+ radial-gradient(circle at 20% 80%,#ffffff55 0 7%,transparent 8%),
+ linear-gradient(145deg,#ff9a42,#ef5598,#8354ce,#3389d2);
+ box-shadow:0 8px 25px #0002;
+}
+.cover .school{font-size:23px;font-weight:bold}
+.cover .bigicon{font-size:100px;margin:20px}
+.cover h1{font-size:37px;margin:5px}
+.cover h2{font-size:28px;margin:8px}
+.cover .urdu{font-size:28px}
+.cover .tag{
+ background:white;color:#793dba;
+ padding:11px 25px;border-radius:30px;
+ font-weight:bold;margin-top:20px;
+}
+.page{
+ background:white;border-radius:20px;
+ margin:20px 0;padding:22px 18px;
+ box-shadow:0 5px 18px #17385a15;
+ border-top:7px solid var(--accent,#8a55c5);
+ page-break-after:always;
+}
+.page h2{
+ color:var(--accent,#8a55c5);
+ font-size:24px;margin:0 0 14px;
+ padding-bottom:10px;border-bottom:2px dashed #e1e7f0;
+}
+.page h3{color:#355e91}
+.page p{font-size:16px;line-height:1.8}
+.lesson-no{
+ display:inline-block;background:var(--accent,#8a55c5);
+ color:white;padding:5px 14px;border-radius:20px;
+ margin-bottom:10px;font-weight:bold;
+}
+.art{
+ background:linear-gradient(135deg,var(--light,#f5efff),#fff);
+ border-radius:17px;padding:14px;
+ text-align:center;margin:15px 0;
+ border:2px dashed #e1e6ef;
+}
+.art svg{
+ width:100%;max-width:330px;height:220px;
+ display:block;margin:auto;
+}
+.art small{display:block;color:#62738a;margin-top:8px}
+.steps{
+ background:var(--light,#f5efff);
+ padding:13px 16px;border-radius:13px;margin:12px 0;
+}
+.steps li{margin:9px 0;line-height:1.8}
+.wordgrid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+ gap:9px;margin:12px 0;
+}
+.word{
+ text-align:center;padding:12px 5px;
+ background:var(--light,#f5efff);border-radius:12px;
+}
+.word b{display:block;font-size:19px;color:var(--accent,#8a55c5)}
+.word span{display:block;margin-top:4px}
+.tip{
+ background:#fff8df;border-right:5px solid #edb43e;
+ padding:12px 15px;border-radius:10px;margin-top:12px;
+}
+.practice{
+ background:#eafff2;border-right:5px solid #35a76d;
+ padding:12px 15px;border-radius:10px;margin-top:12px;
+}
+.contents{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+ gap:9px;
+}
+.contents a{
+ display:block;background:#f4edff;color:#6539a2;
+ padding:11px;border-radius:10px;
+ text-decoration:none;font-weight:bold;
+}
+.drawing-area{
+ background:#f7f9ff;border:2px solid #dce5f4;
+ padding:14px;border-radius:16px;margin-top:14px;
+}
+#drawCanvas{
+ width:100%;height:330px;display:block;
+ background:white;border:2px dashed #b8c7dc;
+ border-radius:12px;touch-action:none;
+}
+.controls{
+ display:flex;gap:8px;flex-wrap:wrap;
+ align-items:center;margin:10px 0;
+}
+.controls label{font-weight:bold}
+input[type=color]{width:48px;height:38px;border:0}
+input[type=range]{width:120px}
+.colorbtn{
+ width:30px;height:30px;border-radius:50%;
+ border:2px solid #ddd;padding:0;
+}
+footer{
+ background:#56318e;color:white;
+ padding:20px;text-align:center;border-radius:15px;
+ margin:20px 0;
+}
+@media(max-width:600px){
+ .book{padding:7px}
+ .cover{min-height:490px}
+ .cover h1{font-size:29px}
+ .page{padding:17px 12px}
+ .art svg{height:190px}
+}
+@media print{
+ body{background:white}
+ .toolbar,.drawing-area{display:none!important}
+ .book{max-width:100%;margin:0;padding:0}
+ .cover,.page,footer{
+  box-shadow:none;break-after:page;
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+ }
+ .page{margin:0;border-radius:0;min-height:95vh}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h1>THE RISEN HIGH SCHOOL</h1>
+ <p class="urdu">علم، کردار اور روشن مستقبل</p>
+ <p>Creative Learning Series</p>
+</header>
+
+<div class="toolbar">
+ <button onclick="window.print()">🖨 Print / PDF</button>
+ <button onclick="document.getElementById('contents').scrollIntoView({behavior:'smooth'})">📚 Contents</button>
+ <button onclick="document.getElementById('drawingBoard').scrollIntoView({behavior:'smooth'})">🎨 Drawing Board</button>
+ <button onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆ Top</button>
+</div>
+
+<main class="book">
+
+<section class="cover">
+ <div class="school">THE RISEN HIGH SCHOOL</div>
+ <div class="bigicon">🎨🖍️🖌️</div>
+ <h1>DRAWING & COLOURING</h1>
+ <h2>NURSERY CLASS</h2>
+ <div class="urdu">ڈرائنگ اور رنگ بھرنے کی کتاب</div>
+ <p>Learn to Draw • Colour • Create</p>
+ <p class="urdu">تصویریں بنائیں، رنگ بھریں اور تخلیقی صلاحیت بڑھائیں</p>
+ <div class="tag">ENGLISH + اردو</div>
+ <p style="margin-top:35px">Creative Activities for Little Artists</p>
+</section>
+
+<section class="page" style="--accent:#8a55c5;--light:#f5efff">
+ <h2>📚 Contents | فہرستِ مضامین</h2>
+ <div class="contents" id="contents">
+  <a href="#l1">01. Drawing Tools | ڈرائنگ کا سامان</a>
+  <a href="#l2">02. Straight Lines | سیدھی لکیریں</a>
+  <a href="#l3">03. Curved Lines | ٹیڑھی اور گول لکیریں</a>
+  <a href="#l4">04. Basic Shapes | بنیادی اشکال</a>
+  <a href="#l5">05. Colour Recognition | رنگوں کی پہچان</a>
+  <a href="#l6">06. Sun | سورج</a>
+  <a href="#l7">07. House | گھر</a>
+  <a href="#l8">08. Tree | درخت</a>
+  <a href="#l9">09. Flower | پھول</a>
+  <a href="#l10">10. Apple | سیب</a>
+  <a href="#l11">11. Balloon | غبارہ</a>
+  <a href="#l12">12. Fish | مچھلی</a>
+  <a href="#l13">13. Butterfly | تتلی</a>
+  <a href="#l14">14. Kite | پتنگ</a>
+  <a href="#l15">15. Car | گاڑی</a>
+  <a href="#l16">16. Boat | کشتی</a>
+  <a href="#l17">17. Ice Cream | آئس کریم</a>
+  <a href="#l18">18. Umbrella | چھتری</a>
+  <a href="#l19">19. Bird | پرندہ</a>
+  <a href="#l20">20. Cat | بلی</a>
+  <a href="#l21">21. Rabbit | خرگوش</a>
+  <a href="#l22">22. Smiling Face | مسکراتا چہرہ</a>
+  <a href="#l23">23. House Scenery | گھر کا منظر</a>
+  <a href="#l24">24. Mountain Scenery | پہاڑوں کا منظر</a>
+  <a href="#l25">25. Fruits Basket | پھلوں کی ٹوکری</a>
+  <a href="#l26">26. My Garden | میرا باغ</a>
+  <a href="#l27">27. Under the Sea | سمندر کی دنیا</a>
+  <a href="#l28">28. Shapes Colouring | اشکال میں رنگ</a>
+  <a href="#l29">29. Free Drawing | اپنی ڈرائنگ</a>
+  <a href="#l30">30. Final Practice | آخری مشق</a>
+ </div>
+</section>
+
+<!-- LESSON 1 -->
+<section class="page" id="l1" style="--accent:#e76b91;--light:#fff0f5">
+ <span class="lesson-no">Lesson 01</span>
+ <h2>Drawing Tools | ڈرائنگ کا سامان</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 200">
+   <rect x="20" y="70" width="55" height="100" rx="7" fill="#f7d66c" stroke="#555" stroke-width="2"/>
+   <rect x="28" y="85" width="39" height="65" fill="#fff" stroke="#555"/>
+   <path d="M100 150 L130 25 L155 25 L125 150Z" fill="#f5a2b9" stroke="#555" stroke-width="2"/>
+   <path d="M130 25 L142 5 L155 25" fill="#e8c18a" stroke="#555"/>
+   <path d="M190 35 L215 35 L215 150 Q202 170 190 150Z" fill="#79c9f0" stroke="#555" stroke-width="2"/>
+   <path d="M240 30 L280 30 L260 160Z" fill="#ff9e48" stroke="#555" stroke-width="2"/>
+  </svg>
+  <small>Pencils, crayons and colours | پنسل، کریون اور رنگ</small>
+ </div>
+ <h3>English</h3>
+ <p>Drawing is a fun activity. We use pencils, crayons, colour pencils, erasers and paper to make pictures. A pencil helps us draw lines. An eraser removes unwanted pencil marks. Crayons help us fill pictures with beautiful colours. We should keep our drawing tools clean and use them carefully.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">ڈرائنگ ایک دلچسپ سرگرمی ہے۔ تصویریں بنانے کے لیے ہم پنسل، کریون، رنگین پنسلیں، ربڑ اور کاغذ استعمال کرتے ہیں۔ پنسل سے لکیریں بنائی جاتی ہیں۔ ربڑ غیر ضروری پنسل کے نشان مٹاتا ہے۔ کریون سے تصویروں میں خوبصورت رنگ بھرے جاتے ہیں۔ ہمیں اپنے ڈرائنگ کے سامان کو صاف اور محفوظ رکھنا چاہیے۔</p>
+ <div class="wordgrid">
+  <div class="word"><b>Pencil ✏️</b><span class="urdu">پنسل</span></div>
+  <div class="word"><b>Eraser</b><span class="urdu">ربڑ</span></div>
+  <div class="word"><b>Crayons 🖍️</b><span class="urdu">رنگین کریون</span></div>
+  <div class="word"><b>Paper 📄</b><span class="urdu">کاغذ</span></div>
+ </div>
+ <div class="tip">⭐ Always hold your pencil correctly. | پنسل کو ہمیشہ درست طریقے سے پکڑیں۔</div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="page" id="l2" style="--accent:#3289c5;--light:#edf7ff">
+ <span class="lesson-no">Lesson 02</span>
+ <h2>Straight Lines | سیدھی لکیریں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 200" stroke-linecap="round">
+   <path d="M35 35 H285" stroke="#e44d68" stroke-width="5"/>
+   <path d="M35 75 V170" stroke="#287ac0" stroke-width="5"/>
+   <path d="M70 170 L270 40" stroke="#38a76d" stroke-width="5"/>
+   <path d="M75 100 H250" stroke="#e9a12e" stroke-width="5" stroke-dasharray="10 8"/>
+  </svg>
+  <small>Horizontal, vertical and slanting lines</small>
+ </div>
+ <h3>English</h3>
+ <p>A line is a mark made with a pencil or crayon. A horizontal line goes from left to right. A vertical line goes up and down. A slanting line goes diagonally. Lines help us make pictures, shapes, houses and many other things.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">لکیر پنسل یا رنگ سے بنایا گیا نشان ہے۔ افقی لکیر دائیں سے بائیں یا بائیں سے دائیں جاتی ہے۔ عمودی لکیر اوپر سے نیچے جاتی ہے۔ ترچھی لکیر ایک طرف سے دوسری طرف جھکی ہوئی ہوتی ہے۔ لکیروں کی مدد سے ہم تصویریں، اشکال اور بہت سی دوسری چیزیں بناتے ہیں۔</p>
+ <div class="steps">
+  <h3>Practice | مشق</h3>
+  <ol>
+   <li>Draw five horizontal lines. | پانچ افقی لکیریں بنائیں۔</li>
+   <li>Draw five vertical lines. | پانچ عمودی لکیریں بنائیں۔</li>
+   <li>Draw five slanting lines. | پانچ ترچھی لکیریں بنائیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="page" id="l3" style="--accent:#9b60bd;--light:#f5edff">
+ <span class="lesson-no">Lesson 03</span>
+ <h2>Curved Lines | گول اور خم دار لکیریں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 200" fill="none" stroke-width="5" stroke-linecap="round">
+   <path d="M25 100 Q80 10 135 100" stroke="#e85c83"/>
+   <path d="M170 100 C170 10 290 10 290 100" stroke="#398bd0"/>
+   <path d="M25 160 Q80 220 135 160 Q190 100 245 160" stroke="#42a86b"/>
+   <circle cx="265" cy="155" r="28" stroke="#e7a62c"/>
+  </svg>
+  <small>Curves, waves and circles | خم دار لکیریں اور لہریں</small>
+ </div>
+ <h3>English</h3>
+ <p>Curved lines are not straight. They bend and turn. We use curved lines to draw rainbows, waves, clouds, flowers and many other pictures. Practice drawing small curves, big curves and round circles.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">خم دار لکیریں سیدھی نہیں ہوتیں بلکہ مڑتی اور گھومتی ہیں۔ ہم ان کی مدد سے قوسِ قزح، لہریں، بادل، پھول اور بہت سی تصویریں بناتے ہیں۔ چھوٹے اور بڑے خم بنائیں اور گول دائرے بنانے کی مشق کریں۔</p>
+ <div class="practice">✏️ Make ten curved lines on your notebook. | اپنی کاپی میں دس خم دار لکیریں بنائیں۔</div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="page" id="l4" style="--accent:#e29b37;--light:#fff6e8">
+ <span class="lesson-no">Lesson 04</span>
+ <h2>Basic Shapes | بنیادی اشکال</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 200" stroke="#46546b" stroke-width="3">
+   <circle cx="55" cy="75" r="36" fill="#ff6c75"/>
+   <rect x="112" y="39" width="72" height="72" fill="#69b8ed"/>
+   <path d="M235 35 L195 112 H275Z" fill="#ffd65d"/>
+   <rect x="25" y="140" width="95" height="43" fill="#a8d98a"/>
+   <path d="M180 150 L225 125 L270 150 L225 180Z" fill="#c69bea"/>
+  </svg>
+  <small>Circle, square, triangle, rectangle and diamond</small>
+ </div>
+ <h3>English</h3>
+ <p>Shapes are all around us. A circle is round. A square has four equal sides. A triangle has three sides. A rectangle has four sides. We can use these shapes to make houses, toys, trees and other drawings.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">اشکال ہمارے اردگرد موجود ہوتی ہیں۔ دائرہ گول ہوتا ہے۔ مربع کے چار برابر کنارے ہوتے ہیں۔ تکون کے تین کنارے ہوتے ہیں۔ مستطیل کے چار کنارے ہوتے ہیں۔ ہم ان اشکال کو ملا کر گھر، کھلونے، درخت اور دوسری تصویریں بنا سکتے ہیں۔</p>
+ <div class="wordgrid">
+  <div class="word"><b>Circle 🔴</b><span>دائرہ</span></div>
+  <div class="word"><b>Square 🟦</b><span>مربع</span></div>
+  <div class="word"><b>Triangle 🔺</b><span>تکون</span></div>
+  <div class="word"><b>Rectangle ▭</b><span>مستطیل</span></div>
+ </div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="page" id="l5" style="--accent:#d65b8b;--light:#fff0f7">
+ <span class="lesson-no">Lesson 05</span>
+ <h2>Colour Recognition | رنگوں کی پہچان</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 190">
+   <circle cx="45" cy="65" r="28" fill="red"/>
+   <circle cx="115" cy="65" r="28" fill="blue"/>
+   <circle cx="185" cy="65" r="28" fill="green"/>
+   <circle cx="255" cy="65" r="28" fill="yellow"/>
+   <circle cx="80" cy="145" r="28" fill="orange"/>
+   <circle cx="160" cy="145" r="28" fill="purple"/>
+   <circle cx="240" cy="145" r="28" fill="pink"/>
+  </svg>
+  <small>Beautiful colours | خوبصورت رنگ</small>
+ </div>
+ <h3>English</h3>
+ <p>Colours make our drawings beautiful. We can use different colours to colour flowers, fruits, houses, animals and scenery. We should colour carefully and try to stay inside the outlines. We can also mix colours with the help of our teacher.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">رنگ ہماری ڈرائنگ کو خوبصورت بناتے ہیں۔ ہم پھولوں، پھلوں، گھروں، جانوروں اور مناظر میں مختلف رنگ بھر سکتے ہیں۔ ہمیں احتیاط سے رنگ بھرنے اور تصویر کی بنی ہوئی حد کے اندر رہنے کی کوشش کرنی چاہیے۔ استاد کی مدد سے ہم رنگوں کو ملا کر بھی نئے رنگ بنا سکتے ہیں۔</p>
+ <div class="wordgrid">
+  <div class="word"><b style="color:red">Red</b><span>سرخ</span></div>
+  <div class="word"><b style="color:blue">Blue</b><span>نیلا</span></div>
+  <div class="word"><b style="color:green">Green</b><span>سبز</span></div>
+  <div class="word"><b style="color:#d4a000">Yellow</b><span>پیلا</span></div>
+  <div class="word"><b style="color:orange">Orange</b><span>نارنجی</span></div>
+  <div class="word"><b style="color:purple">Purple</b><span>جامنی</span></div>
+ </div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="page" id="l6" style="--accent:#e9a12c;--light:#fff7e4">
+ <span class="lesson-no">Lesson 06</span>
+ <h2>Draw a Sun | سورج بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <g stroke="#eaa12c" stroke-width="7" stroke-linecap="round">
+    <path d="M160 12V35 M160 185V208 M45 110H68 M252 110H275 M78 28L95 47 M225 172L242 190 M78 190L95 172 M225 47L242 28"/>
+   </g>
+   <circle cx="160" cy="110" r="62" fill="#ffcf45" stroke="#e99b28" stroke-width="4"/>
+   <circle cx="140" cy="95" r="5" fill="#543d31"/>
+   <circle cx="180" cy="95" r="5" fill="#543d31"/>
+   <path d="M140 125 Q160 145 180 125" fill="none" stroke="#543d31" stroke-width="5" stroke-linecap="round"/>
+  </svg>
+  <small>Example drawing | نمونہ تصویر</small>
+ </div>
+ <h3>English</h3>
+ <p>The Sun is a star. It gives us light and heat. We see the Sun in the sky during the daytime. It looks bright and beautiful. We can draw the Sun using a circle and straight lines.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">سورج ایک ستارہ ہے۔ یہ ہمیں روشنی اور حرارت دیتا ہے۔ دن کے وقت ہمیں آسمان پر سورج نظر آتا ہے۔ یہ روشن اور خوبصورت دکھائی دیتا ہے۔ ہم ایک دائرہ اور سیدھی لکیریں بنا کر سورج کی تصویر بنا سکتے ہیں۔</p>
+ <div class="steps">
+  <h3>How to Draw | بنانے کا طریقہ</h3>
+  <ol>
+   <li>Draw a big circle. | ایک بڑا دائرہ بنائیں۔</li>
+   <li>Draw small lines around it. | اس کے اردگرد چھوٹی لکیریں بنائیں۔</li>
+   <li>Draw two eyes and a smile. | دو آنکھیں اور مسکراہٹ بنائیں۔</li>
+   <li>Colour it yellow and orange. | اسے پیلے اور نارنجی رنگ سے رنگیں۔</li>
+  </ol>
+ </div>
+ <div class="tip">🎨 Use yellow and orange colours. | پیلا اور نارنجی رنگ استعمال کریں۔</div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="page" id="l7" style="--accent:#39a5ba;--light:#eafaff">
+ <span class="lesson-no">Lesson 07</span>
+ <h2>Draw a House | گھر بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220" stroke="#594a42" stroke-width="4">
+   <rect x="65" y="90" width="190" height="115" fill="#ffdb9c"/>
+   <path d="M45 95 L160 15 L275 95Z" fill="#e87561"/>
+   <rect x="135" y="140" width="48" height="65" fill="#a66d49"/>
+   <rect x="82" y="112" width="38" height="38" fill="#9ad9f4"/>
+   <rect x="200" y="112" width="38" height="38" fill="#9ad9f4"/>
+   <path d="M0 207H320" stroke="#4b9d5d"/>
+  </svg>
+  <small>A simple house | ایک آسان گھر</small>
+ </div>
+ <h3>English</h3>
+ <p>A house is a place where a family lives. It protects people from heat, cold and rain. A house has walls, a roof, doors and windows. We can draw a house using a square or rectangle and a triangle.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">گھر وہ جگہ ہے جہاں ایک خاندان رہتا ہے۔ یہ لوگوں کو گرمی، سردی اور بارش سے بچاتا ہے۔ گھر میں دیواریں، چھت، دروازے اور کھڑکیاں ہوتی ہیں۔ ہم مربع یا مستطیل اور تکون کی مدد سے آسان گھر بنا سکتے ہیں۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a big rectangle. | ایک بڑا مستطیل بنائیں۔</li>
+   <li>Draw a triangle on top. | اوپر ایک تکون بنائیں۔</li>
+   <li>Make a door and two windows. | ایک دروازہ اور دو کھڑکیاں بنائیں۔</li>
+   <li>Colour the roof and walls. | چھت اور دیواروں میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="page" id="l8" style="--accent:#38985b;--light:#efffee">
+ <span class="lesson-no">Lesson 08</span>
+ <h2>Draw a Tree | درخت بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <rect x="140" y="105" width="40" height="105" rx="6" fill="#9a6037"/>
+   <circle cx="160" cy="75" r="55" fill="#68bd65"/>
+   <circle cx="115" cy="95" r="35" fill="#83d16b"/>
+   <circle cx="205" cy="95" r="35" fill="#83d16b"/>
+   <circle cx="160" cy="35" r="30" fill="#79c85d"/>
+   <path d="M20 210H300" stroke="#5a9f53" stroke-width="5"/>
+  </svg>
+  <small>Green tree | سبز درخت</small>
+ </div>
+ <h3>English</h3>
+ <p>Trees are very useful. They give us shade, fruits and fresh air. Birds make nests in trees. Trees make our environment beautiful. We should plant more trees and take care of them.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">درخت ہمارے لیے بہت فائدہ مند ہیں۔ یہ ہمیں سایہ، پھل اور صاف ہوا فراہم کرتے ہیں۔ پرندے درختوں پر گھونسلے بناتے ہیں۔ درخت ہمارے ماحول کو خوبصورت بناتے ہیں۔ ہمیں زیادہ درخت لگانے اور ان کی دیکھ بھال کرنے کی عادت اپنانی چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a long trunk. | ایک لمبا تنا بنائیں۔</li>
+   <li>Draw a big round crown. | اوپر پتوں کا بڑا گول حصہ بنائیں۔</li>
+   <li>Add small leaves and fruits. | چھوٹے پتے اور پھل بنائیں۔</li>
+   <li>Colour leaves green and trunk brown. | پتوں کو سبز اور تنے کو بھورا رنگ دیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="page" id="l9" style="--accent:#e05b83;--light:#fff0f6">
+ <span class="lesson-no">Lesson 09</span>
+ <h2>Draw a Flower | پھول بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <g fill="#f18ab5" stroke="#c54f89" stroke-width="3">
+    <ellipse cx="160" cy="52" rx="22" ry="40"/>
+    <ellipse cx="160" cy="132" rx="22" ry="40"/>
+    <ellipse cx="120" cy="92" rx="40" ry="22"/>
+    <ellipse cx="200" cy="92" rx="40" ry="22"/>
+    <ellipse cx="132" cy="62" rx="22" ry="35" transform="rotate(-45 132 62)"/>
+    <ellipse cx="188" cy="62" rx="22" ry="35" transform="rotate(45 188 62)"/>
+   </g>
+   <circle cx="160" cy="92" r="25" fill="#ffd44f" stroke="#d99d20" stroke-width="3"/>
+   <path d="M160 117V210" stroke="#39975a" stroke-width="8"/>
+   <path d="M158 165 Q110 130 105 175 Q130 195 158 165" fill="#63bd6a"/>
+   <path d="M162 185 Q215 145 220 190 Q190 210 162 185" fill="#63bd6a"/>
+  </svg>
+  <small>Beautiful flower | خوبصورت پھول</small>
+ </div>
+ <h3>English</h3>
+ <p>Flowers make gardens beautiful. They have petals, a centre, a stem and leaves. Flowers come in many colours. Some flowers have a sweet smell. We should care for plants and never pick flowers unnecessarily.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پھول باغوں کو خوبصورت بناتے ہیں۔ ان میں پنکھڑیاں، درمیان کا حصہ، تنا اور پتے ہوتے ہیں۔ پھول کئی رنگوں کے ہوتے ہیں۔ کچھ پھولوں میں اچھی خوشبو ہوتی ہے۔ ہمیں پودوں کا خیال رکھنا اور بلاوجہ پھول نہیں توڑنے چاہئیں۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a small circle. | ایک چھوٹا دائرہ بنائیں۔</li>
+   <li>Draw five or six petals around it. | اس کے گرد پانچ یا چھ پنکھڑیاں بنائیں۔</li>
+   <li>Draw a stem and two leaves. | ایک تنا اور دو پتے بنائیں۔</li>
+   <li>Colour the flower. | پھول میں خوبصورت رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="page" id="l10" style="--accent:#d84b54;--light:#fff0ef">
+ <span class="lesson-no">Lesson 10</span>
+ <h2>Draw an Apple | سیب بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M160 65 C115 25 55 65 75 135 C90 195 130 200 160 177 C190 200 230 195 245 135 C265 65 205 25 160 65Z" fill="#ef5257" stroke="#a82d39" stroke-width="4"/>
+   <path d="M160 65 Q160 35 170 20" stroke="#714c2d" stroke-width="8" fill="none"/>
+   <path d="M167 40 Q205 5 220 37 Q192 60 167 40" fill="#54a45b" stroke="#387b40" stroke-width="3"/>
+  </svg>
+  <small>Red apple | سرخ سیب</small>
+ </div>
+ <h3>English</h3>
+ <p>An apple is a fruit. Apples can be red, green or yellow. Apples are a healthy food. We should wash an apple before eating it.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">سیب ایک پھل ہے۔ سیب سرخ، سبز یا پیلے رنگ کا ہو سکتا ہے۔ سیب صحت مند غذا ہے۔ ہمیں سیب کھانے سے پہلے اسے دھونا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a round apple shape. | سیب کی گول شکل بنائیں۔</li>
+   <li>Add a small stem on top. | اوپر چھوٹا تنا بنائیں۔</li>
+   <li>Draw a leaf. | ایک پتا بنائیں۔</li>
+   <li>Colour it red or green. | اسے سرخ یا سبز رنگ دیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 11 -->
+<section class="page" id="l11" style="--accent:#a75ac6;--light:#f7edff">
+ <span class="lesson-no">Lesson 11</span>
+ <h2>Draw a Balloon | غبارہ بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <ellipse cx="160" cy="85" rx="65" ry="78" fill="#e875a9" stroke="#b8467b" stroke-width="4"/>
+   <path d="M150 160 L160 172 L170 160" fill="#e875a9" stroke="#b8467b" stroke-width="3"/>
+   <path d="M160 172 Q125 195 170 215" fill="none" stroke="#777" stroke-width="3"/>
+   <path d="M125 45 Q135 25 150 22" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </svg>
+  <small>Colourful balloon | رنگین غبارہ</small>
+ </div>
+ <h3>English</h3>
+ <p>A balloon is a light object filled with air or gas. Balloons come in many colours and shapes. Children use balloons for decoration and celebrations. We should play with balloons carefully.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">غبارہ ایک ہلکی چیز ہے جس میں ہوا یا گیس بھری جاتی ہے۔ غبارے کئی رنگوں اور شکلوں کے ہوتے ہیں۔ بچے غبارے سجاوٹ اور خوشی کے مواقع پر استعمال کرتے ہیں۔ ہمیں غباروں سے احتیاط کے ساتھ کھیلنا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw an oval shape. | بیضوی شکل بنائیں۔</li>
+   <li>Make a small knot below. | نیچے ایک چھوٹی گرہ بنائیں۔</li>
+   <li>Draw a string. | دھاگا بنائیں۔</li>
+   <li>Fill it with your favourite colour. | اپنی پسند کا رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 12 -->
+<section class="page" id="l12" style="--accent:#369bb9;--light:#eafaff">
+ <span class="lesson-no">Lesson 12</span>
+ <h2>Draw a Fish | مچھلی بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <ellipse cx="145" cy="110" rx="90" ry="55" fill="#65c6e6" stroke="#287fa2" stroke-width="4"/>
+   <path d="M225 110 L290 55 L290 165Z" fill="#ffb75e" stroke="#b77c32" stroke-width="4"/>
+   <path d="M135 57 L165 20 L190 65" fill="#ff9b9b" stroke="#b65b5b" stroke-width="3"/>
+   <circle cx="90" cy="98" r="8" fill="#222"/>
+   <path d="M75 125 Q95 140 115 125" fill="none" stroke="#287fa2" stroke-width="3"/>
+   <circle cx="120" cy="110" r="12" fill="none" stroke="#fff" stroke-width="3"/>
+  </svg>
+  <small>Little fish | چھوٹی مچھلی</small>
+ </div>
+ <h3>English</h3>
+ <p>Fish live in water. They have fins, tails and gills. Many fish have beautiful colours. Fish swim in rivers, lakes and oceans. We should keep water clean to protect fish and other water animals.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">مچھلیاں پانی میں رہتی ہیں۔ ان کے پر، دم اور گلپھڑے ہوتے ہیں۔ بہت سی مچھلیاں خوبصورت رنگوں کی ہوتی ہیں۔ مچھلیاں دریاؤں، جھیلوں اور سمندروں میں تیرتی ہیں۔ ہمیں پانی صاف رکھنا چاہیے تاکہ مچھلیوں اور دوسرے آبی جانوروں کی حفاظت ہو سکے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw an oval body. | بیضوی جسم بنائیں۔</li>
+   <li>Draw a triangle tail. | تکون جیسی دم بنائیں۔</li>
+   <li>Add an eye and fins. | آنکھ اور پر بنائیں۔</li>
+   <li>Colour the fish. | مچھلی میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 13 -->
+<section class="page" id="l13" style="--accent:#d77baf;--light:#fff0f8">
+ <span class="lesson-no">Lesson 13</span>
+ <h2>Draw a Butterfly | تتلی بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <ellipse cx="110" cy="75" rx="55" ry="48" fill="#e98bc5" stroke="#9c4c92" stroke-width="3"/>
+   <ellipse cx="210" cy="75" rx="55" ry="48" fill="#8cc8ed" stroke="#4d87ba" stroke-width="3"/>
+   <ellipse cx="110" cy="155" rx="45" ry="38" fill="#ffcf6a" stroke="#b68a36" stroke-width="3"/>
+   <ellipse cx="210" cy="155" rx="45" ry="38" fill="#9bdc91" stroke="#5b9d57" stroke-width="3"/>
+   <rect x="151" y="65" width="18" height="115" rx="9" fill="#59436d"/>
+   <circle cx="160" cy="55" r="13" fill="#59436d"/>
+   <path d="M157 44 Q140 15 130 20 M163 44 Q180 15 190 20" stroke="#59436d" stroke-width="4" fill="none"/>
+  </svg>
+  <small>Beautiful butterfly | خوبصورت تتلی</small>
+ </div>
+ <h3>English</h3>
+ <p>A butterfly is a colourful insect. It has two pairs of wings, six legs and two antennae. Butterflies visit flowers and drink nectar. They make gardens look beautiful.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">تتلی ایک خوبصورت رنگ برنگا کیڑا ہے۔ اس کے دو جوڑے پر، چھ ٹانگیں اور دو انٹینا ہوتے ہیں۔ تتلی پھولوں پر بیٹھتی ہے اور ان سے رس حاصل کرتی ہے۔ تتلیاں باغوں کو خوبصورت بناتی ہیں۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a thin body. | ایک پتلا جسم بنائیں۔</li>
+   <li>Draw two big wings. | دو بڑے پر بنائیں۔</li>
+   <li>Add two small wings. | دو چھوٹے پر بنائیں۔</li>
+   <li>Draw antennae and colour the wings. | انٹینا بنائیں اور پروں میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 14 -->
+<section class="page" id="l14" style="--accent:#d79a34;--light:#fff7e8">
+ <span class="lesson-no">Lesson 14</span>
+ <h2>Draw a Kite | پتنگ بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M160 15 L250 100 L160 185 L70 100Z" fill="#f48c5c" stroke="#a94f35" stroke-width="4"/>
+   <path d="M160 15V185 M70 100H250" stroke="#fff" stroke-width="3"/>
+   <path d="M160 185 Q130 205 165 220" fill="none" stroke="#555" stroke-width="3"/>
+   <path d="M160 185 L140 202 L180 210" fill="none" stroke="#555" stroke-width="3"/>
+  </svg>
+  <small>Flying kite | اڑتی ہوئی پتنگ</small>
+ </div>
+ <h3>English</h3>
+ <p>A kite is a light object that flies in the air with the help of wind. It has a body, a tail and a string. Kites come in many colours. We should fly kites only in safe open places with adult supervision.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پتنگ ایک ہلکی چیز ہے جو ہوا کی مدد سے فضا میں اڑتی ہے۔ اس کا ایک جسم، دم اور ڈور ہوتی ہے۔ پتنگیں کئی رنگوں کی ہوتی ہیں۔ ہمیں پتنگ صرف محفوظ کھلی جگہ پر کسی بڑے کی نگرانی میں اڑانی چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a diamond shape. | ہیرے جیسی شکل بنائیں۔</li>
+   <li>Draw two crossing lines. | دو ایک دوسرے کو کاٹتی ہوئی لکیریں بنائیں۔</li>
+   <li>Add a tail. | دم بنائیں۔</li>
+   <li>Colour each section. | ہر حصے میں الگ رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 15 -->
+<section class="page" id="l15" style="--accent:#3b91c1;--light:#edf7ff">
+ <span class="lesson-no">Lesson 15</span>
+ <h2>Draw a Car | گاڑی بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M45 125 L65 80 L115 55 H215 L260 125Z" fill="#ef6464" stroke="#a83e42" stroke-width="4"/>
+   <rect x="45" y="120" width="230" height="55" rx="12" fill="#e85a5a" stroke="#a83e42" stroke-width="4"/>
+   <rect x="115" y="70" width="55" height="45" fill="#aee3f8" stroke="#555" stroke-width="3"/>
+   <rect x="180" y="70" width="45" height="45" fill="#aee3f8" stroke="#555" stroke-width="3"/>
+   <circle cx="95" cy="175" r="24" fill="#333" stroke="#111" stroke-width="4"/>
+   <circle cx="230" cy="175" r="24" fill="#333" stroke="#111" stroke-width="4"/>
+   <circle cx="95" cy="175" r="10" fill="#ccc"/>
+   <circle cx="230" cy="175" r="10" fill="#ccc"/>
+  </svg>
+  <small>Little car | چھوٹی گاڑی</small>
+ </div>
+ <h3>English</h3>
+ <p>A car is a means of transport. It carries people from one place to another. A car has wheels, doors, windows and seats. We should always sit safely and wear a seat belt when travelling in a car.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">کار سفر کا ایک ذریعہ ہے۔ یہ لوگوں کو ایک جگہ سے دوسری جگہ لے جاتی ہے۔ کار کے پہیے، دروازے، کھڑکیاں اور نشستیں ہوتی ہیں۔ کار میں سفر کرتے وقت ہمیں محفوظ طریقے سے بیٹھنا اور سیٹ بیلٹ باندھنا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a long rectangle. | ایک لمبا مستطیل بنائیں۔</li>
+   <li>Draw the upper body. | اوپر والا حصہ بنائیں۔</li>
+   <li>Add two round wheels. | دو گول پہیے بنائیں۔</li>
+   <li>Draw windows and colour the car. | کھڑکیاں بنائیں اور گاڑی میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 16 -->
+<section class="page" id="l16" style="--accent:#388dc1;--light:#eaf6ff">
+ <span class="lesson-no">Lesson 16</span>
+ <h2>Draw a Boat | کشتی بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M55 135 H265 L225 190 H100Z" fill="#9a6443" stroke="#61412d" stroke-width="4"/>
+   <path d="M155 30V135" stroke="#72533b" stroke-width="6"/>
+   <path d="M150 40 L80 125 H150Z" fill="#f4d66c" stroke="#9a7b35" stroke-width="3"/>
+   <path d="M160 50 L230 125 H160Z" fill="#ea8aab" stroke="#a94f74" stroke-width="3"/>
+   <path d="M15 200 Q60 180 105 200 T195 200 T305 200" stroke="#43a7d3" stroke-width="5" fill="none"/>
+  </svg>
+  <small>Boat on water | پانی میں کشتی</small>
+ </div>
+ <h3>English</h3>
+ <p>A boat is used to travel on water. Some boats are small and some are large. People use boats in rivers, lakes and seas. A boat helps carry people and goods.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">کشتی پانی میں سفر کرنے کے لیے استعمال ہوتی ہے۔ کچھ کشتیاں چھوٹی اور کچھ بڑی ہوتی ہیں۔ لوگ دریاؤں، جھیلوں اور سمندروں میں کشتیاں استعمال کرتے ہیں۔ کشتی لوگوں اور سامان کو لے جانے میں مدد دیتی ہے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a long curved boat shape. | کشتی کی لمبی خم دار شکل بنائیں۔</li>
+   <li>Draw a stick in the middle. | درمیان میں ایک لکڑی بنائیں۔</li>
+   <li>Add a sail. | بادبان بنائیں۔</li>
+   <li>Draw waves and colour the water blue. | لہریں بنائیں اور پانی نیلا رنگیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 17 -->
+<section class="page" id="l17" style="--accent:#dc8d45;--light:#fff4e9">
+ <span class="lesson-no">Lesson 17</span>
+ <h2>Draw an Ice Cream | آئس کریم بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M105 105 L215 105 L165 210Z" fill="#d9a56d" stroke="#96643b" stroke-width="4"/>
+   <path d="M110 110 L210 110 M125 140 L195 140 M140 170 L180 170" stroke="#99653c" stroke-width="3"/>
+   <circle cx="160" cy="82" r="48" fill="#f59cba" stroke="#b95e7c" stroke-width="4"/>
+   <circle cx="130" cy="95" r="28" fill="#f6d15d" stroke="#c49b3a" stroke-width="3"/>
+   <circle cx="190" cy="95" r="28" fill="#9ac9ed" stroke="#5689b5" stroke-width="3"/>
+  </svg>
+  <small>Three-flavour ice cream | تین رنگوں کی آئس کریم</small>
+ </div>
+ <h3>English</h3>
+ <p>Ice cream is a cold sweet treat. It comes in different flavours and colours. It is often served in a cone or a cup. We can draw ice cream using circles and a triangle.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">آئس کریم ایک ٹھنڈی میٹھی چیز ہے۔ یہ مختلف ذائقوں اور رنگوں میں ملتی ہے۔ اسے عموماً کون یا کپ میں پیش کیا جاتا ہے۔ ہم دائروں اور تکون کی مدد سے آئس کریم کی تصویر بنا سکتے ہیں۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a triangle for the cone. | کون کے لیے تکون بنائیں۔</li>
+   <li>Draw round scoops on top. | اوپر گول آئس کریم بنائیں۔</li>
+   <li>Add small decorations. | چھوٹی سجاوٹ بنائیں۔</li>
+   <li>Colour each scoop differently. | ہر حصے کو الگ رنگ دیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 18 -->
+<section class="page" id="l18" style="--accent:#4d8fc3;--light:#edf7ff">
+ <span class="lesson-no">Lesson 18</span>
+ <h2>Draw an Umbrella | چھتری بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M45 110 Q160 -5 275 110 Q245 95 220 110 Q190 95 160 110 Q130 95 100 110 Q70 95 45 110Z" fill="#e96f9a" stroke="#a84770" stroke-width="4"/>
+   <path d="M160 20V175 Q160 205 190 195" fill="none" stroke="#70533c" stroke-width="7" stroke-linecap="round"/>
+   <path d="M100 110L160 20L220 110" fill="none" stroke="#fff" stroke-width="2"/>
+   <path d="M35 160 L25 175 M270 155 L260 170 M225 180 L215 195" stroke="#51a9dc" stroke-width="4"/>
+  </svg>
+  <small>Umbrella in rain | بارش میں چھتری</small>
+ </div>
+ <h3>English</h3>
+ <p>An umbrella protects us from rain and sunlight. It has a handle and a covering. Umbrellas come in many colours and designs. We can draw one using a curved top and a long handle.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">چھتری ہمیں بارش اور دھوپ سے بچاتی ہے۔ اس کا ایک دستہ اور اوپر کپڑے یا دوسرے مادے کا سایہ دار حصہ ہوتا ہے۔ چھتریاں کئی رنگوں اور ڈیزائنوں کی ہوتی ہیں۔ ہم خم دار اوپری حصے اور لمبے دستے سے چھتری بنا سکتے ہیں۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a big curved top. | اوپر بڑا خم دار حصہ بنائیں۔</li>
+   <li>Divide it into sections. | اسے حصوں میں تقسیم کریں۔</li>
+   <li>Draw a long handle. | لمبا دستہ بنائیں۔</li>
+   <li>Colour the sections. | حصوں میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 19 -->
+<section class="page" id="l19" style="--accent:#459c67;--light:#effff2">
+ <span class="lesson-no">Lesson 19</span>
+ <h2>Draw a Bird | پرندہ بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <ellipse cx="145" cy="120" rx="75" ry="48" fill="#9ac9ee" stroke="#477fae" stroke-width="4"/>
+   <circle cx="205" cy="75" r="36" fill="#9ac9ee" stroke="#477fae" stroke-width="4"/>
+   <path d="M235 70 L275 85 L235 94Z" fill="#f4a447" stroke="#a36b2e" stroke-width="3"/>
+   <circle cx="215" cy="68" r="5" fill="#222"/>
+   <path d="M95 120 L40 80 L55 145Z" fill="#f3c85e" stroke="#b58b38" stroke-width="3"/>
+   <path d="M130 165V195 M165 165V195" stroke="#a16a35" stroke-width="5"/>
+   <path d="M120 195H140 M155 195H175" stroke="#a16a35" stroke-width="4"/>
+  </svg>
+  <small>Little bird | چھوٹا پرندہ</small>
+ </div>
+ <h3>English</h3>
+ <p>A bird has feathers, wings, a beak and two legs. Many birds can fly. Birds build nests and lay eggs. Some birds sing sweetly. We should never harm birds and should protect their nests.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پرندے کے جسم پر پر ہوتے ہیں۔ اس کے پر، چونچ اور دو ٹانگیں ہوتی ہیں۔ بہت سے پرندے اڑ سکتے ہیں۔ پرندے گھونسلے بناتے اور انڈے دیتے ہیں۔ کچھ پرندے خوبصورت آواز میں چہچہاتے ہیں۔ ہمیں پرندوں کو نقصان نہیں پہنچانا چاہیے اور ان کے گھونسلوں کی حفاظت کرنی چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a big oval body. | جسم کے لیے بڑا بیضوی دائرہ بنائیں۔</li>
+   <li>Draw a small round head. | ایک چھوٹا گول سر بنائیں۔</li>
+   <li>Add a beak, wing and tail. | چونچ، پر اور دم بنائیں۔</li>
+   <li>Draw two legs and colour it. | دو ٹانگیں بنائیں اور رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 20 -->
+<section class="page" id="l20" style="--accent:#c78c52;--light:#fff5e9">
+ <span class="lesson-no">Lesson 20</span>
+ <h2>Draw a Cat | بلی بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <circle cx="160" cy="105" r="68" fill="#f0c99a" stroke="#9a754c" stroke-width="4"/>
+   <path d="M105 65 L105 10 L150 48 M170 48 L215 10 L215 65" fill="#f0c99a" stroke="#9a754c" stroke-width="4"/>
+   <circle cx="135" cy="100" r="6" fill="#222"/>
+   <circle cx="185" cy="100" r="6" fill="#222"/>
+   <path d="M150 122 L160 130 L170 122" fill="#e77c9d" stroke="#9b5368" stroke-width="2"/>
+   <path d="M160 130 Q145 150 130 135 M160 130 Q175 150 190 135" fill="none" stroke="#555" stroke-width="3"/>
+   <path d="M95 125L40 115 M95 140L40 145 M225 125L280 115 M225 140L280 145" stroke="#777" stroke-width="3"/>
+  </svg>
+  <small>Sweet little cat | پیاری بلی</small>
+ </div>
+ <h3>English</h3>
+ <p>A cat is a small animal. It has four legs, two ears, a tail and soft fur. Cats can see well in dim light. Many people keep cats as pets. We should give pets food, clean water and proper care.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">بلی ایک چھوٹا جانور ہے۔ اس کی چار ٹانگیں، دو کان، ایک دم اور نرم بال ہوتے ہیں۔ بلی کم روشنی میں بھی اچھی طرح دیکھ سکتی ہے۔ بہت سے لوگ بلی کو پالتو جانور کے طور پر رکھتے ہیں۔ ہمیں پالتو جانوروں کو خوراک، صاف پانی اور مناسب دیکھ بھال دینی چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a big circle. | ایک بڑا دائرہ بنائیں۔</li>
+   <li>Add two pointed ears. | دو نوکیلے کان بنائیں۔</li>
+   <li>Draw eyes, nose and mouth. | آنکھیں، ناک اور منہ بنائیں۔</li>
+   <li>Add whiskers and colour. | مونچھیں بنائیں اور رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 21 -->
+<section class="page" id="l21" style="--accent:#a36dba;--light:#f8f0ff">
+ <span class="lesson-no">Lesson 21</span>
+ <h2>Draw a Rabbit | خرگوش بنائیں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <ellipse cx="160" cy="145" rx="70" ry="60" fill="#eee5dc" stroke="#a69a8e" stroke-width="4"/>
+   <ellipse cx="125" cy="48" rx="22" ry="65" fill="#eee5dc" stroke="#a69a8e" stroke-width="4" transform="rotate(-10 125 48)"/>
+   <ellipse cx="190" cy="48" rx="22" ry="65" fill="#eee5dc" stroke="#a69a8e" stroke-width="4" transform="rotate(10 190 48)"/>
+   <ellipse cx="160" cy="120" rx="45" ry="42" fill="#eee5dc" stroke="#a69a8e" stroke-width="4"/>
+   <circle cx="145" cy="112" r="5" fill="#222"/>
+   <circle cx="175" cy="112" r="5" fill="#222"/>
+   <circle cx="160" cy="130" r="7" fill="#e77b9e"/>
+   <circle cx="235" cy="180" r="22" fill="#fff" stroke="#aaa" stroke-width="3"/>
+  </svg>
+  <small>Little rabbit | چھوٹا خرگوش</small>
+ </div>
+ <h3>English</h3>
+ <p>A rabbit is a small animal with long ears and soft fur. It has four legs and a short tail. Rabbits eat grass and other plants. They can hop and run quickly. We should treat rabbits gently.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">خرگوش ایک چھوٹا جانور ہے جس کے لمبے کان اور نرم بال ہوتے ہیں۔ اس کی چار ٹانگیں اور چھوٹی دم ہوتی ہے۔ خرگوش گھاس اور دوسرے پودے کھاتا ہے۔ یہ اچھل سکتا ہے اور تیزی سے دوڑ سکتا ہے۔ ہمیں خرگوش کے ساتھ نرمی سے پیش آنا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a round face. | گول چہرہ بنائیں۔</li>
+   <li>Draw two long ears. | دو لمبے کان بنائیں۔</li>
+   <li>Add eyes and a nose. | آنکھیں اور ناک بنائیں۔</li>
+   <li>Draw a body and a small tail. | جسم اور چھوٹی دم بنائیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 22 -->
+<section class="page" id="l22" style="--accent:#e19c3b;--light:#fff7e8">
+ <span class="lesson-no">Lesson 22</span>
+ <h2>Smiling Face | مسکراتا چہرہ</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <circle cx="160" cy="108" r="85" fill="#ffd66d" stroke="#d49a37" stroke-width="4"/>
+   <ellipse cx="125" cy="85" rx="8" ry="12" fill="#444"/>
+   <ellipse cx="195" cy="85" rx="8" ry="12" fill="#444"/>
+   <path d="M112 130 Q160 190 208 130" fill="none" stroke="#a34c42" stroke-width="7" stroke-linecap="round"/>
+   <circle cx="100" cy="120" r="10" fill="#f49b9b" opacity=".8"/>
+   <circle cx="220" cy="120" r="10" fill="#f49b9b" opacity=".8"/>
+  </svg>
+  <small>Happy face | خوش چہرہ</small>
+ </div>
+ <h3>English</h3>
+ <p>A face has eyes, a nose, a mouth and ears. We use our eyes to see and our ears to hear. A smile shows happiness. We should be kind and friendly to others.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">چہرے پر آنکھیں، ناک، منہ اور کان ہوتے ہیں۔ ہم آنکھوں سے دیکھتے اور کانوں سے سنتے ہیں۔ مسکراہٹ خوشی کا اظہار کرتی ہے۔ ہمیں دوسروں کے ساتھ مہربانی اور دوستی سے پیش آنا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a big circle. | ایک بڑا دائرہ بنائیں۔</li>
+   <li>Draw two eyes. | دو آنکھیں بنائیں۔</li>
+   <li>Add a small nose. | چھوٹی ناک بنائیں۔</li>
+   <li>Draw a smiling mouth. | مسکراتا ہوا منہ بنائیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 23 -->
+<section class="page" id="l23" style="--accent:#469b65;--light:#effff2">
+ <span class="lesson-no">Lesson 23</span>
+ <h2>House Scenery | گھر کا منظر</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <circle cx="270" cy="35" r="23" fill="#ffd34c"/>
+   <rect x="40" y="115" width="115" height="85" fill="#ffdc9c" stroke="#9a7048" stroke-width="3"/>
+   <path d="M25 118 L98 55 L170 118Z" fill="#e97c66" stroke="#a64d43" stroke-width="3"/>
+   <rect x="85" y="155" width="28" height="45" fill="#9d714d"/>
+   <path d="M0 200H320" stroke="#4a9d56" stroke-width="5"/>
+   <rect x="225" y="130" width="12" height="70" fill="#93613c"/>
+   <circle cx="230" cy="110" r="38" fill="#68bd65"/>
+   <path d="M180 55 Q195 30 215 55" fill="none" stroke="#fff" stroke-width="9"/>
+  </svg>
+  <small>My home and garden | میرا گھر اور باغ</small>
+ </div>
+ <h3>English</h3>
+ <p>A beautiful scene can show a house, a tree, the Sun, clouds and green grass. Nature makes our surroundings beautiful. We should keep our streets and gardens clean.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">ایک خوبصورت منظر میں گھر، درخت، سورج، بادل اور سبز گھاس دکھائی جا سکتی ہے۔ قدرت ہمارے اردگرد کے ماحول کو خوبصورت بناتی ہے۔ ہمیں اپنی گلیوں اور باغوں کو صاف رکھنا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a house. | ایک گھر بنائیں۔</li>
+   <li>Add a tree and the Sun. | درخت اور سورج بنائیں۔</li>
+   <li>Draw clouds and grass. | بادل اور گھاس بنائیں۔</li>
+   <li>Colour the whole scene. | پورے منظر میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 24 -->
+<section class="page" id="l24" style="--accent:#4e91c8;--light:#edf7ff">
+ <span class="lesson-no">Lesson 24</span>
+ <h2>Mountain Scenery | پہاڑوں کا منظر</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <circle cx="265" cy="35" r="24" fill="#ffd34c"/>
+   <path d="M0 175 L85 45 L165 175Z" fill="#8bb5d6" stroke="#547c9b" stroke-width="3"/>
+   <path d="M115 175 L225 20 L320 175Z" fill="#729dc1" stroke="#486f92" stroke-width="3"/>
+   <path d="M85 45 L65 80 L90 70 L110 95 L120 75Z" fill="#fff"/>
+   <path d="M225 20 L200 58 L228 48 L248 70 L255 53Z" fill="#fff"/>
+   <path d="M0 190 Q80 160 160 190 T320 190V220H0Z" fill="#65b76b"/>
+   <path d="M20 180 Q45 160 70 180" fill="none" stroke="#fff" stroke-width="4"/>
+  </svg>
+  <small>Mountains and sky | پہاڑ اور آسمان</small>
+ </div>
+ <h3>English</h3>
+ <p>Mountains are very high areas of land. Some mountains have snow on their tops. Rivers may flow from mountains. We can draw mountains using triangles and add clouds, a Sun and green land.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پہاڑ زمین کے بہت بلند حصے ہوتے ہیں۔ کچھ پہاڑوں کی چوٹیوں پر برف ہوتی ہے۔ پہاڑوں سے دریا بھی نکل سکتے ہیں۔ ہم تکون کی مدد سے پہاڑ بنا سکتے ہیں اور ساتھ بادل، سورج اور سبز زمین بھی بنا سکتے ہیں۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw two big triangles. | دو بڑے تکون بنائیں۔</li>
+   <li>Add snow on the tops. | چوٹیوں پر برف بنائیں۔</li>
+   <li>Draw the Sun and clouds. | سورج اور بادل بنائیں۔</li>
+   <li>Colour the mountains and land. | پہاڑوں اور زمین میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 25 -->
+<section class="page" id="l25" style="--accent:#dc8a3b;--light:#fff4e8">
+ <span class="lesson-no">Lesson 25</span>
+ <h2>Fruit Basket | پھلوں کی ٹوکری</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M75 100 Q160 15 245 100" fill="none" stroke="#9b673f" stroke-width="8"/>
+   <circle cx="115" cy="95" r="32" fill="#e94f50" stroke="#9c3838" stroke-width="3"/>
+   <circle cx="160" cy="75" r="34" fill="#eebd42" stroke="#aa812d" stroke-width="3"/>
+   <circle cx="205" cy="95" r="32" fill="#7ac66d" stroke="#43833c" stroke-width="3"/>
+   <path d="M65 105 L90 195 H230 L255 105Z" fill="#d7a36c" stroke="#95643d" stroke-width="4"/>
+   <path d="M80 135H240 M85 160H235 M95 183H225" stroke="#95643d" stroke-width="3"/>
+  </svg>
+  <small>Basket full of fruits | پھلوں سے بھری ٹوکری</small>
+ </div>
+ <h3>English</h3>
+ <p>A fruit basket holds different fruits. We can put apples, bananas, oranges and grapes in a basket. Fruits give us useful nutrients. We should wash them before eating.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">پھلوں کی ٹوکری میں مختلف پھل رکھے جاتے ہیں۔ ہم ٹوکری میں سیب، کیلے، مالٹے اور انگور رکھ سکتے ہیں۔ پھل ہمیں مفید غذائی اجزا دیتے ہیں۔ انہیں کھانے سے پہلے دھونا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a basket. | ٹوکری بنائیں۔</li>
+   <li>Draw different fruits above it. | اس کے اوپر مختلف پھل بنائیں۔</li>
+   <li>Add leaves and stems. | پتے اور ڈنٹھل بنائیں۔</li>
+   <li>Colour the fruits. | پھلوں میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 26 -->
+<section class="page" id="l26" style="--accent:#3b9c64;--light:#effff2">
+ <span class="lesson-no">Lesson 26</span>
+ <h2>My Garden | میرا باغ</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <circle cx="270" cy="30" r="22" fill="#ffd34c"/>
+   <path d="M0 175 Q100 150 200 180 T320 175V220H0Z" fill="#7bc86e"/>
+   <path d="M70 155V105 M160 155V95 M245 155V110" stroke="#4e9c54" stroke-width="5"/>
+   <g fill="#ef8db1" stroke="#ba5b80" stroke-width="2">
+    <circle cx="70" cy="95" r="20"/><circle cx="160" cy="85" r="20"/><circle cx="245" cy="100" r="20"/>
+   </g>
+   <g fill="#ffd45c">
+    <circle cx="70" cy="95" r="8"/><circle cx="160" cy="85" r="8"/><circle cx="245" cy="100" r="8"/>
+   </g>
+   <path d="M70 130 Q35 110 35 145 Q55 155 70 130 M160 130 Q190 105 195 140 Q180 155 160 130 M245 140 Q220 120 215 150 Q230 160 245 140" fill="#4ba45c"/>
+  </svg>
+  <small>Flowers in a garden | باغ میں پھول</small>
+ </div>
+ <h3>English</h3>
+ <p>A garden is a place where flowers, plants and trees grow. Gardens may have green grass, colourful flowers and butterflies. We should water plants and keep gardens clean. Plants make our world beautiful.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">باغ وہ جگہ ہے جہاں پھول، پودے اور درخت اگتے ہیں۔ باغ میں سبز گھاس، رنگ برنگے پھول اور تتلیاں ہو سکتی ہیں۔ ہمیں پودوں کو پانی دینا اور باغ کو صاف رکھنا چاہیے۔ پودے ہماری دنیا کو خوبصورت بناتے ہیں۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw three flowers. | تین پھول بنائیں۔</li>
+   <li>Add leaves and stems. | پتے اور تنے بنائیں۔</li>
+   <li>Draw grass and a butterfly. | گھاس اور تتلی بنائیں۔</li>
+   <li>Colour the garden. | باغ میں رنگ بھریں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 27 -->
+<section class="page" id="l27" style="--accent:#3295c3;--light:#eaf8ff">
+ <span class="lesson-no">Lesson 27</span>
+ <h2>Under the Sea | سمندر کی دنیا</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 220">
+   <path d="M0 170 Q60 150 120 170 T240 170 T360 170V220H0Z" fill="#69c3e8"/>
+   <ellipse cx="145" cy="95" rx="65" ry="35" fill="#f4b84f" stroke="#a87a30" stroke-width="3"/>
+   <path d="M210 95 L270 55 L270 135Z" fill="#ef8b69" stroke="#a85a42" stroke-width="3"/>
+   <circle cx="105" cy="88" r="6" fill="#222"/>
+   <path d="M60 185 Q50 150 70 130 Q90 150 80 185" fill="#55a76a"/>
+   <circle cx="270" cy="185" r="18" fill="#f08db0"/>
+   <path d="M270 167V145 M250 185H230 M290 185H310 M270 203V215" stroke="#bd6083" stroke-width="5"/>
+   <circle cx="40" cy="40" r="7" fill="#9edcf3"/>
+   <circle cx="65" cy="20" r="5" fill="#9edcf3"/>
+  </svg>
+  <small>Fish and sea life | مچھلی اور سمندری زندگی</small>
+ </div>
+ <h3>English</h3>
+ <p>The sea is home to many living things. Fish, crabs, turtles and other animals live in water. Sea plants grow under the water. We should keep beaches and water clean to protect sea life.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">سمندر بہت سے جانداروں کا گھر ہے۔ مچھلیاں، کیکڑے، کچھوے اور دوسرے جانور پانی میں رہتے ہیں۔ پانی کے اندر آبی پودے بھی اگتے ہیں۔ ہمیں سمندری زندگی کی حفاظت کے لیے ساحلوں اور پانی کو صاف رکھنا چاہیے۔</p>
+ <div class="steps">
+  <ol>
+   <li>Draw a fish. | ایک مچھلی بنائیں۔</li>
+   <li>Add sea plants. | آبی پودے بنائیں۔</li>
+   <li>Draw bubbles and waves. | بلبلے اور لہریں بنائیں۔</li>
+   <li>Colour the water blue. | پانی کو نیلا رنگ دیں۔</li>
+  </ol>
+ </div>
+</section>
+
+<!-- LESSON 28 -->
+<section class="page" id="l28" style="--accent:#8c60c2;--light:#f5efff">
+ <span class="lesson-no">Lesson 28</span>
+ <h2>Shapes Colouring | اشکال میں رنگ بھریں</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 200" stroke="#333" stroke-width="3">
+   <circle cx="60" cy="85" r="42" fill="white"/>
+   <rect x="115" y="43" width="75" height="75" fill="white"/>
+   <path d="M255 38 L210 120 H300Z" fill="white"/>
+   <rect x="25" y="145" width="110" height="35" fill="white"/>
+   <path d="M185 145 L235 125 L285 145 L235 180Z" fill="white"/>
+  </svg>
+  <small>Colour each shape | ہر شکل میں رنگ بھریں</small>
+ </div>
+ <h3>English</h3>
+ <p>Shapes can be coloured in many ways. Use red for the circle, blue for the square, yellow for the triangle and green for the rectangle. Try to colour neatly and stay inside each shape.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">اشکال میں کئی طرح کے رنگ بھرے جا سکتے ہیں۔ دائرے میں سرخ، مربع میں نیلا، تکون میں پیلا اور مستطیل میں سبز رنگ بھریں۔ کوشش کریں کہ رنگ صاف ستھرے طریقے سے بھریں اور شکل کی حد سے باہر نہ جائیں۔</p>
+ <div class="practice">🎨 Teacher Activity: Ask the child to name every shape and its colour. | استاد بچے سے ہر شکل اور اس کے رنگ کا نام پوچھیں۔</div>
+</section>
+
+<!-- LESSON 29 -->
+<section class="page" id="l29" style="--accent:#d65a91;--light:#fff0f6">
+ <span class="lesson-no">Lesson 29</span>
+ <h2>Free Drawing | اپنی پسند کی ڈرائنگ</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 200">
+   <path d="M35 155 Q80 90 130 150 Q180 80 225 140 Q265 100 295 150" fill="none" stroke="#5eaf6a" stroke-width="6"/>
+   <circle cx="80" cy="45" r="25" fill="#ffd34c"/>
+   <path d="M160 30 Q180 10 200 30 Q220 50 200 70 Q180 90 160 70 Q140 50 160 30Z" fill="#e78bb1"/>
+   <path d="M250 45L265 65L285 70L265 85L260 105L245 85L225 80L245 65Z" fill="#8bb9e8"/>
+  </svg>
+  <small>Make your own picture | اپنی تصویر خود بنائیں</small>
+ </div>
+ <h3>English</h3>
+ <p>Every child can be an artist. You can draw anything you like, such as a house, a flower, a tree, a car or your favourite animal. Use your imagination and choose your own colours. There is no single correct way to make your own picture.</p>
+ <h3 class="urdu">اردو</h3>
+ <p class="urdu">ہر بچہ ایک فنکار بن سکتا ہے۔ آپ اپنی پسند کی کوئی بھی تصویر بنا سکتے ہیں، مثلاً گھر، پھول، درخت، گاڑی یا اپنا پسندیدہ جانور۔ اپنی سوچ استعمال کریں اور اپنی پسند کے رنگ منتخب کریں۔ اپنی تصویر بنانے کا صرف ایک ہی درست طریقہ نہیں ہوتا۔</p>
+ <div class="practice">🌟 Draw anything you like on the drawing board below. | نیچے دیے گئے ڈرائنگ بورڈ پر اپنی پسند کی تصویر بنائیں۔</div>
+</section>
+
+<!-- LESSON 30 -->
+<section class="page" id="l30" style="--accent:#8a5bb8;--light:#f5efff">
+ <span class="lesson-no">Lesson 30</span>
+ <h2>Final Practice | آخری مشق</h2>
+ <div class="art">
+  <svg viewBox="0 0 320 200">
+   <circle cx="65" cy="60" r="28" fill="#ffd34c"/>
+   <path d="M120 110 L165 50 L210 110Z" fill="#f18b79" stroke="#a85b50" stroke-width="3"/>
+   <rect x="135" y="110" width="60" height="65" fill="#f4cf91" stroke="#936b3e" stroke-width="3"/>
+   <path d="M245 175V110" stroke="#80552d" stroke-width="7"/>
+   <circle cx="245" cy="90" r="34" fill="#70bf70"/>
+  </svg>
+  <small>Final drawing | آخری تصویر</small>
+ </div>
+ <h3>English Practice</h3>
+ <ol>
+  <li>Draw a circle and colour it red.</li>
+  <li>Draw a house with a triangle roof.</li>
+  <li>Draw a tree with green leaves.</li>
+  <li>Draw a flower with five petals.</li>
+  <li>Draw a fish and colour it.</li>
+  <li>Draw a smiling face.</li>
+  <li>Draw a beautiful garden.</li>
+ </ol>
+ <h3 class="urdu">اردو مشق</h3>
+ <ol class="urdu">
+  <li>ایک دائرہ بنائیں اور اسے سرخ رنگ دیں۔</li>
+  <li>تکون والی چھت کا گھر بنائیں۔</li>
+  <li>سبز پتوں والا درخت بنائیں۔</li>
+  <li>پانچ پنکھڑیوں والا پھول بنائیں۔</li>
+  <li>ایک مچھلی بنائیں اور اس میں رنگ بھریں۔</li>
+  <li>مسکراتا ہوا چہرہ بنائیں۔</li>
+  <li>ایک خوبصورت باغ بنائیں۔</li>
+ </ol>
+ <div class="practice">
+  🏆 Well Done! You have completed your Nursery Drawing Book.
+  <p class="urdu">شاباش! آپ نے نرسری کی ڈرائنگ کی کتاب مکمل کر لی ہے۔</p>
+ </div>
+</section>
+
+<!-- DRAWING BOARD -->
+<section class="page" id="drawingBoard" style="--accent:#d65b91;--light:#fff0f7">
+ <span class="lesson-no">Creative Activity</span>
+ <h2>🎨 My Drawing Board | میرا ڈرائنگ بورڈ</h2>
+ <p>English: Draw anything you like. Choose a colour, adjust the brush size and create your own picture.</p>
+ <p class="urdu">اردو: اپنی پسند کی کوئی بھی تصویر بنائیں۔ رنگ منتخب کریں، برش کا سائز تبدیل کریں اور اپنی تصویر تیار کریں۔</p>
+
+ <div class="drawing-area">
+  <div class="controls">
+   <label>Colour / رنگ:</label>
+   <input type="color" id="brushColor" value="#e74c75">
+   <label>Brush / برش:</label>
+   <input type="range" id="brushSize" min="1" max="30" value="5">
+   <span id="brushValue">5</span>
+  </div>
+
+  <div class="controls">
+   <button class="colorbtn" style="background:red" onclick="setColor('#ff0000')"></button>
+   <button class="colorbtn" style="background:blue" onclick="setColor('#0000ff')"></button>
+   <button class="colorbtn" style="background:green" onclick="setColor('#008000')"></button>
+   <button class="colorbtn" style="background:yellow" onclick="setColor('#ffff00')"></button>
+   <button class="colorbtn" style="background:orange" onclick="setColor('#ff8800')"></button>
+   <button class="colorbtn" style="background:purple" onclick="setColor('#800080')"></button>
+   <button class="colorbtn" style="background:pink" onclick="setColor('#ff69b4')"></button>
+   <button class="colorbtn" style="background:black" onclick="setColor('#000000')"></button>
+  </div>
+
+  <canvas id="drawCanvas" width="900" height="500"></canvas>
+
+  <div class="controls">
+   <button onclick="clearCanvas()">🗑 Clear / صاف کریں</button>
+   <button onclick="undoDraw()">↶ Undo / واپس</button>
+   <button onclick="saveDrawing()">📥 Save PNG / محفوظ کریں</button>
+  </div>
+  <p class="urdu">نوٹ: موبائل پر انگلی یا اسٹائلس سے بھی ڈرائنگ بنائی جا سکتی ہے۔</p>
+ </div>
+</section>
+
+<footer>
+ <h2>THE RISEN HIGH SCHOOL</h2>
+ <p class="urdu">ہر بچہ ایک فنکار ہے</p>
+ <p>Nursery Drawing & Colouring Book</p>
+ <p>Learn • Draw • Colour • Create</p>
+ <p>© The Risen High School</p>
+</footer>
+
+</main>
+
+<script>
+const canvas=document.getElementById("drawCanvas");
+const ctx=canvas.getContext("2d");
+const colorInput=document.getElementById("brushColor");
+const sizeInput=document.getElementById("brushSize");
+const sizeValue=document.getElementById("brushValue");
+
+let drawing=false;
+let lastX=0,lastY=0;
+let undoStack=[];
+
+ctx.fillStyle="#ffffff";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+function saveState(){
+ if(undoStack.length>15)undoStack.shift();
+ undoStack.push(ctx.getImageData(0,0,canvas.width,canvas.height));
+}
+
+function setColor(color){
+ colorInput.value=color;
+}
+
+sizeInput.addEventListener("input",()=>{
+ sizeValue.textContent=sizeInput.value;
+});
+
+function getPosition(e){
+ const rect=canvas.getBoundingClientRect();
+ const x=(e.clientX-rect.left)*(canvas.width/rect.width);
+ const y=(e.clientY-rect.top)*(canvas.height/rect.height);
+ return {x,y};
+}
+
+canvas.addEventListener("pointerdown",e=>{
+ e.preventDefault();
+ saveState();
+ drawing=true;
+ const p=getPosition(e);
+ lastX=p.x;
+ lastY=p.y;
+ canvas.setPointerCapture(e.pointerId);
+});
+
+canvas.addEventListener("pointermove",e=>{
+ if(!drawing)return;
+ e.preventDefault();
+ const p=getPosition(e);
+ ctx.beginPath();
+ ctx.moveTo(lastX,lastY);
+ ctx.lineTo(p.x,p.y);
+ ctx.strokeStyle=colorInput.value;
+ ctx.lineWidth=Number(sizeInput.value);
+ ctx.lineCap="round";
+ ctx.lineJoin="round";
+ ctx.stroke();
+ lastX=p.x;
+ lastY=p.y;
+});
+
+function stopDrawing(){
+ drawing=false;
+}
+canvas.addEventListener("pointerup",stopDrawing);
+canvas.addEventListener("pointercancel",stopDrawing);
+canvas.addEventListener("pointerleave",stopDrawing);
+
+function clearCanvas(){
+ saveState();
+ ctx.fillStyle="#ffffff";
+ ctx.fillRect(0,0,canvas.width,canvas.height);
+}
+
+function undoDraw(){
+ if(undoStack.length===0)return;
+ const previous=undoStack.pop();
+ ctx.putImageData(previous,0,0);
+}
+
+function saveDrawing(){
+ const link=document.createElement("a");
+ link.download="Risen-Nursery-Drawing.png";
+ link.href=canvas.toDataURL("image/png");
+ link.click();
+}
+</script>
+
+</body>
+</html>
