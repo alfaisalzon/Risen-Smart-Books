@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123e78">
+<meta name="description" content="Class 1 Urdu Digital Book - The Risen High School">
+<title>Class 1 Urdu | The Risen High School</title>
+
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#eef3fa;
+ color:#26364a;
+ font-family:Jameel,serif;
+}
+header{
+ background:linear-gradient(135deg,#102f61,#176bb5,#22a5bd);
+ color:white;
+ text-align:center;
+ padding:17px 10px;
+}
+header h1{font-size:27px;margin:0}
+header p{font-size:17px;margin:3px}
+.toolbar{
+ position:sticky;
+ top:0;
+ z-index:10;
+ background:white;
+ padding:10px;
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:8px;
+ box-shadow:0 3px 12px #0002;
+}
+button{
+ font-family:Jameel,serif;
+ font-size:17px;
+ border:0;
+ padding:8px 17px;
+ border-radius:10px;
+ background:#1769b5;
+ color:white;
+ cursor:pointer;
+}
+button:active{transform:scale(.97)}
+.container{max-width:950px;margin:auto;padding:12px}
+.cover{
+ min-height:560px;
+ border-radius:24px;
+ padding:25px 15px;
+ text-align:center;
+ color:white;
+ overflow:hidden;
+ position:relative;
+ background:linear-gradient(145deg,#102f70,#187ec1,#47c7c4);
+ box-shadow:0 8px 25px #0002;
+}
+.cover:before{
+ content:"";
+ position:absolute;
+ width:260px;height:260px;
+ background:#ffffff18;
+ border-radius:50%;
+ top:-80px;right:-65px;
+}
+.cover:after{
+ content:"";
+ position:absolute;
+ width:230px;height:230px;
+ background:#ffffff20;
+ border-radius:50%;
+ bottom:-90px;left:-50px;
+}
+.cover-content{position:relative;z-index:1}
+.school-name{
+ font-size:25px;
+ font-weight:bold;
+ margin-top:12px;
+}
+.cover-image{
+ margin:32px auto 20px;
+ width:190px;height:170px;
+ background:#ffffffeb;
+ border-radius:30px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-size:100px;
+ box-shadow:0 7px 20px #0002;
+}
+.cover h2{font-size:47px;margin:8px 0}
+.cover h3{font-size:29px;margin:0}
+.cover-label{
+ display:inline-block;
+ margin-top:20px;
+ padding:12px 28px;
+ border-radius:30px;
+ background:#fff;
+ color:#15518b;
+ font-size:22px;
+}
+.cover-footer{
+ margin-top:27px;
+ font-size:20px;
+}
+.book-info{
+ background:white;
+ border-radius:18px;
+ padding:20px;
+ margin:20px 0;
+ box-shadow:0 4px 15px #0001;
+}
+.book-info h2{
+ color:#155b9d;
+ text-align:center;
+}
+.contents{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:10px;
+}
+.contents button{
+ text-align:right;
+ background:#edf5ff;
+ color:#174c82;
+ border:1px solid #d2e3f7;
+ width:100%;
+}
+.contents button:hover{background:#dcecff}
+.lesson{
+ background:white;
+ border-radius:18px;
+ padding:20px;
+ margin:20px 0;
+ box-shadow:0 4px 16px #0001;
+ border-top:7px solid var(--c,#1685bd);
+ page-break-inside:avoid;
+}
+.lesson h2{
+ color:var(--c,#1769b5);
+ font-size:29px;
+ margin:0 0 12px;
+}
+.lesson h3{
+ font-size:23px;
+ color:#167c72;
+ margin:15px 0 5px;
+}
+.lesson p{
+ font-size:21px;
+ line-height:2.05;
+ margin:9px 0;
+}
+.english{
+ direction:ltr;
+ text-align:left;
+ font-family:Arial,sans-serif;
+ font-size:17px!important;
+ line-height:1.8!important;
+ color:#52647a;
+}
+.picture{
+ border-radius:18px;
+ padding:18px;
+ margin:15px 0;
+ text-align:center;
+ font-size:80px;
+ background:var(--bg,#edf6ff);
+}
+.words{
+ display:flex;
+ flex-wrap:wrap;
+ gap:9px;
+ justify-content:center;
+}
+.word{
+ padding:8px 16px;
+ background:#fff4d7;
+ border:2px solid #efd18b;
+ border-radius:12px;
+ font-size:23px;
+}
+.exercise{
+ background:#f0f7ff;
+ border-radius:15px;
+ padding:15px;
+ margin-top:16px;
+}
+.exercise h3{color:#175a9a}
+.exercise p{font-size:20px}
+.answer{
+ background:#e7f7ed;
+ padding:9px 13px;
+ border-radius:10px;
+ font-size:19px;
+ margin:7px 0;
+}
+.activity{
+ background:#fff6e9;
+ border-right:5px solid #eea33b;
+ border-radius:10px;
+ padding:12px;
+ margin-top:12px;
+ font-size:19px;
+ line-height:1.9;
+}
+.number{
+ display:inline-block;
+ background:var(--c,#1769b5);
+ color:white;
+ padding:3px 13px;
+ border-radius:30px;
+ font-size:18px;
+ margin-bottom:8px;
+}
+footer{
+ background:#102f61;
+ color:white;
+ text-align:center;
+ padding:22px;
+ margin-top:30px;
+ font-size:19px;
+}
+@media(max-width:600px){
+ .cover{min-height:480px}
+ .cover h2{font-size:39px}
+ .lesson{padding:14px}
+ .lesson p{font-size:19px}
+ .picture{font-size:65px}
+}
+@media print{
+ header,.toolbar,.book-info,footer{display:none!important}
+ body{background:white}
+ .container{padding:0}
+ .cover{
+  min-height:100vh;
+  page-break-after:always;
+  box-shadow:none;
+ }
+ .lesson{
+  box-shadow:none;
+  border:1px solid #ddd;
+  page-break-inside:avoid;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>The Risen High School</h1>
+<p>رائزن ڈیجیٹل لائبریری</p>
+<p>جماعت اول — اردو</p>
+</header>
+
+<div class="toolbar">
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})">🏠 سرورق</button>
+<button onclick="document.getElementById('contents').scrollIntoView({behavior:'smooth'})">📚 فہرست</button>
+<button onclick="window.print()">🖨️ پرنٹ / PDF</button>
+</div>
+
+<div class="container">
+
+<!-- FRONT COVER -->
+<section class="cover">
+<div class="cover-content">
+<div class="school-name">📚 The Risen High School</div>
+<div class="cover-image">📖🌸✏️</div>
+<h2>اردو کی کتاب</h2>
+<h3>جماعت اول</h3>
+<div class="cover-label">پیارے بچوں کے لیے</div>
+<div class="cover-footer">
+آسان سبق • خوبصورت الفاظ • دلچسپ مشقیں
+<br>
+تعلیم روشنی ہے
+</div>
+</div>
+</section>
+
+<!-- BOOK INTRODUCTION -->
+<section class="book-info">
+<h2>میری اردو کی کتاب</h2>
+<p>
+پیارے بچو! یہ آپ کی اردو کی کتاب ہے۔
+اس کتاب میں آپ دلچسپ کہانیاں، سبق، نظمیں، حروفِ تہجی اور نئے الفاظ سیکھیں گے۔
+اردو ہماری پیاری زبان ہے۔
+ہم اس زبان میں بات کرتے، پڑھتے اور لکھتے ہیں۔
+ہمیں روزانہ اردو پڑھنے اور لکھنے کی مشق کرنی چاہیے۔
+</p>
+<p>
+اس کتاب کو صاف ستھرا رکھیں۔
+ہر سبق غور سے پڑھیں۔
+مشکل الفاظ اپنے استاد سے پوچھیں۔
+اپنی کاپی میں روزانہ خوبصورت لکھائی کی مشق کریں۔
+</p>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<section class="book-info" id="contents">
+<h2>📚 فہرستِ مضامین</h2>
+<div class="contents">
+<button onclick="go('l1')">سبق 1 — میرا تعارف</button>
+<button onclick="go('l2')">سبق 2 — میرا خاندان</button>
+<button onclick="go('l3')">سبق 3 — ہمارا گھر</button>
+<button onclick="go('l4')">سبق 4 — میرا اسکول</button>
+<button onclick="go('l5')">سبق 5 — میرا وطن</button>
+<button onclick="go('l6')">سبق 6 — اللہ تعالیٰ</button>
+<button onclick="go('l7')">سبق 7 — صفائی</button>
+<button onclick="go('l8')">سبق 8 — ہمارے جانور</button>
+<button onclick="go('l9')">سبق 9 — پھل اور سبزیاں</button>
+<button onclick="go('l10')">سبق 10 — اچھے اخلاق</button>
+<button onclick="go('l11')">سبق 11 — درخت اور پودے</button>
+<button onclick="go('l12')">سبق 12 — میرا روزانہ معمول</button>
+<button onclick="go('l13')">سبق 13 — پانی کی اہمیت</button>
+<button onclick="go('l14')">سبق 14 — ہمارے موسم</button>
+<button onclick="go('l15')">سبق 15 — وقت کی پابندی</button>
+<button onclick="go('poem1')">نظم — صبح کا وقت</button>
+<button onclick="go('poem2')">نظم — میرا وطن</button>
+<button onclick="go('alphabet')">حروفِ تہجی</button>
+<button onclick="go('grammar')">آسان قواعد</button>
+<button onclick="go('test')">سالانہ امتحان</button>
+</div>
+</section>
+
+<!-- LESSON 1 -->
+<section class="lesson" id="l1" style="--c:#e45b84">
+<span class="number">سبق نمبر 1</span>
+<h2>میرا تعارف</h2>
+<div class="picture" style="--bg:#fff0f5">👦🏻👧🏻</div>
+<p>
+میرا نام علی ہے۔ میں ایک اچھا بچہ ہوں۔
+میں جماعت اول میں پڑھتا ہوں۔
+میری عمر چھ سال ہے۔
+میں روزانہ صبح سویرے اٹھتا ہوں۔
+منہ ہاتھ دھوتا ہوں اور دانت صاف کرتا ہوں۔
+اس کے بعد ناشتہ کرتا ہوں اور اسکول جانے کے لیے تیار ہوتا ہوں۔
+</p>
+<p>
+مجھے پڑھنا اور لکھنا بہت پسند ہے۔
+میں اپنے استاد کی بات غور سے سنتا ہوں۔
+میں اپنی کتابوں اور کاپیوں کو صاف رکھتا ہوں۔
+میں روزانہ اپنا گھر کا کام مکمل کرتا ہوں۔
+میں اپنے دوستوں کے ساتھ محبت سے رہتا ہوں۔
+میں کسی کو تنگ نہیں کرتا اور ہمیشہ سچ بولنے کی کوشش کرتا ہوں۔
+</p>
+<p>
+ہر بچے کا ایک نام ہوتا ہے۔
+ہمیں اپنا نام، والد کا نام اور اسکول کا نام یاد رکھنا چاہیے۔
+اپنا تعارف کرواتے وقت ہمیں صاف اور مکمل جملوں میں بات کرنی چاہیے۔
+</p>
+<h3>نئے الفاظ</h3>
+<div class="words">
+<span class="word">تعارف</span><span class="word">طالب علم</span>
+<span class="word">استاد</span><span class="word">کتاب</span>
+<span class="word">دوست</span><span class="word">محنت</span>
+</div>
+<p class="english">English: My Introduction — My name is Ali. I study in Class One. I love reading and writing.</p>
+<div class="exercise">
+<h3>سوالات و جوابات</h3>
+<p>سوال: بچے کا نام کیا ہے؟</p>
+<div class="answer">جواب: بچے کا نام علی ہے۔</div>
+<p>سوال: علی کس جماعت میں پڑھتا ہے؟</p>
+<div class="answer">جواب: علی جماعت اول میں پڑھتا ہے۔</div>
+<p>سوال: علی کو کیا پسند ہے؟</p>
+<div class="answer">جواب: علی کو پڑھنا اور لکھنا پسند ہے۔</div>
+<h3>خالی جگہ پُر کریں</h3>
+<p>1۔ میرا نام ______ ہے۔</p>
+<p>2۔ میں جماعت ______ میں پڑھتا ہوں۔</p>
+<p>3۔ مجھے ______ پسند ہے۔</p>
+<div class="activity">سرگرمی: بچے اپنا نام، عمر اور اسکول کا نام زبانی بتائیں۔</div>
+</div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="lesson" id="l2" style="--c:#159c91">
+<span class="number">سبق نمبر 2</span>
+<h2>میرا خاندان</h2>
+<div class="picture" style="--bg:#eafff8">👨‍👩‍👧‍👦🏡</div>
+<p>
+خاندان ان لوگوں کو کہتے ہیں جو آپس میں رشتے کے ذریعے ایک دوسرے سے جڑے ہوتے ہیں۔
+خاندان میں والد، والدہ، بہن، بھائی، دادا، دادی، نانا اور نانی شامل ہو سکتے ہیں۔
+خاندان کے افراد ایک دوسرے سے محبت کرتے ہیں۔
+وہ خوشی اور مشکل کے وقت ایک دوسرے کا ساتھ دیتے ہیں۔
+</p>
+<p>
+میرے والد میرے لیے محنت کرتے ہیں۔
+میری والدہ میری دیکھ بھال کرتی ہیں۔
+میرے بہن بھائی میرے ساتھ کھیلتے ہیں۔
+دادا دادی ہمیں پیاری پیاری باتیں اور اچھی نصیحتیں بتاتے ہیں۔
+ہمیں اپنے والدین اور بزرگوں کا احترام کرنا چاہیے۔
+</p>
+<p>
+ایک اچھا خاندان وہ ہوتا ہے جس کے افراد ایک دوسرے کی مدد کرتے ہیں۔
+ہمیں گھر کے چھوٹے چھوٹے کاموں میں بھی مدد کرنی چاہیے۔
+اپنی چیزیں ترتیب سے رکھنی چاہئیں۔
+گھر میں لڑائی جھگڑا نہیں کرنا چاہیے بلکہ محبت اور امن سے رہنا چاہیے۔
+</p>
+<h3>رشتوں کے نام</h3>
+<div class="words">
+<span class="word">والد</span><span class="word">والدہ</span>
+<span class="word">بھائی</span><span class="word">بہن</span>
+<span class="word">دادا</span><span class="word">دادی</span>
+<span class="word">نانا</span><span class="word">نانی</span>
+</div>
+<p class="english">English: My Family — My family loves me. We help one another and live together happily.</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ خاندان کسے کہتے ہیں؟</p>
+<p>2۔ ہماری دیکھ بھال کون کرتا ہے؟</p>
+<p>3۔ ہمیں اپنے خاندان کے ساتھ کیسے رہنا چاہیے؟</p>
+<h3>درست یا غلط</h3>
+<p>1۔ ہمیں والدین کا احترام کرنا چاہیے۔ ______</p>
+<p>2۔ ہمیں گھر میں لڑائی کرنی چاہیے۔ ______</p>
+<p>3۔ خاندان کے افراد ایک دوسرے کی مدد کرتے ہیں۔ ______</p>
+<div class="activity">سرگرمی: اپنے خاندان کے افراد کے نام بتائیں اور ان کے رشتے لکھیں۔</div>
+</div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="lesson" id="l3" style="--c:#e99b26">
+<span class="number">سبق نمبر 3</span>
+<h2>ہمارا گھر</h2>
+<div class="picture" style="--bg:#fff7df">🏠🌳🌼</div>
+<p>
+گھر وہ جگہ ہے جہاں ہم اپنے خاندان کے ساتھ رہتے ہیں۔
+گھر ہمیں دھوپ، بارش، سردی اور گرمی سے بچاتا ہے۔
+ہم گھر میں آرام کرتے ہیں، کھانا کھاتے ہیں اور اپنے خاندان کے ساتھ وقت گزارتے ہیں۔
+ہر انسان کے لیے اس کا گھر بہت اہم ہوتا ہے۔
+</p>
+<p>
+گھر میں مختلف کمرے ہوتے ہیں۔
+سونے کا کمرہ آرام کرنے کے لیے ہوتا ہے۔
+باورچی خانے میں کھانا پکایا جاتا ہے۔
+غسل خانے میں ہم نہاتے اور صفائی کرتے ہیں۔
+بیٹھک میں مہمانوں کو بٹھایا جاتا ہے۔
+گھر میں دروازے، کھڑکیاں اور چھت بھی ہوتی ہے۔
+</p>
+<p>
+ہمیں اپنے گھر کو صاف ستھرا رکھنا چاہیے۔
+کھیلنے کے بعد کھلونے اپنی جگہ پر رکھنے چاہئیں۔
+کچرا ہمیشہ کوڑے دان میں ڈالنا چاہیے۔
+گھر کی دیواروں اور دروازوں کو خراب نہیں کرنا چاہیے۔
+صاف گھر میں رہنے سے ہمیں اچھا محسوس ہوتا ہے۔
+</p>
+<div class="words">
+<span class="word">کمرہ</span><span class="word">دروازہ</span>
+<span class="word">کھڑکی</span><span class="word">چھت</span>
+<span class="word">باورچی خانہ</span>
+</div>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ گھر ہمیں کن چیزوں سے بچاتا ہے؟</p>
+<p>2۔ کھانا کہاں پکایا جاتا ہے؟</p>
+<p>3۔ ہمیں کچرا کہاں ڈالنا چاہیے؟</p>
+<h3>جملے مکمل کریں</h3>
+<p>1۔ ہمارا گھر ______ جگہ ہے۔</p>
+<p>2۔ کھانا ______ میں پکایا جاتا ہے۔</p>
+<p>3۔ ہمیں گھر کو ______ رکھنا چاہیے۔</p>
+</div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="lesson" id="l4" style="--c:#7954c8">
+<span class="number">سبق نمبر 4</span>
+<h2>میرا اسکول</h2>
+<div class="picture" style="--bg:#f1edff">🏫🎒📚</div>
+<p>
+اسکول علم حاصل کرنے کی جگہ ہے۔
+بچے اسکول میں پڑھنا، لکھنا، گنتی کرنا اور اچھی عادتیں سیکھتے ہیں۔
+اسکول میں استاد بچوں کو پیار سے پڑھاتے ہیں۔
+استاد ہمیں اچھی باتیں سکھاتے ہیں۔
+وہ ہمیں محنت، سچائی اور نظم و ضبط کی اہمیت بتاتے ہیں۔
+</p>
+<p>
+میں روزانہ وقت پر اسکول جاتا ہوں۔
+میں اپنا بستہ، کتابیں، کاپیاں اور پنسل ساتھ لے کر جاتا ہوں۔
+اسکول پہنچ کر اپنے استاد کو سلام کرتا ہوں۔
+کلاس میں خاموشی سے بیٹھتا ہوں اور سبق غور سے سنتا ہوں۔
+جب استاد سوال پوچھتے ہیں تو میں ہاتھ کھڑا کرکے جواب دیتا ہوں۔
+</p>
+<p>
+اسکول میں بہت سے بچے میرے ساتھ پڑھتے ہیں۔
+ہم ایک دوسرے کے دوست ہیں۔
+ہم کھیل کے میدان میں کھیلتے ہیں اور کلاس میں مل کر کام کرتے ہیں۔
+ہمیں اسکول کی عمارت، فرنیچر اور پودوں کا خیال رکھنا چاہیے۔
+</p>
+<p class="english">English: My School — My school is a place of learning. I respect my teachers and love my school.</p>
+<div class="exercise">
+<h3>سوالات و جوابات</h3>
+<p>سوال: اسکول میں ہمیں کون پڑھاتا ہے؟</p>
+<div class="answer">جواب: اسکول میں استاد ہمیں پڑھاتے ہیں۔</div>
+<p>سوال: ہم اسکول میں کیا سیکھتے ہیں؟</p>
+<div class="answer">جواب: ہم پڑھنا، لکھنا اور اچھی عادتیں سیکھتے ہیں۔</div>
+<p>سوال: ہمیں اسکول کب جانا چاہیے؟</p>
+<div class="answer">جواب: ہمیں وقت پر اسکول جانا چاہیے۔</div>
+</div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="lesson" id="l5" style="--c:#159447">
+<span class="number">سبق نمبر 5</span>
+<h2>میرا وطن پاکستان</h2>
+<div class="picture" style="--bg:#e8fff0">🇵🇰🌙⭐</div>
+<p>
+پاکستان ہمارا پیارا وطن ہے۔
+پاکستان 14 اگست 1947ء کو آزاد ہوا۔
+ہمارے ملک کا نام پاکستان ہے۔
+پاکستان کا دارالحکومت اسلام آباد ہے۔
+پاکستان کا قومی پرچم سبز اور سفید رنگ کا ہے۔
+اس پر چاند اور ستارہ بھی بنا ہوا ہے۔
+</p>
+<p>
+پاکستان ایک خوبصورت ملک ہے۔
+یہاں بلند پہاڑ، بڑے دریا، سرسبز میدان اور خوبصورت باغات ہیں۔
+ہمارے ملک میں مختلف زبانیں بولی جاتی ہیں۔
+پاکستان کے لوگ محنتی اور مہمان نواز ہیں۔
+ہمارے ملک میں بہت سے خوبصورت شہر اور گاؤں ہیں۔
+</p>
+<p>
+ہمیں اپنے وطن سے محبت کرنی چاہیے۔
+ہم اچھے شہری بن کر ملک کی خدمت کر سکتے ہیں۔
+ہمیں تعلیم حاصل کرنی چاہیے، صفائی کا خیال رکھنا چاہیے اور دوسروں کے ساتھ اچھا سلوک کرنا چاہیے۔
+قومی پرچم کا احترام کرنا بھی ہماری ذمہ داری ہے۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ ہمارے وطن کا نام کیا ہے؟</p>
+<p>2۔ پاکستان کب آزاد ہوا؟</p>
+<p>3۔ پاکستان کا دارالحکومت کون سا ہے؟</p>
+<p>4۔ قومی پرچم کے رنگ کون سے ہیں؟</p>
+<h3>خالی جگہیں</h3>
+<p>1۔ پاکستان ہمارا ______ وطن ہے۔</p>
+<p>2۔ پاکستان کا دارالحکومت ______ ہے۔</p>
+<p>3۔ پاکستان ______ کو آزاد ہوا۔</p>
+</div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="lesson" id="l6" style="--c:#a17a22">
+<span class="number">سبق نمبر 6</span>
+<h2>اللہ تعالیٰ</h2>
+<div class="picture" style="--bg:#fff9df">🌙⭐🕌</div>
+<p>
+اللہ تعالیٰ ہمارا خالق ہے۔
+اس نے ہمیں پیدا کیا اور بے شمار نعمتیں عطا فرمائیں۔
+اللہ تعالیٰ نے ہمیں آنکھیں، کان، ہاتھ اور پاؤں دیے۔
+ہم اپنی آنکھوں سے دیکھتے، کانوں سے سنتے اور ہاتھوں سے کام کرتے ہیں۔
+</p>
+<p>
+اللہ تعالیٰ نے ہمارے لیے سورج، چاند، ستارے، پانی، ہوا، درخت اور پھل پیدا کیے۔
+ہمیں اللہ تعالیٰ کی نعمتوں کا شکر ادا کرنا چاہیے۔
+ہمیں اچھے کام کرنے چاہئیں، سچ بولنا چاہیے اور دوسروں کے ساتھ بھلائی کرنی چاہیے۔
+</p>
+<p>
+ہم نماز پڑھتے ہیں اور اللہ تعالیٰ سے دعا مانگتے ہیں۔
+دعا میں ہم علم، صحت اور کامیابی مانگتے ہیں۔
+ہمیں اپنے والدین کے لیے بھی دعا کرنی چاہیے۔
+ہمیشہ اچھے کام کرنے چاہئیں اور دوسروں کو تکلیف نہیں دینی چاہیے۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ ہمارا خالق کون ہے؟</p>
+<p>2۔ اللہ تعالیٰ نے ہمیں کون سی نعمتیں دی ہیں؟</p>
+<p>3۔ ہمیں اللہ تعالیٰ کا شکر کیسے ادا کرنا چاہیے؟</p>
+</div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="lesson" id="l7" style="--c:#169db1">
+<span class="number">سبق نمبر 7</span>
+<h2>صفائی کی اہمیت</h2>
+<div class="picture" style="--bg:#e7fbff">🧼🪥🚿</div>
+<p>
+صفائی اچھی صحت کے لیے بہت ضروری ہے۔
+ہمیں روزانہ نہانا، دانت صاف کرنا اور ہاتھ دھونا چاہیے۔
+کھانا کھانے سے پہلے اور بیت الخلا استعمال کرنے کے بعد ہاتھ صابن سے دھونے چاہئیں۔
+صاف پانی پینا چاہیے اور کھانے کو ڈھانپ کر رکھنا چاہیے۔
+</p>
+<p>
+ہمیں صاف کپڑے پہننے چاہئیں۔
+ناخن وقت پر کاٹنے چاہئیں اور بالوں کو صاف رکھنا چاہیے۔
+اپنے جوتے بھی صاف رکھنے چاہئیں۔
+اپنے گھر، اسکول اور گلی کو صاف رکھنا ہماری ذمہ داری ہے۔
+</p>
+<p>
+کچرا ہمیشہ کوڑے دان میں ڈالیں۔
+پانی کو ضائع نہ کریں۔
+صاف ماحول میں رہنے سے ہم بیماریوں سے بچنے میں مدد حاصل کرتے ہیں۔
+صفائی ایک اچھی عادت ہے جسے ہمیں ہمیشہ اپنانا چاہیے۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ کھانا کھانے سے پہلے کیا کرنا چاہیے؟</p>
+<p>2۔ کچرا کہاں ڈالنا چاہیے؟</p>
+<p>3۔ ہمیں روزانہ کون کون سی صفائی کرنی چاہیے؟</p>
+</div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="lesson" id="l8" style="--c:#d46b35">
+<span class="number">سبق نمبر 8</span>
+<h2>ہمارے جانور</h2>
+<div class="picture" style="--bg:#fff0e6">🐄🐈🐐🐇</div>
+<p>
+اس دنیا میں بہت سے جانور رہتے ہیں۔
+کچھ جانور ہمارے گھروں میں رہتے ہیں اور کچھ جنگلوں میں پائے جاتے ہیں۔
+گائے، بکری، بھینس، بلی، کتا اور خرگوش عام جانور ہیں۔
+شیر، ہاتھی، زرافہ اور ریچھ جنگلی جانور ہیں۔
+</p>
+<p>
+گائے ہمیں دودھ دیتی ہے۔
+بکری بھی دودھ دیتی ہے۔
+گھوڑا سواری اور سامان لے جانے کے کام آتا ہے۔
+کتا گھر کی حفاظت میں مدد دے سکتا ہے۔
+بلی چوہے پکڑتی ہے۔
+خرگوش ایک پیارا جانور ہے جس کے لمبے کان ہوتے ہیں۔
+</p>
+<p>
+جانور بھی اللہ تعالیٰ کی مخلوق ہیں۔
+ہمیں ان پر رحم کرنا چاہیے۔
+انہیں بلاوجہ تنگ نہیں کرنا چاہیے۔
+پالتو جانوروں کو مناسب خوراک اور پانی دینا چاہیے۔
+ہمیں جانوروں کے ساتھ نرمی اور اچھا سلوک کرنا چاہیے۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ گائے ہمیں کیا دیتی ہے؟</p>
+<p>2۔ چار جنگلی جانوروں کے نام لکھیں۔</p>
+<p>3۔ ہمیں جانوروں کے ساتھ کیسا سلوک کرنا چاہیے؟</p>
+</div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="lesson" id="l9" style="--c:#d64b67">
+<span class="number">سبق نمبر 9</span>
+<h2>پھل اور سبزیاں</h2>
+<div class="picture" style="--bg:#fff0f1">🍎🍌🍇🥕🥒</div>
+<p>
+پھل اور سبزیاں ہماری صحت کے لیے بہت مفید ہیں۔
+پھلوں میں سیب، آم، کیلا، انگور، مالٹا اور امرود شامل ہیں۔
+سبزیوں میں آلو، گاجر، مٹر، پالک، ٹماٹر اور کھیرا شامل ہیں۔
+</p>
+<p>
+پھلوں میں قدرتی غذائیت ہوتی ہے۔
+سبزیاں بھی ہمارے جسم کو طاقت دیتی ہیں۔
+ہمیں مختلف پھل اور سبزیاں کھانی چاہئیں۔
+پھل اور سبزیاں کھانے سے ہمارے جسم کو ضروری غذائی اجزا ملتے ہیں۔
+</p>
+<p>
+پھل کھانے سے پہلے انہیں صاف پانی سے دھونا چاہیے۔
+سبزیوں کو بھی اچھی طرح دھو کر پکانا چاہیے۔
+ہمیں کھانے کو ضائع نہیں کرنا چاہیے۔
+ہمیشہ صاف اور صحت مند غذا کھانی چاہیے۔
+</p>
+<div class="exercise">
+<h3>الفاظ یاد کریں</h3>
+<div class="words">
+<span class="word">سیب</span><span class="word">آم</span>
+<span class="word">کیلا</span><span class="word">گاجر</span>
+<span class="word">آلو</span><span class="word">ٹماٹر</span>
+</div>
+<h3>سوالات</h3>
+<p>1۔ پانچ پھلوں کے نام لکھیں۔</p>
+<p>2۔ چار سبزیوں کے نام لکھیں۔</p>
+<p>3۔ پھل کھانے سے پہلے کیا کرنا چاہیے؟</p>
+</div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="lesson" id="l10" style="--c:#8060bd">
+<span class="number">سبق نمبر 10</span>
+<h2>اچھے اخلاق</h2>
+<div class="picture" style="--bg:#f3edff">🤝💗🌷</div>
+<p>
+اچھے اخلاق انسان کی اچھی عادتوں کو کہتے ہیں۔
+ہمیں ہمیشہ سچ بولنا چاہیے اور دوسروں سے نرمی سے بات کرنی چاہیے۔
+والدین، اساتذہ اور بزرگوں کا احترام کرنا چاہیے۔
+چھوٹے بچوں سے پیار کرنا چاہیے۔
+</p>
+<p>
+جب ہم کسی سے ملیں تو سلام کریں۔
+کسی سے چیز لیں تو شکریہ ادا کریں۔
+غلطی ہو جائے تو معافی مانگیں۔
+کسی ضرورت مند کی مدد کریں اور کسی کا مذاق نہ اڑائیں۔
+</p>
+<p>
+اچھے اخلاق سے لوگ ہم سے محبت کرتے ہیں۔
+ہمیں لڑائی جھگڑے سے بچنا چاہیے۔
+اپنے دوستوں کے ساتھ چیزیں بانٹنی چاہئیں۔
+وعدہ پورا کرنا اور دوسروں کی بات غور سے سننا بھی اچھی عادت ہے۔
+</p>
+<div class="words">
+<span class="word">السلام علیکم</span>
+<span class="word">شکریہ</span>
+<span class="word">معاف کیجیے</span>
+<span class="word">براہِ کرم</span>
+</div>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ اچھے اخلاق کسے کہتے ہیں؟</p>
+<p>2۔ ہمیں بزرگوں کے ساتھ کیسا سلوک کرنا چاہیے؟</p>
+<p>3۔ غلطی ہو جائے تو کیا کہنا چاہیے؟</p>
+</div>
+</section>
+
+<!-- LESSON 11 -->
+<section class="lesson" id="l11" style="--c:#398c4b">
+<span class="number">سبق نمبر 11</span>
+<h2>درخت اور پودے</h2>
+<div class="picture" style="--bg:#edffeb">🌳🌱🌻</div>
+<p>
+درخت اور پودے ہماری زندگی کے لیے بہت ضروری ہیں۔
+پودے ہمیں پھل، پھول، لکڑی اور سایہ دیتے ہیں۔
+درخت ہوا کو صاف رکھنے میں مدد دیتے ہیں۔
+بہت سے پرندے درختوں پر گھونسلے بناتے ہیں۔
+</p>
+<p>
+ایک پودے کو بڑھنے کے لیے پانی، ہوا اور روشنی کی ضرورت ہوتی ہے۔
+پودے کی جڑیں زمین میں ہوتی ہیں۔
+تنا پودے کو سہارا دیتا ہے اور پتے اس کی نشوونما میں مدد کرتے ہیں۔
+کچھ پودوں پر خوبصورت پھول کھلتے ہیں اور کچھ پر پھل لگتے ہیں۔
+</p>
+<p>
+ہمیں درختوں کی حفاظت کرنی چاہیے۔
+نئے پودے لگانے چاہئیں اور انہیں باقاعدگی سے پانی دینا چاہیے۔
+بلاوجہ درخت نہیں کاٹنے چاہئیں۔
+درخت ہمارے ماحول کو خوبصورت بناتے ہیں۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ درخت ہمیں کیا دیتے ہیں؟</p>
+<p>2۔ پودے کو بڑھنے کے لیے کن چیزوں کی ضرورت ہوتی ہے؟</p>
+<p>3۔ ہمیں پودوں کی حفاظت کیسے کرنی چاہیے؟</p>
+<div class="activity">سرگرمی: ایک چھوٹا پودا لگائیں اور اس کی روزانہ دیکھ بھال کریں۔</div>
+</div>
+</section>
+
+<!-- LESSON 12 -->
+<section class="lesson" id="l12" style="--c:#2579bb">
+<span class="number">سبق نمبر 12</span>
+<h2>میرا روزانہ کا معمول</h2>
+<div class="picture" style="--bg:#eaf5ff">🌞⏰📚</div>
+<p>
+ہمیں اپنا ہر کام وقت پر کرنا چاہیے۔
+میں صبح سویرے اٹھتا ہوں۔
+سب سے پہلے منہ ہاتھ دھوتا ہوں اور دانت صاف کرتا ہوں۔
+اس کے بعد ناشتہ کرتا ہوں اور اسکول کے لیے تیار ہوتا ہوں۔
+</p>
+<p>
+میں وقت پر اسکول پہنچتا ہوں۔
+استاد کا سبق غور سے سنتا ہوں۔
+اپنے دوستوں کے ساتھ اچھے طریقے سے کھیلتا ہوں۔
+اسکول سے واپس آ کر آرام کرتا ہوں اور کھانا کھاتا ہوں۔
+</p>
+<p>
+شام کو اپنا گھر کا کام مکمل کرتا ہوں۔
+کچھ وقت کھیلتا ہوں اور اپنے خاندان کے ساتھ بیٹھتا ہوں۔
+رات کو کھانا کھا کر اپنے بستے اور کتابیں تیار کرتا ہوں۔
+پھر وقت پر سو جاتا ہوں تاکہ صبح تازہ دم اٹھ سکوں۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ ہمیں صبح اٹھ کر سب سے پہلے کیا کرنا چاہیے؟</p>
+<p>2۔ اسکول میں ہمیں استاد کا سبق کیسے سننا چاہیے؟</p>
+<p>3۔ رات کو سونے سے پہلے کیا تیاری کرنی چاہیے؟</p>
+</div>
+</section>
+
+<!-- LESSON 13 -->
+<section class="lesson" id="l13" style="--c:#2597cb">
+<span class="number">سبق نمبر 13</span>
+<h2>پانی کی اہمیت</h2>
+<div class="picture" style="--bg:#e5f8ff">💧🚰🌊</div>
+<p>
+پانی اللہ تعالیٰ کی بہت بڑی نعمت ہے۔
+پانی کے بغیر زندگی ممکن نہیں۔
+انسان، جانور اور پودے سب پانی کے محتاج ہیں۔
+ہم پانی پیتے ہیں، کھانا پکاتے ہیں اور صفائی کرتے ہیں۔
+</p>
+<p>
+پودوں کو بڑھنے کے لیے پانی چاہیے۔
+جانور بھی پانی پیتے ہیں۔
+بارش سے زمین کو پانی ملتا ہے۔
+دریا، نہریں اور جھیلیں پانی کے اہم ذخیرے ہیں۔
+</p>
+<p>
+ہمیں پانی ضائع نہیں کرنا چاہیے۔
+نل کھلا نہیں چھوڑنا چاہیے۔
+پانی کو صاف رکھنا چاہیے اور گندگی پانی میں نہیں ڈالنی چاہیے۔
+صاف پانی صحت کے لیے ضروری ہے۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ پانی کس کے لیے ضروری ہے؟</p>
+<p>2۔ پانی کے تین استعمال لکھیں۔</p>
+<p>3۔ ہمیں پانی کیوں ضائع نہیں کرنا چاہیے؟</p>
+</div>
+</section>
+
+<!-- LESSON 14 -->
+<section class="lesson" id="l14" style="--c:#db8a35">
+<span class="number">سبق نمبر 14</span>
+<h2>ہمارے موسم</h2>
+<div class="picture" style="--bg:#fff4e7">☀️🌧️❄️🌈</div>
+<p>
+سال میں مختلف موسم آتے ہیں۔
+گرمی، سردی، بہار اور خزاں اہم موسم ہیں۔
+ہر موسم کا اپنا الگ مزہ ہوتا ہے۔
+موسم کے بدلنے سے ہمارے لباس اور روزمرہ کے کام بھی بدل جاتے ہیں۔
+</p>
+<p>
+گرمی کے موسم میں دھوپ تیز ہوتی ہے۔
+ہم ہلکے کپڑے پہنتے ہیں اور پانی زیادہ پیتے ہیں۔
+سردی میں موسم ٹھنڈا ہوتا ہے۔
+ہم گرم کپڑے پہنتے ہیں۔
+بارش کے موسم میں آسمان پر بادل آتے ہیں اور بارش ہوتی ہے۔
+</p>
+<p>
+بہار کے موسم میں بہت سے پھول کھلتے ہیں۔
+درختوں پر نئے پتے آتے ہیں۔
+خزاں میں بعض درختوں کے پتے جھڑ جاتے ہیں۔
+ہمیں ہر موسم میں اپنی صحت کا خیال رکھنا چاہیے۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ گرمی میں ہم کیسے کپڑے پہنتے ہیں؟</p>
+<p>2۔ سردی میں ہم کیا پہنتے ہیں؟</p>
+<p>3۔ بہار کے موسم میں کیا ہوتا ہے؟</p>
+</div>
+</section>
+
+<!-- LESSON 15 -->
+<section class="lesson" id="l15" style="--c:#7b65bc">
+<span class="number">سبق نمبر 15</span>
+<h2>وقت کی پابندی</h2>
+<div class="picture" style="--bg:#f2edff">⏰📅⌚</div>
+<p>
+وقت بہت قیمتی ہے۔
+جو لوگ وقت کی قدر کرتے ہیں وہ اپنے کام بہتر طریقے سے مکمل کرتے ہیں۔
+ہمیں ہر کام مقررہ وقت پر کرنا چاہیے۔
+وقت پر اٹھنا، اسکول جانا، سبق پڑھنا اور سونا اچھی عادتیں ہیں۔
+</p>
+<p>
+اگر ہم اپنا کام وقت پر کریں تو ہمیں پریشانی نہیں ہوتی۔
+ہمیں کھیلنے، پڑھنے اور آرام کرنے کے لیے بھی وقت نکالنا چاہیے۔
+کام کو بلاوجہ کل پر نہیں چھوڑنا چاہیے۔
+</p>
+<p>
+وقت دوبارہ واپس نہیں آتا۔
+اس لیے ہمیں اپنے وقت کو اچھے کاموں میں استعمال کرنا چاہیے۔
+ایک اچھا طالب علم وقت کی پابندی کرتا ہے اور اپنا سبق روزانہ یاد کرتا ہے۔
+</p>
+<div class="exercise">
+<h3>سوالات</h3>
+<p>1۔ وقت کیسا ہے؟</p>
+<p>2۔ ہمیں اسکول کب جانا چاہیے؟</p>
+<p>3۔ وقت کی پابندی سے کیا فائدہ ہوتا ہے؟</p>
+</div>
+</section>
+
+<!-- POEM 1 -->
+<section class="lesson" id="poem1" style="--c:#e3a02d">
+<span class="number">نظم نمبر 1</span>
+<h2>صبح کا وقت</h2>
+<div class="picture" style="--bg:#fff8df">🌞🐦🌸</div>
+<p style="text-align:center;line-height:2.5">
+صبح ہوئی سورج نکلا<br>
+ہر طرف اجالا پھیلا<br>
+چڑیاں چہکیں باغ میں<br>
+پھول کھلے ہیں راہ میں<br>
+اٹھو بچو کام کرو<br>
+علم حاصل عام کرو<br>
+وقت پہ اسکول جاؤ<br>
+اچھی باتیں سیکھ کر آؤ
+</p>
+<div class="exercise">
+<h3>نظم کی مشق</h3>
+<p>1۔ صبح سورج کہاں سے نکلتا ہے؟</p>
+<p>2۔ باغ میں کون چہکتا ہے؟</p>
+<p>3۔ ہمیں اسکول کب جانا چاہیے؟</p>
+</div>
+</section>
+
+<!-- POEM 2 -->
+<section class="lesson" id="poem2" style="--c:#26935a">
+<span class="number">نظم نمبر 2</span>
+<h2>میرا وطن</h2>
+<div class="picture" style="--bg:#e9fff0">🇵🇰🌙⭐</div>
+<p style="text-align:center;line-height:2.5">
+پاکستان ہے پیارا وطن<br>
+اس پر ہم سب کو ہے فخر<br>
+اس کے کھیت اور اس کے باغ<br>
+اس کے دریا، اس کے پہاڑ<br>
+محنت کرکے نام بنائیں<br>
+مل کر اس کو خوب سجائیں<br>
+علم سے روشن ہو یہ چمن<br>
+پیارا پاکستان ہمارا وطن
+</p>
+<div class="exercise">
+<h3>نظم کی مشق</h3>
+<p>1۔ ہمارا وطن کون سا ہے؟</p>
+<p>2۔ پاکستان میں کون کون سی خوبصورت چیزیں ہیں؟</p>
+<p>3۔ ہمیں اپنے وطن کے لیے کیا کرنا چاہیے؟</p>
+</div>
+</section>
+
+<!-- ALPHABET -->
+<section class="lesson" id="alphabet" style="--c:#bb6b32">
+<span class="number">خصوصی سبق</span>
+<h2>حروفِ تہجی</h2>
+<div class="picture" style="--bg:#fff2e8">🔤📖✏️</div>
+<p>
+اردو زبان کے حروف کو حروفِ تہجی کہتے ہیں۔
+حروف کی مدد سے الفاظ بنتے ہیں اور الفاظ سے جملے بنتے ہیں۔
+ہمیں ہر حرف کی شکل اور آواز پہچاننی چاہیے۔
+</p>
+<div class="words">
+<span class="word">ا — انار</span>
+<span class="word">ب — بکری</span>
+<span class="word">پ — پتنگ</span>
+<span class="word">ت — تتلی</span>
+<span class="word">ٹ — ٹماٹر</span>
+<span class="word">ث — ثمر</span>
+<span class="word">ج — جہاز</span>
+<span class="word">چ — چاند</span>
+<span class="word">ح — حلوہ</span>
+<span class="word">خ — خرگوش</span>
+<span class="word">د — درخت</span>
+<span class="word">ڈ — ڈبہ</span>
+<span class="word">ذ — ذہین</span>
+<span class="word">ر — رسی</span>
+<span class="word">ڑ — پہاڑ</span>
+<span class="word">ز — زمین</span>
+<span class="word">ژ — ژالہ</span>
+<span class="word">س — سیب</span>
+<span class="word">ش — شیر</span>
+<span class="word">ص — صابن</span>
+<span class="word">ض — ضمیر</span>
+<span class="word">ط — طوطا</span>
+<span class="word">ظ — ظرف</span>
+<span class="word">ع — عینک</span>
+<span class="word">غ — غبارہ</span>
+<span class="word">ف — فوارہ</span>
+<span class="word">ق — قلم</span>
+<span class="word">ک — کتاب</span>
+<span class="word">گ — گلاب</span>
+<span class="word">ل — لیموں</span>
+<span class="word">م — مچھلی</span>
+<span class="word">ن — ناک</span>
+<span class="word">و — وطن</span>
+<span class="word">ہ — ہاتھی</span>
+<span class="word">ء — آئینہ</span>
+<span class="word">ی — یاد</span>
+</div>
+<div class="exercise">
+<h3>لکھائی کی مشق</h3>
+<p>1۔ ا سے ی تک تمام حروف لکھیں۔</p>
+<p>2۔ ہر حرف سے ایک لفظ بولیں۔</p>
+<p>3۔ پانچ حروف کے الفاظ اپنی کاپی میں لکھیں۔</p>
+</div>
+</section>
+
+<!-- GRAMMAR -->
+<section class="lesson" id="grammar" style="--c:#267bb5">
+<span class="number">خصوصی سبق</span>
+<h2>آسان اردو قواعد</h2>
+<div class="picture" style="--bg:#e9f5ff">📚✏️📝</div>
+
+<h3>1۔ لفظ کسے کہتے ہیں؟</h3>
+<p>حروف کے ملنے سے لفظ بنتا ہے۔ مثال: ک + ت + ا + ب = کتاب۔</p>
+
+<h3>2۔ جملہ کسے کہتے ہیں؟</h3>
+<p>الفاظ کے ایسے مجموعے کو جملہ کہتے ہیں جس سے پوری بات سمجھ میں آ جائے۔ مثال: علی اسکول جاتا ہے۔</p>
+
+<h3>3۔ اسم کیا ہے؟</h3>
+<p>کسی شخص، جگہ یا چیز کے نام کو اسم کہتے ہیں۔ مثال: علی، لاہور، کتاب۔</p>
+
+<h3>4۔ واحد اور جمع</h3>
+<p>ایک چیز کو واحد اور ایک سے زیادہ چیزوں کو جمع کہتے ہیں۔</p>
+<div class="words">
+<span class="word">کتاب — کتابیں</span>
+<span class="word">لڑکا — لڑکے</span>
+<span class="word">بچہ — بچے</span>
+<span class="word">پھول — پھول</span>
+</div>
+
+<h3>5۔ مذکر اور مؤنث</h3>
+<p>مرد یا نر کے لیے مذکر اور عورت یا مادہ کے لیے مؤنث استعمال ہوتا ہے۔</p>
+<div class="words">
+<span class="word">لڑکا — لڑکی</span>
+<span class="word">بیٹا — بیٹی</span>
+<span class="word">مرغا — مرغی</span>
+<span class="word">بادشاہ — ملکہ</span>
+</div>
+
+<h3>6۔ متضاد الفاظ</h3>
+<p>جن الفاظ کے معنی ایک دوسرے کے الٹ ہوں انہیں متضاد الفاظ کہتے ہیں۔</p>
+<div class="words">
+<span class="word">دن — رات</span>
+<span class="word">اچھا — برا</span>
+<span class="word">بڑا — چھوٹا</span>
+<span class="word">گرم — ٹھنڈا</span>
+<span class="word">اوپر — نیچے</span>
+<span class="word">روشنی — اندھیرا</span>
+</div>
+
+<div class="exercise">
+<h3>قواعد کی مشق</h3>
+<p>1۔ لفظ کسے کہتے ہیں؟</p>
+<p>2۔ جملے کی ایک مثال لکھیں۔</p>
+<p>3۔ کتاب کی جمع لکھیں۔</p>
+<p>4۔ لڑکا کا مؤنث لکھیں۔</p>
+<p>5۔ دن اور بڑا کے متضاد لکھیں۔</p>
+</div>
+</section>
+
+<!-- FINAL TEST -->
+<section class="lesson" id="test" style="--c:#d08a23">
+<span class="number">سالانہ امتحان</span>
+<h2>سالانہ دہرائی اور امتحانی مشق</h2>
+<div class="picture" style="--bg:#fff5df">🏆📚✏️</div>
+<h3>سوال نمبر 1: مختصر جوابات لکھیں</h3>
+<p>1۔ اپنا تعارف لکھیں۔</p>
+<p>2۔ خاندان کسے کہتے ہیں؟</p>
+<p>3۔ گھر ہمیں کن چیزوں سے بچاتا ہے؟</p>
+<p>4۔ اسکول میں ہمیں کون پڑھاتا ہے؟</p>
+<p>5۔ پاکستان کب آزاد ہوا؟</p>
+
+<h3>سوال نمبر 2: خالی جگہیں پُر کریں</h3>
+<p>1۔ ہمارا وطن ______ ہے۔</p>
+<p>2۔ گائے ہمیں ______ دیتی ہے۔</p>
+<p>3۔ ہمیں ہمیشہ ______ بولنا چاہیے۔</p>
+<p>4۔ درخت ہمیں ______ دیتے ہیں۔</p>
+<p>5۔ پانی زندگی کے لیے ______ ہے۔</p>
+
+<h3>سوال نمبر 3: متضاد الفاظ لکھیں</h3>
+<p>1۔ دن — ______</p>
+<p>2۔ اچھا — ______</p>
+<p>3۔ بڑا — ______</p>
+<p>4۔ گرم — ______</p>
+
+<h3>سوال نمبر 4: جملے بنائیں</h3>
+<p>1۔ کتاب</p>
+<p>2۔ اسکول</p>
+<p>3۔ پاکستان</p>
+<p>4۔ پانی</p>
+<p>5۔ درخت</p>
+
+<h3>سوال نمبر 5: تحریری کام</h3>
+<p>1۔ میرا خاندان پر پانچ جملے لکھیں۔</p>
+<p>2۔ میرا اسکول پر پانچ جملے لکھیں۔</p>
+<p>3۔ میرا وطن پاکستان پر پانچ جملے لکھیں۔</p>
+<p>4۔ صفائی کی اہمیت پر پانچ جملے لکھیں۔</p>
+
+<div class="activity">
+استاد کے لیے ہدایت: بچوں سے سبق بلند آواز میں پڑھوائیں، نئے الفاظ کے معنی پوچھیں، زبانی سوالات کریں اور کاپی میں تحریری مشق کروائیں۔
+</div>
+</section>
+
+</div>
+
+<footer>
+<h2>The Risen High School</h2>
+<p>علم، تربیت اور روشن مستقبل</p>
+<p>جماعت اول — اردو کی کتاب</p>
+</footer>
+
+<script>
+function go(id){
+ const el=document.getElementById(id);
+ if(el){
+  el.scrollIntoView({behavior:"smooth",block:"start"});
+ }
+}
+</script>
+
+</body>
+</html>
