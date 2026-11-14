@@ -1,0 +1,755 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1769aa">
+<title>Class 1 Mathematics | The Risen High School</title>
+
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#edf5ff;
+ color:#23344d;
+ font-family:Arial,sans-serif;
+}
+header{
+ background:linear-gradient(135deg,#075985,#2878d0,#7547bd);
+ color:white;
+ text-align:center;
+ padding:22px 12px;
+}
+header h1{margin:5px;font-size:25px}
+header p{margin:5px;font-size:14px}
+.topbar{
+ position:sticky;top:0;z-index:10;
+ background:white;padding:10px;
+ display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+ box-shadow:0 3px 12px #0002;
+}
+button{
+ border:0;border-radius:9px;padding:10px 15px;
+ background:#1769aa;color:white;font-weight:bold;
+ cursor:pointer;font-size:14px;
+}
+button:hover{opacity:.85}
+.book{max-width:950px;margin:18px auto;padding:0 12px}
+.cover{
+ min-height:570px;border-radius:24px;overflow:hidden;
+ background:linear-gradient(145deg,#ffdc67,#ff9e65,#ef6c91,#8158ca);
+ color:white;text-align:center;padding:30px 15px;
+ position:relative;box-shadow:0 8px 25px #0002;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.cover:before,.cover:after{
+ content:"";position:absolute;border-radius:50%;
+ background:#ffffff24;
+}
+.cover:before{width:280px;height:280px;top:-90px;left:-80px}
+.cover:after{width:230px;height:230px;bottom:-70px;right:-50px}
+.school{
+ position:relative;font-size:24px;font-weight:bold;
+ background:#ffffff28;padding:12px 22px;border-radius:30px;
+}
+.cover h2{position:relative;font-size:58px;margin:30px 0 5px;text-shadow:2px 4px 5px #0003}
+.cover h3{position:relative;font-size:27px;margin:5px}
+.cover .math-art{font-size:68px;margin:22px 0;position:relative}
+.cover .urdu{font-family:Jameel,serif;font-size:27px;position:relative}
+.cover .grade{
+ position:relative;background:#fff;color:#7547bd;
+ padding:12px 28px;border-radius:30px;font-weight:bold;margin-top:25px;
+}
+.page{
+ background:white;border-radius:18px;margin:18px 0;padding:25px;
+ box-shadow:0 4px 15px #2342;
+ border-top:7px solid #39a9e8;
+ page-break-after:always;
+}
+.page h2{
+ color:#1769aa;border-bottom:2px dashed #b7dafa;
+ padding-bottom:12px;margin-top:0;font-size:25px;
+}
+.page h3{color:#7547bd;margin-top:22px}
+.urdu{
+ font-family:Jameel,serif;
+ direction:rtl;text-align:right;
+ font-size:23px;line-height:2;
+}
+.intro{
+ background:#e9f5ff;padding:15px;border-radius:12px;
+ line-height:1.7;
+}
+.example{
+ background:#fff6d9;border-left:5px solid #ffb52e;
+ padding:14px;border-radius:10px;margin:12px 0;
+}
+.number-grid{
+ display:grid;grid-template-columns:repeat(10,1fr);
+ gap:5px;margin:15px 0;
+}
+.number-grid span{
+ background:#e7f3ff;border-radius:8px;text-align:center;
+ padding:9px 2px;font-weight:bold;color:#1769aa;
+}
+.cards{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
+ gap:12px;margin:15px 0;
+}
+.card{
+ border-radius:13px;padding:17px 8px;text-align:center;
+ background:#f0f6ff;border:2px solid #d8e9ff;
+ font-size:17px;font-weight:bold;
+}
+.card .big{font-size:38px;display:block;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{border:1px solid #c9d9eb;padding:10px;text-align:center}
+th{background:#dceeff;color:#15558d}
+.exercise{
+ background:#f1fff5;border:2px solid #bce8ca;
+ border-radius:13px;padding:15px;margin-top:18px;
+}
+.exercise h3{color:#16834c;margin-top:0}
+.question{
+ padding:9px 4px;border-bottom:1px dashed #b8d9c2;
+ line-height:1.8;
+}
+.blank{
+ display:inline-block;min-width:55px;border-bottom:2px solid #333;
+ margin:0 5px;
+}
+.answer-note{
+ color:#777;font-size:13px;text-align:center;margin-top:15px;
+}
+.footer{
+ text-align:center;color:#64748b;padding:20px;
+}
+@media(max-width:550px){
+ .cover{min-height:490px}
+ .cover h2{font-size:43px}
+ .school{font-size:19px}
+ .page{padding:17px}
+ .number-grid{grid-template-columns:repeat(5,1fr)}
+}
+@media print{
+ body{background:white}
+ header,.topbar{display:none!important}
+ .book{max-width:none;margin:0;padding:0}
+ .page,.cover{box-shadow:none;border-radius:0;margin:0;break-after:page}
+ button{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h1>The Risen High School</h1>
+ <p>Digital School Library</p>
+ <p>Class 1 Mathematics</p>
+</header>
+
+<div class="topbar">
+ <button onclick="window.print()">🖨 Print / Save PDF</button>
+ <button onclick="document.getElementById('contents').scrollIntoView({behavior:'smooth'})">📚 Contents</button>
+ <button onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆ Top</button>
+</div>
+
+<main class="book">
+
+<!-- COVER -->
+<section class="cover">
+ <div class="school">THE RISEN HIGH SCHOOL</div>
+ <div class="math-art">🔢 ➕ 📐 ✖️</div>
+ <h2>MATHEMATICS</h2>
+ <h3>ریاضی</h3>
+ <div class="urdu">آؤ کھیل کھیل میں ریاضی سیکھیں</div>
+ <div class="grade">CLASS ONE | جماعت اوّل</div>
+ <p style="position:relative;margin-top:35px;font-size:17px">
+ Learn • Count • Think • Solve
+ </p>
+</section>
+
+<!-- CONTENTS -->
+<section class="page" id="contents">
+<h2>📚 Contents / فہرست</h2>
+<table>
+<tr><th>No.</th><th>Lesson</th><th>سبق</th></tr>
+<tr><td>1</td><td>Numbers 1–20</td><td>گنتی 1 سے 20</td></tr>
+<tr><td>2</td><td>Numbers 21–100</td><td>گنتی 21 سے 100</td></tr>
+<tr><td>3</td><td>Number Names</td><td>اعداد کے نام</td></tr>
+<tr><td>4</td><td>Before, After, Between</td><td>پہلے، بعد، درمیان</td></tr>
+<tr><td>5</td><td>Greater and Smaller</td><td>بڑا اور چھوٹا</td></tr>
+<tr><td>6</td><td>Addition</td><td>جمع</td></tr>
+<tr><td>7</td><td>Subtraction</td><td>تفریق</td></tr>
+<tr><td>8</td><td>Shapes</td><td>اشکال</td></tr>
+<tr><td>9</td><td>Patterns</td><td>ترتیب اور نمونے</td></tr>
+<tr><td>10</td><td>Measurement</td><td>پیمائش</td></tr>
+<tr><td>11</td><td>Time and Calendar</td><td>وقت اور کیلنڈر</td></tr>
+<tr><td>12</td><td>Money</td><td>پیسے</td></tr>
+<tr><td>13</td><td>Tables and Revision</td><td>پہاڑے اور دہرائی</td></tr>
+</table>
+</section>
+
+<!-- LESSON 1 -->
+<section class="page">
+<h2>Lesson 1: Numbers 1 to 20</h2>
+<div class="intro">
+<b>Learning Objective:</b> Learn to read, write and count numbers from 1 to 20.
+<div class="urdu">مقصد: ایک سے بیس تک گنتی پڑھنا، لکھنا اور چیزیں گننا سیکھیں۔</div>
+</div>
+<h3>Counting / گنتی</h3>
+<div class="number-grid">
+<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+<span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+<span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+<span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+</div>
+<div class="cards">
+<div class="card"><span class="big">🍎</span>1 Apple</div>
+<div class="card"><span class="big">🍌🍌</span>2 Bananas</div>
+<div class="card"><span class="big">⭐ ⭐ ⭐</span>3 Stars</div>
+<div class="card"><span class="big">⚽⚽⚽⚽</span>4 Balls</div>
+</div>
+<h3>Urdu Counting / اردو گنتی</h3>
+<table>
+<tr><th>Number</th><th>اردو</th><th>Number</th><th>اردو</th></tr>
+<tr><td>1</td><td class="urdu">ایک</td><td>11</td><td class="urdu">گیارہ</td></tr>
+<tr><td>2</td><td class="urdu">دو</td><td>12</td><td class="urdu">بارہ</td></tr>
+<tr><td>3</td><td class="urdu">تین</td><td>13</td><td class="urdu">تیرہ</td></tr>
+<tr><td>4</td><td class="urdu">چار</td><td>14</td><td class="urdu">چودہ</td></tr>
+<tr><td>5</td><td class="urdu">پانچ</td><td>15</td><td class="urdu">پندرہ</td></tr>
+<tr><td>6</td><td class="urdu">چھ</td><td>16</td><td class="urdu">سولہ</td></tr>
+<tr><td>7</td><td class="urdu">سات</td><td>17</td><td class="urdu">سترہ</td></tr>
+<tr><td>8</td><td class="urdu">آٹھ</td><td>18</td><td class="urdu">اٹھارہ</td></tr>
+<tr><td>9</td><td class="urdu">نو</td><td>19</td><td class="urdu">انیس</td></tr>
+<tr><td>10</td><td class="urdu">دس</td><td>20</td><td class="urdu">بیس</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ Exercise 1</h3>
+<div class="question">1. Write numbers from 1 to 10.</div>
+<div class="question">2. Write numbers from 11 to 20.</div>
+<div class="question">3. Count: 🍎 🍎 🍎 🍎 🍎 = <span class="blank"></span></div>
+<div class="question">4. What comes after 7? <span class="blank"></span></div>
+<div class="question">5. What comes before 10? <span class="blank"></span></div>
+</div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="page">
+<h2>Lesson 2: Numbers 21 to 100</h2>
+<div class="intro">
+<b>Learn:</b> Count forward from 21 to 100.
+<div class="urdu">اکیس سے سو تک گنتی ترتیب سے پڑھیں اور لکھیں۔</div>
+</div>
+<h3>Counting Chart / گنتی کا چارٹ</h3>
+<div class="number-grid">
+<script>
+for(let i=21;i<=100;i++)document.write("<span>"+i+"</span>");
+</script>
+</div>
+<h3>Tens / دہائیاں</h3>
+<table>
+<tr><th>Number</th><th>Number Name</th><th>اردو نام</th></tr>
+<tr><td>10</td><td>Ten</td><td class="urdu">دس</td></tr>
+<tr><td>20</td><td>Twenty</td><td class="urdu">بیس</td></tr>
+<tr><td>30</td><td>Thirty</td><td class="urdu">تیس</td></tr>
+<tr><td>40</td><td>Forty</td><td class="urdu">چالیس</td></tr>
+<tr><td>50</td><td>Fifty</td><td class="urdu">پچاس</td></tr>
+<tr><td>60</td><td>Sixty</td><td class="urdu">ساٹھ</td></tr>
+<tr><td>70</td><td>Seventy</td><td class="urdu">ستر</td></tr>
+<tr><td>80</td><td>Eighty</td><td class="urdu">اسی</td></tr>
+<tr><td>90</td><td>Ninety</td><td class="urdu">نوے</td></tr>
+<tr><td>100</td><td>One Hundred</td><td class="urdu">ایک سو</td></tr>
+</table>
+<div class="example">
+<b>Remember:</b> 10 tens make 100.
+<div class="urdu">دس دہائیاں مل کر ایک سو بنتی ہیں۔</div>
+</div>
+<div class="exercise">
+<h3>✏️ Exercise 2</h3>
+<div class="question">1. Write counting from 21 to 30.</div>
+<div class="question">2. Write counting from 91 to 100.</div>
+<div class="question">3. Fill in: 35, 36, <span class="blank"></span>, 38.</div>
+<div class="question">4. Fill in: 67, <span class="blank"></span>, 69.</div>
+<div class="question">5. Write the number after 99: <span class="blank"></span></div>
+</div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="page">
+<h2>Lesson 3: Number Names</h2>
+<div class="intro">
+Numbers have names. Learn to read and write them.
+<div class="urdu">ہر عدد کا ایک نام ہوتا ہے۔ اعداد کے نام پڑھیں اور لکھیں۔</div>
+</div>
+<table>
+<tr><th>Number</th><th>Name</th><th>اردو</th></tr>
+<tr><td>1</td><td>One</td><td class="urdu">ایک</td></tr>
+<tr><td>2</td><td>Two</td><td class="urdu">دو</td></tr>
+<tr><td>3</td><td>Three</td><td class="urdu">تین</td></tr>
+<tr><td>4</td><td>Four</td><td class="urdu">چار</td></tr>
+<tr><td>5</td><td>Five</td><td class="urdu">پانچ</td></tr>
+<tr><td>6</td><td>Six</td><td class="urdu">چھ</td></tr>
+<tr><td>7</td><td>Seven</td><td class="urdu">سات</td></tr>
+<tr><td>8</td><td>Eight</td><td class="urdu">آٹھ</td></tr>
+<tr><td>9</td><td>Nine</td><td class="urdu">نو</td></tr>
+<tr><td>10</td><td>Ten</td><td class="urdu">دس</td></tr>
+<tr><td>11</td><td>Eleven</td><td class="urdu">گیارہ</td></tr>
+<tr><td>12</td><td>Twelve</td><td class="urdu">بارہ</td></tr>
+<tr><td>13</td><td>Thirteen</td><td class="urdu">تیرہ</td></tr>
+<tr><td>14</td><td>Fourteen</td><td class="urdu">چودہ</td></tr>
+<tr><td>15</td><td>Fifteen</td><td class="urdu">پندرہ</td></tr>
+<tr><td>16</td><td>Sixteen</td><td class="urdu">سولہ</td></tr>
+<tr><td>17</td><td>Seventeen</td><td class="urdu">سترہ</td></tr>
+<tr><td>18</td><td>Eighteen</td><td class="urdu">اٹھارہ</td></tr>
+<tr><td>19</td><td>Nineteen</td><td class="urdu">انیس</td></tr>
+<tr><td>20</td><td>Twenty</td><td class="urdu">بیس</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ Exercise 3</h3>
+<div class="question">1. Write the name of 3: <span class="blank"></span></div>
+<div class="question">2. Write the name of 8: <span class="blank"></span></div>
+<div class="question">3. Write the number for Five: <span class="blank"></span></div>
+<div class="question">4. Write the number for Twelve: <span class="blank"></span></div>
+<div class="question">5. Write number names from 1 to 10.</div>
+</div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="page">
+<h2>Lesson 4: Before, After and Between</h2>
+<div class="intro">
+<b>Before:</b> The number that comes first.
+<b>After:</b> The number that comes next.
+<b>Between:</b> The number in the middle.
+<div class="urdu">Before کا مطلب پہلے، After کا مطلب بعد میں اور Between کا مطلب درمیان میں ہے۔</div>
+</div>
+<div class="cards">
+<div class="card"><span class="big">4 → 5</span>Before 5 = 4</div>
+<div class="card"><span class="big">5 → 6</span>After 5 = 6</div>
+<div class="card"><span class="big">4  5  6</span>5 is between 4 and 6</div>
+</div>
+<div class="example">
+1. Before 9 = 8<br>
+2. After 12 = 13<br>
+3. Between 14 and 16 = 15
+<div class="urdu">مثال: نو سے پہلے آٹھ، بارہ کے بعد تیرہ اور چودہ اور سولہ کے درمیان پندرہ آتا ہے۔</div>
+</div>
+<div class="exercise">
+<h3>✏️ Exercise 4</h3>
+<div class="question">1. Before 6 = <span class="blank"></span></div>
+<div class="question">2. After 15 = <span class="blank"></span></div>
+<div class="question">3. Between 7 and 9 = <span class="blank"></span></div>
+<div class="question">4. Before 20 = <span class="blank"></span></div>
+<div class="question">5. After 39 = <span class="blank"></span></div>
+<div class="question">6. Between 50 and 52 = <span class="blank"></span></div>
+</div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="page">
+<h2>Lesson 5: Greater and Smaller</h2>
+<div class="intro">
+Greater means bigger. Smaller means less.
+<div class="urdu">Greater کا مطلب بڑا اور Smaller کا مطلب چھوٹا ہے۔</div>
+</div>
+<div class="cards">
+<div class="card"><span class="big">8 🍎</span>8 is greater than 3</div>
+<div class="card"><span class="big">2 🍊</span>2 is smaller than 6</div>
+</div>
+<h3>Signs / نشانیاں</h3>
+<table>
+<tr><th>Sign</th><th>Meaning</th><th>Example</th></tr>
+<tr><td>&gt;</td><td>Greater than</td><td>8 &gt; 3</td></tr>
+<tr><td>&lt;</td><td>Less than</td><td>2 &lt; 6</td></tr>
+<tr><td>=</td><td>Equal to</td><td>5 = 5</td></tr>
+</table>
+<div class="example">
+<b>Remember:</b> The open side of the sign faces the bigger number.
+<div class="urdu">نشان کا کھلا حصہ ہمیشہ بڑے عدد کی طرف ہوتا ہے۔</div>
+</div>
+<div class="exercise">
+<h3>✏️ Exercise 5</h3>
+<div class="question">1. 5 ___ 8</div>
+<div class="question">2. 9 ___ 3</div>
+<div class="question">3. 4 ___ 4</div>
+<div class="question">4. Which is bigger: 12 or 18? <span class="blank"></span></div>
+<div class="question">5. Which is smaller: 7 or 2? <span class="blank"></span></div>
+</div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="page">
+<h2>Lesson 6: Addition / جمع</h2>
+<div class="intro">
+Addition means putting things together.
+<div class="urdu">جمع کا مطلب چیزوں کو آپس میں ملانا ہے۔ جب ہم دو یا زیادہ اعداد کو ملاتے ہیں تو جمع کرتے ہیں۔</div>
+</div>
+<div class="cards">
+<div class="card"><span class="big">🍎 + 🍎</span>1 + 1 = 2</div>
+<div class="card"><span class="big">🍌🍌 + 🍌</span>2 + 1 = 3</div>
+<div class="card"><span class="big">⭐ ⭐ + ⭐ ⭐</span>2 + 2 = 4</div>
+</div>
+<h3>Vertical Addition / سیدھی جمع</h3>
+<div class="example" style="font-size:24px;text-align:center">
+&nbsp;  3<br>
++ 2<br>
+────<br>
+&nbsp;  5
+</div>
+<div class="urdu">تین میں دو جمع کریں تو جواب پانچ آتا ہے۔</div>
+<h3>More Examples</h3>
+<table>
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>1 + 2</td><td>3</td></tr>
+<tr><td>3 + 4</td><td>7</td></tr>
+<tr><td>5 + 2</td><td>7</td></tr>
+<tr><td>6 + 3</td><td>9</td></tr>
+<tr><td>10 + 5</td><td>15</td></tr>
+<tr><td>12 + 3</td><td>15</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ Exercise 6</h3>
+<div class="question">1. 2 + 3 = <span class="blank"></span></div>
+<div class="question">2. 4 + 4 = <span class="blank"></span></div>
+<div class="question">3. 5 + 3 = <span class="blank"></span></div>
+<div class="question">4. 10 + 6 = <span class="blank"></span></div>
+<div class="question">5. 11 + 5 = <span class="blank"></span></div>
+<div class="question">6. Ali has 3 balls. He gets 2 more. How many balls does he have? <span class="blank"></span></div>
+<div class="urdu">علی کے پاس تین گیندیں ہیں۔ اسے دو اور ملتی ہیں۔ اب اس کے پاس کتنی گیندیں ہیں؟</div>
+</div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="page">
+<h2>Lesson 7: Subtraction / تفریق</h2>
+<div class="intro">
+Subtraction means taking away.
+<div class="urdu">تفریق کا مطلب کسی چیز میں سے کچھ چیزیں کم کرنا یا نکالنا ہے۔</div>
+</div>
+<div class="cards">
+<div class="card"><span class="big">🍎🍎🍎</span>3 - 1 = 2</div>
+<div class="card"><span class="big">🍌🍌🍌🍌</span>4 - 2 = 2</div>
+</div>
+<h3>Vertical Subtraction / سیدھی تفریق</h3>
+<div class="example" style="font-size:24px;text-align:center">
+&nbsp;  5<br>
+− 2<br>
+────<br>
+&nbsp;  3
+</div>
+<div class="urdu">پانچ میں سے دو نکالیں تو جواب تین آتا ہے۔</div>
+<table>
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>5 - 2</td><td>3</td></tr>
+<tr><td>7 - 3</td><td>4</td></tr>
+<tr><td>9 - 4</td><td>5</td></tr>
+<tr><td>10 - 5</td><td>5</td></tr>
+<tr><td>15 - 5</td><td>10</td></tr>
+<tr><td>18 - 6</td><td>12</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ Exercise 7</h3>
+<div class="question">1. 4 - 1 = <span class="blank"></span></div>
+<div class="question">2. 8 - 3 = <span class="blank"></span></div>
+<div class="question">3. 9 - 5 = <span class="blank"></span></div>
+<div class="question">4. 12 - 2 = <span class="blank"></span></div>
+<div class="question">5. 16 - 4 = <span class="blank"></span></div>
+<div class="question">6. Sara has 7 pencils. She gives 2 to her friend. How many pencils are left? <span class="blank"></span></div>
+<div class="urdu">سارہ کے پاس سات پنسلیں ہیں۔ وہ دو پنسلیں اپنی دوست کو دے دیتی ہے۔ اس کے پاس کتنی پنسلیں باقی بچیں؟</div>
+</div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="page">
+<h2>Lesson 8: Shapes / اشکال</h2>
+<div class="intro">
+We see different shapes around us.
+<div class="urdu">ہم اپنے اردگرد مختلف شکلیں دیکھتے ہیں۔ ان کے نام اور پہچان سیکھیں۔</div>
+</div>
+<div class="cards">
+<div class="card"><span class="big">🔴</span>Circle<br><span class="urdu">دائرہ</span></div>
+<div class="card"><span class="big">🟦</span>Square<br><span class="urdu">مربع</span></div>
+<div class="card"><span class="big">🔺</span>Triangle<br><span class="urdu">مثلث</span></div>
+<div class="card"><span class="big">▭</span>Rectangle<br><span class="urdu">مستطیل</span></div>
+<div class="card"><span class="big">⭐</span>Star<br><span class="urdu">ستارہ</span></div>
+<div class="card"><span class="big">❤️</span>Heart<br><span class="urdu">دل</span></div>
+</div>
+<h3>Shapes Around Us / ہمارے اردگرد اشکال</h3>
+<table>
+<tr><th>Object</th><th>Shape</th><th>اردو</th></tr>
+<tr><td>Clock</td><td>Circle</td><td class="urdu">گھڑی - دائرہ</td></tr>
+<tr><td>Window</td><td>Square</td><td class="urdu">کھڑکی - مربع</td></tr>
+<tr><td>Book</td><td>Rectangle</td><td class="urdu">کتاب - مستطیل</td></tr>
+<tr><td>Pizza Slice</td><td>Triangle</td><td class="urdu">پیزا - مثلث</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ Exercise 8</h3>
+<div class="question">1. Name a round shape: <span class="blank"></span></div>
+<div class="question">2. How many sides does a triangle have? <span class="blank"></span></div>
+<div class="question">3. How many sides does a square have? <span class="blank"></span></div>
+<div class="question">4. What is the shape of a book? <span class="blank"></span></div>
+<div class="question">5. Draw a circle, square and triangle in your notebook.</div>
+</div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="page">
+<h2>Lesson 9: Patterns / ترتیب</h2>
+<div class="intro">
+A pattern is something that repeats in the same order.
+<div class="urdu">جب چیزیں ایک خاص ترتیب سے بار بار دہرائی جائیں تو اسے نمونہ یا ترتیب کہتے ہیں۔</div>
+</div>
+<div class="example" style="font-size:25px;text-align:center">
+🔴 🔵 🔴 🔵 🔴 ___
+<p style="font-size:15px">Red, Blue, Red, Blue, Red, ?</p>
+</div>
+<div class="example" style="font-size:25px;text-align:center">
+⭐ ⭐ 🌙 ⭐ ⭐ 🌙 ___
+<p style="font-size:15px">Star, Star, Moon, Star, Star, Moon, ?</p>
+</div>
+<div class="example" style="font-size:25px;text-align:center">
+1, 2, 1, 2, 1, ___
+</div>
+<div class="urdu">ترتیب کو غور سے دیکھیں اور بتائیں کہ اگلی چیز یا عدد کیا ہوگا۔</div>
+<div class="exercise">
+<h3>✏️ Exercise 9</h3>
+<div class="question">1. 2, 4, 2, 4, 2, ___</div>
+<div class="question">2. 🔴 🔵 🔴 🔵 ___</div>
+<div class="question">3. 5, 6, 5, 6, 5, ___</div>
+<div class="question">4. ⭐ 🌙 ⭐ 🌙 ___</div>
+<div class="question">5. 10, 20, 10, 20, ___</div>
+</div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="page">
+<h2>Lesson 10: Measurement / پیمائش</h2>
+<div class="intro">
+We measure length, weight and quantity.
+<div class="urdu">ہم چیزوں کی لمبائی، وزن اور مقدار معلوم کرنے کے لیے پیمائش کرتے ہیں۔</div>
+</div>
+<h3>Long and Short / لمبا اور چھوٹا</h3>
+<div class="cards">
+<div class="card"><span class="big">━━━━━━━━</span>Long<br><span class="urdu">لمبا</span></div>
+<div class="card"><span class="big">━━</span>Short<br><span class="urdu">چھوٹا</span></div>
+</div>
+<h3>Heavy and Light / بھاری اور ہلکا</h3>
+<div class="cards">
+<div class="card"><span class="big">🏋️</span>Heavy<br><span class="urdu">بھاری</span></div>
+<div class="card"><span class="big">🪶</span>Light<br><span class="urdu">ہلکا</span></div>
+</div>
+<h3>Units / اکائیاں</h3>
+<table>
+<tr><th>Unit</th><th>Used for</th><th>اردو</th></tr>
+<tr><td>Centimetre (cm)</td><td>Length</td><td class="urdu">لمبائی</td></tr>
+<tr><td>Metre (m)</td><td>Long length</td><td class="urdu">زیادہ لمبائی</td></tr>
+<tr><td>Kilogram (kg)</td><td>Weight</td><td class="urdu">وزن</td></tr>
+<tr><td>Litre (L)</td><td>Liquid</td><td class="urdu">مائع کی مقدار</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ Exercise 10</h3>
+<div class="question">1. Which is longer: a pencil or a bus? <span class="blank"></span></div>
+<div class="question">2. Which is heavier: a stone or a feather? <span class="blank"></span></div>
+<div class="question">3. What do we use to measure length? <span class="blank"></span></div>
+<div class="question">4. Circle the lighter object: 🪶 or 🏋️</div>
+<div class="question">5. Write the name of one heavy object and one light object.</div>
+</div>
+</section>
+
+<!-- LESSON 11 -->
+<section class="page">
+<h2>Lesson 11: Time and Calendar / وقت</h2>
+<div class="intro">
+Time tells us when something happens.
+<div class="urdu">وقت ہمیں بتاتا ہے کہ کوئی کام کب ہوتا ہے۔</div>
+</div>
+<h3>Parts of the Day / دن کے حصے</h3>
+<div class="cards">
+<div class="card"><span class="big">🌅</span>Morning<br><span class="urdu">صبح</span></div>
+<div class="card"><span class="big">☀️</span>Afternoon<br><span class="urdu">دوپہر</span></div>
+<div class="card"><span class="big">🌇</span>Evening<br><span class="urdu">شام</span></div>
+<div class="card"><span class="big">🌙</span>Night<br><span class="urdu">رات</span></div>
+</div>
+<h3>Days of the Week / ہفتے کے دن</h3>
+<table>
+<tr><th>English</th><th>اردو</th></tr>
+<tr><td>Monday</td><td class="urdu">پیر</td></tr>
+<tr><td>Tuesday</td><td class="urdu">منگل</td></tr>
+<tr><td>Wednesday</td><td class="urdu">بدھ</td></tr>
+<tr><td>Thursday</td><td class="urdu">جمعرات</td></tr>
+<tr><td>Friday</td><td class="urdu">جمعہ</td></tr>
+<tr><td>Saturday</td><td class="urdu">ہفتہ</td></tr>
+<tr><td>Sunday</td><td class="urdu">اتوار</td></tr>
+</table>
+<h3>Months of the Year / سال کے مہینے</h3>
+<table>
+<tr><th>No.</th><th>Month</th><th>مہینہ</th></tr>
+<tr><td>1</td><td>January</td><td class="urdu">جنوری</td></tr>
+<tr><td>2</td><td>February</td><td class="urdu">فروری</td></tr>
+<tr><td>3</td><td>March</td><td class="urdu">مارچ</td></tr>
+<tr><td>4</td><td>April</td><td class="urdu">اپریل</td></tr>
+<tr><td>5</td><td>May</td><td class="urdu">مئی</td></tr>
+<tr><td>6</td><td>June</td><td class="urdu">جون</td></tr>
+<tr><td>7</td><td>July</td><td class="urdu">جولائی</td></tr>
+<tr><td>8</td><td>August</td><td class="urdu">اگست</td></tr>
+<tr><td>9</td><td>September</td><td class="urdu">ستمبر</td></tr>
+<tr><td>10</td><td>October</td><td class="urdu">اکتوبر</td></tr>
+<tr><td>11</td><td>November</td><td class="urdu">نومبر</td></tr>
+<tr><td>12</td><td>December</td><td class="urdu">دسمبر</td></tr>
+</table>
+<div class="example">
+<b>Important:</b> There are 7 days in a week and 12 months in a year.
+<div class="urdu">ایک ہفتے میں سات دن اور ایک سال میں بارہ مہینے ہوتے ہیں۔</div>
+</div>
+<div class="exercise">
+<h3>✏️ Exercise 11</h3>
+<div class="question">1. How many days are in a week? <span class="blank"></span></div>
+<div class="question">2. How many months are in a year? <span class="blank"></span></div>
+<div class="question">3. Which day comes after Monday? <span class="blank"></span></div>
+<div class="question">4. Which month comes after March? <span class="blank"></span></div>
+<div class="question">5. When do we see the moon: day or night? <span class="blank"></span></div>
+</div>
+</section>
+
+<!-- LESSON 12 -->
+<section class="page">
+<h2>Lesson 12: Money / پیسے</h2>
+<div class="intro">
+We use money to buy things.
+<div class="urdu">ہم چیزیں خریدنے کے لیے پیسے استعمال کرتے ہیں۔ پاکستان کی کرنسی کا نام روپیہ ہے۔</div>
+</div>
+<div class="cards">
+<div class="card"><span class="big">🪙</span>Coins<br><span class="urdu">سکے</span></div>
+<div class="card"><span class="big">💵</span>Notes<br><span class="urdu">نوٹ</span></div>
+</div>
+<h3>Pakistani Currency / پاکستانی کرنسی</h3>
+<table>
+<tr><th>Value</th><th>In Words</th></tr>
+<tr><td>Rs. 10</td><td>Ten Rupees</td></tr>
+<tr><td>Rs. 20</td><td>Twenty Rupees</td></tr>
+<tr><td>Rs. 50</td><td>Fifty Rupees</td></tr>
+<tr><td>Rs. 100</td><td>One Hundred Rupees</td></tr>
+</table>
+<div class="example">
+<b>Example:</b><br>
+A pencil costs Rs. 10. You have Rs. 20.<br>
+Money left = 20 - 10 = Rs. 10.
+<div class="urdu">ایک پنسل کی قیمت دس روپے ہے۔ آپ کے پاس بیس روپے ہیں۔ پنسل خریدنے کے بعد دس روپے باقی بچیں گے۔</div>
+</div>
+<div class="exercise">
+<h3>✏️ Exercise 12</h3>
+<div class="question">1. What is the currency of Pakistan? <span class="blank"></span></div>
+<div class="question">2. Rs. 10 + Rs. 10 = <span class="blank"></span></div>
+<div class="question">3. Rs. 20 - Rs. 5 = <span class="blank"></span></div>
+<div class="question">4. A book costs Rs. 50. You have Rs. 50. How much money is left? <span class="blank"></span></div>
+<div class="question">5. Write the value of a hundred-rupee note.</div>
+</div>
+</section>
+
+<!-- LESSON 13 -->
+<section class="page">
+<h2>Lesson 13: Multiplication Introduction</h2>
+<div class="intro">
+Multiplication is repeated addition.
+<div class="urdu">ضرب کا ابتدائی مطلب ایک ہی عدد کو بار بار جمع کرنا ہے۔</div>
+</div>
+<div class="example">
+2 + 2 + 2 = 6<br>
+So, 3 groups of 2 = 6<br>
+3 × 2 = 6
+<div class="urdu">دو کو تین مرتبہ جمع کریں تو چھ حاصل ہوتا ہے۔</div>
+</div>
+<div class="cards">
+<div class="card"><span class="big">🍎🍎</span>1 group of 2 = 2</div>
+<div class="card"><span class="big">🍎🍎 🍎🍎</span>2 groups of 2 = 4</div>
+<div class="card"><span class="big">🍎🍎 🍎🍎 🍎🍎</span>3 groups of 2 = 6</div>
+</div>
+<h3>Table of 2 / دو کا پہاڑا</h3>
+<table>
+<tr><th>Multiplication</th><th>Answer</th></tr>
+<tr><td>2 × 1</td><td>2</td></tr>
+<tr><td>2 × 2</td><td>4</td></tr>
+<tr><td>2 × 3</td><td>6</td></tr>
+<tr><td>2 × 4</td><td>8</td></tr>
+<tr><td>2 × 5</td><td>10</td></tr>
+<tr><td>2 × 6</td><td>12</td></tr>
+<tr><td>2 × 7</td><td>14</td></tr>
+<tr><td>2 × 8</td><td>16</td></tr>
+<tr><td>2 × 9</td><td>18</td></tr>
+<tr><td>2 × 10</td><td>20</td></tr>
+</table>
+<div class="exercise">
+<h3>✏️ Exercise 13</h3>
+<div class="question">1. 2 + 2 = <span class="blank"></span></div>
+<div class="question">2. 2 + 2 + 2 = <span class="blank"></span></div>
+<div class="question">3. 2 × 4 = <span class="blank"></span></div>
+<div class="question">4. 2 × 5 = <span class="blank"></span></div>
+<div class="question">5. Write the table of 2 in your notebook.</div>
+</div>
+</section>
+
+<!-- REVISION -->
+<section class="page">
+<h2>🌟 Final Revision Test</h2>
+<div class="intro">
+<b>Class 1 Mathematics</b><br>
+Time: 1 Hour | Total Marks: 30
+<div class="urdu">جماعت اوّل ریاضی کا آخری ٹیسٹ۔ تمام سوالات حل کریں۔</div>
+</div>
+<h3>Part A: Fill in the blanks (10 Marks)</h3>
+<div class="question">1. 5, 6, <span class="blank"></span>, 8</div>
+<div class="question">2. After 19 comes <span class="blank"></span></div>
+<div class="question">3. 4 + 3 = <span class="blank"></span></div>
+<div class="question">4. 9 - 5 = <span class="blank"></span></div>
+<div class="question">5. 2 × 3 = <span class="blank"></span></div>
+<div class="question">6. A triangle has <span class="blank"></span> sides.</div>
+<div class="question">7. A week has <span class="blank"></span> days.</div>
+<div class="question">8. 10 + 10 = <span class="blank"></span></div>
+<div class="question">9. Before 50 comes <span class="blank"></span></div>
+<div class="question">10. The currency of Pakistan is <span class="blank"></span></div>
+
+<h3>Part B: Solve the sums (10 Marks)</h3>
+<table>
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>6 + 2 =</td><td>________</td></tr>
+<tr><td>8 - 3 =</td><td>________</td></tr>
+<tr><td>10 + 5 =</td><td>________</td></tr>
+<tr><td>12 - 2 =</td><td>________</td></tr>
+<tr><td>2 × 5 =</td><td>________</td></tr>
+</table>
+
+<h3>Part C: Short Questions (10 Marks)</h3>
+<div class="question">1. Write numbers from 1 to 20.</div>
+<div class="question">2. Write five number names.</div>
+<div class="question">3. Draw a circle, square and triangle.</div>
+<div class="question">4. Write the days of the week.</div>
+<div class="question">5. Write the table of 2.</div>
+</section>
+
+<section class="page" style="text-align:center;background:linear-gradient(135deg,#e5f5ff,#fff3dc)">
+<h2>🎓 Well Done!</h2>
+<div style="font-size:70px">🏆 🌟 📚</div>
+<h2 style="border:0">You are a Little Mathematician!</h2>
+<div class="urdu" style="text-align:center">
+شاباش! آپ نے ریاضی کی کتاب مکمل کر لی ہے۔<br>
+محنت کرتے رہیں اور روزانہ مشق کریں۔
+</div>
+<h3 style="color:#1769aa">THE RISEN HIGH SCHOOL</h3>
+<p>Learn Today, Lead Tomorrow</p>
+</section>
+
+</main>
+
+<div class="footer">
+© The Risen High School | Class 1 Mathematics
+</div>
+
+</body>
+</html>
