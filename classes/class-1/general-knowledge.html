@@ -1,1 +1,1022 @@
 
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075985">
+<title>General Knowledge Class 1 | The Risen High School</title>
+
+<style>
+@font-face{
+ font-family:Jameel;
+ src:url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff");
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#eaf2ff;
+ color:#24364b;
+ font-family:Arial,sans-serif;
+ line-height:1.8;
+}
+.urdu{font-family:Jameel,serif; direction:rtl}
+header{
+ background:linear-gradient(120deg,#073b75,#087eaa,#13b9b0);
+ color:white;
+ text-align:center;
+ padding:17px 10px;
+}
+header h2{margin:0;font-size:23px}
+header p{margin:2px}
+.toolbar{
+ position:sticky;top:0;z-index:10;
+ background:white;padding:10px;
+ display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+ box-shadow:0 2px 8px #0002;
+}
+button{
+ border:0;border-radius:9px;padding:10px 15px;
+ background:#087eaa;color:white;font-weight:bold;
+}
+button:hover{background:#075985}
+.book{
+ max-width:850px;margin:18px auto;padding:12px;
+}
+.page{
+ background:white;border-radius:16px;
+ padding:25px 24px;margin:18px 0;
+ box-shadow:0 4px 16px #173c6520;
+ page-break-after:always;
+ border-top:7px solid #10a7ad;
+}
+.cover{
+ min-height:780px;
+ display:flex;flex-direction:column;
+ align-items:center;justify-content:center;text-align:center;
+ color:white;
+ background:linear-gradient(145deg,#092d67,#087eaa,#22b8a5,#f7b844);
+ border:8px solid white;
+ outline:5px solid #087eaa;
+}
+.cover .school{
+ font-size:27px;font-weight:bold;
+ background:#ffffff22;padding:12px 25px;border-radius:15px;
+}
+.cover .bookicon{font-size:100px;margin:25px}
+.cover h1{font-size:42px;margin:8px}
+.cover h2{font-size:32px;margin:5px}
+.cover p{font-size:21px}
+.cover .classbox{
+ background:#fff;color:#075985;
+ padding:10px 35px;border-radius:30px;
+ font-size:24px;font-weight:bold;margin:20px;
+}
+h2.lesson-title{
+ color:#075985;text-align:center;
+ border-bottom:3px dashed #f2b544;
+ padding-bottom:12px;font-size:27px;
+}
+h3{color:#078b9c;margin-bottom:5px}
+.english{
+ direction:ltr;text-align:left;
+ font-family:Arial,sans-serif;
+}
+.bilingual{
+ background:#f0f8ff;
+ border-right:5px solid #13a6aa;
+ padding:12px 15px;margin:12px 0;border-radius:10px;
+}
+.englishbox{
+ background:#fff8e9;
+ border-left:5px solid #f0ae35;
+ direction:ltr;text-align:left;
+ padding:12px 15px;margin:12px 0;border-radius:10px;
+}
+.picture{
+ display:flex;flex-wrap:wrap;justify-content:center;
+ gap:12px;margin:15px 0;
+}
+.pic{
+ background:#f2f8ff;border:2px solid #d9eafa;
+ border-radius:13px;padding:12px;min-width:95px;
+ text-align:center;font-size:37px;
+}
+.pic small{display:block;font-size:15px;color:#234}
+.wordtable{
+ width:100%;border-collapse:collapse;margin:12px 0;
+}
+.wordtable th,.wordtable td{
+ border:1px solid #cbd9e8;padding:8px;text-align:center;
+}
+.wordtable th{background:#d9f3f2}
+.exercise{
+ background:#f0fff4;border:2px solid #9adbb1;
+ padding:13px;border-radius:12px;margin-top:16px;
+}
+.question{margin:8px 0;padding:7px;border-bottom:1px dashed #ccc}
+.badge{
+ display:inline-block;background:#ffefbd;color:#805600;
+ padding:4px 12px;border-radius:20px;font-size:14px;
+}
+.footer{
+ text-align:center;color:#718096;font-size:13px;margin-top:20px;
+}
+.contents li{padding:5px;border-bottom:1px dotted #bbb}
+.answer{color:#087eaa;font-weight:bold}
+@media(max-width:600px){
+ .book{padding:7px}
+ .page{padding:17px 13px}
+ .cover{min-height:650px}
+ .cover h1{font-size:34px}
+ .cover .school{font-size:21px}
+}
+@media print{
+ body{background:white}
+ .toolbar,header{display:none}
+ .book{max-width:100%;margin:0;padding:0}
+ .page{box-shadow:none;border-radius:0;margin:0;min-height:96vh}
+ button{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <h2 class="urdu">دی رائزن ہائی اسکول</h2>
+ <h2>THE RISEN HIGH SCHOOL</h2>
+ <p>Digital School Library</p>
+</header>
+
+<div class="toolbar">
+ <button onclick="window.print()">🖨️ Print / PDF</button>
+ <button onclick="document.documentElement.scrollTop=0">🏠 Home</button>
+ <button onclick="toggleLanguage()">اردو / English</button>
+</div>
+
+<div class="book">
+
+<!-- COVER -->
+<section class="page cover">
+ <div class="school">THE RISEN HIGH SCHOOL</div>
+ <div class="bookicon">🌍📚🌈</div>
+ <h1>GENERAL KNOWLEDGE</h1>
+ <h2 class="urdu">عمومی معلومات</h2>
+ <div class="classbox">CLASS ONE | جماعت اوّل</div>
+ <p>Learn • Explore • Discover</p>
+ <p class="urdu">سیکھیں، جانیں اور دنیا کو پہچانیں</p>
+ <div style="font-size:65px">🌳 🏫 ☀️ 🐦</div>
+ <p>English + Urdu Edition</p>
+ <p class="urdu">مرتب کردہ: دی رائزن ہائی اسکول</p>
+</section>
+
+<!-- INTRO -->
+<section class="page">
+ <h2 class="lesson-title">کتاب کا تعارف | About This Book</h2>
+ <div class="bilingual urdu">
+  <h3>پیارے بچو!</h3>
+  اس کتاب میں آپ اپنے خاندان، اسکول، پاکستان، جانوروں، پرندوں، پھلوں، سبزیوں، موسموں اور دنیا کے بارے میں دلچسپ باتیں سیکھیں گے۔
+ </div>
+ <div class="englishbox">
+  <h3>Dear Students!</h3>
+  In this book, you will learn interesting facts about your family, school, Pakistan, animals, birds, fruits, vegetables, seasons and the world around you.
+ </div>
+ <div class="picture">
+  <div class="pic">👦<small>Boy</small></div>
+  <div class="pic">👧<small>Girl</small></div>
+  <div class="pic">📖<small>Book</small></div>
+  <div class="pic">🌍<small>World</small></div>
+ </div>
+ <h3 class="urdu">اس کتاب کو کیسے پڑھیں؟</h3>
+ <p class="urdu">ہر سبق کو غور سے پڑھیں، تصاویر دیکھیں، نئے الفاظ یاد کریں اور آخر میں دی گئی مشق حل کریں۔</p>
+ <h3>How to Use This Book?</h3>
+ <p class="english">Read every lesson carefully, look at the pictures, learn new words and complete the exercises.</p>
+</section>
+
+<!-- CONTENTS -->
+<section class="page">
+ <h2 class="lesson-title">فہرست | Contents</h2>
+ <ol class="contents">
+  <li>میرا تعارف | About Myself</li>
+  <li>میرا خاندان | My Family</li>
+  <li>میرا اسکول | My School</li>
+  <li>میرا ملک پاکستان | My Country Pakistan</li>
+  <li>پاکستان کا قومی پرچم | National Flag of Pakistan</li>
+  <li>قومی رہنما | National Leaders</li>
+  <li>ہفتے کے دن | Days of the Week</li>
+  <li>سال کے مہینے | Months of the Year</li>
+  <li>چار موسم | Four Seasons</li>
+  <li>رنگوں کے نام | Names of Colours</li>
+  <li>پھل | Fruits</li>
+  <li>سبزیاں | Vegetables</li>
+  <li>جانور | Animals</li>
+  <li>پرندے | Birds</li>
+  <li>انسانی جسم | Human Body</li>
+  <li>ہمارے پانچ حواس | Five Senses</li>
+  <li>ذرائع آمدورفت | Means of Transport</li>
+  <li>سورج، چاند اور زمین | Sun, Moon and Earth</li>
+  <li>صفائی اور اچھی عادات | Cleanliness and Good Habits</li>
+  <li>کھیل اور کھلونے | Games and Toys</li>
+ </ol>
+</section>
+
+<!-- LESSON 1 -->
+<section class="page">
+ <span class="badge">LESSON 01</span>
+ <h2 class="lesson-title">میرا تعارف | About Myself</h2>
+ <div class="picture">
+  <div class="pic">👦<small>Boy</small></div>
+  <div class="pic">👧<small>Girl</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  میرا نام علی ہے۔ میں ایک طالب علم ہوں۔ میں جماعت اوّل میں پڑھتا ہوں۔ میں اپنے والدین سے محبت کرتا ہوں۔ میں روزانہ اسکول جاتا ہوں۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  My name is Ali. I am a student. I study in Class One. I love my parents. I go to school every day.
+ </div>
+ <h3 class="urdu">نئے الفاظ | New Words</h3>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>My Name</td><td>میرا نام</td></tr>
+  <tr><td>Student</td><td>طالب علم</td></tr>
+  <tr><td>School</td><td>اسکول</td></tr>
+  <tr><td>Parents</td><td>والدین</td></tr>
+  <tr><td>Love</td><td>محبت</td></tr>
+ </table>
+ <div class="exercise">
+  <h3 class="urdu">مشق | Exercise</h3>
+  <p class="urdu">1۔ آپ کا نام کیا ہے؟</p>
+  <p class="english">2. What is your name?</p>
+  <p class="urdu">3۔ آپ کس جماعت میں پڑھتے ہیں؟</p>
+  <p class="english">4. Do you love your parents?</p>
+ </div>
+</section>
+
+<!-- LESSON 2 -->
+<section class="page">
+ <span class="badge">LESSON 02</span>
+ <h2 class="lesson-title">میرا خاندان | My Family</h2>
+ <div class="picture">
+  <div class="pic">👨<small>Father</small></div>
+  <div class="pic">👩<small>Mother</small></div>
+  <div class="pic">👦<small>Brother</small></div>
+  <div class="pic">👧<small>Sister</small></div>
+  <div class="pic">👴<small>Grandfather</small></div>
+  <div class="pic">👵<small>Grandmother</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  خاندان ان لوگوں کا گروہ ہے جو ایک دوسرے سے محبت کرتے ہیں اور ایک دوسرے کا خیال رکھتے ہیں۔ ہمارے خاندان میں والد، والدہ، بھائی، بہن اور دادا دادی شامل ہو سکتے ہیں۔ ہمیں اپنے خاندان کے افراد کا احترام کرنا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  A family is a group of people who love and care for one another. A family may include a father, mother, brothers, sisters and grandparents. We should respect our family members.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Father</td><td>والد</td></tr>
+  <tr><td>Mother</td><td>والدہ</td></tr>
+  <tr><td>Brother</td><td>بھائی</td></tr>
+  <tr><td>Sister</td><td>بہن</td></tr>
+  <tr><td>Family</td><td>خاندان</td></tr>
+  <tr><td>Grandparents</td><td>دادا دادی / نانا نانی</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p class="urdu">1۔ خاندان کے دو افراد کے نام بتائیں۔</p>
+  <p class="english">2. Who is your mother?</p>
+  <p class="urdu">3۔ ہمیں اپنے بڑوں کے ساتھ کیسا سلوک کرنا چاہیے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 3 -->
+<section class="page">
+ <span class="badge">LESSON 03</span>
+ <h2 class="lesson-title">میرا اسکول | My School</h2>
+ <div class="picture">
+  <div class="pic">🏫<small>School</small></div>
+  <div class="pic">📚<small>Books</small></div>
+  <div class="pic">✏️<small>Pencil</small></div>
+  <div class="pic">🎒<small>Bag</small></div>
+  <div class="pic">👩‍🏫<small>Teacher</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  اسکول علم حاصل کرنے کی جگہ ہے۔ ہم اسکول میں پڑھنا، لکھنا اور اچھی عادتیں سیکھتے ہیں۔ ہمارے اسکول میں اساتذہ، طلبہ، کلاس روم اور کھیل کا میدان ہوتا ہے۔ ہمیں اسکول صاف رکھنا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  A school is a place where we get education. We learn reading, writing and good habits at school. Our school has teachers, students, classrooms and a playground. We should keep our school clean.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Teacher</td><td>استاد</td></tr>
+  <tr><td>Student</td><td>طالب علم</td></tr>
+  <tr><td>Classroom</td><td>کلاس روم</td></tr>
+  <tr><td>Playground</td><td>کھیل کا میدان</td></tr>
+  <tr><td>Education</td><td>تعلیم</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. What is a school?</p>
+  <p class="urdu">2۔ اسکول میں ہمیں کون پڑھاتا ہے؟</p>
+  <p>3. Name two things in your school.</p>
+ </div>
+</section>
+
+<!-- LESSON 4 -->
+<section class="page">
+ <span class="badge">LESSON 04</span>
+ <h2 class="lesson-title">میرا ملک پاکستان | My Country Pakistan</h2>
+ <div class="picture">
+  <div class="pic">🇵🇰<small>Pakistan</small></div>
+  <div class="pic">🏔️<small>Mountains</small></div>
+  <div class="pic">🌊<small>Sea</small></div>
+  <div class="pic">🌾<small>Fields</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  ہمارا ملک پاکستان ہے۔ پاکستان 14 اگست 1947ء کو آزاد ہوا۔ پاکستان کا دارالحکومت اسلام آباد ہے۔ پاکستان کے چار صوبے ہیں: پنجاب، سندھ، خیبر پختونخوا اور بلوچستان۔ پاکستان کا قومی ترانہ ہماری پہچان ہے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Our country is Pakistan. Pakistan became independent on 14 August 1947. The capital of Pakistan is Islamabad. Pakistan has four provinces: Punjab, Sindh, Khyber Pakhtunkhwa and Balochistan. Our national anthem is a symbol of our identity.
+ </div>
+ <table class="wordtable">
+  <tr><th>Question</th><th>Answer</th></tr>
+  <tr><td>Country</td><td>Pakistan</td></tr>
+  <tr><td>Capital</td><td>Islamabad</td></tr>
+  <tr><td>Independence Day</td><td>14 August</td></tr>
+  <tr><td>National Language</td><td>Urdu</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p class="urdu">1۔ ہمارے ملک کا نام کیا ہے؟</p>
+  <p>2. What is the capital of Pakistan?</p>
+  <p class="urdu">3۔ پاکستان کب آزاد ہوا؟</p>
+ </div>
+</section>
+
+<!-- LESSON 5 -->
+<section class="page">
+ <span class="badge">LESSON 05</span>
+ <h2 class="lesson-title">پاکستان کا قومی پرچم | National Flag of Pakistan</h2>
+ <div class="picture">
+  <div class="pic" style="font-size:90px">🇵🇰<small>Pakistan Flag</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  پاکستان کا قومی پرچم سبز اور سفید رنگ کا ہے۔ سبز حصہ مسلمانوں کی اکثریت کی نمائندگی کرتا ہے۔ سفید حصہ اقلیتوں کی نمائندگی کرتا ہے۔ پرچم پر سفید چاند اور ستارہ بھی موجود ہیں۔ ہمیں اپنے قومی پرچم کا احترام کرنا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  The national flag of Pakistan is green and white. The green part represents the Muslim majority. The white stripe represents religious minorities. The flag also has a white crescent and star. We should respect our national flag.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Flag</td><td>پرچم</td></tr>
+  <tr><td>Green</td><td>سبز</td></tr>
+  <tr><td>White</td><td>سفید</td></tr>
+  <tr><td>Crescent</td><td>ہلال</td></tr>
+  <tr><td>Star</td><td>ستارہ</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. What are the colours of our flag?</p>
+  <p class="urdu">2۔ پاکستان کے پرچم پر کیا بنا ہوا ہے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 6 -->
+<section class="page">
+ <span class="badge">LESSON 06</span>
+ <h2 class="lesson-title">قومی رہنما | National Leaders</h2>
+ <div class="picture">
+  <div class="pic">👨🏻‍💼<small>Quaid-e-Azam</small></div>
+  <div class="pic">👳🏻‍♂️<small>Allama Iqbal</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  قائداعظم محمد علی جناح پاکستان کے بانی تھے۔ ان کی پیدائش 25 دسمبر 1876ء کو ہوئی۔ علامہ محمد اقبال ایک عظیم شاعر اور مفکر تھے۔ انہوں نے مسلمانوں کے لیے ایک الگ وطن کا خواب پیش کیا۔ ہمیں اپنے قومی رہنماؤں کی خدمات یاد رکھنی چاہئیں۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Quaid-e-Azam Muhammad Ali Jinnah was the founder of Pakistan. He was born on 25 December 1876. Allama Muhammad Iqbal was a great poet and thinker. He presented the idea of a separate homeland for Muslims. We should remember the services of our national leaders.
+ </div>
+ <table class="wordtable">
+  <tr><th>Name</th><th>Known for</th></tr>
+  <tr><td>Muhammad Ali Jinnah</td><td>Founder of Pakistan</td></tr>
+  <tr><td>Allama Muhammad Iqbal</td><td>Great Poet and Thinker</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p class="urdu">1۔ پاکستان کے بانی کون ہیں؟</p>
+  <p>2. Who was Allama Iqbal?</p>
+ </div>
+</section>
+
+<!-- LESSON 7 -->
+<section class="page">
+ <span class="badge">LESSON 07</span>
+ <h2 class="lesson-title">ہفتے کے دن | Days of the Week</h2>
+ <div class="picture">
+  <div class="pic">📅<small>Calendar</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  ایک ہفتے میں سات دن ہوتے ہیں۔ ہر دن کا اپنا نام ہے۔ ہم روزانہ اسکول جاتے ہیں، جبکہ اتوار کو عام طور پر چھٹی ہوتی ہے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  There are seven days in a week. Every day has a name. We go to school on school days, while Sunday is commonly a holiday.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Monday</td><td>پیر</td></tr>
+  <tr><td>Tuesday</td><td>منگل</td></tr>
+  <tr><td>Wednesday</td><td>بدھ</td></tr>
+  <tr><td>Thursday</td><td>جمعرات</td></tr>
+  <tr><td>Friday</td><td>جمعہ</td></tr>
+  <tr><td>Saturday</td><td>ہفتہ</td></tr>
+  <tr><td>Sunday</td><td>اتوار</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. How many days are there in a week?</p>
+  <p class="urdu">2۔ ہفتے کے پہلے دن کا نام کیا ہے؟</p>
+  <p>3. Which day comes after Friday?</p>
+ </div>
+</section>
+
+<!-- LESSON 8 -->
+<section class="page">
+ <span class="badge">LESSON 08</span>
+ <h2 class="lesson-title">سال کے مہینے | Months of the Year</h2>
+ <div class="picture"><div class="pic">🗓️<small>Calendar</small></div></div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  ایک سال میں بارہ مہینے ہوتے ہیں۔ ہر مہینے میں دنوں کی تعداد مختلف ہو سکتی ہے۔ فروری میں عام سال کے دوران 28 دن ہوتے ہیں اور لیپ سال میں 29 دن ہوتے ہیں۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  There are twelve months in a year. The number of days can be different in each month. February has 28 days in a common year and 29 days in a leap year.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>January</td><td>جنوری</td></tr>
+  <tr><td>February</td><td>فروری</td></tr>
+  <tr><td>March</td><td>مارچ</td></tr>
+  <tr><td>April</td><td>اپریل</td></tr>
+  <tr><td>May</td><td>مئی</td></tr>
+  <tr><td>June</td><td>جون</td></tr>
+  <tr><td>July</td><td>جولائی</td></tr>
+  <tr><td>August</td><td>اگست</td></tr>
+  <tr><td>September</td><td>ستمبر</td></tr>
+  <tr><td>October</td><td>اکتوبر</td></tr>
+  <tr><td>November</td><td>نومبر</td></tr>
+  <tr><td>December</td><td>دسمبر</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. How many months are there in a year?</p>
+  <p class="urdu">2۔ سال کا آخری مہینہ کون سا ہے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 9 -->
+<section class="page">
+ <span class="badge">LESSON 09</span>
+ <h2 class="lesson-title">چار موسم | Four Seasons</h2>
+ <div class="picture">
+  <div class="pic">🌸<small>Spring</small></div>
+  <div class="pic">☀️<small>Summer</small></div>
+  <div class="pic">🍂<small>Autumn</small></div>
+  <div class="pic">❄️<small>Winter</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  موسم میں وقت کے ساتھ تبدیلی آتی رہتی ہے۔ عام طور پر چار موسم بیان کیے جاتے ہیں: بہار، گرمی، خزاں اور سردی۔ بہار میں پھول کھلتے ہیں، گرمی میں موسم گرم ہوتا ہے، خزاں میں بہت سے درختوں کے پتے جھڑتے ہیں اور سردی میں موسم ٹھنڈا ہوتا ہے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  The weather changes during the year. Four commonly described seasons are spring, summer, autumn and winter. Flowers bloom in spring, summer is hot, many trees shed their leaves in autumn, and winter is cold.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Spring</td><td>بہار</td></tr>
+  <tr><td>Summer</td><td>گرمی</td></tr>
+  <tr><td>Autumn</td><td>خزاں</td></tr>
+  <tr><td>Winter</td><td>سردی</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. Which season is cold?</p>
+  <p class="urdu">2۔ کس موسم میں پھول کھلتے ہیں؟</p>
+ </div>
+</section>
+
+<!-- LESSON 10 -->
+<section class="page">
+ <span class="badge">LESSON 10</span>
+ <h2 class="lesson-title">رنگوں کے نام | Names of Colours</h2>
+ <div class="picture">
+  <div class="pic" style="background:#ffdddd">🔴<small>Red</small></div>
+  <div class="pic" style="background:#ddffdd">🟢<small>Green</small></div>
+  <div class="pic" style="background:#ddddff">🔵<small>Blue</small></div>
+  <div class="pic" style="background:#fff3a8">🟡<small>Yellow</small></div>
+  <div class="pic" style="background:#eee">⚫<small>Black</small></div>
+  <div class="pic">⚪<small>White</small></div>
+  <div class="pic">🟠<small>Orange</small></div>
+  <div class="pic">🟣<small>Purple</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  ہمارے اردگرد بہت سے خوبصورت رنگ موجود ہیں۔ پھولوں، پھلوں، کپڑوں اور کھلونوں میں مختلف رنگ نظر آتے ہیں۔ رنگ ہماری دنیا کو خوبصورت بناتے ہیں۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  We see many beautiful colours around us. Flowers, fruits, clothes and toys have different colours. Colours make our world beautiful.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Red</td><td>لال</td></tr>
+  <tr><td>Green</td><td>سبز</td></tr>
+  <tr><td>Blue</td><td>نیلا</td></tr>
+  <tr><td>Yellow</td><td>پیلا</td></tr>
+  <tr><td>Black</td><td>کالا</td></tr>
+  <tr><td>White</td><td>سفید</td></tr>
+  <tr><td>Orange</td><td>نارنجی</td></tr>
+  <tr><td>Purple</td><td>جامنی</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. What is the colour of grass?</p>
+  <p class="urdu">2۔ دودھ کا رنگ کیا ہے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 11 -->
+<section class="page">
+ <span class="badge">LESSON 11</span>
+ <h2 class="lesson-title">پھل | Fruits</h2>
+ <div class="picture">
+  <div class="pic">🍎<small>Apple</small></div>
+  <div class="pic">🍌<small>Banana</small></div>
+  <div class="pic">🍊<small>Orange</small></div>
+  <div class="pic">🥭<small>Mango</small></div>
+  <div class="pic">🍇<small>Grapes</small></div>
+  <div class="pic">🍉<small>Watermelon</small></div>
+  <div class="pic">🍓<small>Strawberry</small></div>
+  <div class="pic">🍐<small>Pear</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  پھل قدرت کی نعمت ہیں۔ پھلوں میں وٹامنز اور غذائی اجزا پائے جاتے ہیں۔ سیب، آم، کیلا، مالٹا، انگور اور تربوز مشہور پھل ہیں۔ ہمیں مختلف پھل کھانے چاہئیں اور انہیں دھو کر کھانا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Fruits are gifts of nature. They contain vitamins and nutrients. Apple, mango, banana, orange, grapes and watermelon are popular fruits. We should eat different fruits and wash them before eating.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Apple</td><td>سیب</td></tr>
+  <tr><td>Banana</td><td>کیلا</td></tr>
+  <tr><td>Mango</td><td>آم</td></tr>
+  <tr><td>Orange</td><td>مالٹا</td></tr>
+  <tr><td>Grapes</td><td>انگور</td></tr>
+  <tr><td>Watermelon</td><td>تربوز</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. Name two fruits.</p>
+  <p class="urdu">2۔ آم کس موسم میں زیادہ ملتا ہے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 12 -->
+<section class="page">
+ <span class="badge">LESSON 12</span>
+ <h2 class="lesson-title">سبزیاں | Vegetables</h2>
+ <div class="picture">
+  <div class="pic">🥕<small>Carrot</small></div>
+  <div class="pic">🥔<small>Potato</small></div>
+  <div class="pic">🍅<small>Tomato</small></div>
+  <div class="pic">🧅<small>Onion</small></div>
+  <div class="pic">🥒<small>Cucumber</small></div>
+  <div class="pic">🥬<small>Cabbage</small></div>
+  <div class="pic">🌶️<small>Chilli</small></div>
+  <div class="pic">🍆<small>Brinjal</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  سبزیاں ہماری غذا کا اہم حصہ ہیں۔ گاجر، آلو، ٹماٹر، پیاز، کھیرا اور پالک عام سبزیاں ہیں۔ سبزیوں کو اچھی طرح دھو کر کھانا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Vegetables are an important part of our food. Carrot, potato, tomato, onion, cucumber and spinach are common vegetables. We should wash vegetables properly before eating.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Carrot</td><td>گاجر</td></tr>
+  <tr><td>Potato</td><td>آلو</td></tr>
+  <tr><td>Tomato</td><td>ٹماٹر</td></tr>
+  <tr><td>Onion</td><td>پیاز</td></tr>
+  <tr><td>Cucumber</td><td>کھیرا</td></tr>
+  <tr><td>Spinach</td><td>پالک</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. Name two vegetables.</p>
+  <p class="urdu">2۔ گاجر کا رنگ کیا ہوتا ہے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 13 -->
+<section class="page">
+ <span class="badge">LESSON 13</span>
+ <h2 class="lesson-title">جانور | Animals</h2>
+ <div class="picture">
+  <div class="pic">🦁<small>Lion</small></div>
+  <div class="pic">🐘<small>Elephant</small></div>
+  <div class="pic">🐄<small>Cow</small></div>
+  <div class="pic">🐐<small>Goat</small></div>
+  <div class="pic">🐈<small>Cat</small></div>
+  <div class="pic">🐕<small>Dog</small></div>
+  <div class="pic">🐪<small>Camel</small></div>
+  <div class="pic">🐎<small>Horse</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  دنیا میں بہت سے جانور پائے جاتے ہیں۔ کچھ جانور جنگل میں رہتے ہیں اور کچھ انسانوں کے ساتھ گھروں یا کھیتوں میں رہتے ہیں۔ گائے ہمیں دودھ دیتی ہے۔ گھوڑا سواری اور کام میں مدد دیتا ہے۔ ہمیں جانوروں کے ساتھ نرمی کرنی چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  There are many kinds of animals in the world. Some live in forests and others live with people in homes or farms. A cow gives us milk. A horse helps people with riding and work. We should treat animals kindly.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Lion</td><td>شیر</td></tr>
+  <tr><td>Elephant</td><td>ہاتھی</td></tr>
+  <tr><td>Cow</td><td>گائے</td></tr>
+  <tr><td>Goat</td><td>بکری</td></tr>
+  <tr><td>Cat</td><td>بلی</td></tr>
+  <tr><td>Dog</td><td>کتا</td></tr>
+  <tr><td>Camel</td><td>اونٹ</td></tr>
+  <tr><td>Horse</td><td>گھوڑا</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. Which animal gives us milk?</p>
+  <p class="urdu">2۔ جنگل کا بادشاہ کسے کہتے ہیں؟</p>
+ </div>
+</section>
+
+<!-- LESSON 14 -->
+<section class="page">
+ <span class="badge">LESSON 14</span>
+ <h2 class="lesson-title">پرندے | Birds</h2>
+ <div class="picture">
+  <div class="pic">🦚<small>Peacock</small></div>
+  <div class="pic">🦜<small>Parrot</small></div>
+  <div class="pic">🕊️<small>Dove</small></div>
+  <div class="pic">🐦<small>Sparrow</small></div>
+  <div class="pic">🦅<small>Eagle</small></div>
+  <div class="pic">🦆<small>Duck</small></div>
+  <div class="pic">🐓<small>Rooster</small></div>
+  <div class="pic">🦉<small>Owl</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  پرندوں کے جسم پر پر ہوتے ہیں۔ زیادہ تر پرندوں کے دو پر اور دو ٹانگیں ہوتی ہیں۔ بہت سے پرندے اڑ سکتے ہیں۔ طوطا، کبوتر، چڑیا، مور اور عقاب مشہور پرندے ہیں۔ ہمیں پرندوں کی حفاظت کرنی چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Birds have feathers. Most birds have two wings and two legs. Many birds can fly. Parrot, pigeon, sparrow, peacock and eagle are well-known birds. We should protect birds.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Parrot</td><td>طوطا</td></tr>
+  <tr><td>Pigeon</td><td>کبوتر</td></tr>
+  <tr><td>Sparrow</td><td>چڑیا</td></tr>
+  <tr><td>Peacock</td><td>مور</td></tr>
+  <tr><td>Eagle</td><td>عقاب</td></tr>
+  <tr><td>Duck</td><td>بطخ</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. What do birds have on their bodies?</p>
+  <p class="urdu">2۔ کون سا پرندہ پاکستان کا قومی پرندہ ہے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 15 -->
+<section class="page">
+ <span class="badge">LESSON 15</span>
+ <h2 class="lesson-title">انسانی جسم | Human Body</h2>
+ <div class="picture">
+  <div class="pic">👀<small>Eyes</small></div>
+  <div class="pic">👂<small>Ears</small></div>
+  <div class="pic">👃<small>Nose</small></div>
+  <div class="pic">👄<small>Mouth</small></div>
+  <div class="pic">✋<small>Hands</small></div>
+  <div class="pic">🦶<small>Feet</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  انسانی جسم کے کئی حصے ہوتے ہیں۔ ہمارے سر پر آنکھیں، کان، ناک اور منہ ہوتے ہیں۔ ہم ہاتھوں سے کام کرتے اور پاؤں سے چلتے ہیں۔ ہمیں اپنے جسم کو صاف رکھنا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  The human body has many parts. We have eyes, ears, a nose and a mouth on our head. We use our hands to do work and our feet to walk. We should keep our body clean.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Head</td><td>سر</td></tr>
+  <tr><td>Eyes</td><td>آنکھیں</td></tr>
+  <tr><td>Ears</td><td>کان</td></tr>
+  <tr><td>Nose</td><td>ناک</td></tr>
+  <tr><td>Mouth</td><td>منہ</td></tr>
+  <tr><td>Hands</td><td>ہاتھ</td></tr>
+  <tr><td>Feet</td><td>پاؤں</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. How many eyes do we have?</p>
+  <p class="urdu">2۔ ہم کس حصے سے سنتے ہیں؟</p>
+ </div>
+</section>
+
+<!-- LESSON 16 -->
+<section class="page">
+ <span class="badge">LESSON 16</span>
+ <h2 class="lesson-title">ہمارے پانچ حواس | Five Senses</h2>
+ <div class="picture">
+  <div class="pic">👀<small>See</small></div>
+  <div class="pic">👂<small>Hear</small></div>
+  <div class="pic">👃<small>Smell</small></div>
+  <div class="pic">👅<small>Taste</small></div>
+  <div class="pic">✋<small>Touch</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  ہمارے پانچ بنیادی حواس ہیں۔ آنکھوں سے دیکھتے، کانوں سے سنتے، ناک سے سونگھتے، زبان سے ذائقہ چکھتے اور جلد سے چھونے کا احساس کرتے ہیں۔ یہ حواس ہمیں اپنے اردگرد کی دنیا کو سمجھنے میں مدد دیتے ہیں۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  We have five basic senses. We see with our eyes, hear with our ears, smell with our nose, taste with our tongue and feel touch with our skin. These senses help us understand the world around us.
+ </div>
+ <table class="wordtable">
+  <tr><th>Sense</th><th>Body Part</th><th>اردو</th></tr>
+  <tr><td>Sight</td><td>Eyes</td><td>دیکھنا</td></tr>
+  <tr><td>Hearing</td><td>Ears</td><td>سننا</td></tr>
+  <tr><td>Smell</td><td>Nose</td><td>سونگھنا</td></tr>
+  <tr><td>Taste</td><td>Tongue</td><td>چکھنا</td></tr>
+  <tr><td>Touch</td><td>Skin</td><td>چھونا</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. Which body part helps us to see?</p>
+  <p class="urdu">2۔ ہم کس حصے سے ذائقہ چکھتے ہیں؟</p>
+ </div>
+</section>
+
+<!-- LESSON 17 -->
+<section class="page">
+ <span class="badge">LESSON 17</span>
+ <h2 class="lesson-title">ذرائع آمدورفت | Means of Transport</h2>
+ <div class="picture">
+  <div class="pic">🚗<small>Car</small></div>
+  <div class="pic">🚌<small>Bus</small></div>
+  <div class="pic">🚂<small>Train</small></div>
+  <div class="pic">✈️<small>Airplane</small></div>
+  <div class="pic">🚢<small>Ship</small></div>
+  <div class="pic">🚲<small>Bicycle</small></div>
+  <div class="pic">🏍️<small>Motorcycle</small></div>
+  <div class="pic">🚁<small>Helicopter</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  ذرائع آمدورفت ہمیں ایک جگہ سے دوسری جگہ جانے میں مدد دیتے ہیں۔ گاڑی، بس، سائیکل اور موٹر سائیکل سڑک پر چلتے ہیں۔ ریل گاڑی پٹڑی پر چلتی ہے۔ ہوائی جہاز ہوا میں اڑتا ہے اور جہاز پانی میں چلتا ہے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Means of transport help us travel from one place to another. Cars, buses, bicycles and motorcycles travel on roads. Trains run on tracks. Aeroplanes fly in the air and ships travel on water.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Car</td><td>گاڑی</td></tr>
+  <tr><td>Bus</td><td>بس</td></tr>
+  <tr><td>Train</td><td>ریل گاڑی</td></tr>
+  <tr><td>Airplane</td><td>ہوائی جہاز</td></tr>
+  <tr><td>Ship</td><td>بحری جہاز</td></tr>
+  <tr><td>Bicycle</td><td>سائیکل</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. Which vehicle flies in the air?</p>
+  <p class="urdu">2۔ ریل گاڑی کہاں چلتی ہے؟</p>
+ </div>
+</section>
+
+<!-- LESSON 18 -->
+<section class="page">
+ <span class="badge">LESSON 18</span>
+ <h2 class="lesson-title">سورج، چاند اور زمین | Sun, Moon and Earth</h2>
+ <div class="picture">
+  <div class="pic">☀️<small>Sun</small></div>
+  <div class="pic">🌙<small>Moon</small></div>
+  <div class="pic">🌍<small>Earth</small></div>
+  <div class="pic">⭐<small>Stars</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  زمین ہمارا گھر ہے۔ ہم زمین پر رہتے ہیں۔ سورج ہمیں روشنی اور گرمی دیتا ہے۔ چاند رات کے وقت آسمان پر نظر آتا ہے۔ رات کو آسمان پر ستارے بھی دکھائی دیتے ہیں۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Earth is our home. We live on Earth. The Sun gives us light and heat. The Moon can be seen in the sky at night. We can also see stars in the night sky.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Sun</td><td>سورج</td></tr>
+  <tr><td>Moon</td><td>چاند</td></tr>
+  <tr><td>Earth</td><td>زمین</td></tr>
+  <tr><td>Stars</td><td>ستارے</td></tr>
+  <tr><td>Sky</td><td>آسمان</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. What gives us light and heat?</p>
+  <p class="urdu">2۔ ہم کس سیارے پر رہتے ہیں؟</p>
+ </div>
+</section>
+
+<!-- LESSON 19 -->
+<section class="page">
+ <span class="badge">LESSON 19</span>
+ <h2 class="lesson-title">صفائی اور اچھی عادات | Cleanliness and Good Habits</h2>
+ <div class="picture">
+  <div class="pic">🪥<small>Brush</small></div>
+  <div class="pic">🧼<small>Soap</small></div>
+  <div class="pic">🚿<small>Bath</small></div>
+  <div class="pic">🗑️<small>Dustbin</small></div>
+  <div class="pic">🥗<small>Healthy Food</small></div>
+  <div class="pic">💧<small>Water</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  صفائی اچھی صحت کے لیے ضروری ہے۔ ہمیں روزانہ دانت صاف کرنے، ہاتھ دھونے اور نہانے کی عادت اپنانی چاہیے۔ کھانے سے پہلے اور بیت الخلا کے بعد ہاتھ صابن سے دھوئیں۔ کچرا کوڑے دان میں ڈالیں۔ ہمیں صاف پانی پینا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Cleanliness is important for good health. We should brush our teeth, wash our hands and take a bath regularly. Wash your hands with soap before eating and after using the toilet. Put rubbish in the dustbin. We should drink clean water.
+ </div>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. When should we wash our hands?</p>
+  <p class="urdu">2۔ کچرا کہاں ڈالنا چاہیے؟</p>
+  <p>3. Why is cleanliness important?</p>
+ </div>
+</section>
+
+<!-- LESSON 20 -->
+<section class="page">
+ <span class="badge">LESSON 20</span>
+ <h2 class="lesson-title">کھیل اور کھلونے | Games and Toys</h2>
+ <div class="picture">
+  <div class="pic">⚽<small>Football</small></div>
+  <div class="pic">🏏<small>Cricket</small></div>
+  <div class="pic">🏸<small>Badminton</small></div>
+  <div class="pic">🧸<small>Teddy Bear</small></div>
+  <div class="pic">🚂<small>Toy Train</small></div>
+  <div class="pic">🪁<small>Kite</small></div>
+ </div>
+ <div class="bilingual urdu">
+  <h3>اردو میں</h3>
+  کھیل ہماری صحت اور خوشی کے لیے اچھے ہیں۔ بچے کرکٹ، فٹ بال اور بیڈمنٹن کھیلتے ہیں۔ کھلونے بچوں کے لیے خوشی کا باعث بنتے ہیں۔ ہمیں مل جل کر کھیلنا اور کھیل کے اصولوں کا خیال رکھنا چاہیے۔
+ </div>
+ <div class="englishbox">
+  <h3>In English</h3>
+  Games are good for our health and happiness. Children play cricket, football and badminton. Toys make children happy. We should play together and follow the rules of games.
+ </div>
+ <table class="wordtable">
+  <tr><th>English</th><th>اردو</th></tr>
+  <tr><td>Football</td><td>فٹ بال</td></tr>
+  <tr><td>Cricket</td><td>کرکٹ</td></tr>
+  <tr><td>Badminton</td><td>بیڈمنٹن</td></tr>
+  <tr><td>Toy</td><td>کھلونا</td></tr>
+  <tr><td>Kite</td><td>پتنگ</td></tr>
+  <tr><td>Ball</td><td>گیند</td></tr>
+ </table>
+ <div class="exercise">
+  <h3>Exercise / مشق</h3>
+  <p>1. Name two games.</p>
+  <p class="urdu">2۔ آپ کا پسندیدہ کھیل کون سا ہے؟</p>
+ </div>
+</section>
+
+<!-- REVISION -->
+<section class="page">
+ <h2 class="lesson-title">دہرائی | Revision Test</h2>
+ <h3>Part A: Choose the Correct Answer</h3>
+ <div class="question">1. What is the capital of Pakistan?
+  <br>A) Lahore &nbsp; B) Islamabad &nbsp; C) Karachi
+ </div>
+ <div class="question">2. How many days are in a week?
+  <br>A) Five &nbsp; B) Seven &nbsp; C) Ten
+ </div>
+ <div class="question">3. Which animal gives us milk?
+  <br>A) Cow &nbsp; B) Lion &nbsp; C) Cat
+ </div>
+ <div class="question">4. Which planet is our home?
+  <br>A) Mars &nbsp; B) Earth &nbsp; C) Jupiter
+ </div>
+ <div class="question">5. Which vehicle flies in the air?
+  <br>A) Bus &nbsp; B) Train &nbsp; C) Airplane
+ </div>
+
+ <h3 class="urdu">حصہ ب: درست یا غلط | True or False</h3>
+ <div class="question urdu">1۔ پاکستان کا دارالحکومت اسلام آباد ہے۔ ______</div>
+ <div class="question urdu">2۔ ایک ہفتے میں دس دن ہوتے ہیں۔ ______</div>
+ <div class="question urdu">3۔ سورج ہمیں روشنی دیتا ہے۔ ______</div>
+ <div class="question urdu">4۔ گائے ایک پرندہ ہے۔ ______</div>
+ <div class="question urdu">5۔ ہمیں صفائی رکھنی چاہیے۔ ______</div>
+
+ <h3>Part C: Fill in the Blanks</h3>
+ <div class="question">1. Our country is __________.</div>
+ <div class="question">2. There are __________ months in a year.</div>
+ <div class="question">3. We see with our __________.</div>
+ <div class="question">4. The Sun gives us light and __________.</div>
+ <div class="question">5. A __________ gives us milk.</div>
+
+ <h3 class="urdu">حصہ د: مختصر سوالات | Short Questions</h3>
+ <div class="question urdu">1۔ پاکستان کب آزاد ہوا؟</div>
+ <div class="question urdu">2۔ ہفتے میں کتنے دن ہوتے ہیں؟</div>
+ <div class="question urdu">3۔ دو پھلوں کے نام لکھیں۔</div>
+ <div class="question urdu">4۔ پانچ حواس کے نام بتائیں۔</div>
+ <div class="question urdu">5۔ ہمیں اسکول کیوں جانا چاہیے؟</div>
+</section>
+
+<!-- ANSWER KEY -->
+<section class="page">
+ <h2 class="lesson-title">جوابی کلید | Answer Key</h2>
+ <h3>MCQs</h3>
+ <p>1. B) Islamabad</p>
+ <p>2. B) Seven</p>
+ <p>3. A) Cow</p>
+ <p>4. B) Earth</p>
+ <p>5. C) Airplane</p>
+
+ <h3 class="urdu">درست یا غلط</h3>
+ <p class="urdu">1۔ درست</p>
+ <p class="urdu">2۔ غلط</p>
+ <p class="urdu">3۔ درست</p>
+ <p class="urdu">4۔ غلط</p>
+ <p class="urdu">5۔ درست</p>
+
+ <h3>Fill in the Blanks</h3>
+ <p>1. Pakistan</p>
+ <p>2. Twelve</p>
+ <p>3. Eyes</p>
+ <p>4. Heat</p>
+ <p>5. Cow</p>
+
+ <div class="bilingual urdu">
+  <h3>شاباش بچو!</h3>
+  آپ نے عمومی معلومات کی کتاب مکمل کر لی ہے۔ روزانہ نئی چیزیں سیکھیں، سوال پوچھیں اور اپنے علم میں اضافہ کریں۔
+ </div>
+ <div class="englishbox">
+  <h3>Well Done, Students!</h3>
+  You have completed this General Knowledge book. Keep learning new things, asking questions and increasing your knowledge.
+ </div>
+ <div class="picture">
+  <div class="pic">🏆<small>Well Done</small></div>
+  <div class="pic">🌟<small>Star Student</small></div>
+  <div class="pic">📚<small>Keep Learning</small></div>
+ </div>
+ <div class="footer">
+  THE RISEN HIGH SCHOOL<br>
+  General Knowledge — Class 1<br>
+  English + Urdu Edition
+ </div>
+</section>
+
+</div>
+
+<script>
+function toggleLanguage(){
+ document.querySelectorAll('.urdu').forEach(el=>{
+  el.style.display = el.style.display === 'none' ? '' : 'none';
+ });
+ document.querySelectorAll('.englishbox').forEach(el=>{
+  el.style.display = el.style.display === 'none' ? '' : 'none';
+ });
+}
+</script>
+
+</body>
+</html>
+
